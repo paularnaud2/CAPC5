@@ -25,11 +25,11 @@ def lauch_threads(range_list, var):
 	
 	log("Plages à requêter : {}".format(range_list))
 	i = 0
+	init_th_dict()
 	thread_list = []
 	for elt in range_list:
-		i += 1
-		th = Thread(target=process_range, args=(elt, var, i,))
-		#th = Thread(process_range(elt, var, i))
+		th = Thread(target=process_range, args=(elt, var,))
+		#th = Thread(process_range(elt, var))
 		thread_list.append(th)
 		th.start()
 	
@@ -38,16 +38,34 @@ def lauch_threads(range_list, var):
 	
 	print_com('|')
 
-def process_range(elt, var, th_nb):
-
+def process_range(elt, var):
+	
 	with sem:
 		gl.counters['QUERY_RANGE'] += 1
-		cnx = connect(gl.BDD, th_nb)
+		cur_th = get_th_nb()
+		cnx = connect(gl.BDD, cur_th)
 		query = gl.query.replace(gl.VAR_STR + var + gl.VAR_STR, elt)
 		c = cnx.cursor()
-		process_query(c, query, elt, th_nb)
+		process_query(c, query, elt, cur_th)
 		c.close()
 		cnx.close
+		with verrou:
+			gl.th_dic[cur_th] = 0
+
+def init_th_dict():
+
+	for i in range(1, gl.MAX_BDD_CNX + 1):
+		gl.th_dic[i] = 0
+
+def get_th_nb():
+
+	with verrou:
+		i = 1
+		while gl.th_dic[i] == 1:
+			i += 1
+		
+		gl.th_dic[i] = 1
+	return i
 
 def process_gko_query(inst):
 	
@@ -64,12 +82,12 @@ def process_gko_query(inst):
 	
 def process_query(c, query, elt, th_nb):
 
-	log_process_query_init(elt, query)
+	log_process_query_init(elt, query, th_nb)
 	c.execute(query)
-	log_process_query_finish(elt)
+	log_process_query_finish(elt, th_nb)
 	init_out_file(c, elt)
 	th_name = gen_sl_detail(elt, th_nb)
-	write_rows(c, elt, th_name)
+	write_rows(c, elt, th_name, th_nb)
 	
 def finish():
 	
@@ -127,9 +145,9 @@ def init_out_file(cursor, range_name = 'MONO'):
 			out_file.write(com.CSV_SEPARATOR + "INSTANCE")
 		out_file.write("\n")
 
-def write_rows(cursor, range_name = 'MONO', th_name = 'DEFAULT'):
+def write_rows(cursor, range_name = 'MONO', th_name = 'DEFAULT', th_nb = 0):
 	
-	log_write_rows_init(range_name)
+	log_write_rows_init(range_name, th_nb)
 	with open(gl.out_files[range_name + gl.EC], 'a', encoding='utf-8') as out_file:
 		i = 0
 		for row in cursor:
@@ -139,9 +157,8 @@ def write_rows(cursor, range_name = 'MONO', th_name = 'DEFAULT'):
 				gl.counters["row"] += iter
 			step_log(i, gl.SL_STEP, th_name = th_name)
 	
-	#breakpoint()
 	rename(gl.out_files[range_name + gl.EC], gl.out_files[range_name])
-	log_write_rows_finish(range_name, i)
+	log_write_rows_finish(range_name, i, th_nb)
 
 def write_row(row, out_file, range_name = 'MONO'):
 	

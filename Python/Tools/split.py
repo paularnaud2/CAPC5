@@ -40,8 +40,8 @@ def prompt_split(in_dir, max_line, n_line):
 	
 	n_line_2 = n_line + n_out_files-1
 	n_out_files = ceil(n_line_2 / max_line)
-	s = "Le fichier d'entrée dépasse les {} lignes. Il va être découpé en {} fichiers. Continuer ? (o/n)"
-	a = input_com(s.format(big_number(max_line), n_out_files))
+	s = "Le fichier d'entrée dépasse les {} lignes. Il va être découpé en {} fichiers (nb max de fichiers fixé à {}). Continuer ? (o/n)"
+	a = input_com(s.format(big_number(max_line), n_out_files, MAX_FILE_NB))
 	
 	if a == "n":
 		gl.bool["quit"] = True

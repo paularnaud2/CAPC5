@@ -19,7 +19,7 @@ GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GK
 #GKO_INSTANCES = ['GKO1_IDF']
 EXPORT_INSTANCES = False
 MAX_CHECK_DUP = 1*10**6
-MAX_BDD_CNX = 8
+MAX_BDD_CNX = 3
 
 CONF_FILE = 'C:/oracle/conf_perso.txt'
 VAR_STR = '@@'
@@ -35,4 +35,5 @@ conf = {}
 counters = {}
 bools = {}
 out_files = {}
+th_dic = {}
 query = ''
