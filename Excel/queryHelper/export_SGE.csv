@@ -1,0 +1,698 @@
+﻿AFFAIRE;POINT;PRESTATION;PRS_OPTION;FOURNISSEUR;STATUT;ETAT_EXTERNE;ETAT_INTERNE;DATE_DEMANDE;DATE_EFFET;MOD_RDV;MEDIA;REGION;TERRITOIRE;SGEL;GINKO;STR_TAR_ST_FORTARACH
+A04RL55P;07449493401697;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLEKV;21214761062627;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFCU4
+A04RLDSG;21180752405112;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Versailles (211);O;O;BTINFMU4
+A04RLGNA;07443704769310;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RLGV2;14685094063921;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Iroise (146);O;O;BTINFCU4
+A04RLIK8;14579015859358;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RLLW9;01192040510561;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RLLSU;05203039049960;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFMU4
+A04RLN3I;21268306734396;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RLNN0;04270622281196;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Ardennes (042);O;O;BTINFCU4
+A04RLPJY;19128219967577;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RLPI4;23125036161480;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RLQ6Y;16246309666094;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Perigord (162);O;O;BTINFCU4
+A04RLPU2;07373082461330;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RLRHK;14269175067987;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RLSDV;06425470296706;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Nord (064);O;O;BTINFMU4
+A04RLU4N;19696816132163;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Savoie (196);O;O;BTINFMU4
+A04RLVXV;07462083850239;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLWKN;14413024576748;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFCU4
+A04RLWRY;01543560005255;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Cote d'Opale (015);O;O;BTINFCU4
+A04RLXSH;21332127334712;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RLYC5;01547322675160;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Cote d'Opale (015);O;O;BTINFMU4
+A04RLZH7;07250506441827;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RM120;01247322690245;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Hainaut-Cambresis (012);O;O;BTINFMU4
+A04RM5SC;14555282174361;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RM4BN;15456005754901;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;17/02/2020;;EAI;M8 - Ouest;M100 - Vienne et Sevres (154);O;O;BTINFMU4
+A04RM5AA;17177568714802;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFCU4
+A04RM6LM;24150795916004;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Vallees d'Aude (241);O;O;BTINFCU4
+A04RM754;14583067991909;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RM8AJ;04238639627570;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Ardennes (042);O;O;BTINFCU4
+A04RM8J6;02490014456422;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Calvados (024);O;O;BTINFCU4
+A04RM94Z;01188277825718;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RMAJ9;06370622235302;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Alsace (063);O;O;BTINFMU4
+A04RMANI;17117221359984;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFMU4
+A04RMC1H;16214471741092;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Perigord (162);O;O;BTINFMU4
+A04RMAUU;07486396461568;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMDXM;21131114277943;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Versailles (211);O;O;BTINFMU4
+A04RMCRH;01407814731449;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFMU4
+A04RMF7A;21470622192289;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RMQQE;22589869751770;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Pantin (225);O;O;BTINFMU4
+A04RMR59;14838060767066;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFMU4
+A04RMQTU;07278871140689;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMR64;14212300972489;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RMSDD;01328943509641;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Douai (013);O;O;BTINFMU4
+A04RMVGC;07396960888563;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RMVW8;22162083893852;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Seine et Marne (221);O;O;BTINFMU4
+A04RMVIZ;01203328493563;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Hainaut-Cambresis (012);O;O;BTINFMU4
+A04RMY88;14298986934704;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RN27R;09701591869206;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFMU4
+A04RN2P6;01602170755950;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de Somme (016);O;O;BTINFMU4
+A04RN2BV;06598408096570;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Sud (065);O;O;BTINFMU4
+A04RN21L;21345151936705;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RN3V5;07477858169862;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN4D9;19199999774659;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RN3QC;21375542626284;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RN77K;19324457188964;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Alpes Dauphine (193);O;O;BTINFCU4
+A04RN982;07386251755191;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RN8WA;02268596165925;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Eure (022);O;O;BTINFMU4
+A04RN9DA;21492474582329;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RNA1Y;21267148968299;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RNAKY;19512445663881;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Annecy Leman (195);O;O;BTINFMU4
+A04RNBEI;21447612086705;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RNBDH;02203473186230;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Eure (022);O;O;BTINFCU4
+A04RNCQ8;02121997038745;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Rouen (021);O;O;BTINFMU4
+A04RND43;07277423997940;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RNDYJ;07120549880382;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFCU4
+A04RNFPK;14878147531160;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFMU4
+A04RNG1I;07510853736688;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RNG29;16138928889576;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFCU4
+A04RNIYC;01150795927681;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RNJGG;21426627965671;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RNM5S;19943125900704;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Pays de l'Ain-Beaujolais (199);O;O;BTINFMU4
+A04RNMW7;25220260344124;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Méditerranée;M100 - Provence (252);O;O;BTINFMU4
+A04RNNP1;23180897101912;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RNP88;24395513647422;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;15/02/2020;;EAI;M8 - Méditerranée;M100 - Montpellier Herault (243);O;O;BTINFMU4
+A04RNRVI;16124312504016;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RNUIN;07405788669623;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RNVW4;25137192399013;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RNYYR;19165267576808;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;11/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RL4MS;19151374809830;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFCU4
+A04RL4C9;04352966639043;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Reims-Champagne (043);O;O;BTINFCU4
+A04RL4XL;14235889973878;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RLG3A;21451085273881;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RLI2M;07326338576426;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RLKFG;14662373316559;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Iroise (146);O;O;BTINFMU4
+A04RLKI3;04239507948584;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Ardennes (042);O;O;BTINFCU4
+A04RLNDX;07484370435250;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLRNL;25855282170005;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Avignon Grand Delta (258);O;O;BTINFCU4
+A04RLS5R;14406512284523;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFCU4
+A04RLRT6;02167438490109;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Rouen (021);O;O;BTINFCU4
+A04RLRVC;07256295224155;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RLSCL;07441533949518;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLRMQ;05629088218309;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Lorraine trois frontieres (056);O;O;BTINFMU4
+A04RLTFE;19476121559505;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Vienne Pays de Rhone (194);O;O;BTINFMU4
+A04RLUNI;23129667118645;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RLVLW;17535889976469;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Correze-Cantal (175);O;O;BTINFCU4
+A04RLWKQ;07401447105794;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLX0Z;14214037586030;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RLW85;15495079587529;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Vienne et Sevres (154);O;O;BTINFMU4
+A04RLXLA;01300289427347;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Douai (013);O;O;BTINFCU4
+A04RLXQW;14540810394428;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RLZNA;05128943490389;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFMU4
+A04RM0UI;17183646877184;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFMU4
+A04RM11E;21377423938788;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RM155;07582633845209;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RM2Q5;21513458669330;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RM3KS;17133719193932;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFCU4
+A04RM4NE;24140665658971;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Vallees d'Aude (241);O;O;BTINFCU4
+A04RM4BZ;07442112873191;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RM676;22562662759560;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Pantin (225);O;O;BTINFCU4
+A04RM6NU;16239942099368;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Perigord (162);O;O;BTINFMU4
+A04RM8PF;14543270597067;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFCU4
+A04RM8GX;22413169178603;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFCU4
+A04RM9SN;02565846557819;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Manche (025);O;O;BTINFCU4
+A04RMBCI;23124167786320;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFCU4
+A04RMBWH;05152098351804;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFMU4
+A04RMCU5;21219247344807;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFMU4
+A04RMCV9;01131693107100;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RMDRU;22485962232178;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFMU4
+A04RME0P;14893198224950;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFCU4
+A04RMGBA;23392040496369;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;02/03/2020;;EAI;M8 - Sud Ouest;M100 - Pyrenees Gascogne (233);O;O;BTINFCU4
+A04RML4S;12582923273508;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Nievre (125);O;O;BTINFMU4
+A04RMPDL;25164544047799;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RMPT8;07456150499744;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMP1X;25193053477305;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RMQ26;25272648249776;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Provence (252);O;O;BTINFMU4
+A04RMRF1;14673806029267;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Iroise (146);O;O;BTINFCU4
+A04RMR5J;14225036138855;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RMTS8;07502894319507;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RMUMT;23152966702405;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RMV12;24351374785314;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Montpellier Herault (243);O;O;BTINFCU4
+A04RMV5W;07469753893638;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMV85;24227351633430;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Pyrenees Roussillon (242);O;O;BTINFCU4
+A04RN0KB;17199276349511;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFMU4
+A04RN0LN;25485093967598;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;19/02/2020;;EAI;M8 - Méditerranée;M100 - Nice Alpes Cote D'azur (254);O;O;BTINFMU4
+A04RN13M;07187698950982;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFMU4
+A04RN0UX;07229377621617;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFMU4
+A04RN2G1;14294355965156;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RN1PX;25149203959210;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RN257;07493777050621;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN344;07309840773299;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RN4Z9;05558031784509;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Metz Lorraine (055);O;O;BTINFMU4
+A04RN6GQ;19194789973470;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;25/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFCU4
+A04RN80W;02370043387345;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Le Havre Porte Oceane (023);O;O;BTINFCU4
+A04RN8GF;15450361744875;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Vienne et Sevres (154);O;O;BTINFMU4
+A04RNABB;21576410948740;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RNBC8;07383936247223;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RNBR0;06368451468336;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Alsace (063);O;O;BTINFCU4
+A04RNCSY;02396092597168;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Le Havre Porte Oceane (023);O;O;BTINFMU4
+A04RND7R;21257597547512;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RNCU1;01675687363582;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;18/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de Somme (016);O;O;BTINFMU4
+A04RNCV4;22296526748389;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Essonne (222);O;O;BTINFMU4
+A04RNFE7;05172648304030;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFMU4
+A04RNFG9;07442112810437;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RNH0V;19793487577084;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Drome-Ardeche (197);O;O;BTINFCU4
+A04RNJID;07285383459250;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RNM7E;14465991314186;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFCU4
+A04RNPV6;23144138776758;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFCU4
+A04RNR6W;09770911658835;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFMU4
+A04RNSAD;07303907343312;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RNT5M;19848191011601;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFMU4
+A04RNU70;05598697525755;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Est;M100 - Metz Lorraine (055);O;O;BTINFCU4
+A04RNVYZ;19852387827882;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFCU4
+A04RNYDM;01669464507001;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de Somme (016);O;O;BTINFMU4
+A04RNYHX;01261070872881;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;20/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Hainaut-Cambresis (012);O;O;BTINFMU4
+A04RL53Q;01565991275685;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Cote d'Opale (015);O;O;BTINFMU4
+A04RLDAA;22331259035527;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Villejuif (223);O;O;BTINFMU4
+A04RLG3X;07119536899963;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFMU4
+A04RLN33;25132561394808;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RLMTJ;09567872608576;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;19/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFMU4
+A04RLMGC;12277568699483;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Cote d'Or (122);O;O;BTINFCU4
+A04RLPNJ;14443415296146;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFCU4
+A04RLN6K;04139942062480;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de l'Aisne (041);O;O;BTINFMU4
+A04RLNP9;07423733705658;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLNRQ;07583067968162;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RLQ2C;01200578820540;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Hainaut-Cambresis (012);O;O;BTINFMU4
+A04RLQF9;05207525320372;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFCU4
+A04RLR7H;16407525265783;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Sud-Aquitaine (164);O;O;BTINFCU4
+A04RLVMH;14484225757642;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFCU4
+A04RLWA8;14557597678459;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RLYRX;24376410935922;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Montpellier Herault (243);O;O;BTINFMU4
+A04RLZ6V;21470332777717;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RM15W;21400868281796;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RM18N;14473227194707;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFMU4
+A04RM3SS;07226628059489;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RM3NX;07469609254988;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RM42T;07498408018078;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RM3AW;01144572990536;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;18/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RM59T;21281765453635;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFCU4
+A04RM8M4;07469030327437;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RM7I2;07496960919403;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RM7XN;14580173635901;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RM8RP;21421128772005;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RM7M3;07275253182466;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFCU4
+A04RMBBA;01104920373967;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RMCS2;21472214097454;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RMCUB;01148914545202;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RMD8I;07470332816431;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMF5F;02215774226807;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Eure (022);O;O;BTINFCU4
+A04RMG2C;07194211282536;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFCU4
+A04RMGDM;02324891420437;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Le Havre Porte Oceane (023);O;O;BTINFCU4
+A04RMHYU;17110998477580;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFCU4
+A04RMK6V;17539942060240;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Correze-Cantal (175);O;O;BTINFMU4
+A04RMKFH;07233429807825;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFMU4
+A04RMNJS;07526917474533;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMN6X;09770911719818;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFCU4
+A04RMPTU;07462807458425;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMNTU;01546454353917;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Cote d'Opale (015);O;O;BTINFCU4
+A04RMQ3B;19199565745630;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RMPBQ;01278002815779;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Hainaut-Cambresis (012);O;O;BTINFMU4
+A04RMQDX;12191895798031;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Bourgogne du sud (121);O;O;BTINFCU4
+A04RMQUU;07489869687080;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMU5A;09141968119963;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Sarthe (091);O;O;BTINFMU4
+A04RMU2M;17339942097903;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Bourbonnais (173);O;O;BTINFMU4
+A04RMVH4;01251953657767;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;20/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Hainaut-Cambresis (012);O;O;BTINFMU4
+A04RMVZY;07344862505584;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RMVMF;19197539645612;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFCU4
+A04RMXJ5;06536613584271;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Sud (065);O;O;BTINFMU4
+A04RMY09;07480752466402;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMY4L;14565701856514;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RMYDT;07217945002633;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RMYW6;07506512264506;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RN0G1;17949782915808;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;24/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Grand Velay (179);O;O;BTINFMU4
+A04RN03Y;07417655564963;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN1T0;14740955105642;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cornouaille (147);O;O;BTINFCU4
+A04RN1PK;01490303868398;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFMU4
+A04RN4A5;09555571595665;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFMU4
+A04RN4EY;07440231515679;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN45N;07403039001517;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN4N2;21263096847235;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFCU4
+A04RN5VG;14517366086280;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFCU4
+A04RN5GZ;14522141798918;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFCU4
+A04RN4RP;01185093907213;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RN5Q3;14467004302899;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFCU4
+A04RN6XH;21539942050786;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RN6JL;19492474637227;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;27/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Vienne Pays de Rhone (194);O;O;BTINFMU4
+A04RN8RI;17116787204927;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFCU4
+A04RN984;07385528166103;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RN9IS;17766425440221;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Cher en Berry (177);O;O;BTINFMU4
+A04RNAIZ;07389580241499;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RNCM8;01516497791460;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Cote d'Opale (015);O;O;BTINFMU4
+A04RNB6R;23172069310963;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RNBC9;25122720613690;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFCU4
+A04RNDFS;05183357382742;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFCU4
+A04RND23;19502604855989;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Annecy Leman (195);O;O;BTINFCU4
+A04RNCQU;19134876911961;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RNDP1;09366859564294;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Anjou (093);O;O;BTINFMU4
+A04RNE5U;21441823334630;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RNFGV;19171924646410;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RNGS4;07400144711095;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RNHA6;07277713433593;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RNIT2;21289001429797;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFMU4
+A04RNIXR;07575253175480;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RNL1A;22174963736699;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Seine et Marne (221);O;O;BTINFMU4
+A04RNL2Q;14413603447964;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFCU4
+A04RNNN9;19618089653641;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Savoie (196);O;O;BTINFCU4
+A04RNPU0;22391750945757;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Villejuif (223);O;O;BTINFCU4
+A04RNXZ3;22530245991023;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Pantin (225);O;O;BTINFMU4
+A04RLD26;01427062192203;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFCU4
+A04RLI7W;21485238698398;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RLJFI;01175831973899;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;03/03/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RLIPY;02445007217834;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Calvados (024);O;O;BTINFMU4
+A04RLKG5;01198407986868;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFCU4
+A04RLL1N;22121273493440;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Seine et Marne (221);O;O;BTINFMU4
+A04RLMFC;19743125887398;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Drome-Ardeche (197);O;O;BTINFMU4
+A04RLMVR;09675976831814;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loir-et-Cher (096);O;O;BTINFMU4
+A04RLS2V;23193777063440;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFCU4
+A04RLS8F;17176700377727;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Grand Velay (179);O;O;BTINFCU4
+A04RLT0S;19538929021256;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Annecy Leman (195);O;O;BTINFCU4
+A04RLV0P;16139797376534;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RLWR0;07436324095672;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RLYKD;17518523876102;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;20/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Correze-Cantal (175);O;O;BTINFMU4
+A04RLZGX;07135600539226;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFMU4
+A04RM2S3;09144573038367;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Sarthe (091);O;O;BTINFMU4
+A04RM4N8;14282489105508;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RM559;07291027450305;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFMU4
+A04RM6XZ;07233285049036;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFMU4
+A04RM8F9;01354992668626;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Douai (013);O;O;BTINFCU4
+A04RM8LZ;14706078126323;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cornouaille (147);O;O;BTINFMU4
+A04RMASK;04382489120470;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Reims-Champagne (043);O;O;BTINFMU4
+A04RMB7B;14423444271304;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFMU4
+A04RMATN;07223733646253;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMF5W;12221128768924;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Cote d'Or (122);O;O;BTINFMU4
+A04RMEFQ;24266135967123;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Pyrenees Roussillon (242);O;O;BTINFMU4
+A04RMEM8;25868596210836;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Avignon Grand Delta (258);O;O;BTINFMU4
+A04RMFY3;14252677238643;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RMG3W;07164544095060;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFCU4
+A04RMHAZ;07440520911899;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMJKR;04546020231420;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Champagne Sud (045);O;O;BTINFMU4
+A04RMJRV;07398263349133;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RMLJL;21277568707603;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFCU4
+A04RMLMU;21461215622389;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RMKYC;25894645381975;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Avignon Grand Delta (258);O;O;BTINFMU4
+A04RMLF7;24267583206175;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Pyrenees Roussillon (242);O;O;BTINFCU4
+A04RMKQ7;14535311118034;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFCU4
+A04RMMTC;14585672912310;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RMMZK;04106512232895;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de l'Aisne (041);O;O;BTINFCU4
+A04RMN0G;21260781406781;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFCU4
+A04RMP26;14254124416621;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RMPXX;25169319783811;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RMQ4J;24140376223308;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Vallees d'Aude (241);O;O;BTINFCU4
+A04RMQ4W;22184804567337;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Seine et Marne (221);O;O;BTINFCU4
+A04RMRJU;21273806013410;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFMU4
+A04RMQVN;12589580289620;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Nievre (125);O;O;BTINFMU4
+A04RMR7P;07475108530317;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMRNF;09566280695229;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFMU4
+A04RMT7E;07335021667871;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RMUPG;07450361726212;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMV2Q;23161649754777;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RMVKD;07407669965720;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMYPS;01692764039097;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de Somme (016);O;O;BTINFCU4
+A04RMYF4;07120984077940;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFMU4
+A04RMYIM;07478002887648;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RN12U;07485093987304;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RN0WC;07426772726205;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN2R0;07389580244102;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RN47N;07592474638016;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RN4MZ;07470622242164;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN8GJ;22475542656978;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;28/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFMU4
+A04RN8YA;24169898693058;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Vallees d'Aude (241);O;O;BTINFCU4
+A04RN9YW;07349203959322;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RN9M7;19119102679264;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFCU4
+A04RNBMX;01427930522659;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFMU4
+A04RND3V;09584225752373;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFMU4
+A04RNH9R;21449203983510;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RNKL2;21446164886903;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RNKLV;04516353109630;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Champagne Sud (045);O;O;BTINFCU4
+A04RNK7V;14201591855251;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RNKTK;16503039026690;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Bearn Bigorre (165);O;O;BTINFCU4
+A04RNLLX;21451953611990;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RNNWG;02324023118012;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Le Havre Porte Oceane (023);O;O;BTINFMU4
+A04RNQ37;12246599086056;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Cote d'Or (122);O;O;BTINFMU4
+A04RNP5Y;19987698949516;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;20/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Pays de l'Ain-Beaujolais (199);O;O;BTINFMU4
+A04RNRWE;07574384941317;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RNRK8;19801881257560;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFCU4
+A04RNTAJ;22386107025753;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Villejuif (223);O;O;BTINFMU4
+A04RNS8D;19177423927436;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RNV3V;01145441227310;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RNVS6;07475253187072;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RNW9V;09710709066640;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;18/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFCU4
+A04RNWPJ;07377858117685;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RL4IZ;25887698927583;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Avignon Grand Delta (258);O;O;BTINFMU4
+A04RLGJD;09369030337115;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Anjou (093);O;O;BTINFMU4
+A04RLHIU;02113169282238;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Rouen (021);O;O;BTINFMU4
+A04RLIYJ;16135600539440;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RLKEG;21147177929486;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Versailles (211);O;O;BTINFMU4
+A04RLLS9;02439797358532;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;06/03/2020;;EAI;M8 - Manche Mer du Nord;M100 - Calvados (024);O;O;BTINFCU4
+A04RLLTK;23395079537692;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Pyrenees Gascogne (233);O;O;BTINFMU4
+A04RLPAJ;01103907324206;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RLN6H;01170477503466;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFCU4
+A04RLNRH;02391895785549;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Le Havre Porte Oceane (023);O;O;BTINFMU4
+A04RLRYU;07499565813597;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RLSFZ;23534008654002;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Aveyron Lozere (235);O;O;BTINFMU4
+A04RLT8L;21427206847055;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RLVPZ;21321562951220;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RLX5J;07413024569099;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLWGT;14286251793873;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RLWV8;16559913074627;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;14/02/2020;;EAI;M8 - Sud Ouest;M100 - Bearn Bigorre (165);O;O;BTINFMU4
+A04RM0S4;14651664207669;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Iroise (146);O;O;BTINFCU4
+A04RM1XJ;07418668553886;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RM2CC;14535889989287;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFCU4
+A04RM16Y;07583936245208;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;26/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RM2E8;01452387827669;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFCU4
+A04RM2KI;16590882759508;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Bearn Bigorre (165);O;O;BTINFMU4
+A04RM5DR;09706222803146;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFMU4
+A04RM4N3;07551808923380;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RM4AD;07419681543172;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RM4IV;09548335688030;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;19/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFMU4
+A04RM6D5;16379160601870;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Lot et Garonne (163);O;O;BTINFMU4
+A04RM86M;16157308246601;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RM94M;21364254686326;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RM94N;21324891444710;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RM9NR;14263096920263;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RMDHG;07363820548387;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RMEH3;07349059326510;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RMG0A;14509117196031;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFCU4
+A04RMGS6;01495224282798;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFCU4
+A04RMIBB;25139942093850;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RMJ54;07549638151727;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RMKLE;04269464519244;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Ardennes (042);O;O;BTINFMU4
+A04RMPHL;01132850927165;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RMQNZ;07398408040790;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RMS80;14855716226704;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFCU4
+A04RMT31;05644428354141;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Lorraine trois frontieres (056);O;O;BTINFCU4
+A04RMS09;19114761134626;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;17/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFCU4
+A04RMUJS;14877424004415;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFMU4
+A04RMTXH;19335745247506;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Alpes Dauphine (193);O;O;BTINFMU4
+A04RMTXJ;07469753951143;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMVWD;21213024554378;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFMU4
+A04RMV8S;25176700332086;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;18/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RMW2J;14863675801505;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFMU4
+A04RMWY9;07477424016444;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RN066;25982923250115;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;17/02/2020;;EAI;M8 - Méditerranée;M100 - Cannes (259);O;O;BTINFCU4
+A04RN5FG;02586830650057;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Manche (025);O;O;BTINFMU4
+A04RN88F;23147612108868;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RN8Q1;07512445672221;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RN8D7;17510853793599;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Correze-Cantal (175);O;O;BTINFMU4
+A04RNA86;23184804602234;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;06/03/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RN9X1;04540086801622;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Champagne Sud (045);O;O;BTINFCU4
+A04RNA0F;25888133082689;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Avignon Grand Delta (258);O;O;BTINFCU4
+A04RNAJL;14262807484639;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RNB9I;01406512289790;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFMU4
+A04RNFDK;07376989861896;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RNG7I;06344283589345;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Alsace (063);O;O;BTINFMU4
+A04RNJ0S;16109985491910;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RNHWL;19140231351877;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;09/03/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RNK88;05251664232860;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFMU4
+A04RNJJL;19169319759847;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;17/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RNJYB;17198697479831;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFMU4
+A04RNKCW;21539218467973;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RNJAG;14478147475906;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFCU4
+A04RNR7H;19891751020058;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFCU4
+A04RNRME;19855571619418;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFCU4
+A04RNTIP;05676845114931;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Est;M100 - Lorraine trois frontieres (056);O;O;BTINFMU4
+A04RNT5R;19848480447299;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFCU4
+A04RNST0;04225325614412;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Est;M100 - Ardennes (042);O;O;BTINFMU4
+A04RNV03;22471490575511;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFMU4
+A04RNWJT;06441244553852;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Nord (064);O;O;BTINFCU4
+A04RNYBE;16179160435150;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RNYBH;22109551210919;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Seine et Marne (221);O;O;BTINFMU4
+A04RL4KG;14270622245967;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RLCVC;06411722129601;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Nord (064);O;O;BTINFMU4
+A04RLGGL;21213024552576;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RLI26;25497539796139;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Nice Alpes Cote D'azur (254);O;O;BTINFMU4
+A04RLHR4;07380607740562;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RLJS6;14585962347904;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RLIEG;23533863929345;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Aveyron Lozere (235);O;O;BTINFMU4
+A04RLITT;16271201150087;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Perigord (162);O;O;BTINFCU4
+A04RLLMF;14669753951031;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Iroise (146);O;O;BTINFMU4
+A04RLP7E;17191606356169;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFMU4
+A04RLQ9V;21331837899179;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RLQ28;07411577391038;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLPWF;12244573047256;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Cote d'Or (122);O;O;BTINFMU4
+A04RLRV7;07249782923133;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RLRWI;07589290861011;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RLTGA;14228943519431;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RLT51;12217221395327;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Cote d'Or (122);O;O;BTINFCU4
+A04RLW2Y;19340665698906;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Alpes Dauphine (193);O;O;BTINFMU4
+A04RLW3W;21182054931345;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Versailles (211);O;O;BTINFCU4
+A04RLUMF;17152098379232;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Grand Velay (179);O;O;BTINFCU4
+A04RLWHS;17541678698306;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Correze-Cantal (175);O;O;BTINFMU4
+A04RLWAI;25625904475607;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;18/02/2020;;EAI;M8 - Méditerranée;M100 - Alpes du Sud (256);O;O;BTINFCU4
+A04RLWR2;07506367546726;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RLZVP;07486107033304;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RM0PK;01181041935772;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFCU4
+A04RM1BI;22483067876146;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFMU4
+A04RM2JB;25979015869585;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Cannes (259);O;O;BTINFMU4
+A04RM1XM;07478292323277;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RM2N0;24380028864498;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Montpellier Herault (243);O;O;BTINFMU4
+A04RM350;22114905896440;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Seine et Marne (221);O;O;BTINFCU4
+A04RM6M7;01596382029630;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Cote d'Opale (015);O;O;BTINFMU4
+A04RM6R8;07438929047443;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RM8H2;22413603332016;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFCU4
+A04RMD9H;05563386392975;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Metz Lorraine (055);O;O;BTINFMU4
+A04RME7D;17162083930999;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Grand Velay (179);O;O;BTINFMU4
+A04RMFZK;07174095469802;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFMU4
+A04RMIPL;12104775662062;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Bourgogne du sud (121);O;O;BTINFCU4
+A04RMJD4;23119392087309;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RMIZG;14552966689530;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RMLBM;17665412426210;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Indre en Berry (176);O;O;BTINFMU4
+A04RMNY7;25406367537398;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Nice Alpes Cote D'azur (254);O;O;BTINFCU4
+A04RMR0J;15216642438143;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Charente-maritime (152);O;O;BTINFCU4
+A04RMRIT;14203617904434;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RMRJT;21522431200824;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RMRLF;07331403714690;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RMSRV;05124457209799;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFCU4
+A04RMSVW;07200868233763;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMTTD;21279305340220;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RMW7F;01187988390100;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RMV0G;02241244547442;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Eure (022);O;O;BTINFMU4
+A04RMV80;16508827729560;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Bearn Bigorre (165);O;O;BTINFCU4
+A04RMVLN;07220694584301;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMXEW;25183357346749;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RMX4F;07417221415149;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;05/03/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RN1DK;23122431241007;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RN0NH;16399710536107;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;17/02/2020;;EAI;M8 - Sud Ouest;M100 - Lot et Garonne (163);O;O;BTINFMU4
+A04RN0GI;07539218451464;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RN0GW;01169898666279;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RN21Z;07366714879061;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RN3GC;16239363228160;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Perigord (162);O;O;BTINFMU4
+A04RN40D;16106801723735;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RN569;19159478811347;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFCU4
+A04RN6GG;21399710480184;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Bagneux (213);O;O;BTINFMU4
+A04RN928;07227930474169;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RN95N;21263096832401;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFMU4
+A04RN9KR;16175976644725;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RNAWK;02119102682209;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Rouen (021);O;O;BTINFCU4
+A04RNAJD;09714471756599;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFMU4
+A04RNBAF;23144428294283;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFCU4
+A04RNBS3;21213603400084;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RNDUT;07386685912912;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RNDT1;01364544020599;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Douai (013);O;O;BTINFCU4
+A04RNFIP;07492474668372;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RNG7U;07412445653542;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RNJWB;07307525271105;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RNKBE;14205933389205;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RNKQI;01476121478719;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFMU4
+A04RNL88;17154992723103;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFCU4
+A04RNKZE;25148046158608;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RNMUQ;02143559951541;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Rouen (021);O;O;BTINFMU4
+A04RNNBH;22368162018340;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Villejuif (223);O;O;BTINFMU4
+A04RNPL6;01463386381489;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFMU4
+A04RNPE6;16110419495907;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFCU4
+A04RNS3R;07543415321253;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RNS8Z;01169898694284;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Lille metropole (011);O;O;BTINFMU4
+A04RNS9X;14566714883456;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RNT5S;19846743833627;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFCU4
+A04RNV67;06356584641192;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Est;M100 - Alsace (063);O;O;BTINFMU4
+A04RNWG9;16114616411153;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RNVRU;21502604824610;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RNVU2;04505499256092;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Est;M100 - Champagne Sud (045);O;O;BTINFMU4
+A04RL4P4;21450506420909;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RL53D;07342257575285;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RLCTZ;21525904462340;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RLCP9;14592329905741;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RLEFU;02172503542852;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Rouen (021);O;O;BTINFMU4
+A04RLH05;19507814695864;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;17/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Annecy Leman (195);O;O;BTINFMU4
+A04RLJSF;09143849451299;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Sarthe (091);O;O;BTINFMU4
+A04RLJ5V;22429088223706;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFMU4
+A04RLJ63;07267727919728;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RLL7H;25906656956890;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;20/02/2020;;EAI;M8 - Méditerranée;M100 - Cannes (259);O;O;BTINFCU4
+A04RLMNP;14448914602805;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFMU4
+A04RLMD4;17198408091639;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFMU4
+A04RLM3A;07339073789375;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RLPLV;23106801651400;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RLPI8;09532127339329;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFMU4
+A04RLQUK;06441099836097;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Nord (064);O;O;BTINFMU4
+A04RLR3Y;19135021600749;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFCU4
+A04RLPTD;17212735148667;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Montlucon-Gueret (172);O;O;BTINFCU4
+A04RLRRI;07498552735899;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RLRIT;09792764047961;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFMU4
+A04RLU49;25393921733838;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;26/02/2020;;EAI;M8 - Méditerranée;M100 - Var (253);O;O;BTINFMU4
+A04RLUWJ;14871924696356;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFCU4
+A04RLVD6;07509985491910;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RLXBU;07540086787092;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RLWZC;19168162064245;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RLX1X;23195369016960;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RLYYC;07226193917298;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RLYJI;25185528151819;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Marseille (251);O;O;BTINFMU4
+A04RLY6C;07379160588466;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RLXTE;14408248901127;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFMU4
+A04RLZ3R;14868162060977;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFCU4
+A04RLZ6Q;07443994152178;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLYUT;21451085292123;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RLZRA;15497539790306;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Vienne et Sevres (154);O;O;BTINFMU4
+A04RLZVI;17520694616366;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Correze-Cantal (175);O;O;BTINFMU4
+A04RM0PN;19913313978262;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Pays de l'Ain-Beaujolais (199);O;O;BTINFMU4
+A04RLZZW;09160057871367;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Sarthe (091);O;O;BTINFCU4
+A04RLZMU;07494066511017;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RM1EW;21500434067267;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFCU4
+A04RM28Q;14207091131681;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RM29H;07298263386140;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RM2AC;07120839360114;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFCU4
+A04RM5N7;07478436992409;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RM6TI;16124457260654;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFCU4
+A04RM8A2;19109261845701;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Lyon metropole (191);O;O;BTINFMU4
+A04RM8UD;21102604871304;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Versailles (211);O;O;BTINFMU4
+A04RM9WJ;17171779932148;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Clermont-Ferrand (171);O;O;BTINFCU4
+A04RMAGM;01557308247053;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Cote d'Opale (015);O;O;BTINFMU4
+A04RMA3T;14547756848737;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RMA3U;14543704750321;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFCU4
+A04RMBCW;07369753891612;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RMDIQ;14891895787340;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFMU4
+A04RMDYV;07311287911540;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RMERP;07475976759136;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RME95;07490159103412;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMI2J;05409261927499;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Vosges (054);O;O;BTINFMU4
+A04RMHA0;23104341459548;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;25/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RMIUR;07200723584860;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMLNQ;01284804617629;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Hainaut-Cambresis (012);O;O;BTINFMU4
+A04RMMCJ;07475832060444;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMPCL;23180752458414;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RMPCU;14498697518007;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFMU4
+A04RMQNY;09714037624302;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFMU4
+A04RMRJW;19881186622034;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFCU4
+A04RMR6Q;07137047710759;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFCU4
+A04RMSSY;14641823391552;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Iroise (146);O;O;BTINFCU4
+A04RMUWB;07523733682706;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMWE6;07202025983648;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFMU4
+A04RMWZM;07357163515027;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RMWMR;07407235876406;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMXJP;07142691674850;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFMU4
+A04RMXZY;07499710485128;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMY5H;16427496379274;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Sud-Aquitaine (164);O;O;BTINFMU4
+A04RMZV5;12122286531091;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Bourgogne du sud (121);O;O;BTINFCU4
+A04RN2WB;21288856600540;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFCU4
+A04RN4GI;07481765499398;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN7F9;07401302401136;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RN792;02224167836947;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Eure (022);O;O;BTINFMU4
+A04RN7BP;16230969595816;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Perigord (162);O;O;BTINFMU4
+A04RN9UD;16147467366898;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RNAUK;01226917399927;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Hainaut-Cambresis (012);O;O;BTINFMU4
+A04RNAHX;25861939159016;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Avignon Grand Delta (258);O;O;BTINFMU4
+A04RNFE8;19850361720603;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFCU4
+A04RNER5;25362373311942;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Var (253);O;O;BTINFMU4
+A04RNFXG;02425036109837;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Calvados (024);O;O;BTINFMU4
+A04RNG3S;01689869710946;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de Somme (016);O;O;BTINFMU4
+A04RNI1A;07470622244078;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RNJSX;07381476073277;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RNJQK;21297105487104;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFMU4
+A04RNKYB;24388277701531;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Montpellier Herault (243);O;O;BTINFMU4
+A04RNNF7;07510998521703;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RNMG9;06487120069791;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Nord (064);O;O;BTINFMU4
+A04RNNN6;01528075158939;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;04/03/2020;;EAI;M8 - Manche Mer du Nord;M100 - Cote d'Opale (015);O;O;BTINFCU4
+A04RNNBG;22382778516135;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Villejuif (223);O;O;BTINFMU4
+A04RNP9W;25643125894601;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;24/02/2020;;EAI;M8 - Méditerranée;M100 - Alpes du Sud (256);O;O;BTINFMU4
+A04RNRV4;07383646837038;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RNR4G;21492474635537;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RNRK1;19804196742350;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFMU4
+A04RNTAK;22386975332560;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Villejuif (223);O;O;BTINFCU4
+A04RNSXN;19856005772891;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFMU4
+A04RNXP7;19587120084328;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Annecy Leman (195);O;O;BTINFCU4
+A04RL4BI;14680897181117;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Iroise (146);O;O;BTINFMU4
+A04RL4SM;22418234299620;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;20/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFCU4
+A04RLDE7;09141244530807;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Sarthe (091);O;O;BTINFMU4
+A04RLGSC;06479884201969;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Nord (064);O;O;BTINFMU4
+A04RLJ7W;25881620812197;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Avignon Grand Delta (258);O;O;BTINFCU4
+A04RLMS0;09500723531781;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFMU4
+A04RLMH9;25299999878155;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;18/02/2020;;EAI;M8 - Méditerranée;M100 - Provence (252);O;O;BTINFCU4
+A04RLQD3;07295658420742;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFCU4
+A04RLQHN;02117076628837;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;19/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Rouen (021);O;O;BTINFCU4
+A04RLQ3B;05283502163744;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Nancy Lorraine (051);O;O;BTINFCU4
+A04RLWNQ;09574819045408;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFMU4
+A04RLWVC;09521997013235;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;19/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Loiret (095);O;O;BTINFCU4
+A04RLXZ5;21272937657698;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RM0GJ;07409696048220;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RLZW0;17788856694787;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Cher en Berry (177);O;O;BTINFCU4
+A04RLZLD;07524312553938;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RM1WS;07291895730008;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RM1KD;21582778567084;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RM5E2;14551808947114;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cotes d'Armor (145);O;O;BTINFMU4
+A04RM4X5;07418234436110;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RM7FA;05599710516180;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Metz Lorraine (055);O;O;BTINFMU4
+A04RM8NY;21253400754633;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RMAFB;21494355914868;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RMA6Y;07124457255582;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFMU4
+A04RMANJ;07407525247905;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFMU4
+A04RMB4L;14436324148992;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFMU4
+A04RMB5L;05470043400759;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Vosges (054);O;O;BTINFCU4
+A04RMBNM;22412879743004;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Saint-Mande (224);O;O;BTINFMU4
+A04RME2U;07467727862253;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMEPM;07443415316407;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMFM7;21211143245128;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Cergy (212);O;O;BTINFMU4
+A04RMG0H;07538060727806;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFMU4
+A04RMFMJ;25860491981183;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Avignon Grand Delta (258);O;O;BTINFMU4
+A04RMFP4;07452677229530;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMFP8;16245441378601;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;17/02/2020;;EAI;M8 - Sud Ouest;M100 - Perigord (162);O;O;BTINFMU4
+A04RMH6B;07470043398709;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMJPE;24362807411645;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Montpellier Herault (243);O;O;BTINFMU4
+A04RMJTX;01340810411872;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Douai (013);O;O;BTINFCU4
+A04RMMLL;21127496332933;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Versailles (211);O;O;BTINFMU4
+A04RMRAN;21426772693665;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RMRIV;14201012984059;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RMQDD;07497829226258;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMR4T;14242257557060;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFCU4
+A04RMSEJ;07414182258440;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMU80;07484370460998;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMU9W;14844138906486;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Morbihan (148);O;O;BTINFCU4
+A04RMY85;07416787258804;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RMZ3Y;21495658356388;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFCU4
+A04RN0D7;07326338619620;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RN2U7;01644717715381;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de Somme (016);O;O;BTINFCU4
+A04RN2ZI;21522865395530;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Asnieres (215);O;O;BTINFMU4
+A04RN499;04159189535709;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Pays de l'Aisne (041);O;O;BTINFMU4
+A04RN7GZ;16214616476596;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Perigord (162);O;O;BTINFMU4
+A04RN796;24260347316545;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Méditerranée;M100 - Pyrenees Roussillon (242);O;O;BTINFCU4
+A04RN8NJ;06505788657480;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Sud (065);O;O;BTINFMU4
+A04RN8PQ;15499999962199;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Vienne et Sevres (154);O;O;BTINFCU4
+A04RN9BU;07449059264850;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris tour Eiffel (074);O;O;BTINFCU4
+A04RNAFW;07530101203233;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris Nord (075);O;O;BTINFCU4
+A04RNBCU;16572503555233;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;10/03/2020;;EAI;M8 - Sud Ouest;M100 - Bearn Bigorre (165);O;O;BTINFCU4
+A04RNCKS;23126917431570;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Sud Ouest;M100 - Grand Toulouse (231);O;O;BTINFMU4
+A04RNDBP;06331403672061;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Alsace (063);O;O;BTINFMU4
+A04RNFEG;19850651156201;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFMU4
+A04RNH14;07353111384390;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFCU4
+A04RNGWF;12567583199283;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Nievre (125);O;O;BTINFCU4
+A04RNG5I;14788567264157;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Cornouaille (147);O;O;BTINFMU4
+A04RNI14;16161649745552;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFMU4
+A04RNHPK;14463096958154;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ouest;M100 - Ille-et-Vilaine (144);O;O;BTINFMU4
+A04RNIJS;07307814748411;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Paris r.g. (073);O;O;BTINFMU4
+A04RNIZA;09784804597919;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Touraine (097);O;O;BTINFCU4
+A04RNJYA;06549782910640;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Est;M100 - Franche-Comte Sud (065);O;O;BTINFCU4
+A04RNJBS;01468596130074;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Arras (014);O;O;BTINFMU4
+A04RNKJM;21440520952296;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
+A04RNKP7;14285383461405;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Ouest;M100 - Nantes Atlantique (142);O;O;BTINFMU4
+A04RNKZI;01672648252609;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;12/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Oise (016);O;O;BTINFMU4
+A04RNM5Z;09403328494801;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Chartres Eure-et-Loir (094);O;O;BTINFCU4
+A04RNM5X;09402749623688;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Auvergne Centre Limousin;M100 - Chartres Eure-et-Loir (094);O;O;BTINFMU4
+A04RNNGQ;16135311102186;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Gironde (161);O;O;BTINFCU4
+A04RNPNG;02211287933694;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Normandie Eure (022);O;O;BTINFMU4
+A04RNNYR;16425036176437;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Sud Ouest;M100 - Sud-Aquitaine (164);O;O;BTINFCU4
+A04RNP38;02481910169607;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Manche Mer du Nord;M100 - Calvados (024);O;O;BTINFMU4
+A04RNT5Q;19847177987085;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Rhône Alpes Bourgogne;M100 - Loire (198);O;O;BTINFMU4
+A04RNXA7;07167438467889;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris pyramide (071);O;O;BTINFCU4
+A04RNYL0;07249493419459;F180;;EDF Commerce;AFF-ENCOURS;Intervention re-planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFMU4
+A04RNYLD;07251230033089;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Paris Aurore (072);O;O;BTINFCU4
+A04RNYQG;21435166290907;F180;;EDF Commerce;AFF-ENCOURS;Intervention planifiée;Intervention planifiée;10/02/2020;13/02/2020;;EAI;M8 - Ile de France;M100 - Nanterre (214);O;O;BTINFMU4
