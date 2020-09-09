@@ -2,17 +2,20 @@
 import common as com
 from time import time
 
-#BDD = 'GINKO'
-#BDD = 'ADAM'
+ENV = 'PROD'
+
+# BDD = 'GINKO'
+# BDD = 'ADAM'
 BDD = 'SGE'
-#BDD = 'RFC'
+# BDD = 'RFC'
 
+date = com.get_date().replace('-', '')
 QUERY_FILE = 'ReqList/queries/e_RL.sql'
-
 IN_FILE = 'C:/Py/IN/in.csv'
 #IN_FILE = 'C:/Py/IN/fin_trv.csv'
 #IN_FILE = 'C:/Py/IN/fin_trv_COSY.csv'
 OUT_FILE = 'C:/Py/OUT/out.csv'
+OUT_FILE = 'C:/Py/OUT/out_{}_{}.csv'.format(BDD, date)
 
 OUT_LEFT = com.TMP_PATH_REQLIST + 'out_l.csv'
 OUT_RIGHT = com.TMP_PATH_REQLIST + 'out_r.csv'
@@ -25,7 +28,7 @@ GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GK
 #GKO_INSTANCES = ['GKO2_MMN']
 
 MAX_BDD_CNX = 8
-SL_STEP_QUERY = 100
+SL_STEP_QUERY = 50
 NB_MAX_ELT_IN_STATEMENT = 1000
 IN_FIELD_NB = 1
 MAX_DUP_PRINT = 5

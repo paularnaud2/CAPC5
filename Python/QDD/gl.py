@@ -2,8 +2,8 @@
 from time import time
 import common as com
 
-IN_FILE_1 = 'SGE'
-IN_FILE_1 = 'OLD'
+# IN_FILE_1 = 'SGE'
+# IN_FILE_1 = 'OLD'
 IN_FILE_2 = 'GINKO'
 IN_FILE_2 = 'NEW'
 

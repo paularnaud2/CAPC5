@@ -17,8 +17,8 @@ SELECT /*+ PARALLEL(8) ORDERED */ DISTINCT pds.Reference PDS
 	WHERE 1=1
 	AND pds.ETATOBJET = '0'
 	AND pds.ETAT <> '5'
-	AND pds.Reference IN ('01102025899266')
-	--AND pds.Reference IN @@IN1@@
+	--AND pds.Reference IN ('01102025899266')
+	AND pds.Reference IN @@IN1@@
 )
 
 SELECT a.PDS POINT, a.TYPE_PDS

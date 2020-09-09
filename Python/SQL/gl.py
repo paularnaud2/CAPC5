@@ -2,17 +2,21 @@
 import common as com
 from time import time
 
-#BDD = 'GINKO'
-#BDD = 'ADAM'
-BDD = 'SGE'
+ENV = 'PROD'
+
+# BDD = 'GINKO'
+# BDD = 'ADAM'
+# BDD = 'SGE'
+BDD = 'CAPC5'
 
 SL_STEP = 100*10**3
 #SL_STEP = 500
 
+date = com.get_date().replace('-', '')
 QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
 OUT_FILE_TYPE = '.csv'
 OUT_FILE = 'C:/Py/OUT/{}'.format(BDD)
-#OUT_FILE = 'C:/Py/OUT/out.csv'.format(BDD)
+#OUT_FILE = 'C:/Py/OUT/{}_{}'.format(BDD, date)
 
 GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
 #GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
@@ -32,6 +36,7 @@ OUT_PDL_LIST_FILE = com.TMP_PATH_SQL + 'out_pdl_list.csv'
 
 start_time = time()
 conf = {}
+conf_env = {}
 counters = {}
 bools = {}
 out_files = {}

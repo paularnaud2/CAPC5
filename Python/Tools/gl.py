@@ -6,5 +6,6 @@ cur_list = []
 counters = {}
 txt = {}
 bool = {}
+parse_dict = {}
 
 header = ''

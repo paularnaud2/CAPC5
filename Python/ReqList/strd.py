@@ -11,7 +11,7 @@ def get_sql_array_out_strd(BDD):
 
 	group_array = split_group_list()
 	if len(group_array) == 1:
-		get_sql_array_out_strd_th(BDD, gl.group_list, 0)
+		get_sql_array_out_strd_th(BDD, gl.group_list, 1, False)
 	else:
 		launch_threads(group_array, BDD)	
 	
@@ -27,7 +27,7 @@ def launch_threads(group_array, BDD):
 	thread_list = []
 	for group_list in group_array:
 		i += 1
-		th = Thread(target=get_sql_array_out_strd_th, args=(BDD, group_list, i,))
+		th = Thread(target=get_sql_array_out_strd_th, args=(BDD, group_list, i, True,))
 		#th = Thread(get_sql_array_out_strd_th(BDD, group_list, i))
 		thread_list.append(th)
 		th.start()
@@ -35,11 +35,11 @@ def launch_threads(group_array, BDD):
 	for th in thread_list:
 		th.join()
 
-def get_sql_array_out_strd_th(BDD, group_list, th_nb):
+def get_sql_array_out_strd_th(BDD, group_list, th_nb, multi_thread):
 
-	cnx = sql.connect(BDD, th_nb)
+	cnx = sql.connect(BDD, th_nb, multi_thread, ENV = gl.ENV)
 	c = cnx.cursor()
-	array_out = get_sql_array_out(c, group_list, th_nb = th_nb)
+	array_out = get_sql_array_out(c, group_list, th_nb = th_nb, multi_thread = multi_thread)
 	log_get_sql_array_finish(array_out, th_nb)
 	c.close()
 	cnx.close()

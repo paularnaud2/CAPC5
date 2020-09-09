@@ -23,26 +23,26 @@ def restart():
 	
 	return
 
-def log_start_exec(inst, th_nb):
+def log_start_exec(inst, th_nb, multi_thread):
 	
 	if inst != '':
 		s = "Exécution des requêtes pour {}..."
 		s = s.format(inst)
-	elif th_nb != 0:
+	elif multi_thread == True:
 		s = "Exécution des requêtes (pool No. {})..."
 		s = s.format(th_nb)
 	else:
 		s = "Exécution des requêtes..."
 	log(s)
 
-def get_sql_array_out(c, group_list, inst = '', th_nb = 0):
+def get_sql_array_out(c, group_list, inst = '', th_nb = 1, multi_thread = False):
 	
-	th_name = gen_sl_detail(inst, th_nb)
+	th_name = gen_sl_detail(inst, th_nb, multi_thread = multi_thread)
 	init_tmp(th_name)
 	array_out = []
 	query_nb = 0
 	
-	log_start_exec(inst, th_nb)
+	log_start_exec(inst, th_nb, multi_thread)
 	for grp in group_list:
 		query_nb += 1
 		if query_nb <= gl.ec_query_nb[th_name]:

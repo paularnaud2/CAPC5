@@ -91,6 +91,12 @@ def log(str_in, level = 0, print_date = False, nb_tab = 0):
 		s = s + " - " + str_in
 		print_com(s, nb_tab)
 
+def get_date():
+	
+	d = str(datetime.now().date())
+	
+	return d
+
 def print_com(str_in, nb_tab = 0):
 
 	if nb_tab != 0:
@@ -105,6 +111,11 @@ def print_array(array, nb_tab = 0):
 	
 	for elt in array:
 		print_com(elt, nb_tab)
+
+def print_dict(dict):
+	
+	for elt in dict:
+		print('{} : {}'.format(elt, dict[elt]))
 
 def write_log(str_in):
 	
@@ -280,16 +291,16 @@ def big_number(str_in):
 			out = " " + out
 	return(out)
 
-def gen_sl_detail(range_name, th_nb = 0, what = 'la plage'):
+def gen_sl_detail(range_name, th_nb = 1, what = 'la plage', multi_thread = False):
 	global sl_detail
 	
-	th_name = range_name + '_' + str(th_nb) 
+	th_name = str(range_name) + '_' + str(th_nb) 
 	
-	if range_name not in ['', 'MONO'] and th_nb != 0:
+	if range_name not in ['', 'MONO'] and multi_thread == True:
 		detail = ' pour {} {} (pool No.{})'.format(what, range_name, th_nb)
 	elif range_name not in ['', 'MONO']:
 		detail = ' pour {} {}'.format(what, range_name)
-	elif th_nb != 0:
+	elif multi_thread == True:
 		detail = ' (pool No.{})'.format(th_nb)
 	else:
 		detail = ''

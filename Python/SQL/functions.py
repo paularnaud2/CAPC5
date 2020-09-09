@@ -17,7 +17,8 @@ def process_range_list(range_list, var):
 	
 	gl.counters['QUERY_RANGE'] = 0
 	if range_list == ['MONO']:
-		process_range('MONO', var, 0)
+		init_th_dict()
+		process_range()
 	else:
 		lauch_threads(range_list, var)
 
@@ -38,12 +39,12 @@ def lauch_threads(range_list, var):
 	
 	print_com('|')
 
-def process_range(elt, var):
+def process_range(elt = 'MONO', var = ''):
 	
 	with sem:
 		gl.counters['QUERY_RANGE'] += 1
 		cur_th = get_th_nb()
-		cnx = connect(gl.BDD, cur_th)
+		cnx = connect(gl.BDD, cur_th, gl.bools['RANGE_QUERY'], ENV = gl.ENV)
 		query = gl.query.replace(gl.VAR_STR + var + gl.VAR_STR, elt)
 		c = cnx.cursor()
 		process_query(c, query, elt, cur_th)
@@ -117,13 +118,16 @@ def check_dup():
 	save_pdl_list(array_in, gl.OUT_PDL_LIST_FILE)
 	dup.check_dup(gl.OUT_PDL_LIST_FILE)
 
-def connect(BDD, th_nb = 0):
+def connect(BDD, th_nb = 1, multi_thread = False, ENV = ''):
 	
-	conf = gl.conf[BDD]
-	log_connect_init(th_nb, BDD, conf)
+	if ENV == '':
+		conf = gl.conf[BDD]
+	else:
+		conf = gl.conf_env[(ENV, BDD)]
+	log_connect_init(th_nb, BDD, conf, multi_thread)
 	#print((conf["USER"], conf["PWD"], conf["TNS_NAME"]))
 	cnx = cx.connect(conf["USER"], conf["PWD"], conf["TNS_NAME"])
-	log_connect_finish(th_nb, BDD)
+	log_connect_finish(th_nb, BDD, multi_thread)
 	
 	return cnx
 	

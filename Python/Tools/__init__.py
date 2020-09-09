@@ -9,6 +9,7 @@ from Tools.split import split_file_main
 from Tools.filter import filter_main
 from Tools.sort import sort_csv_file_main
 from Tools.shuf import shuffle_csv
+from Tools.xml import parse_xml
 
 def fdup():
 	com.LOG_OUTPUT = False
@@ -28,7 +29,7 @@ def sbf():
 
 def split():
 	com.LOG_OUTPUT = False
-	split_file_main(add_header = True, prompt = True)
+	split_file_main(add_header = False, prompt = False)
 	
 def sort():
 	com.LOG_OUTPUT = False
@@ -41,3 +42,7 @@ def flt():
 def shuf():
 	com.LOG_OUTPUT = False
 	shuffle_csv()
+	
+def xml():
+	com.LOG_OUTPUT = False
+	parse_xml()

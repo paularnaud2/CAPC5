@@ -6,4 +6,5 @@ from Tools import *
 #rdup(2)
 #flt()
 #shuf()
-split()
+#split()
+xml()

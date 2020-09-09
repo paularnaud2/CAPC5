@@ -1,6 +1,6 @@
 import SQL.gl as gl
 from SQL.rg import restart
-from common import log, print_com
+from common import log, print_com, print_dict
 import re
 
 def init():
@@ -11,7 +11,11 @@ def init():
 	gl.counters["row"] = 0
 	set_conf()
 	get_query()
-
+	
+	# print_dict(gl.conf)
+	# print_dict(gl.conf_env)
+	# breakpoint()
+	
 def init_gko():
 	
 	print_com("Réquête exécutée pour toutes les instances :\n{}\n;".format(gl.query))
@@ -29,25 +33,27 @@ def set_conf():
 	
 	with open(gl.CONF_FILE, 'r', encoding='utf-8') as conf_file:
 		for line in conf_file:
-			(BDD, conf) = get_one_conf(line)
+			(ENV, BDD, conf) = get_one_conf(line)
 			if BDD != '':
+				gl.conf_env[(ENV, BDD)] = conf
 				gl.conf[BDD] = conf
 
 def get_one_conf(in_str):
 	
 	conf = {}
-	exp = 'BDD=(.*);HOST=(.*);PORT=(.*);SERVICE_NAME=(.*);USER=(.*);PWD=(.*);TNS_NAME=(.*)$'
+	exp = 'ENV=(.*);BDD=(.*);HOST=(.*);PORT=(.*);SERVICE_NAME=(.*);USER=(.*);PWD=(.*);TNS_NAME=(.*)$'
 	m = re.search(exp, in_str)
 	
-	BDD = m.group(1)
-	conf["HOST"] = m.group(2)
-	conf["PORT"] = m.group(3)
-	conf["SERVICE_NAME"] = m.group(4)
-	conf["USER"] = m.group(5)
-	conf["PWD"] = m.group(6)
-	conf["TNS_NAME"] = m.group(7)
+	ENV = m.group(1)
+	BDD = m.group(2)
+	conf["HOST"] = m.group(3)
+	conf["PORT"] = m.group(4)
+	conf["SERVICE_NAME"] = m.group(5)
+	conf["USER"] = m.group(6)
+	conf["PWD"] = m.group(7)
+	conf["TNS_NAME"] = m.group(8)
 	
-	return(BDD, conf)
+	return(ENV, BDD, conf)
 
 def get_query():
 

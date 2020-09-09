@@ -17,9 +17,9 @@ def log_process_query_finish(elt, th_nb):
 	else:
 		log("Requête exécutée pour la plage {} (pool No.{})".format(elt, th_nb))
 
-def log_connect_init(th_nb, BDD, conf):
+def log_connect_init(th_nb, BDD, conf, multi_thread):
 
-	if th_nb == 0:
+	if multi_thread == False:
 		s = "Connexion à la base {} avec le TNS {}..."
 		s = s.format(BDD, conf["TNS_NAME"])
 	else:
@@ -27,9 +27,9 @@ def log_connect_init(th_nb, BDD, conf):
 		s = s.format(BDD, conf["TNS_NAME"], th_nb)
 	log(s)
 
-def log_connect_finish(th_nb, BDD):
+def log_connect_finish(th_nb, BDD, multi_thread):
 	
-	if th_nb == 0:
+	if multi_thread == False:
 		s = "Connecté à {}".format(BDD)
 	else:
 		s = "Connecté à {} (pool No.{})".format(BDD, th_nb)

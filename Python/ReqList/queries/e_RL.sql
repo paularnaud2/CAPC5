@@ -28,9 +28,9 @@ WITH ccd_dr as (
 	SELECT '073' as "CCD", 'Paris' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '074' as "CCD", 'Paris' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '075' as "CCD", 'Paris' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
-	SELECT '091' as "CCD", 'Pays de Loire' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '092' as "CCD", 'Pays de Loire' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '093' as "CCD", 'Pays de Loire' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
+	SELECT '091' as "CCD", 'Pays de Loire' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '092' as "CCD", 'Pays de Loire' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '093' as "CCD", 'Pays de Loire' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
 	SELECT '094' as "CCD", 'Centre' as "DR", 'ACL' as "REG" FROM DUAL UNION ALL
 	SELECT '095' as "CCD", 'Centre' as "DR", 'ACL' as "REG" FROM DUAL UNION ALL
 	SELECT '096' as "CCD", 'Centre' as "DR", 'ACL' as "REG" FROM DUAL UNION ALL
@@ -39,16 +39,16 @@ WITH ccd_dr as (
 	SELECT '122' as "CCD", 'Bourgogne' as "DR", 'RAB' as "REG" FROM DUAL UNION ALL
 	SELECT '124' as "CCD", 'Bourgogne' as "DR", 'RAB' as "REG" FROM DUAL UNION ALL
 	SELECT '125' as "CCD", 'Bourgogne' as "DR", 'RAB' as "REG" FROM DUAL UNION ALL
-	SELECT '142' as "CCD", 'Pays de Loire' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '143' as "CCD", 'Pays de Loire' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '144' as "CCD", 'Bretagne' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '145' as "CCD", 'Bretagne' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '146' as "CCD", 'Bretagne' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '147' as "CCD", 'Bretagne' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '148' as "CCD", 'Bretagne' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '151' as "CCD", 'Poitou Charentes' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '152' as "CCD", 'Poitou Charentes' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
-	SELECT '154' as "CCD", 'Poitou Charentes' as "DR", 'Ouest' as "REG" FROM DUAL UNION ALL
+	SELECT '142' as "CCD", 'Pays de Loire' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '143' as "CCD", 'Pays de Loire' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '144' as "CCD", 'Bretagne' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '145' as "CCD", 'Bretagne' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '146' as "CCD", 'Bretagne' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '147' as "CCD", 'Bretagne' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '148' as "CCD", 'Bretagne' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '151' as "CCD", 'Poitou Charentes' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '152' as "CCD", 'Poitou Charentes' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
+	SELECT '154' as "CCD", 'Poitou Charentes' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
 	SELECT '155' as "CCD", 'Limousin' as "DR", 'ACL' as "REG" FROM DUAL UNION ALL
 	SELECT '161' as "CCD", 'Aquitaine Nord' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '162' as "CCD", 'Aquitaine Nord' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
@@ -73,7 +73,7 @@ WITH ccd_dr as (
 	SELECT '211' as "CCD", 'IDF Ouest' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '212' as "CCD", 'IDF Ouest' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '213' as "CCD", 'IDF Ouest' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
-	SELECT '214' as "CCD", 'IDF OUest' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
+	SELECT '214' as "CCD", 'IDF Ouest' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '215' as "CCD", 'IDF Ouest' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '221' as "CCD", 'IDF Est' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '222' as "CCD", 'IDF Est' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
@@ -195,8 +195,7 @@ WITH ccd_dr as (
 	SELECT '95' as "DEP", 'IDF Ouest' as "DR", 'IDF' as "REG" FROM DUAL
 )
 
-, aff_130 as
-(
+, aff_130 as (
 	SELECT DISTINCT dem.DEM_ID_PRM as POINT, dem.AFF_T_DISCO as AFFAIRE, dem.DEM_D_EFFET as DATE_EFFET
 	, DENSE_RANK() OVER (PARTITION BY dem.DEM_ID_PRM ORDER BY dem.DEM_D_DEMANDE DESC) as RANG
 	FROM SUIVI.DEMANDE dem
@@ -206,8 +205,7 @@ WITH ccd_dr as (
 	AND dem.DEM_R_STATUT IN ('AFF-ENCOURS')
 )
 
-, aff_BP as
-(
+, aff_BP as (
 	SELECT DISTINCT dem.DEM_ID_PRM as POINT, dem.AFF_T_DISCO as AFFAIRE
 	, CASE WHEN nat.NAT_C_PRESTATION = 'F800B' THEN 'LONG' ELSE 'COURT' END TYPE
 	, DENSE_RANK() OVER (PARTITION BY dem.DEM_ID_PRM ORDER BY dem.DEM_D_DEMANDE DESC) as RANG

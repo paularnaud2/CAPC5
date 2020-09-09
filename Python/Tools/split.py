@@ -3,9 +3,9 @@ import Tools.gl as gl
 from os import remove
 from math import ceil
 
-IN_DIR = 'C:/Py/OUT/SGE.csv'
-MAX_LINE = 1*10**3
-MAX_FILE_NB = 2
+IN_DIR = 'C:/Py/IN/2020_09_03_SITES.xml'
+MAX_LINE = 2*10**6
+MAX_FILE_NB = 20
 
 def split_file_main(in_dir = IN_DIR, max_line = MAX_LINE, add_header = True, prompt = False, n_line = 0, max_file = MAX_FILE_NB):
 	
@@ -18,7 +18,9 @@ def split_file_main(in_dir = IN_DIR, max_line = MAX_LINE, add_header = True, pro
 		
 	if not gl.bool["quit"]:
 		split_file(in_dir, max_line, add_header, max_file)
-
+	
+	log("Traitement terminé")
+	
 def init(in_dir):
 	
 	gl.bool["quit"] = False
