@@ -12,30 +12,40 @@ SL_STEP_WRITE = 100 * 10**3
 
 def parse_xml():
 	
-	gl.counters['nb line read'] = 0
+	gen_img_dict()
+	save_img_dict(gl.parse_dict, OUT_FILE)
+	finish()
+	
+def finish():
+	
+	dur = get_duration_ms(gl.start_time)
+	bn = big_number(gl.counters["write"])
+	s = "Parsing terminé. {} lignes écrites en {}."
+	s = s.format(bn, get_duration_string(dur))
+	log(s)
+
+def gen_img_dict():
 	
 	log('Génération du dictionnaire image...')
 	with open(IN_FILE, 'r', encoding='utf-8', errors='ignore') as in_file:
+		gl.counters['read'] = 0
 		line = read_file(in_file)
 		fill_parse_dict(line)
 		init_sl_time()
 		while line != "":
 			line = read_file(in_file)
 			fill_parse_dict(line)
+	
+	even_dict()
 	log('Dictionnaire image généré.')
+	print('')
 	# print('Impression du dictionnaire :')
 	# print_dict(gl.parse_dict)
 	
-	even_dict()
-	log('Sauvegarde du dictionnaire au format csv...')
-	save_dict_csv(gl.parse_dict, OUT_FILE)
-	log("Fichier csv généré à l'adresse {}".format(OUT_FILE))
-	
-	print('')
-	log("Fin du traitement")
 
-def save_dict_csv(dict, out_file_dir, att = 'w'):
+def save_img_dict(dict, out_file_dir, att = 'w'):
 	
+	log('Sauvegarde du dictionnaire au format csv...')
 	(min_size, max_size) = get_sizes(gl.parse_dict)
 	header = []
 	for elt in dict:
@@ -43,21 +53,24 @@ def save_dict_csv(dict, out_file_dir, att = 'w'):
 	
 	with open(out_file_dir, att, encoding='utf-8') as out_file:
 		write_csv_line(header, out_file)
-		i = 0
 		init_sl_time()
-		while i < max_size:
+		gl.counters['write'] = 0
+		while gl.counters['write'] < max_size:
 			cur_row = []
 			for elt in dict:
-				cur_row.append(dict[elt][i])
+				cur_row.append(dict[elt][gl.counters['write']])
 			write_csv_line(cur_row, out_file)
-			i += 1
-			step_log(i, SL_STEP_WRITE, what = 'lignes écrites')
+			gl.counters['write'] += 1
+			step_log(gl.counters['write'], SL_STEP_WRITE, what = 'lignes écrites')
+			
+	log("Fichier csv généré à l'adresse {}".format(OUT_FILE))
+	print('')
 
 def read_file(in_file):
 	
 	line = in_file.readline()
-	gl.counters['nb line read'] += 1
-	step_log(gl.counters['nb line read'], SL_STEP_READ, what = 'lignes traitées')
+	gl.counters['read'] += 1
+	step_log(gl.counters['read'], SL_STEP_READ, what = 'lignes traitées')
 	
 	return line
 

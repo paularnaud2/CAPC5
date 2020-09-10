@@ -1,4 +1,3 @@
-# -*-coding:utf-8 -*
 # Basic================================================================
 # Opérateurs
 <	Strictement inférieur à
@@ -14,6 +13,14 @@ variable += 1 # -=, *= existent aussi
 # Permutation
 a,b = b,a
 
+# Aller à la ligne dans le code
+	new_line = [line[fields['RAE']]\
+	, line[fields['raisonSociale']]\
+	, line[fields['typeCompteur']]\
+	, line[fields['optionTarifaire']]]
+# Au lieu de
+	new_line = [line[fields['RAE']], line[fields['raisonSociale']], line[fields['typeCompteur']], line[fields['optionTarifaire']]]
+	
 # If=====================================================================
 annee = input("Saisissez une année : ") # On attend que l'utilisateur saisisse l'année qu'il désire tester
 annee = int(annee) # Risque d'erreur si l'utilisateur n'a pas saisi un nombre
