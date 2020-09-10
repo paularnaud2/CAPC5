@@ -12,8 +12,11 @@ def export_strd():
 	range_list = gen_range_list(var)
 	range_list = restart(range_list)
 	process_range_list(range_list, var)
-	merge_tmp_files()
-	
+	if gl.MERGE_RG_FILES:
+		merge_tmp_files()
+	else:
+		move_tmp_folder()
+		
 	finish()
 	
 def export_gko():

@@ -6,6 +6,9 @@ def log_process_query_init(elt, query, th_nb):
 	if elt == 'MONO':
 		log("Exécution de la requête :")
 		print_com(query + "\n;")
+	elif gl.MAX_BDD_CNX == 1:
+		s = "Exécution de la requête pour la plage {}"
+		log(s.format(elt))
 	else:
 		s = "Exécution de la requête pour la plage {} (pool No.{})..."
 		log(s.format(elt, th_nb))
@@ -14,6 +17,8 @@ def log_process_query_finish(elt, th_nb):
 	
 	if elt == 'MONO':
 		log("Requête exécutée")
+	elif gl.MAX_BDD_CNX == 1:
+		log("Requête exécutée pour la plage {}".format(elt))
 	else:
 		log("Requête exécutée pour la plage {} (pool No.{})".format(elt, th_nb))
 
@@ -39,6 +44,8 @@ def log_write_rows_init(range_name, th_nb):
 
 	if range_name == 'MONO':
 		log("Écriture des lignes en cours...")
+	elif gl.MAX_BDD_CNX == 1:
+		log("Écriture des lignes en cours pour la plage {}...".format(range_name))
 	else:
 		log("Écriture des lignes en cours pour la plage {} (pool No.{})...".format(range_name, th_nb))
 
@@ -47,6 +54,9 @@ def log_write_rows_finish(range_name, i, th_nb):
 	if range_name == 'MONO':
 		s = "Écriture des lignes terminée ({} lignes écrites)"
 		log(s.format(big_number(i)))
+	elif gl.MAX_BDD_CNX == 1:
+		s = "Écriture des lignes terminée pour la plage {}. {} lignes écrites"
+		log(s.format(range_name, big_number(i)))
 	else:
 		s = "Écriture des lignes terminée pour la plage {}. {} lignes écrites (pool No.{})"
 		log(s.format(range_name, big_number(i), th_nb))

@@ -1,8 +1,8 @@
 import SQL.gl as gl
 from common import *
-from os import remove
-import re
+from os import remove, makedirs
 from shutil import move
+import re
 
 def get_var_name(in_str):
 	
@@ -72,6 +72,31 @@ def modify_restart(range_list, file_list):
 			log("Fichier EC {} supprimé".format(ec_path))
 	
 	return list_out
+
+def move_tmp_folder():
+	
+	import shutil
+	from os.path import exists
+	from time import sleep
+	
+	out_dir = gl.OUT_DIR + gl.OUT_RG_FOLDER + '/'
+	
+	log('Création du dossier de sortie {}...'.format(out_dir))
+	if not exists(out_dir):
+		makedirs(out_dir)
+	else:
+		delete_folder(out_dir)
+		sleep(0.5)
+		makedirs(out_dir)
+	log('Dossier de sortie créé')
+	
+	file_list = get_file_list(gl.TMP_PATH)
+	log('Déplacement de {} fichiers vers les dossier de sortie...'.format(len(file_list)))
+	for elt in file_list:
+		cur_dir = gl.TMP_PATH + elt
+		target_dir = out_dir + elt
+		shutil.move(cur_dir,target_dir)
+	log('Fichers déplacés vers {}'.format(out_dir))
 
 def merge_tmp_files():
 	
