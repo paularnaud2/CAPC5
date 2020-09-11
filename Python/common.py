@@ -191,30 +191,27 @@ def init_log(parent_module):
 	arc_log_files()
 	LOG_FILE_INITIALISED = True
 	
-def csv_to_list(line_in):
-
-	txt = line_in.strip("\n")
-	line_list = txt.split(CSV_SEPARATOR)
-	return line_list
-	
 def get_csv_fields_dict(in_dir):
 	
 	fields = {}
 	with open(in_dir, 'r', encoding='utf-8') as in_file:
 		header = in_file.readline()
 	
-	line_list = header.split(CSV_SEPARATOR)
+	line_list = csv_to_list(header)
 	for i, elt in enumerate(line_list):
 		fields[elt] = i
 	
 	return fields
+
+def get_csv_fields_list(in_dir):
 	
-def read_csv_line(line, list_in):
+	fields = {}
+	with open(in_dir, 'r', encoding='utf-8') as in_file:
+		header = in_file.readline()
 	
-	line_list = csv_to_list(line)
-	if len(line_list) == 1:
-		line_list = line_list[0]
-	list_in.append(line_list)
+	line_list = csv_to_list(header)
+	
+	return line_list
 
 def load_csv(in_dir):
 	
@@ -222,9 +219,19 @@ def load_csv(in_dir):
 	out_list = []	
 	with open(in_dir, 'r', encoding='utf-8') as in_file:
 		for line in in_file:
-			read_csv_line (line, out_list)
+			line_list = csv_to_list(line)
+			if len(line_list) == 1:
+				line_list = line_list[0]
+			out_list.append(line_list)
 			counters["csv_read"] += 1
+	
 	return out_list
+	
+def csv_to_list(line_in):
+
+	txt = line_in.strip("\n\ufeff")
+	line_list = txt.split(CSV_SEPARATOR)
+	return line_list
 	
 def load_txt(in_dir):
 	

@@ -79,6 +79,7 @@ def move_tmp_folder():
 	from os.path import exists
 	from time import sleep
 	
+	gl.bools["MERGE_OK"] = False
 	out_dir = gl.OUT_DIR + gl.OUT_RG_FOLDER + '/'
 	
 	log('Création du dossier de sortie {}...'.format(out_dir))

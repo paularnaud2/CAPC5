@@ -1,9 +1,9 @@
 WITH a AS (
 SELECT /*+ PARALLEL(8) ORDERED */ DISTINCT pds.Reference PDS
 	, CASE WHEN pds.Nature = 2 THEN 'Producteur en Totalité'
-					  WHEN pds.ParticularitePDS = 1 THEN 'Producteur en Surplus'
-					  WHEN pds.Nature = 1 THEN 'Consommation'
-					  ELSE NULL END as TYPE_PDS
+		  WHEN pds.ParticularitePDS = 1 THEN 'Producteur en Surplus'
+		  WHEN pds.Nature = 1 THEN 'Consommation'
+		  ELSE NULL END as TYPE_PDS
 	, TO_CHAR(rel.DateReleve, 'DD/MM/YYYY') D
 	, DECODE(rel.STATUTRELEVE,1,'valide', 2, 'invalide', 3, 'en cours de traitement', NULL, NULL, rel.STATUTRELEVE || '-INCONNU') STA
 	, DECODE(rel.FactureGRD, 0, 'NON Facturée', 1, 'Facturée') AS FACT
@@ -17,8 +17,9 @@ SELECT /*+ PARALLEL(8) ORDERED */ DISTINCT pds.Reference PDS
 	WHERE 1=1
 	AND pds.ETATOBJET = '0'
 	AND pds.ETAT <> '5'
-	--AND pds.Reference IN ('01102025899266')
-	AND pds.Reference IN @@IN1@@
+	AND rel.NATURERELEVE IN ('1', '6', '41')
+	AND pds.Reference IN ('01102025899266')
+--	AND pds.Reference IN @@IN1@@
 )
 
 SELECT a.PDS POINT, a.TYPE_PDS

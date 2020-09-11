@@ -111,25 +111,6 @@ def finish():
 	print_com("|")
 	log("Traitement terminé")
 	send_notif(s, "SQL", dur)
-	
-def finish_no_merge():
-	
-	dur = get_duration_ms(gl.start_time)
-	bn = big_number(gl.counters["row"])
-	s = "Export terminé. {} lignes écrites en {}."
-	s = s.format(bn, get_duration_string(dur))
-	log(s)
-	s = "Export {} terminé.\n{} lignes écrites en {}."
-	s = s.format(gl.BDD, bn, get_duration_string(dur))
-	
-	if gl.bools["MERGE_OK"]:
-		log("Fichier de sortie {} alimenté avec succès".format(gl.OUT_FILE + gl.RANGE_FILE_TYPE))
-		if gl.counters["row"] < gl.MAX_CHECK_DUP:
-			check_dup()
-	
-	print_com("|")
-	log("Traitement terminé")
-	send_notif(s, "SQL", dur)
 
 def check_dup():
 

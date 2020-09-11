@@ -6,11 +6,16 @@ from Tools.dup import remove_dup_main
 from Tools.rbf import read_big_file
 from Tools.sbf import search_big_file
 from Tools.split import split_file_main
-from Tools.filter import filter_main
 from Tools.sort import sort_csv_file_main
+from Tools.filter import filter_main
 from Tools.shuf import shuffle_csv
 from Tools.xml import parse_xml
+from Tools.csv_to_xls import *
 
+def csv_to_xls():
+	com.LOG_OUTPUT = False
+	csv_to_xls_folder()
+	
 def fdup():
 	com.LOG_OUTPUT = False
 	find_dup_main()
