@@ -103,11 +103,10 @@ def finish():
 	s = "Export {} terminé.\n{} lignes écrites en {}."
 	s = s.format(gl.BDD, bn, get_duration_string(dur))
 	
-	if gl.MERGE_RG_FILES:
-		if gl.bools["MERGE_OK"]:
-			log("Fichier de sortie {} alimenté avec succès".format(gl.OUT_FILE + gl.RANGE_FILE_TYPE))
-			if gl.counters["row"] < gl.MAX_CHECK_DUP:
-				check_dup()
+	if gl.bools["MERGE_OK"]:
+		log("Fichier de sortie {} alimenté avec succès".format(gl.OUT_FILE + gl.RANGE_FILE_TYPE))
+		if gl.counters["row"] < gl.MAX_CHECK_DUP:
+			check_dup()
 	
 	print_com("|")
 	log("Traitement terminé")
@@ -189,12 +188,12 @@ def write_rows(cursor, range_name = 'MONO', th_name = 'DEFAULT', th_nb = 0):
 
 def write_row(row, out_file, range_name = 'MONO'):
 	
-	line_out = str(row[0]).strip('\r\n')
+	line_out = gl.LEFT_DEL + str(row[0]).strip('\r\n') + gl.RIGHT_DEL
 	for elt in row[1:]:   
 		s = str(elt)
 		if s == 'None':
 			s = ''
-		line_out += com.CSV_SEPARATOR + s.strip('\r\n')
+		line_out += com.CSV_SEPARATOR + gl.LEFT_DEL + s.strip('\r\n') + gl.RIGHT_DEL
 	if line_out.strip(com.CSV_SEPARATOR) == '':
 		return 0
 	if gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES:

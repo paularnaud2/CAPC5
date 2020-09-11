@@ -4,9 +4,9 @@ from time import time
 
 ENV = 'PROD'
 
-# BDD = 'GINKO'
+BDD = 'GINKO'
 # BDD = 'ADAM'
-BDD = 'SGE'
+# BDD = 'SGE'
 # BDD = 'RFC'
 
 date = com.get_date().replace('-', '')

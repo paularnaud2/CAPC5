@@ -12,7 +12,7 @@ def export_strd():
 	range_list = gen_range_list(var)
 	range_list = restart(range_list)
 	process_range_list(range_list, var)
-	if gl.MERGE_RG_FILES:
+	if gl.MERGE_RG_FILES or not gl.bools['RANGE_QUERY']:
 		merge_tmp_files()
 	else:
 		move_tmp_folder()
