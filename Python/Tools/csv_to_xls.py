@@ -1,5 +1,6 @@
 from openpyxl import Workbook
 from openpyxl.styles import Font
+import Tools.gl as gl
 from common import *
 
 IN_DIR = 'C:/Py/OUT/CAPC5_OUT_20200911/'
@@ -9,7 +10,6 @@ TXT_CONVERT = ['PRM', 'PDS', 'POINT', 'IDPDL', 'RAE', 'CCD']
 
 def csv_to_xls_folder(in_dir = IN_DIR):
 	
-	dur = get_duration_ms(gl.start_time)
 	file_list = get_file_list(IN_DIR)
 	n = len(file_list)
 	log("Conversion des {} fichiers du dossier {} au format xlsx".format(n, IN_DIR))
@@ -22,7 +22,8 @@ def csv_to_xls_folder(in_dir = IN_DIR):
 		log("Conversion du fichier {}...".format(elt))
 		csv_to_xls(in_dir, out_dir)
 		log("Conversion du fichier {} terminée, {} fichiers convertis, {} fichiers restants".format(elt, i, n-i))
-		
+	
+	dur = get_duration_ms(gl.start_time)	
 	finish(dur)
 
 def csv_to_xls(in_dir = IN_DIR, out_dir = OUT_DIR):

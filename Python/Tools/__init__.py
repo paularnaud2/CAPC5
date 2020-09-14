@@ -13,7 +13,9 @@ from Tools.xml import parse_xml
 from Tools.csv_to_xls import *
 
 def csv_to_xls():
-	com.LOG_OUTPUT = False
+	com.LOG_FILE_INITIALISED = False
+	com.init_log('Tools')
+	com.LOG_OUTPUT = True
 	csv_to_xls_folder()
 	
 def fdup():
