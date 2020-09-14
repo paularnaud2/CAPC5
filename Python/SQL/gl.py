@@ -30,7 +30,7 @@ EXPORT_INSTANCES = False
 MAX_CHECK_DUP = 1*10**6
 MAX_BDD_CNX = 8
 PARALLEL = True
-MERGE_RG_FILES = False
+MERGE_RG_FILES = True
 LEFT_DEL = "" # "\""
 RIGHT_DEL = "" # "\""
 

@@ -80,11 +80,11 @@ WITH ccd_dr as (
 	SELECT '223' as "CCD", 'IDF Est' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '224' as "CCD", 'IDF Est' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '225' as "CCD", 'IDF Est' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
-	SELECT '231' as "CCD", 'Midi Pyrenées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
-	SELECT '232' as "CCD", 'Midi Pyrenées Sud et Nord midi Pyrennées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
-	SELECT '233' as "CCD", 'Midi Pyrenées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
-	SELECT '234' as "CCD", 'Midi Pyrenées Sud et Nord midi Pyrennées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
-	SELECT '235' as "CCD", 'Midi Pyrenées Sud et Nord midi Pyrennées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '231' as "CCD", 'Midi Pyrénées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '232' as "CCD", 'Midi Pyrénées Sud et Nord midi Pyrénées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '233' as "CCD", 'Midi Pyrénées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '234' as "CCD", 'Midi Pyrénées Sud et Nord midi Pyrénées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '235' as "CCD", 'Midi Pyrénées Sud et Nord midi Pyrénées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '241' as "CCD", 'LARO' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
 	SELECT '242' as "CCD", 'LARO' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
 	SELECT '243' as "CCD", 'LARO' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
@@ -107,10 +107,10 @@ WITH ccd_dr as (
 	SELECT '06' as "DEP", 'Côte d''Azur' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
 	SELECT '07' as "DEP", 'Sillon Rhodanien' as "DR", 'RAB' as "REG" FROM DUAL UNION ALL
 	SELECT '08' as "DEP", 'Champagne Ardennes' as "DR", 'EST' as "REG" FROM DUAL UNION ALL
-	SELECT '09' as "DEP", 'Midi Pyrenées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '09' as "DEP", 'Midi Pyrénées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '10' as "DEP", 'Champagne Ardennes' as "DR", 'EST' as "REG" FROM DUAL UNION ALL
 	SELECT '11' as "DEP", 'LARO' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
-	SELECT '12' as "DEP", 'Nord midi Pyrennées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '12' as "DEP", 'Nord midi Pyrénées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '13' as "DEP", 'Provence Alpes du Sud' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
 	SELECT '14' as "DEP", 'Normandie' as "DR", 'MMN' as "REG" FROM DUAL UNION ALL
 	SELECT '15' as "DEP", 'Auvergne' as "DR", 'ACL' as "REG" FROM DUAL UNION ALL
@@ -128,8 +128,8 @@ WITH ccd_dr as (
 	SELECT '28' as "DEP", 'Centre' as "DR", 'ACL' as "REG" FROM DUAL UNION ALL
 	SELECT '29' as "DEP", 'Bretagne' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
 	SELECT '30' as "DEP", 'LARO' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
-	SELECT '31' as "DEP", 'Midi Pyrenées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
-	SELECT '32' as "DEP", 'Midi Pyrenées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '31' as "DEP", 'Midi Pyrénées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '32' as "DEP", 'Midi Pyrénées Sud' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '33' as "DEP", 'Aquitaine Nord' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '34' as "DEP", 'LARO' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
 	SELECT '35' as "DEP", 'Bretagne' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
@@ -143,9 +143,9 @@ WITH ccd_dr as (
 	SELECT '43' as "DEP", 'Auvergne' as "DR", 'ACL' as "REG" FROM DUAL UNION ALL
 	SELECT '44' as "DEP", 'Pays de Loire' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
 	SELECT '45' as "DEP", 'Centre' as "DR", 'ACL' as "REG" FROM DUAL UNION ALL
-	SELECT '46' as "DEP", 'Nord midi Pyrennées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '46' as "DEP", 'Nord midi Pyrénées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '47' as "DEP", 'Aquitaine Nord' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
-	SELECT '48' as "DEP", 'Nord midi Pyrennées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '48' as "DEP", 'Nord midi Pyrénées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '49' as "DEP", 'Pays de Loire' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
 	SELECT '50' as "DEP", 'Normandie' as "DR", 'MMN' as "REG" FROM DUAL UNION ALL
 	SELECT '51' as "DEP", 'Champagne Ardennes' as "DR", 'EST' as "REG" FROM DUAL UNION ALL
@@ -178,8 +178,8 @@ WITH ccd_dr as (
 	SELECT '78' as "DEP", 'IDF Ouest' as "DR", 'IDF' as "REG" FROM DUAL UNION ALL
 	SELECT '79' as "DEP", 'Poitou Charentes' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
 	SELECT '80' as "DEP", 'Picardie' as "DR", 'MMN' as "REG" FROM DUAL UNION ALL
-	SELECT '81' as "DEP", 'Nord midi Pyrennées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
-	SELECT '82' as "DEP", 'Nord midi Pyrennées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '81' as "DEP", 'Nord midi Pyrénées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
+	SELECT '82' as "DEP", 'Nord midi Pyrénées' as "DR", 'SO' as "REG" FROM DUAL UNION ALL
 	SELECT '83' as "DEP", 'Côte d''Azur' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
 	SELECT '84' as "DEP", 'Provence Alpes du Sud' as "DR", 'MED' as "REG" FROM DUAL UNION ALL
 	SELECT '85' as "DEP", 'Pays de Loire' as "DR", 'OUEST' as "REG" FROM DUAL UNION ALL
@@ -217,22 +217,22 @@ WITH ccd_dr as (
 	AND dem.DEM_R_STATUT <> 'AFF-ANNULEE'
 )
 
-SELECT DISTINCT POINT PRM
+SELECT DISTINCT POINT PRM, SEG
 , CODE_INSEE, CODE_DEPARTEMENT, t.CCD, COMMUNE
 , CASE WHEN ccd_dr.DR IS NOT NULL THEN ccd_dr.DR ELSE dep_dr.DR END DR
 , CASE WHEN ccd_dr.REG IS NOT NULL THEN ccd_dr.REG ELSE dep_dr.REG END REG
 , SI, EN_SERVICE
---, CONTRAT, TYPE_OFFRE_SCN
 , CASE WHEN TYPE_OFFRE_SCN IS NULL THEN TYPE_OFFRE_CTR ELSE TYPE_OFFRE_SCN END TYPE_OFFRE
 , CALENDRIER, CAL_LIBELLE_COMPTEUR
 , PS_MAX_KW, P_RAC_KW
-, COMPTEUR, CPT_COMMUNIQUANT, CPT_ACCESSIBLE, MODE_RLV, MEDIA
+, COMPTEUR, CPT_COMMUNIQUANT, CPT_TO, CPT_ACCESSIBLE, MODE_RLV, MEDIA
 , F130_EC, DATE_EFFET
 , BP
 , COLOC
 FROM
 (
 	SELECT prm.PRM_ID as POINT
+	, prm.PRM_SC_SEGMENT SEG
 	, DECODE(situ.SCN_APP_APPLICATION_CODE
 		, 'QETGC', 'DISCO'
 		, situ.SCN_APP_APPLICATION_CODE) as SI
@@ -254,7 +254,9 @@ FROM
 	, CASE WHEN prm.PRM_DG_NIV_OUV_SERV > 0 THEN 'O'
 			WHEN scm.SCM_MODE_RELEVE_CODE = 'TRLV' THEN 'O'
 			ELSE 'N' END CPT_COMMUNIQUANT
-		, DECODE(eqeCPT.EQE_ACCESSIBILITE
+	, CASE WHEN situ.SCN_APP_APPLICATION_CODE IN ('QETGC', 'GINKO') THEN CASE WHEN scm.SCM_TELEOPERABLE = '1' THEN 'O' ELSE 'N' END
+			ELSE NULL END CPT_TO
+	, DECODE(eqeCPT.EQE_ACCESSIBILITE
 		, '0', 'N'
 		, '1', 'O'
 		, 'N'
