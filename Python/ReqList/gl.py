@@ -4,9 +4,9 @@ from time import time
 
 ENV = 'PROD'
 
-BDD = 'GINKO'
+# BDD = 'GINKO'
 # BDD = 'ADAM'
-# BDD = 'SGE'
+BDD = 'SGE'
 # BDD = 'RFC'
 
 date = com.get_date().replace('-', '')
@@ -15,7 +15,7 @@ IN_FILE = 'C:/Py/IN/in.csv'
 #IN_FILE = 'C:/Py/IN/fin_trv.csv'
 #IN_FILE = 'C:/Py/IN/fin_trv_COSY.csv'
 OUT_FILE = 'C:/Py/OUT/out.csv'
-OUT_FILE = 'C:/Py/OUT/out_{}_{}.csv'.format(BDD, date)
+# OUT_FILE = 'C:/Py/OUT/out_{}_{}.csv'.format(BDD, date)
 
 OUT_LEFT = com.TMP_PATH_REQLIST + 'out_l.csv'
 OUT_RIGHT = com.TMP_PATH_REQLIST + 'out_r.csv'
@@ -40,7 +40,6 @@ EXPORT_INSTANCES = True
 VAR_STR = "@@IN1@@"
 TMP_PATH = com.TMP_PATH_REQLIST + BDD + '/'
 TMP_FILE_TYPE = '.csv'
-OUT_PDL_LIST_FILE = com.TMP_PATH_REQLIST + 'out_pdl_list.csv'
 init_tmp_file_list = []
 
 counters = {}

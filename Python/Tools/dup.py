@@ -4,14 +4,21 @@ import Tools.gl as gl
 
 IN_FILE = 'C:/Py/IN/in.csv'
 OUT_FILE = 'C:/Py/OUT/out.csv'
+IN_TMP_FILE = com.TMP_PATH_TOOLS + 'in.csv'
 OUT_DUP_FILE = com.TMP_PATH_TOOLS + 'out_dup.csv'
 MAX_DUP_PRINT = 5
 
-def check_dup(dir_in):
+def check_dup_key(in_dir, col_nb = 1):
 	
-	log("Liste des PDL sauvegardée à l'adresse '{}'".format(dir_in))
-	find_dup_main(dir_in, OUT_DUP_FILE)
-
+	print_com("|")
+	s = "Vérification des doublons sur la colonne No.{} du fichier de sortie. Chargement du fichier de sortie..."
+	log(s.format(col_nb))
+	array_in = load_csv(in_dir)
+	log("Fichier de sortie chargé. Sauvegarde de la colonne No.{}...".format(col_nb))
+	extract_list(array_in, IN_TMP_FILE, col_nb)
+	log("Colonne No.{} sauvegardée à l'adresse {}".format(col_nb, IN_TMP_FILE))
+	find_dup_main(IN_TMP_FILE, OUT_DUP_FILE)
+	
 def find_dup_main(in_dir = IN_FILE, out_dir = OUT_DUP_FILE):
 	
 	log("Recherche des doublons dans le fichier {} en cours...".format(in_dir))

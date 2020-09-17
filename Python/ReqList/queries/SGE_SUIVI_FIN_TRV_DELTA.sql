@@ -79,4 +79,5 @@ LEFT JOIN cal cal_init ON t.CALENDRIER = cal_init.CAL_CODE
 LEFT JOIN cal cal_cible ON aff.CAL_CIBLE = cal_cible.CAL_CODE
 WHERE 1=1
 AND aff.RANG = 1
+AND t.POINT IN @@IN1@@
 ;

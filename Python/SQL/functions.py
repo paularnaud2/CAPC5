@@ -104,9 +104,11 @@ def finish():
 	s = s.format(gl.BDD, bn, get_duration_string(dur))
 	
 	if gl.bools["MERGE_OK"]:
-		log("Fichier de sortie {} alimenté avec succès".format(gl.OUT_FILE + gl.RANGE_FILE_TYPE))
+		out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE
+		log("Fichier de sortie {} alimenté avec succès".format(out_dir))
 		if gl.counters["row"] < gl.MAX_CHECK_DUP:
-			check_dup()
+			import Tools.dup as dup
+			dup.check_dup_key(out_dir)
 	
 	print_com("|")
 	log("Traitement terminé")
@@ -115,11 +117,12 @@ def finish():
 def check_dup():
 
 	print_com("|")
-	log("Vérification des doublons de clé. Chargement du fichier de sortie...")
+	log("Vérification des doublons sur la première colonne du fichier de sortie. Chargement du fichier de sortie...")
 	array_in = load_csv(gl.OUT_FILE + gl.OUT_FILE_TYPE)
-	log("Fichier de sortie chargé")
-	save_pdl_list(array_in, gl.OUT_PDL_LIST_FILE)
-	dup.check_dup(gl.OUT_PDL_LIST_FILE)
+	log("Fichier de sortie chargé. Sauvegarde de la première colonne...")
+	extract_list(array_in, gl.OUT_DUP_CHECK_LIST_FILE)
+	log("Première colonne sauvegardée à l'adresse {}".format(gl.OUT_DUP_CHECK_LIST_FILE))
+	dup.check_dup(gl.OUT_DUP_CHECK_LIST_FILE)
 
 def connect(BDD, th_nb = 1, multi_thread = False, ENV = ''):
 	

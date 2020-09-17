@@ -41,7 +41,6 @@ RANGE_FILE_TYPE = '.csv'
 EC = '_EC'
 TMP_PATH = com.TMP_PATH_SQL + BDD + '/'
 TMP_TRT_FILE = 'tmp.csv'
-OUT_PDL_LIST_FILE = com.TMP_PATH_SQL + 'out_pdl_list.csv'
 
 start_time = time()
 conf = {}

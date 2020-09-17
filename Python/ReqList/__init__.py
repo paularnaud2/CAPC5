@@ -31,11 +31,9 @@ def run_reqList(BDD = gl.BDD, query_file = gl.QUERY_FILE, in_dir = gl.IN_FILE, o
 	log("Sauvegarde du fichier de sortie...")
 	save_csv(gl.out_array, out_dir)
 	log("Fichier de sortie sauvegardé à l'adresse '{}'".format(out_dir))
-	print_com("|")
-	log("Vérification des doublons sur les PDL")
-	save_pdl_list(gl.out_array, gl.OUT_PDL_LIST_FILE)
 	del gl.out_array
-	dup.check_dup(gl.OUT_PDL_LIST_FILE)
+	
+	dup.check_dup_key(out_dir)
 	
 	print_com("")
 	s = "Exécution terminée en {}"
