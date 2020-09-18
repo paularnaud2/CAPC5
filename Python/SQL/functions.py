@@ -126,17 +126,37 @@ def check_dup():
 
 def connect(BDD, th_nb = 1, multi_thread = False, ENV = ''):
 	
-	if ENV == '':
-		conf = gl.conf[BDD]
-	else:
-		conf = gl.conf_env[(ENV, BDD)]
+	init_instant_client()
+	(cnx_str, conf) = get_cnx_str(BDD, ENV)
 	log_connect_init(th_nb, BDD, conf, multi_thread)
-	#print((conf["USER"], conf["PWD"], conf["TNS_NAME"]))
-	cnx = cx.connect(conf["USER"], conf["PWD"], conf["TNS_NAME"])
+	cnx = cx.connect(cnx_str)
 	log_connect_finish(th_nb, BDD, multi_thread)
 	
 	return cnx
 	
+def init_instant_client():
+	
+	with verrou:
+		if gl.is_init == False:
+			log("Initialisation du client Oracle...")
+			gl.is_init = True
+			cx.init_oracle_client(gl.ORACLE_CLIENT)
+			log("Client Oracle initialisé")
+	
+def get_cnx_str(BDD, ENV):
+
+	if ENV == '':
+		conf = gl.conf[BDD]
+	else:
+		conf = gl.conf_env[(ENV, BDD)]
+	cnx_str = '{user}/{pwd}@{host}:{port}/{srv}'
+	cnx_str = cnx_str.format(\
+	user = conf["USER"], pwd = conf["PWD"]\
+	, host = conf["HOST"], port = conf["PORT"], srv = conf["SERVICE_NAME"]\
+	)
+	
+	return (cnx_str, conf)
+
 def init_out_file(cursor, range_name = 'MONO'):
 	# on initialise le fichier de sortie avec le nom des différents champs en première ligne
 	

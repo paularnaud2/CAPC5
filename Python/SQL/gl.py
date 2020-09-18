@@ -18,8 +18,9 @@ date = com.get_date().replace('-', '')
 QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
 OUT_FILE_TYPE = '.csv'
 OUT_DIR = 'C:/Py/OUT/'
-OUT_FILE = OUT_DIR + '{}'.format(BDD)
-OUT_FILE = OUT_DIR + '{}_{}'.format(BDD, date)
+OUT_FILE = OUT_DIR + 'out'
+# OUT_FILE = OUT_DIR + '{}'.format(BDD)
+# OUT_FILE = OUT_DIR + '{}_{}'.format(BDD, date)
 OUT_RG_FOLDER = '{}_OUT_{}'.format(BDD, date)
 
 GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
@@ -35,6 +36,7 @@ LEFT_DEL = "" # "\""
 RIGHT_DEL = "" # "\""
 
 CONF_FILE = 'C:/oracle/conf_perso.txt'
+ORACLE_CLIENT = 'C:/instantclient_19_6'
 VAR_STR = '@@'
 RANGE_PATH = 'SQL/ranges/'
 RANGE_FILE_TYPE = '.csv'
@@ -50,3 +52,4 @@ bools = {}
 out_files = {}
 th_dic = {}
 query = ''
+is_init = False
