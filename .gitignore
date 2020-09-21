@@ -1,3 +1,4 @@
 *.pyc
 _old/
 Python/Install/gl.py
+~$*.xlsm
