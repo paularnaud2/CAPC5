@@ -1,0 +1,4 @@
+1;cx_Oracle;cx_Oracle;
+1;win32;pywin32;u
+2;win32com;pypiwin32;u
+3;win10toast;win10toast;
