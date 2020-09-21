@@ -6,13 +6,13 @@ ENV = 'PROD'
 
 # BDD = 'GINKO'
 # BDD = 'ADAM'
-# BDD = 'SGE'
+BDD = 'SGE'
 
 # ENV = 'DIRECT'
 # BDD = 'CAPC5'
 
-ENV = 'LOCAL'
-BDD = 'XE'
+# ENV = 'LOCAL'
+# BDD = 'XE'
 
 SL_STEP = 100*10**3
 #SL_STEP = 500
@@ -21,10 +21,9 @@ date = com.get_date().replace('-', '')
 QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
 OUT_FILE_TYPE = '.csv'
 OUT_DIR = 'C:/Py/OUT/'
-OUT_FILE = OUT_DIR + 'out'
-# OUT_FILE = OUT_DIR + '{}'.format(BDD)
-# OUT_FILE = OUT_DIR + '{}_{}'.format(BDD, date)
 OUT_RG_FOLDER = '{}_OUT_{}'.format(BDD, date)
+# OUT_FILE = OUT_DIR + 'out'.format(BDD)
+OUT_FILE = OUT_DIR + 'export_{}_{}'.format(BDD, date)
 
 GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
 #GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
@@ -35,6 +34,7 @@ MAX_CHECK_DUP = 1*10**6
 MAX_BDD_CNX = 8
 PARALLEL = True
 MERGE_RG_FILES = True
+OPEN_OUT_FILE = True
 LEFT_DEL = "" # "\""
 RIGHT_DEL = "" # "\""
 

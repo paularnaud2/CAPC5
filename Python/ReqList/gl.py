@@ -15,7 +15,7 @@ IN_FILE = 'C:/Py/IN/in.csv'
 #IN_FILE = 'C:/Py/IN/fin_trv.csv'
 #IN_FILE = 'C:/Py/IN/fin_trv_COSY.csv'
 OUT_FILE = 'C:/Py/OUT/out.csv'
-# OUT_FILE = 'C:/Py/OUT/out_{}_{}.csv'.format(BDD, date)
+OUT_FILE = 'C:/Py/OUT/export_{}_{}.csv'.format(BDD, date)
 
 OUT_LEFT = com.TMP_PATH_REQLIST + 'out_l.csv'
 OUT_RIGHT = com.TMP_PATH_REQLIST + 'out_r.csv'
@@ -33,6 +33,7 @@ NB_MAX_ELT_IN_STATEMENT = 1000
 IN_FIELD_NB = 1
 MAX_DUP_PRINT = 5
 
+OPEN_OUT_FILE = True
 DEBUG_JOIN = False
 SQUEEZE_SQL = False
 EXPORT_INSTANCES = True

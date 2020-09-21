@@ -4,6 +4,7 @@ init_log('ReqList')
 import ReqList.gl as gl
 from ReqList.main import *
 import Tools.dup as dup
+from os import startfile
 
 def run_reqList(BDD = gl.BDD, query_file = gl.QUERY_FILE, in_dir = gl.IN_FILE, out_dir = gl.OUT_FILE):
 	
@@ -42,3 +43,5 @@ def run_reqList(BDD = gl.BDD, query_file = gl.QUERY_FILE, in_dir = gl.IN_FILE, o
 	log(s)
 	send_notif(s, "ReqList", duration)
 	print_com("")
+	if gl.OPEN_OUT_FILE:
+		startfile(out_dir)

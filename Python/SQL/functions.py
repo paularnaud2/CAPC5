@@ -6,7 +6,7 @@ from common import *
 import cx_Oracle as cx
 from time import time
 import Tools.dup as dup
-from os import makedirs, rename
+from os import makedirs, rename, startfile
 from os.path import exists
 from threading import Thread, RLock, Semaphore
 
@@ -109,6 +109,8 @@ def finish():
 		if gl.counters["row"] < gl.MAX_CHECK_DUP:
 			import Tools.dup as dup
 			dup.check_dup_key(out_dir)
+		if gl.OPEN_OUT_FILE:
+			startfile(out_dir)
 	
 	print_com("|")
 	log("Traitement terminé")
