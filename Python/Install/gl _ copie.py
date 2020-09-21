@@ -2,7 +2,7 @@
 
 import sys
 
-USE_PROXY = True
+USE_PROXY = False
 PROXY = 'http://vip-users.proxy.edf.fr:3131'
 
 CUR_PATH = sys.path[0]
