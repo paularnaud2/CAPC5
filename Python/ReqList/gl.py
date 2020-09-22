@@ -3,7 +3,6 @@ import common as com
 from time import time
 
 ENV = 'PROD'
-
 # BDD = 'GINKO'
 # BDD = 'ADAM'
 BDD = 'SGE'
@@ -33,9 +32,11 @@ NB_MAX_ELT_IN_STATEMENT = 1000
 IN_FIELD_NB = 1
 MAX_DUP_PRINT = 5
 
+SQUEEZE_SQL = False
+SQUEEZE_JOIN = True
+CHECK_DUP = False
 OPEN_OUT_FILE = True
 DEBUG_JOIN = False
-SQUEEZE_SQL = False
 EXPORT_INSTANCES = True
 
 VAR_STR = "@@IN1@@"

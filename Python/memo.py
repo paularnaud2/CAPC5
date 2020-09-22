@@ -194,10 +194,11 @@ with open('fichier.txt', 'r', encoding='utf-8') as mon_fichier: # Pas besoin d'u
 	texte = mon_fichier.readlines() # liste ligne par ligne
 for line in in_file: # lecture ligne par ligne
 os.remove(FILE_OUT) # supprimer un fichier
-from shutil import copyfile 
+from shutil import copyfile
 copyfile(src, dst) # copie de fichier
 shutil.move(src, dst) # déplacement de fichier
 os.makedirs(LOG_OUT) # créer une arborescence
+os.rename(source, target) # renommer un fichier
 folders = [f[0] for f in os.walk(package_path)] # lister des dossiers
 files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
 os.exists(dir) # vérifier l'existence d'un fichier

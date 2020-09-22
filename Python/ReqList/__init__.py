@@ -19,22 +19,29 @@ def run_reqList(BDD = gl.BDD, query_file = gl.QUERY_FILE, in_dir = gl.IN_FILE, o
 	if not gl.SQUEEZE_SQL:
 		export = get_sql_array(ar_left, BDD, query_file)
 		log("Sauvegarde de l'export SQL...")
-		save_csv(export, gl.OUT_SQL)
+		if not gl.SQUEEZE_JOIN:
+			save_csv(export, gl.OUT_SQL)
+			s = "Export SQL sauvegardé"
+		else:
+			save_csv(export, out_dir)
+			s = "Export SQL sauvegardé à l'adresse {}".format(out_dir)
 		del export
-		log("Export SQL sauvegardé")
+		log(s)
 	
-	log("Chargement du tableau de droite...")
-	ar_right = load_csv (gl.OUT_SQL)
-	log("Tableau de droite chargé\n|")
-	join_arrays(ar_left, ar_right)
-	del ar_left
-	del ar_right
-	log("Sauvegarde du fichier de sortie...")
-	save_csv(gl.out_array, out_dir)
-	log("Fichier de sortie sauvegardé à l'adresse '{}'".format(out_dir))
-	del gl.out_array
+	if not gl.SQUEEZE_JOIN:
+		log("Chargement du tableau de droite...")
+		ar_right = load_csv (gl.OUT_SQL)
+		log("Tableau de droite chargé\n|")
+		join_arrays(ar_left, ar_right)
+		del ar_left
+		del ar_right
+		log("Sauvegarde du fichier de sortie...")
+		save_csv(gl.out_array, out_dir)
+		log("Fichier de sortie sauvegardé à l'adresse '{}'".format(out_dir))
+		del gl.out_array
 	
-	dup.check_dup_key(out_dir)
+	if gl.CHECK_DUP:
+		dup.check_dup_key(out_dir)
 	
 	print_com("")
 	s = "Exécution terminée en {}"
