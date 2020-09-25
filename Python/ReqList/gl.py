@@ -3,9 +3,9 @@ import common as com
 from time import time
 
 ENV = 'PROD'
-# BDD = 'GINKO'
+BDD = 'GINKO'
 # BDD = 'ADAM'
-BDD = 'SGE'
+# BDD = 'SGE'
 # BDD = 'RFC'
 
 date = com.get_date().replace('-', '')
@@ -24,7 +24,7 @@ IN_TEST_R = 'C:/Py/IN/Tests/test_R0.csv'
 
 GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
 #GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN']
-#GKO_INSTANCES = ['GKO2_MMN']
+# GKO_INSTANCES = ['GKO2_MMN']
 
 MAX_BDD_CNX = 8
 SL_STEP_QUERY = 100
@@ -37,7 +37,7 @@ SQUEEZE_JOIN = True
 CHECK_DUP = False
 OPEN_OUT_FILE = True
 DEBUG_JOIN = False
-EXPORT_INSTANCES = True
+EXPORT_INSTANCES = False
 
 VAR_STR = "@@IN1@@"
 TMP_PATH = com.TMP_PATH_REQLIST + BDD + '/'

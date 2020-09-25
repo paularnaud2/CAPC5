@@ -44,7 +44,7 @@ def log_write_rows_init(range_name, th_nb):
 
 	if range_name == 'MONO':
 		log("Écriture des lignes en cours...")
-	elif gl.MAX_BDD_CNX == 1:
+	elif gl.MAX_BDD_CNX == 1 or th_nb == 0:
 		log("Écriture des lignes en cours pour la plage {}...".format(range_name))
 	else:
 		log("Écriture des lignes en cours pour la plage {} (pool No.{})...".format(range_name, th_nb))
@@ -54,7 +54,7 @@ def log_write_rows_finish(range_name, i, th_nb):
 	if range_name == 'MONO':
 		s = "Écriture des lignes terminée ({} lignes écrites)"
 		log(s.format(big_number(i)))
-	elif gl.MAX_BDD_CNX == 1:
+	elif gl.MAX_BDD_CNX == 1 or th_nb == 0:
 		s = "Écriture des lignes terminée pour la plage {}. {} lignes écrites"
 		log(s.format(range_name, big_number(i)))
 	else:

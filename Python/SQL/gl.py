@@ -3,12 +3,12 @@ import common as com
 from time import time
 
 ENV = 'PROD'
-# BDD = 'GINKO'
+BDD = 'GINKO'
 # BDD = 'ADAM'
-BDD = 'SGE'
+# BDD = 'SGE'
 
-ENV = 'DIRECT'
-BDD = 'CAPC5'
+# ENV = 'DIRECT'
+# BDD = 'CAPC5'
 
 # ENV = 'LOCAL'
 # BDD = 'XE'
@@ -27,7 +27,7 @@ OUT_FILE = OUT_DIR + 'export_{}_{}'.format(BDD, date)
 GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
 #GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
 #GKO_INSTANCES = ['GKO1_IDF']
-EXPORT_INSTANCES = False
+EXPORT_INSTANCES = True
 
 MAX_CHECK_DUP = 1*10**6
 MAX_BDD_CNX = 8
