@@ -3,10 +3,13 @@ import common as com
 from time import time
 
 ENV = 'PROD'
-BDD = 'GINKO'
+# BDD = 'GINKO'
 # BDD = 'ADAM'
-# BDD = 'SGE'
+BDD = 'SGE'
 # BDD = 'RFC'
+
+# ENV = 'DIRECT'
+# BDD = 'CAPC5'
 
 date = com.get_date().replace('-', '')
 QUERY_FILE = 'ReqList/queries/e_RL.sql'
@@ -34,7 +37,7 @@ MAX_DUP_PRINT = 5
 
 SQUEEZE_SQL = False
 SQUEEZE_JOIN = True
-CHECK_DUP = False
+CHECK_DUP = True
 OPEN_OUT_FILE = True
 DEBUG_JOIN = False
 EXPORT_INSTANCES = False

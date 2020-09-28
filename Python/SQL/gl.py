@@ -3,9 +3,9 @@ import common as com
 from time import time
 
 ENV = 'PROD'
-BDD = 'GINKO'
+# BDD = 'GINKO'
 # BDD = 'ADAM'
-# BDD = 'SGE'
+BDD = 'SGE'
 
 # ENV = 'DIRECT'
 # BDD = 'CAPC5'
@@ -34,6 +34,8 @@ MAX_BDD_CNX = 8
 PARALLEL = True
 MERGE_RG_FILES = True
 OPEN_OUT_FILE = True
+RANGE_FIELD = "RANGE"
+EXPORT_RANGE = True
 LEFT_DEL = "" # "\""
 RIGHT_DEL = "" # "\""
 

@@ -101,7 +101,7 @@ def process_query(c, query, inst, query_nb, th_name):
 	tmp_update(array_out, th_name, query_nb)
 
 def gen_header(c):
-
+	
 	if gl.header == '':
 		header = [elt[0] for elt in c.description]
 		with verrou:
@@ -159,7 +159,6 @@ def prepare_elt_list(array_in):
 	# tri et suppression des doublons
 	
 	elt_list = str_handle(array_in)
-	
 	elt_set = set()
 	for elt in elt_list:
 		elt_set.add(elt)
@@ -178,8 +177,19 @@ def prepare_elt_list(array_in):
 def str_handle(array_in):
 
 	if isinstance(array_in[0], str):
+		if len(array_in[0]) == len(array_in[1]):
+			s = "Attention il semble ne pas y avoir de header dans l'entrant (premier élément : {}) Continuer ? (o/n)"
+			s = s.format(array_in[0])
+			if input_com(s) != 'o':
+				sys.exit()
 		elt_list = array_in[1:]
 	else:
+		if len(array_in[0][0]) == len(array_in[1][0]):
+			s = "Attention il semble ne pas y avoir de header dans l'entrant (première ligne : {}) Continuer ? (o/n)"
+			s = s.format(array_in[0])
+			if input_com(s) != 'o':
+				sys.exit()
+		
 		if gl.IN_FIELD_NB != 1:
 			s = "Attention les requêtes se feront sur le {}ème champ du tableau d'entrée. Continuer ? (o/n)"
 			s = s.format(gl.IN_FIELD_NB)
