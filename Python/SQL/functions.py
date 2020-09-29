@@ -93,6 +93,33 @@ def process_query(c, query, elt, th_nb):
 	th_name = gen_sl_detail(elt, th_nb)
 	write_rows(c, elt, th_name, th_nb)
 	
+def group_by():
+	
+	if not gl.bools["MERGE_OK"]:
+		return
+	
+	out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE
+	header = get_csv_fields_list(out_dir)
+	vol_fields = [elt for elt in header if 'VOL' in elt or 'COUNT' in elt]
+	if len(vol_fields) == 0:
+		return
+	else:
+		vol_field = vol_fields[0]
+	
+	log('Group by sur le fichier de sortie...')
+	import pandas as pd
+	
+	gl.CHECK_DUP = False
+	array_in = load_csv(out_dir)
+	df = pd.DataFrame(data=array_in[1:], columns=header)
+	gb_fields = [elt for elt in header if not ('VOL' in elt or 'COUNT' in elt)]
+	df[vol_field] = df[vol_field].astype(int)
+	df = df.groupby(by = gb_fields).sum()
+	df = df.sort_values(by = vol_field, ascending = False)
+	out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE
+	df.to_csv(path_or_buf = out_dir, sep = ';', encoding = 'UTF-8')
+	log('Group by terminé')
+	
 def finish():
 	
 	dur = get_duration_ms(gl.start_time)
@@ -106,7 +133,7 @@ def finish():
 	if gl.bools["MERGE_OK"]:
 		out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE
 		log("Fichier de sortie {} alimenté avec succès".format(out_dir))
-		if gl.counters["row"] < gl.MAX_CHECK_DUP:
+		if gl.counters["row"] < gl.MAX_CHECK_DUP and gl.CHECK_DUP:
 			import Tools.dup as dup
 			dup.check_dup_key(out_dir)
 		if gl.OPEN_OUT_FILE:

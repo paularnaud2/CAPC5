@@ -113,6 +113,8 @@ def merge_tmp_files():
 		else:
 			merge_files(cur_dir, out_file, remove_header = True)
 		remove(cur_dir)
+	
+	log("Fusion et suppression des {} fichiers temporaires terminée".format(len(file_list)))
 
 def init_merge():
 

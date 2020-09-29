@@ -16,8 +16,6 @@ def export_strd():
 		merge_tmp_files()
 	else:
 		move_tmp_folder()
-		
-	finish()
 	
 def export_gko():
 	
@@ -35,5 +33,3 @@ def export_gko():
 		th.join()
 	
 	merge_tmp_files()
-	
-	finish()
