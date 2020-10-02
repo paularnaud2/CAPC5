@@ -2,8 +2,8 @@ from common import *
 import common as com
 import Tools.gl as gl
 
-IN_FILE = 'C:/Py/IN/in.csv'
-OUT_FILE = 'C:/Py/OUT/out.csv'
+IN_FILE = 'C:/Py/IN/out_sql.csv'
+OUT_FILE = 'C:/Py/OUT/out_dup.csv'
 IN_TMP_FILE = com.TMP_PATH_TOOLS + 'in.csv'
 OUT_DUP_FILE = com.TMP_PATH_TOOLS + 'out_dup.csv'
 MAX_DUP_PRINT = 5

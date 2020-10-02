@@ -14,10 +14,9 @@ BDD = 'SGE'
 date = com.get_date().replace('-', '')
 QUERY_FILE = 'ReqList/queries/e_RL.sql'
 IN_FILE = 'C:/Py/IN/in.csv'
-#IN_FILE = 'C:/Py/IN/fin_trv.csv'
-#IN_FILE = 'C:/Py/IN/fin_trv_COSY.csv'
-OUT_FILE = 'C:/Py/OUT/out.csv'
-OUT_FILE = 'C:/Py/OUT/export_{}_{}.csv'.format(BDD, date)
+# IN_FILE = 'C:/Py/IN/fin_trv.csv'
+# OUT_FILE = 'C:/Py/OUT/out.csv'
+OUT_FILE = 'C:/Py/OUT/export_RL_{}_{}.csv'.format(BDD, date)
 
 OUT_LEFT = com.TMP_PATH_REQLIST + 'out_l.csv'
 OUT_RIGHT = com.TMP_PATH_REQLIST + 'out_r.csv'
@@ -26,21 +25,21 @@ IN_TEST_L = 'C:/Py/IN/Tests/test_L0.csv'
 IN_TEST_R = 'C:/Py/IN/Tests/test_R0.csv'
 
 GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
-#GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN']
+# GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN']
 # GKO_INSTANCES = ['GKO2_MMN']
 
 MAX_BDD_CNX = 8
-SL_STEP_QUERY = 100
+SL_STEP_QUERY = 10
 NB_MAX_ELT_IN_STATEMENT = 1000
 IN_FIELD_NB = 1
 MAX_DUP_PRINT = 5
 
 SQUEEZE_SQL = False
-SQUEEZE_JOIN = True
+SQUEEZE_JOIN = False
 CHECK_DUP = True
+EXPORT_INSTANCES = False
 OPEN_OUT_FILE = True
 DEBUG_JOIN = False
-EXPORT_INSTANCES = False
 
 VAR_STR = "@@IN1@@"
 TMP_PATH = com.TMP_PATH_REQLIST + BDD + '/'

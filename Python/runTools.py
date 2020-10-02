@@ -2,10 +2,10 @@ from Tools import *
 
 # rbf()
 # sbf()
-# fdup()
+fdup()
 # rdup(2)
 # flt()
 # shuf()
 # split()
 # xml()
-csv_to_xls()
+# csv_to_xls()

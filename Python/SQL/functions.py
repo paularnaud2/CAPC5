@@ -159,10 +159,58 @@ def connect(BDD, th_nb = 1, multi_thread = False, ENV = ''):
 	(cnx_str, conf) = get_cnx_str(BDD, ENV)
 	log_connect_init(th_nb, BDD, conf, multi_thread)
 	cnx = cx.connect(cnx_str)
+	check_mepa(BDD, cnx)
 	log_connect_finish(th_nb, BDD, multi_thread)
 	
 	return cnx
+
+def check_mepa(BDD, cnx):
 	
+	with verrou:
+		if BDD != 'SGE' or gl.CHECK_MEPA:
+			return
+		
+		from datetime import datetime
+		from os.path import exists
+		d_now = str(datetime.now().date()).replace('-', '/')
+		if exists(gl.CHECK_MEPA_DIR):
+			d_old = load_csv(gl.CHECK_MEPA_DIR)[0]
+			if d_now == d_old:
+				gl.CHECK_MEPA = True
+				return
+		else:
+			log("Fichier de vérification MEPA introuvable")
+		
+		log('Vérification MEPA...')
+		d_bdd = get_bdd_date(cnx)
+		if d_bdd == d_now:
+			save_csv([d_now], gl.CHECK_MEPA_DIR)
+			log("Fichier de vérification sauvegardé à l'adresse {}".format(gl.CHECK_MEPA_DIR))
+			log('Vérification MEPA OK')
+		else:
+			print("Attention la BDD SGE spécifiée dans les conf semble ne pas être à jour (conf possiblement modifiées par MEPA).")
+			print("Date BDD : {}".format(d_bdd))
+			print("Date du jour : {}".format(d_now))
+			s = "Continuer ? (o/n)"
+			if input_com(s) == 'n':
+				import sys
+				sys.exit()
+			
+		gl.CHECK_MEPA = True
+
+def get_bdd_date(cnx):
+	
+	c = cnx.cursor()
+	log("Exécution de la requête check MEPA : ")
+	print_com(gl.CHECK_MEPA_QUERY)
+	c.execute(gl.CHECK_MEPA_QUERY)
+	log("Requête exécutée")
+	a = c.fetchone()
+	a = str(a[0]).replace('-', '/')
+	a = a[:10]
+	
+	return a
+
 def init_instant_client():
 	
 	with verrou:

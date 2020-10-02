@@ -19,7 +19,7 @@ def log_prepare(ar, bn_ar):
 	
 	n_dup = len(gl.dup_list)
 	bn_dup = big_number(n_dup)
-	s = "Tableau de gauche préparé et enregistré sous '{}' ({} lignes, {} doublons écartés)"
+	s = "Tableau préparé et enregistré sous '{}' ({} lignes, {} doublons écartés)"
 	log(s.format(ar, bn_ar, bn_dup))
 	
 	if n_dup > 0:

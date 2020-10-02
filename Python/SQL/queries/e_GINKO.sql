@@ -1,26 +1,35 @@
-WITH hierarchie_geo AS (
-	SELECT /*+ INLINE */ ID, ETATOBJET, RANG, TYPEDONNEEGEO, LIBELLE, NUMERO_COMPLEMENT, CODE_HIERARCHIE, MNEMONIQUE_HIERARCHIE, LIBELLE_HIERARCHIE, LIBELLEABREGE_HIERARCHIE, CODEINSEE_HIERARCHIE, MATRICULEVOIE_HIERARCHIE, RANG_HIERARCHIE, TYPEDONNEEGEO_HIERARCHIE, COMPLEMENTNUMERO_HIERARCHIE, TYPEDG_HIERARCHIE, CP_ID_HIERARCHIE, CP_HIERARCHIE, QUALITEDG_HIERARCHIE,
-	length(hgeo.LIBELLE_HIERARCHIE) - length(replace(hgeo.LIBELLE_HIERARCHIE, '|', null)) AS no_niveau
-	FROM gahfld.MV_BATCH_HIERARCHIE_DGEO hgeo
-	WHERE rang = 6
-)
-
-SELECT CODE_INSEE, DR, COUNT(*) VOL
-FROM(
-	SELECT pds.REFERENCE PRM
-	, substr(replace(replace(hgeo.CODEINSEE_HIERARCHIE, '-', ''), 'VIDE', ''), 1, 5) AS "CODE_INSEE"
-	, SUBSTR(dt.LIBELLE, 20) AS DR
-	FROM GAHFLD.TESPACEDELIVRAISON edl
-	JOIN GAHFLD.TPOINTDESERVICE pds ON edl.ID = pds.ESPACEDELIVRAISON_ID
-	JOIN GAHFLD.EDL_DECOUPAGETERRITOIRE edldt ON edldt.SOURCE = edl.ID
-	JOIN GAHFLD.TDECOUPAGETERRITOIRE dt ON (dt.ID = edldt.DEST AND dt.TYPEDECOUPAGETERRITOIRE = '3')
-	LEFT JOIN hierarchie_geo hgeo ON edl.ADRESSE_ID = hgeo.id
+SELECT COUNT(*) VOL, TYPEPDS, ETAT, SOUSETAT, COUPE FROM(
+	SELECT pds.REFERENCE as PDS
+	, CASE
+		WHEN pds.Nature = 2 THEN 'Producteur en Totalité'
+		WHEN pds.ParticularitePDS = 1 THEN 'Producteur en Surplus'
+		WHEN pds.Nature = 1 THEN 'Consommation'
+		ELSE NULL
+		END AS TypePDS
+	, DECODE(pds.ETAT,
+			  '1', 'ne peut être mis en service',
+			  '3', 'hors service',
+			  '4', 'en service',
+			  '5', 'supprimé',
+			  '12', 'non raccordable',
+			  '13', 'raccordable',
+			  'inconnu') as ETAT
+	, DECODE(pds.SOUSETAT,
+			  '1', 'actif',
+			  '2', 'libre service',
+			  '3', 'depose',
+			  '4', 'debranche',
+			  '5', 'debranche au branchement',
+			  '6', 'sans objet',
+			  '7', 'debranche au CCPI',
+			  '8', 'organe compteur ouvert') as SOUSETAT
+	, pds.COUPE
+	FROM GAHFLD.TPOINTDESERVICE pds
 	WHERE 1=1
-	AND pds.ETATOBJET = '0'
-	AND pds.ETAT = '4'
+	AND pds.ETAT <> '5'
+	AND pds.DATESUPPRESSION IS NULL
 	AND pds.REFERENCE NOT LIKE '000%'
-	-- AND pds.REFERENCE IN @@IN1@@
-	-- AND pds.REFERENCE = '07105209825441'
+	AND pds.NATURE = '1'
+	AND ROWNUM <= 1000
 )
-GROUP BY CODE_INSEE, DR
-;
+GROUP BY TYPEPDS, ETAT, SOUSETAT, COUPE
