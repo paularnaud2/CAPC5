@@ -5,7 +5,7 @@ import math
 
 RE_EXP = '<(.*)>(.*)</(.*)>'
 IN_FILE = 'C:/Py/IN/in.xml'
-IN_FILE = 'C:/Py/IN/2020_09_03_SITES.xml'
+IN_FILE = 'C:/Py/IN/2020_09_03_SITES_1.xml'
 OUT_FILE = 'C:/Py/OUT/out.csv'
 SL_STEP_READ = 1000 * 10**3
 SL_STEP_WRITE = 100 * 10**3
@@ -23,17 +23,17 @@ def finish():
 	s = "Parsing terminé. {} lignes écrites en {}."
 	s = s.format(bn, get_duration_string(dur))
 	log(s)
-
+	
 def gen_img_dict():
 	
 	log('Génération du dictionnaire image...')
 	with open(IN_FILE, 'r', encoding='utf-8', errors='ignore') as in_file:
 		gl.counters['read'] = 0
-		line = read_file(in_file)
+		line = read_one_line(in_file)
 		fill_parse_dict(line)
 		init_sl_time()
 		while line != "":
-			line = read_file(in_file)
+			line = read_one_line(in_file)
 			fill_parse_dict(line)
 	
 	even_dict()
@@ -66,13 +66,31 @@ def save_img_dict(dict, out_file_dir, att = 'w'):
 	log("Fichier csv généré à l'adresse {}".format(OUT_FILE))
 	print('')
 
-def read_file(in_file):
+def read_one_line(in_file):
 	
 	line = in_file.readline()
 	gl.counters['read'] += 1
 	step_log(gl.counters['read'], SL_STEP_READ, what = 'lignes traitées')
 	
 	return line
+	
+def fill_parse_dict(str_in):
+	
+	xml_out = get_xml(str_in)
+	if xml_out != []:
+		# print(str_in.strip("\n"))
+		(tag, elt) = xml_out
+		if tag in gl.parse_dict:
+			gl.parse_dict[tag].append(elt)
+		else:
+			(min_size, max_size) = get_sizes(gl.parse_dict)
+			if max_size != 1 and gl.parse_dict != {}: # on rencontre un nouvel élément (absent dans la première boucle)
+				new_col = gen_void_list(max_size - 1)
+				new_col.append(elt)
+				gl.parse_dict[tag] = new_col
+			else:
+				gl.parse_dict[tag] = [elt]
+		complete_dict()
 
 def get_xml(in_str):
 	
@@ -84,19 +102,26 @@ def get_xml(in_str):
 	elt = m.group(2)
 	
 	return (tag, elt)
+
+def gen_void_list(size):
 	
-def fill_parse_dict(str_in):
-	
-	xml_out = get_xml(str_in)
-	if xml_out != []:
-		# print(str_in.strip("\n"))
-		(tag, elt) = xml_out
-		if tag in gl.parse_dict:
-			gl.parse_dict[tag].append(elt)
-		else:
-			gl.parse_dict[tag] = [elt]
-		complete_dict()
+	i = 0
+	out_list = []
+	while i < size:
+		i = i + 1
+		out_list.append('')
 		
+	return out_list
+
+def complete_dict():
+
+	(min_size, max_size) = get_sizes(gl.parse_dict)
+	if max_size - min_size > 1:
+		# print('sizes (min, max) : {}'.format((min_size, max_size)))
+		for elt in gl.parse_dict:
+			if len(gl.parse_dict[elt]) == min_size:
+				gl.parse_dict[elt].append('')
+
 def get_sizes(dict):
 
 	min_size = math.inf
@@ -110,15 +135,6 @@ def get_sizes(dict):
 	
 	return (min_size, max_size)
 	
-def complete_dict():
-
-	(min_size, max_size) = get_sizes(gl.parse_dict)
-	if max_size - min_size > 1:
-		# print('sizes (min, max) : {}'.format((min_size, max_size)))
-		for elt in gl.parse_dict:
-			if len(gl.parse_dict[elt]) == min_size:
-				gl.parse_dict[elt].append('')
-
 def even_dict():
 
 	(min_size, max_size) = get_sizes(gl.parse_dict)
