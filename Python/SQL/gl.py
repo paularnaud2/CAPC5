@@ -7,8 +7,8 @@ ENV = 'PROD'
 # BDD = 'ADAM'
 BDD = 'SGE'
 
-ENV = 'DIRECT'
-BDD = 'CAPC5'
+# ENV = 'DIRECT'
+# BDD = 'CAPC5'
 
 # ENV = 'LOCAL'
 # BDD = 'XE'

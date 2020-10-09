@@ -4,8 +4,8 @@ from os import remove
 from math import ceil
 
 IN_DIR = 'C:/Py/IN/2020_09_03_SITES.xml'
-MAX_LINE = 2*10**6
-MAX_FILE_NB = 1
+MAX_LINE = 2*10**3
+MAX_FILE_NB = 3
 
 def split_file_main(in_dir = IN_DIR, max_line = MAX_LINE, add_header = True, prompt = False, n_line = 0, max_file = MAX_FILE_NB):
 	

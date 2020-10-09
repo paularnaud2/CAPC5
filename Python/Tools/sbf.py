@@ -1,39 +1,20 @@
 from common import *
 import Tools.gl as gl
+from os import startfile
 
-OUT_FILE = 'C:/Py/OUT/out.xml'
-SL_STEP = 200*10**3
+IN_FILE = 'C:/Py/IN/2020_10_07_SITES.xml'
+# IN_FILE = 'C:/Py/IN/2020_09_03_SITES_1.xml'
+OUT_FILE = 'C:/Py/OUT/out_sbf.xml'
+LINE_PER_LINE = True
+LOOK_FOR = '06381331333501'
+# LOOK_FOR = '00001291940930'
+MAX_LIST_SIZE = 5*10**6
+PRINT_SIZE = 100
 BUFFER_SIZE = 100*10**3
-""# Ligne par ligne (R04)
-LINE_PER_LINE = True
-LOOK_FOR = 'VILLAR GHISLAINE'
-IN_FILE = 'C:/Py/IN/Tests/R04'
-MAX_LIST_SIZE = 1000
-""
-"""# Ligne par ligne (test)
-LINE_PER_LINE = True
-IN_FILE = 'C:/Py/IN/Tests/test_sbf_lpl.xml'
-LOOK_FOR = 'PARIS'
-MAX_LIST_SIZE = 10
-"""
-"""# Buffer (C01)
-LINE_PER_LINE = False
-LOOK_FOR = '19380752434029'
-IN_FILE = 'C:/Py/IN/Tests/C01 - 19380752434029.xml'
-MAX_LIST_SIZE = 10
-SL_STEP = 1*10**3
-"""
-"""# Buffer (test)
-LINE_PER_LINE = False
-LOOK_FOR = 'par'
-IN_FILE = 'C:/Py/IN/test_sbf_buf.xml'
-MAX_LIST_SIZE = 4
-BUFFER_SIZE = 10
-"""
+
 def search_big_file():
 
 	init()
-	
 	with open(IN_FILE, 'r', encoding='utf-8', errors='ignore') as in_file:
 		while not gl.bool["EOF"]:
 			fill_cur_list(in_file)
@@ -60,14 +41,16 @@ def init():
 	log(s)
 
 def finish():
-
+	
 	if gl.bool["found"]:
-		command = input('\n' + "Imprimer la liste courante contenant la chaîne trouvée dans le fichier de sortie ? (o/n)")
-		print("")
-		if command == 'o':
-			save_list(gl.cur_list, OUT_FILE)
-			s = "Liste courante écrite dans le fichier '{}'"
-			log(s.format(OUT_FILE))
+		lowI = gl.counters["row"] - PRINT_SIZE // 2
+		if lowI < 0:
+			lowI = 0
+		highI = gl.counters["row"] + PRINT_SIZE // 2
+		save_list(gl.cur_list[lowI:highI], OUT_FILE)
+		s = "Liste courante écrite dans le fichier '{}'"
+		log(s.format(OUT_FILE))
+		startfile(OUT_FILE)
 	else:
 		s = "Fichier entier parcouru ({} lignes, {} listes temporaires), chaîne de caractère '{}' introuvable"
 		log(s.format(big_number(gl.counters["main"]), gl.counters["list"], LOOK_FOR))
@@ -134,7 +117,6 @@ def search_cur_list():
 	for elt in gl.cur_list:
 		i += 1
 		gl.counters["main"] += 1
-		step_log(gl.counters["main"], SL_STEP, gl.txt["sl_string"], BUFFER_SIZE)
 		j = elt.find(LOOK_FOR)
 		if j != -1:
 			found_msg(i, j)
@@ -148,6 +130,7 @@ def search_cur_list():
 def found_msg(i, j):
 	
 	bn = big_number(gl.counters["main"])
+	gl.counters["row"] = i
 	if LINE_PER_LINE:
 		s = "Chaîne trouvée à la {}ème ligne de la liste tampon No.{} (ligne globale No.{}) ligne en position {} !"
 		log(s.format(big_number(i), gl.counters["list"], bn, j+1))

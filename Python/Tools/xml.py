@@ -1,11 +1,12 @@
 import re
 import Tools.gl as gl
 from common import *
+import common as com
 import math
 
 RE_EXP = '<(.*)>(.*)</(.*)>'
 IN_FILE = 'C:/Py/IN/in.xml'
-IN_FILE = 'C:/Py/IN/2020_09_03_SITES_1.xml'
+IN_FILE = 'C:/Py/IN/2020_10_07_SITES.xml'
 OUT_FILE = 'C:/Py/OUT/out.csv'
 SL_STEP_READ = 1000 * 10**3
 SL_STEP_WRITE = 100 * 10**3
@@ -39,9 +40,6 @@ def gen_img_dict():
 	even_dict()
 	log('Dictionnaire image généré.')
 	print('')
-	# print('Impression du dictionnaire :')
-	# print_dict(gl.parse_dict)
-	
 
 def save_img_dict(dict, out_file_dir, att = 'w'):
 	
@@ -100,6 +98,7 @@ def get_xml(in_str):
 	
 	tag = m.group(1)
 	elt = m.group(2)
+	elt = elt.replace(com.CSV_SEPARATOR, '')
 	
 	return (tag, elt)
 

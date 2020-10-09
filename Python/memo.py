@@ -202,6 +202,7 @@ os.rename(source, target) # renommer un fichier
 folders = [f[0] for f in os.walk(package_path)] # lister des dossiers
 files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
 os.exists(dir) # vérifier l'existence d'un fichier
+os.startfile(dir) # lancer un fichier avec l'appli par défaut
 
 # Enregistrement et chargement d'objets dans des fichiers
 import pickle
