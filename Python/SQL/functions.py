@@ -95,7 +95,7 @@ def process_query(c, query, elt, th_nb):
 	
 def group_by():
 	
-	if not gl.bools["MERGE_OK"]:
+	if not gl.bools["MERGE_OK"] or not gl.bools['RANGE_QUERY']:
 		return
 	
 	out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE

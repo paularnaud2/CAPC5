@@ -30,6 +30,7 @@ SELECT pds.REFERENCE as PDS
 		  '3', 'absence relève',
 		  '5', 'suspension contractuelle',
 		  'inconnu') as RAISONCOUPURE
+, SUBSTR(pds.PALIERTECHNIQUE, 4, 2) P_RAC
 , pds.NBCADRANSCOMPTEUR
 , pds.TECHNOLOGIETELERELEVE
 , pds.ELIGIBILITEDEPLOIEMENTAMMMASSE
@@ -59,7 +60,7 @@ SELECT pds.REFERENCE as PDS
 		  '5', 'cessation partielle',
 		  '8', 'annulé',
 		  'inconnu') as STATUT
-, srv.PUISSANCESOUSCRITE1_VALUE as PS
+, REPLACE(srv.PUISSANCESOUSCRITE1_VALUE,'.',',') PS
 , op.LIBELLE as OFFRE_PRODUIT, act.NOM as FOURNISSEUR
 , cafo.REFERENCE as CALENDRIER
 , dga.LIBELLE as DG_ACTIVE, dgp.LIBELLE as DG_PROGRAMMEE, dgf.LIBELLE as DG_FUTURE

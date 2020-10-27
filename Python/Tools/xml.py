@@ -6,7 +6,7 @@ import math
 
 RE_EXP = '<(.*)>(.*)</(.*)>'
 IN_FILE = 'C:/Py/IN/in.xml'
-IN_FILE = 'C:/Py/IN/2020_10_07_SITES.xml'
+IN_FILE = 'C:/Py/IN/2020_09_03_SITES.xml'
 OUT_FILE = 'C:/Py/OUT/out.csv'
 SL_STEP_READ = 1000 * 10**3
 SL_STEP_WRITE = 100 * 10**3

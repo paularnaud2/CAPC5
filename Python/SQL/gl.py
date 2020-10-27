@@ -7,8 +7,8 @@ ENV = 'PROD'
 # BDD = 'ADAM'
 BDD = 'SGE'
 
-# ENV = 'DIRECT'
-# BDD = 'CAPC5'
+ENV = 'DIRECT'
+BDD = 'CAPC5'
 
 # ENV = 'LOCAL'
 # BDD = 'XE'
@@ -29,20 +29,21 @@ GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GK
 #GKO_INSTANCES = ['GKO1_IDF']
 EXPORT_INSTANCES = False
 
+MAX_BDD_CNX = 10
+MERGE_RG_FILES = True
+EXPORT_RANGE = False
+
 MAX_CHECK_DUP = 1*10**6
 CHECK_DUP = True
-MAX_BDD_CNX = 8
 OPEN_OUT_FILE = True
 
-MERGE_RG_FILES = True
 RANGE_FIELD = "RANGE"
-EXPORT_RANGE = False
 LEFT_DEL = "" # "\""
 RIGHT_DEL = "" # "\""
 PARALLEL = True
 
-CONF_FILE = 'C:/oracle/conf_perso.txt'
-ORACLE_CLIENT = 'C:/instantclient_19_6'
+ORACLE_CLIENT = 'C:/instantclient_19_6/'
+CONF_FILE = ORACLE_CLIENT + 'conf_perso.txt'
 CHECK_MEPA = False
 CHECK_MEPA_DIR = com.TMP_PATH_SQL + 'last_mepa_check.csv'
 CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'

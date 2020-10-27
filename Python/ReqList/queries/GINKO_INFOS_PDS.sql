@@ -9,6 +9,7 @@ FROM
 	SELECT pds.REFERENCE as POINT
 		, TO_CHAR(ctr.DATEEFFET, 'DD/MM/YYYY') DATE_DEBUT_SCN_GKO
 		, TO_CHAR(pds.DATEMODIFICATION, 'DD/MM/YYYY') DATE_MODIF_GKO
+		, SUBSTR(pds.PALIERTECHNIQUE, 4, 2)  P_RAC
 		, DECODE(ctr.EXTRAITSERVICESSOUSCRIT
 			, 'CUSDT', 'CUST'
 			, 'MUADT', 'MUDT'
@@ -16,7 +17,16 @@ FROM
 			, 'LUSDT', 'LU'
 			, 'CUADT4', 'CU4'
 			, 'MUADT4', 'MU4')as FTA_GKO
-		, srv.PUISSANCESOUSCRITE1_VALUE as PS_GKO
+		, DECODE(ctr.STATUTEXTRAIT,
+		  '0', 'en cours de souscription',
+		  '1', 'actif',
+		  '2', 'en cours de modification',
+		  '3', 'en cours de cessation',
+		  '4', 'cessé',
+		  '5', 'cessation partielle',
+		  '8', 'annulé',
+		  'inconnu') as STATUT
+		, REPLACE(srv.PUISSANCESOUSCRITE1_VALUE,'.',',') PS
 		, act.NOM FRN_GKO
 		, DENSE_RANK() OVER (PARTITION BY pds.REFERENCE ORDER BY ctr.STATUTEXTRAIT, srv.STATUT) as RANG
 	FROM GAHFLD.TESPACEDELIVRAISON edl

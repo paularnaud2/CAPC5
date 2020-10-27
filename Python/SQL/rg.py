@@ -92,7 +92,7 @@ def move_tmp_folder():
 	log('Dossier de sortie créé')
 	
 	file_list = get_file_list(gl.TMP_PATH)
-	log('Déplacement de {} fichiers vers les dossier de sortie...'.format(len(file_list)))
+	log('Déplacement de {} fichiers vers le dossier de sortie...'.format(len(file_list)))
 	for elt in file_list:
 		cur_dir = gl.TMP_PATH + elt
 		target_dir = out_dir + elt
