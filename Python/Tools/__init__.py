@@ -32,6 +32,11 @@ def split():
 	from Tools.split import split_file_main
 	com.LOG_OUTPUT = False
 	split_file_main(add_header = False, prompt = False)
+
+def merge():
+	from Tools.merge import merge_files_main
+	com.LOG_OUTPUT = False
+	merge_files_main()
 	
 def sort():
 	from Tools.sort import sort_csv_file_main

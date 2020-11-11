@@ -2,11 +2,11 @@ from common import *
 import Tools.gl as gl
 from Tools.split import split_file_main
 
-IN_FILE = 'C:/Py/OUT/out.csv'
+IN_FILE = 'C:/Py/OUT/export_RL_SGE_20201106.csv'
 SL_STEP = 500*10**3
 OUT_FILE = 'C:/Py/OUT/out_filtered.csv'
-FILTER = True
-EXTRACT_COL = False
+FILTER = False
+EXTRACT_COL = True
 MAX_LINE_SPLIT = 300*10**3
 fields = {}
 
@@ -59,10 +59,18 @@ def extract_col(line):
 	if EXTRACT_COL == False:
 		return line
 	
-	new_line = [line[fields['RAE']]\
-	, line[fields['raisonSociale']]\
-	, line[fields['typeCompteur']]\
-	, line[fields['optionTarifaire']]]
+	new_line = [line[fields['PRM']]\
+	, line[fields['AFFAIRE']]\
+	, line[fields['SI']]\
+	, line[fields['PRESTATION']]\
+	, line[fields['STATUT']]\
+	, line[fields['ETAT_EXTERNE']]\
+	, line[fields['FOURNISSEUR']]\
+	, line[fields['DATE_DEMANDE']]\
+	, line[fields['DATE_EFFET']]\
+	, line[fields['PS_INIT']]\
+	, line[fields['PS_CIBLE']]\
+	]
 	
 	return new_line
 

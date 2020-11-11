@@ -1,15 +1,20 @@
 import re
 import Tools.gl as gl
+import os
 from common import *
 import common as com
 import math
 
-RE_EXP = '<(.*)>(.*)</(.*)>'
+RE_EXP_TAG_ELT = '<(.*)>(.*)</(.*)>'
+RE_EXP_SUB_TAG = '<([a-z][^<]*[a-z])>$'
 IN_FILE = 'C:/Py/IN/in.xml'
-IN_FILE = 'C:/Py/IN/2020_09_03_SITES.xml'
+IN_FILE = 'C:/Py/IN/Enedis_APR_20201101_115205318.xml'
 OUT_FILE = 'C:/Py/OUT/out.csv'
 SL_STEP_READ = 1000 * 10**3
 SL_STEP_WRITE = 100 * 10**3
+FIRST_TAG = ''
+SUB_TAG = ''
+MULTI_TAG_LIST = ['libelle', 'civilite', 'nom', 'prenom', 'telephone1Num', 'adresseEmail']
 
 def parse_xml():
 	
@@ -24,10 +29,11 @@ def finish():
 	s = "Parsing terminé. {} lignes écrites en {}."
 	s = s.format(bn, get_duration_string(dur))
 	log(s)
+	os.startfile(OUT_FILE)
 	
 def gen_img_dict():
 	
-	log('Génération du dictionnaire image...')
+	log('Génération du dictionnaire image à partir du fichier {}...'.format(IN_FILE))
 	with open(IN_FILE, 'r', encoding='utf-8', errors='ignore') as in_file:
 		gl.counters['read'] = 0
 		line = read_one_line(in_file)
@@ -73,12 +79,15 @@ def read_one_line(in_file):
 	return line
 	
 def fill_parse_dict(str_in):
+	global FIRST_TAG
 	
 	xml_out = get_xml(str_in)
 	if xml_out != []:
-		# print(str_in.strip("\n"))
 		(tag, elt) = xml_out
+		if tag in MULTI_TAG_LIST:
+			tag = tag + '_' + SUB_TAG
 		if tag in gl.parse_dict:
+			
 			gl.parse_dict[tag].append(elt)
 		else:
 			(min_size, max_size) = get_sizes(gl.parse_dict)
@@ -88,16 +97,26 @@ def fill_parse_dict(str_in):
 				gl.parse_dict[tag] = new_col
 			else:
 				gl.parse_dict[tag] = [elt]
-		complete_dict()
+				if len(gl.parse_dict) == 1:
+					FIRST_TAG = tag
+		
+		if tag == FIRST_TAG:
+			complete_dict()
 
 def get_xml(in_str):
+	global SUB_TAG
 	
-	m = re.search(RE_EXP, in_str)
-	if m is None:
+	m1 = re.search(RE_EXP_TAG_ELT, in_str)
+	m2 = re.search(RE_EXP_SUB_TAG, in_str)
+	
+	if not m2 is None:
+		SUB_TAG = m2.group(1)
+		
+	if m1 is None:
 		return []
 	
-	tag = m.group(1)
-	elt = m.group(2)
+	tag = m1.group(1)
+	elt = m1.group(2)
 	elt = elt.replace(com.CSV_SEPARATOR, '')
 	
 	return (tag, elt)
@@ -122,7 +141,7 @@ def complete_dict():
 				gl.parse_dict[elt].append('')
 
 def get_sizes(dict):
-
+	
 	min_size = math.inf
 	max_size = 0
 	for elt in dict:

@@ -14,10 +14,9 @@ BDD = 'SGE'
 date = com.get_date().replace('-', '')
 QUERY_FILE = 'ReqList/queries/e_RL.sql'
 IN_FILE = 'C:/Py/IN/in.csv'
-# IN_FILE = 'C:/Py/IN/pdl_fin_trv_0903.csv'
-# IN_FILE = 'C:/Py/IN/pdl_fin_trv_1007.csv'
 IN_FILE = 'C:/Py/IN/perimetre_fin_trv.csv'
-# OUT_FILE = 'C:/Py/OUT/out.csv'
+# IN_FILE = 'C:/Py/IN/perimetre_aff_full.csv'
+OUT_FILE = 'C:/Py/OUT/out.csv'
 OUT_FILE = 'C:/Py/OUT/export_RL_{}_{}.csv'.format(BDD, date)
 
 OUT_LEFT = com.TMP_PATH_REQLIST + 'out_l.csv'
@@ -31,9 +30,9 @@ GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GK
 # GKO_INSTANCES = ['GKO2_MMN']
 EXPORT_INSTANCES = False
 
-MAX_BDD_CNX = 10
-SQUEEZE_JOIN = False
-SQUEEZE_SQL = True
+MAX_BDD_CNX = 8
+SQUEEZE_JOIN = True
+SQUEEZE_SQL = False
 CHECK_DUP = True
 SL_STEP_QUERY = 10
 NB_MAX_ELT_IN_STATEMENT = 1000
