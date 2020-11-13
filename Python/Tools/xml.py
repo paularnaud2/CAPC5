@@ -7,14 +7,15 @@ import math
 
 RE_EXP_TAG_ELT = '<(.*)>(.*)</(.*)>'
 RE_EXP_SUB_TAG = '<([a-z][^<]*[a-z])>$'
-IN_FILE = 'C:/Py/IN/in.xml'
-IN_FILE = 'C:/Py/IN/Enedis_APR_20201101_115205318.xml'
+IN_FILE = 'C:/Py/IN/in - test.xml'
+# IN_FILE = 'C:/Py/IN/Enedis_APR_20201101_115205318.xml'
 OUT_FILE = 'C:/Py/OUT/out.csv'
 SL_STEP_READ = 1000 * 10**3
 SL_STEP_WRITE = 100 * 10**3
 FIRST_TAG = ''
 SUB_TAG = ''
-MULTI_TAG_LIST = ['libelle', 'civilite', 'nom', 'prenom', 'telephone1Num', 'adresseEmail']
+MULTI_TAG_LIST = ['libelle', 'civilite', 'nom', 'prenom', 'telephone1Num', 'telephone2Num', 'adresseEmail']
+N_ROW = 0
 
 def parse_xml():
 	
@@ -50,7 +51,6 @@ def gen_img_dict():
 def save_img_dict(dict, out_file_dir, att = 'w'):
 	
 	log('Sauvegarde du dictionnaire au format csv...')
-	(min_size, max_size) = get_sizes(gl.parse_dict)
 	header = []
 	for elt in dict:
 		header.append(elt)
@@ -59,7 +59,7 @@ def save_img_dict(dict, out_file_dir, att = 'w'):
 		write_csv_line(header, out_file)
 		init_sl_time()
 		gl.counters['write'] = 0
-		while gl.counters['write'] < max_size:
+		while gl.counters['write'] < N_ROW:
 			cur_row = []
 			for elt in dict:
 				cur_row.append(dict[elt][gl.counters['write']])
@@ -79,7 +79,7 @@ def read_one_line(in_file):
 	return line
 	
 def fill_parse_dict(str_in):
-	global FIRST_TAG
+	global FIRST_TAG, N_ROW
 	
 	xml_out = get_xml(str_in)
 	if xml_out != []:
@@ -87,21 +87,20 @@ def fill_parse_dict(str_in):
 		if tag in MULTI_TAG_LIST:
 			tag = tag + '_' + SUB_TAG
 		if tag in gl.parse_dict:
-			
 			gl.parse_dict[tag].append(elt)
+			if tag == FIRST_TAG:
+				N_ROW += 1
+				complete_dict()
 		else:
-			(min_size, max_size) = get_sizes(gl.parse_dict)
-			if max_size != 1 and gl.parse_dict != {}: # on rencontre un nouvel élément (absent dans la première boucle)
-				new_col = gen_void_list(max_size - 1)
+			if N_ROW > 1 and gl.parse_dict != {}: # on rencontre un nouvel élément (absent dans la première boucle)
+				new_col = gen_void_list(N_ROW - 1)
 				new_col.append(elt)
 				gl.parse_dict[tag] = new_col
 			else:
 				gl.parse_dict[tag] = [elt]
 				if len(gl.parse_dict) == 1:
 					FIRST_TAG = tag
-		
-		if tag == FIRST_TAG:
-			complete_dict()
+					N_ROW = 1
 
 def get_xml(in_str):
 	global SUB_TAG
@@ -133,31 +132,19 @@ def gen_void_list(size):
 
 def complete_dict():
 
-	(min_size, max_size) = get_sizes(gl.parse_dict)
-	if max_size - min_size > 1:
-		# print('sizes (min, max) : {}'.format((min_size, max_size)))
-		for elt in gl.parse_dict:
-			if len(gl.parse_dict[elt]) == min_size:
-				gl.parse_dict[elt].append('')
-
-def get_sizes(dict):
-	
-	min_size = math.inf
-	max_size = 0
-	for elt in dict:
-		cur_l = len(dict[elt])
-		if cur_l < min_size:
-			min_size = cur_l
-		if cur_l > max_size:
-			max_size = cur_l
-	
-	return (min_size, max_size)
+	for tag in gl.parse_dict:
+		l = len(gl.parse_dict[tag])
+		if l < N_ROW - 1:
+			gl.parse_dict[tag].append('')
+		elif l >= N_ROW and tag != FIRST_TAG:
+			s = "Attention, la balise '{}' apparaît en doublon (id = {}). Elle doit être ajoutée à la liste 'MULTI_TAG_LIST'"
+			print(s.format(tag, gl.parse_dict[FIRST_TAG][N_ROW-3]))
+			import sys
+			sys.exit()
 	
 def even_dict():
 
-	(min_size, max_size) = get_sizes(gl.parse_dict)
-	if max_size - min_size > 0:
-		# print('sizes (min, max) : {}'.format((min_size, max_size)))
-		for elt in gl.parse_dict:
-			while len(gl.parse_dict[elt]) < max_size:
-				gl.parse_dict[elt].append('')
+	for tag in gl.parse_dict:
+		n = len(gl.parse_dict[tag])
+		if n < N_ROW:
+			gl.parse_dict[tag].append('')
