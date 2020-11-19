@@ -7,7 +7,7 @@ from os import startfile
 
 def run_reqList(**params):
 	
-	log("Package reqList - Début du traitement\n", print_date = True)
+	log("Package reqList - Début du traitement", print_date = True)
 	start_time = time()
 	init_params(params)
 	#ar_left = load_csv (gl.IN_TEST_L)
@@ -55,7 +55,6 @@ def run_reqList(**params):
 def init_params (params):
 	if len(params) > 0:
 		log("Initialisation des paramètres")
-		print(params)
 		for key in params:
 			a = gl.__getattribute__(key)
 			gl.__setattr__(key, params[key])

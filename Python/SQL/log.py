@@ -25,11 +25,11 @@ def log_process_query_finish(elt, th_nb):
 def log_connect_init(th_nb, BDD, conf, multi_thread):
 
 	if multi_thread == False:
-		s = "Connexion à la base {} avec le TNS {}..."
-		s = s.format(BDD, conf["TNS_NAME"])
+		s = "Connexion à la base {}..."
+		s = s.format(BDD)
 	else:
-		s = "Connexion à la base {} avec le TNS {} (pool No.{})..."
-		s = s.format(BDD, conf["TNS_NAME"], th_nb)
+		s = "Connexion à la base {} (pool No.{})..."
+		s = s.format(BDD, th_nb)
 	log(s)
 
 def log_connect_finish(th_nb, BDD, multi_thread):

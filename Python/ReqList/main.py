@@ -3,7 +3,7 @@ from ReqList.functions import *
 from ReqList.join import *
 from ReqList.strd import get_sql_array_out_strd
 from ReqList.gko import get_sql_array_out_ginko
-import SQL.init as sql
+from SQL.init import init
 from common import *
 import common as com
 
@@ -17,7 +17,7 @@ def get_sql_array(array_in, BDD, query_file):
 
 def get_export(BDD):
 	
-	sql.init()
+	init()
 	print_com("|")
 	log("Récupération de l'export SQL...")
 	gl.header = ''

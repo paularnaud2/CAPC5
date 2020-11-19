@@ -63,3 +63,7 @@ out_files = {}
 th_dic = {}
 query = ''
 is_init = False
+
+# Execute
+TABLE_NAME = ''
+IN_DIR = ''
