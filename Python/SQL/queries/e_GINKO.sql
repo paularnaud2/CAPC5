@@ -1,35 +1,30 @@
-SELECT COUNT(*) VOL, TYPEPDS, ETAT, SOUSETAT, COUPE FROM(
-	SELECT pds.REFERENCE as PDS
-	, CASE
-		WHEN pds.Nature = 2 THEN 'Producteur en Totalité'
-		WHEN pds.ParticularitePDS = 1 THEN 'Producteur en Surplus'
-		WHEN pds.Nature = 1 THEN 'Consommation'
-		ELSE NULL
-		END AS TypePDS
-	, DECODE(pds.ETAT,
-			  '1', 'ne peut être mis en service',
-			  '3', 'hors service',
-			  '4', 'en service',
-			  '5', 'supprimé',
-			  '12', 'non raccordable',
-			  '13', 'raccordable',
-			  'inconnu') as ETAT
-	, DECODE(pds.SOUSETAT,
-			  '1', 'actif',
-			  '2', 'libre service',
-			  '3', 'depose',
-			  '4', 'debranche',
-			  '5', 'debranche au branchement',
-			  '6', 'sans objet',
-			  '7', 'debranche au CCPI',
-			  '8', 'organe compteur ouvert') as SOUSETAT
-	, pds.COUPE
-	FROM GAHFLD.TPOINTDESERVICE pds
+--SELECT *
+SELECT POINT
+FROM
+(
+	SELECT pds.REFERENCE as POINT
+		, DENSE_RANK() OVER (PARTITION BY pds.REFERENCE ORDER BY ctr.STATUTEXTRAIT, srv.STATUT) as RANG
+		--, srv.ID ID_SRV, ctr.ID ID_CTR, paca.ID ID_PACA, cafo.ID ID_CAFO
+		--, paca.*
+	FROM GAHFLD.TESPACEDELIVRAISON edl
+		JOIN GAHFLD.TPOINTDESERVICE pds ON edl.ID = pds.ESPACEDELIVRAISON_ID
+		JOIN GAHFLD.CONTRAT_ESPACESDELIVRAISON ce ON edl.ID = ce.DEST
+		JOIN GAHFLD.TCONTRAT ctr ON ce.SOURCE = ctr.ID
+		JOIN GAHFLD.TSERVICESOUSCRIT srv ON ctr.ID = srv.CONTRAT_ID
 	WHERE 1=1
-	AND pds.ETAT <> '5'
-	AND pds.DATESUPPRESSION IS NULL
-	AND pds.REFERENCE NOT LIKE '000%'
-	AND pds.NATURE = '1'
-	AND ROWNUM <= 1000
+		AND pds.ETAT <> '5'
+		AND pds.DATESUPPRESSION IS NULL
+		AND pds.REFERENCE NOT LIKE '000%'
+		AND pds.NATURE = '2'
+		AND ctr.DATEFIN IS NULL
+		AND ctr.STATUTEXTRAIT IN ('1', '2', '3')
+		AND ctr.EXTRAITSERVICESSOUSCRIT = 'injection'
+		AND srv.DATEFIN IS NULL
+		AND srv.ROLE = 'com.hermes.crm.contrat.businessobject.ServiceSouscritAcheminementElecBTInf36'
+		--AND ctr.EXTRAITSERVICESSOUSCRIT = 'LUSDT'
+		--AND srv.USAGE = 'PARTSEC'
+		--AND pds.REFERENCE IN ('21154847994199', '21135889968033')
+		--AND pds.REFERENCE LIKE '211%'
+		--AND ROWNUM < 11
 )
-GROUP BY TYPEPDS, ETAT, SOUSETAT, COUPE
+WHERE RANG = '1'

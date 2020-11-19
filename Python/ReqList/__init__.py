@@ -1,30 +1,29 @@
 from common import *
 init_log('ReqList')
-
 import ReqList.gl as gl
 from ReqList.main import *
 import Tools.dup as dup
 from os import startfile
 
-def run_reqList(BDD = gl.BDD, query_file = gl.QUERY_FILE, in_dir = gl.IN_FILE, out_dir = gl.OUT_FILE):
+def run_reqList(**params):
 	
 	log("Package reqList - Début du traitement\n", print_date = True)
 	start_time = time()
-	
+	init_params(params)
 	#ar_left = load_csv (gl.IN_TEST_L)
 	#ar_right = load_csv (gl.IN_TEST_R)
 	log("Chargement du tableau de gauche...")
-	ar_left = load_csv (in_dir)
+	ar_left = load_csv (gl.IN_FILE)
 	log("Tableau de gauche chargé\n|")
 	if not gl.SQUEEZE_SQL:
-		export = get_sql_array(ar_left, BDD, query_file)
+		export = get_sql_array(ar_left, gl.BDD, gl.QUERY_FILE)
 		log("Sauvegarde de l'export SQL...")
 		if not gl.SQUEEZE_JOIN:
 			save_csv(export, gl.OUT_SQL)
 			s = "Export SQL sauvegardé"
 		else:
-			save_csv(export, out_dir)
-			s = "Export SQL sauvegardé à l'adresse {}".format(out_dir)
+			save_csv(export, gl.OUT_FILE)
+			s = "Export SQL sauvegardé à l'adresse {}".format(gl.OUT_FILE)
 		del export
 		log(s)
 	
@@ -36,12 +35,12 @@ def run_reqList(BDD = gl.BDD, query_file = gl.QUERY_FILE, in_dir = gl.IN_FILE, o
 		del ar_left
 		del ar_right
 		log("Sauvegarde du fichier de sortie...")
-		save_csv(gl.out_array, out_dir)
-		log("Fichier de sortie sauvegardé à l'adresse '{}'".format(out_dir))
+		save_csv(gl.out_array, gl.OUT_FILE)
+		log("Fichier de sortie sauvegardé à l'adresse '{}'".format(gl.OUT_FILE))
 		del gl.out_array
 	
 	if gl.CHECK_DUP:
-		dup.check_dup_key(out_dir)
+		dup.check_dup_key(gl.OUT_FILE)
 	
 	print_com("")
 	s = "Exécution terminée en {}"
@@ -51,4 +50,12 @@ def run_reqList(BDD = gl.BDD, query_file = gl.QUERY_FILE, in_dir = gl.IN_FILE, o
 	send_notif(s, "ReqList", duration)
 	print_com("")
 	if gl.OPEN_OUT_FILE:
-		startfile(out_dir)
+		startfile(gl.OUT_FILE)
+		
+def init_params (params):
+	if len(params) > 0:
+		log("Initialisation des paramètres")
+		print(params)
+		for key in params:
+			a = gl.__getattribute__(key)
+			gl.__setattr__(key, params[key])

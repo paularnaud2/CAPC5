@@ -5,6 +5,7 @@ import QDD.gl
 from QDD.main import *
 from QDD.init import set_dirs
 from Tools.split import split_file_main
+import os
 
 def runQDD():
 	
@@ -16,7 +17,7 @@ def runQDD():
 	sort_file(dirs["in1"], dirs["out1"], True, 1)
 	sort_file(dirs["in2"], dirs["out2"], True, 2)
 	compare_sorted_files_main(dirs["out1"], dirs["out2"], dirs["out"])
-	split_file_main(dirs["out"], gl.MAX_LINE_SPLIT, True, True, gl.counters["out"])
+	# split_file_main(dirs["out"], gl.MAX_LINE_SPLIT, True, True, gl.counters["out"])
 	
 	s = "Exécution terminée en {}"
 	duration = get_duration_ms(start_time)
@@ -24,3 +25,4 @@ def runQDD():
 	log(s)
 	send_notif(s, "QDD", duration)
 	print_com("")
+	os.startfile(dirs["out"])

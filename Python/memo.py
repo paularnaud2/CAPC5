@@ -201,7 +201,7 @@ os.makedirs(LOG_OUT) # créer une arborescence
 os.rename(source, target) # renommer un fichier
 folders = [f[0] for f in os.walk(package_path)] # lister des dossiers
 files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
-os.exists(dir) # vérifier l'existence d'un fichier
+os.path.exists(dir) # vérifier l'existence d'un fichier
 os.startfile(dir) # lancer un fichier avec l'appli par défaut
 
 # Enregistrement et chargement d'objets dans des fichiers
@@ -216,3 +216,7 @@ with open('donnees', 'rb') as fichier:
 # Divers=======================================================================
 import sys
 sys.exit() # arrêter un script
+gl = __import__('ReqList.' + gl_file, fromlist=[None]) # importer un sous module avec la fonction spéciale __import__
+def run_reqList(**params): # les noms/valeurs sont convertis en dictionnaire params
+a = gl.__getattribute__(key) # récupérer un attribut depuis une string
+gl.__setattr__(key, params[key]) # valoriser un attribut depuis une string

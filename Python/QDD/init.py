@@ -95,13 +95,13 @@ def init_equal_diff_bool():
 	if gl.EQUAL_OUT:
 		if gl.counters["sf_read"] <= gl.MAX_ROW_EQUAL_OUT:
 			gl.bool["EQUAL"] = True
-			gl.bool["DIFF"] = gl.FULL_OUT
+			gl.bool["DIFF"] = gl.DIFF_OUT
 		else:
 			s = "Attention les fichiers à comparer dépassent les {} lignes et le paramètre EQUAL_OUT est activé.".format(big_number(gl.MAX_ROW_EQUAL_OUT))
 			s = s + "\nÉcrire les champs égaux dans le fichier de sortie ? (o/n)"
 			if input_com(s) == "o":
 				gl.bool["EQUAL"] = True
-				gl.bool["DIFF"] = gl.FULL_OUT
+				gl.bool["DIFF"] = gl.DIFF_OUT
 			else:
 				gl.bool["EQUAL"] = False
 				gl.bool["DIFF"] = True

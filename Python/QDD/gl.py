@@ -2,10 +2,10 @@
 from time import time
 import common as com
 
-# IN_FILE_1 = 'SGE'
+IN_FILE_1 = 'SGE'
 # IN_FILE_1 = 'OLD'
 IN_FILE_2 = 'GINKO'
-IN_FILE_2 = 'NEW'
+# IN_FILE_2 = 'NEW'
 
 MAX_ROW_LIST = 12*10**6
 SL_STEP = 5*10**6
@@ -14,8 +14,8 @@ MAX_LINE_SPLIT = 900*10**3
 COMPARE_FIELD_NB = 1
 COMPARE_SEPARATOR = '|'
 
-EQUAL_OUT = True
-FULL_OUT = True
+EQUAL_OUT = False # écrire les lignes égales dans le fichier de sortie
+DIFF_OUT = False # écrire les lignes différentes dans le fichier de sortie (prend effet uniquement si EQUAL_OUT = True)
 EQUAL_LABEL = 'E'
 
 FILE_TYPE = '.csv'
