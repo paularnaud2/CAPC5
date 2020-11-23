@@ -6,7 +6,7 @@ import common as com
 # Définition des variables
 date = str(datetime.now())[0:19].replace(':', '').replace(' ', '').replace('-', '')
 in_file = 'C:/Py/IN/perimetre_aff_full.csv'
-in_file = 'C:/Py/IN/in_test.csv'
+# in_file = 'C:/Py/IN/in_test.csv'
 out_file = f'C:/Py/OUT/out_AFF_FULL_FIN_TRV_{date}.csv'
 table_name = f'PY_{date}'
 

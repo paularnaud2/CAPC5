@@ -319,6 +319,8 @@ def gen_sl_detail(range_name, th_nb = 1, what = 'la plage', multi_thread = False
 	return th_name
 
 def step_log(counter, step, what = 'lignes écrites', nb = 0, th_name = 'DEFAULT'):
+	# Pour une utilisation simple, initialiser avec init_sl_time()
+	# Pour une utilisation multi_thread, initialiser avec gen_sl_detail(range_name)
 	global sl_time_dict
 	
 	if counter % step != 0:
@@ -351,6 +353,17 @@ def init_sl_time(th_name = 'DEFAULT'):
 	
 	with verrou:
 		sl_time_dict[th_name] = time()
+
+def split_array(array_in, max_elt):
+	array_out = []
+	cur_array = array_in[0:max_elt]
+	i = 0
+	while cur_array != []:
+		i += 1
+		array_out.append(cur_array)
+		cur_array = array_in[max_elt*i:max_elt*(i+1)]
+	
+	return array_out
 
 def count_lines(in_dir):
 	

@@ -65,5 +65,6 @@ query = ''
 is_init = False
 
 # Execute
-TABLE_NAME = ''
-IN_DIR = ''
+TABLE_NAME = 'TABLE'
+IN_DIR = 'C:/Py/OUT/in.csv'
+NB_MAX_ELT_INSERT = 100000

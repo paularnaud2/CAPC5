@@ -127,8 +127,6 @@ def finish():
 	s = "Export terminé. {} lignes écrites en {}."
 	s = s.format(bn, get_duration_string(dur))
 	log(s)
-	s = "Export {} terminé.\n{} lignes écrites en {}."
-	s = s.format(gl.BDD, bn, get_duration_string(dur))
 	
 	if gl.bools["MERGE_OK"]:
 		out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE

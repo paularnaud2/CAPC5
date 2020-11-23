@@ -12,10 +12,6 @@ def init():
 	set_conf()
 	get_query()
 	
-	# print_dict(gl.conf)
-	# print_dict(gl.conf_env)
-	# breakpoint()
-	
 def init_gko():
 	
 	print_com("Réquête exécutée pour toutes les instances :\n{}\n;".format(gl.query))
