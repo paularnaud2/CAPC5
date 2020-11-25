@@ -65,6 +65,8 @@ query = ''
 is_init = False
 
 # Execute
-TABLE_NAME = 'TABLE'
+SCRIPT_FILE = 'SQL/scripts/create_table_aff.sql'
+VAR_DICT = {}
 IN_DIR = 'C:/Py/OUT/in.csv'
 NB_MAX_ELT_INSERT = 100000
+PROC = False

@@ -47,7 +47,8 @@ def run_reqList(**params):
 	duration = get_duration_ms(start_time)
 	s = s.format(get_duration_string(duration))
 	log(s)
-	send_notif(s, "ReqList", duration)
+	if gl.SEND_NOTIF:
+		send_notif(s, "ReqList", duration)
 	print_com("")
 	if gl.OPEN_OUT_FILE:
 		startfile(gl.OUT_FILE)

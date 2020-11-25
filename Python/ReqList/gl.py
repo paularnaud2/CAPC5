@@ -42,6 +42,7 @@ MAX_DUP_PRINT = 5
 
 OPEN_OUT_FILE = True
 DEBUG_JOIN = False
+SEND_NOTIF = True
 
 VAR_STR = "@@IN1@@"
 TMP_PATH = com.TMP_PATH_REQLIST + BDD + '/'

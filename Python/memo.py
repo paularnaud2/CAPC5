@@ -1,3 +1,17 @@
+# Minutage
+import common as com
+import time
+step_log(counter, step, what = 'lignes écrites', nb = 0, th_name = 'DEFAULT')
+	# Pour une utilisation simple, initialiser avec init_sl_time()
+	# Pour une utilisation multi_thread, initialiser avec gen_sl_detail(range_name)
+start_time = time.time()
+<traitement dont on veut mesurer la durée>
+dur = com.get_duration_ms(start_time)
+bn = com.big_number(counter)
+s = "Injection des données terminée. {} lignes insérées en {}."
+s = s.format(bn, com.get_duration_string(dur))
+com.log(s)
+
 # Basic================================================================
 # Opérateurs
 <	Strictement inférieur à
@@ -107,6 +121,7 @@ ma_chaine.split(" ") #['Bonjour', 'à', 'tous']
 string.replace(old, new)
 line.strip("\n") #retirer des caractères aux extremités
 isinstance(row, str): #vérifie que row est de type string
+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S,%f") # formatage date
 
 # Listes=====================================================================
 ma_liste = [1, 2, 3]

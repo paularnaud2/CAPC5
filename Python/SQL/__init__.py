@@ -20,25 +20,36 @@ def export():
 def execute(**params):
 	init_params (params)
 	init()
-	query = gl.query.replace('@@TABLE_NAME@@', gl.TABLE_NAME)
-	com.log("Requête à executer :")
-	com.print_com(query)
+	script = com.read_file(gl.SCRIPT_FILE)
+	for key in gl.VAR_DICT:
+		script = script.replace(key, gl.VAR_DICT[key])
 	cnx = connect(BDD = gl.BDD, ENV = gl.ENV)
 	c = cnx.cursor()
-	com.log("Execution...")
-	c.execute(query)
+	if gl.PROC:
+		com.log("Execution de la procédure :")
+		com.print_com(script)
+		c.execute(script)
+	else:
+		command_list = script.split(';')
+		for command in command_list:
+			com.log("Execution de la commande :")
+			com.print_com(command)
+			c.execute(command)
+			com.log("Commande executée")
 	c.close()
 	cnx.commit()
-	com.log("Requête executée")
+	com.log("Script executé")
 	cnx.close()
 
 def sql_import(**params):
 	init_params (params)
 	init()
 	
-	query = gl.query.replace('@@TABLE_NAME@@', gl.TABLE_NAME)
-	com.log("Requête de base à executer pour chaque ligne du fichier csv d'entrée :")
-	com.print_com(query)
+	script = com.read_file(gl.SCRIPT_FILE)
+	for key in gl.VAR_DICT:
+		script = script.replace(key, gl.VAR_DICT[key])
+	com.log("Script de base à executer pour chaque ligne du fichier csv d'entrée :")
+	com.print_com(script)
 	com.print_com('|')
 	
 	cnx = connect(BDD = gl.BDD, ENV = gl.ENV)
@@ -54,7 +65,7 @@ def sql_import(**params):
 	counter = 0
 	start_time = time()
 	for data in data_list:
-		c.executemany(query, data)
+		c.executemany(script, data)
 		counter += len(data)
 		com.log(f"{com.big_number(counter)} lignes insérées")
 	
