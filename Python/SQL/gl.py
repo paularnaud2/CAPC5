@@ -71,3 +71,5 @@ IN_DIR = 'C:/Py/OUT/in.csv'
 NB_MAX_ELT_INSERT = 100000
 PROC = False
 data = []
+TMP_FILE_CHUNK = com.TMP_PATH_SQL + 'chunk.txt'
+REF_CHUNK = 0

@@ -2,6 +2,7 @@ from common import *
 
 IN_DIR = 'C:/Py/IN/Merge/'
 OUT_FILE = 'C:/Py/OUT/out_merge.xml'
+REMOVE_HEARDER = False
 
 def merge_files_main():
 	
@@ -12,7 +13,7 @@ def merge_files_main():
 	for elt in file_list:
 		i += 1
 		cur_dir = IN_DIR + elt
-		if i == 1:
+		if i == 1 or not REMOVE_HEARDER:
 			merge_files(cur_dir, OUT_FILE, remove_header = False)
 		else:
 			merge_files(cur_dir, OUT_FILE, remove_header = True)
