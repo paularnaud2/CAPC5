@@ -60,7 +60,14 @@ def sql_import(**params):
 	cnx = connect(BDD = gl.BDD, ENV = gl.ENV)
 	c = cnx.cursor()
 	
-	com.log("Injection des données dans la BDD...")
+	s1 = "Injection des données dans la BDD"
+	if gl.REF_CHUNK != 0:
+		bn = com.big_number(gl.REF_CHUNK * gl.NB_MAX_ELT_INSERT)
+		s = s1 + f" (reprise à partir de la ligne {bn})"
+	else:
+		s = s1
+	s += "..."
+	com.log(s)
 	gl.data = []
 	gl.counters['main'] = 0
 	gl.counters['chunk'] = 0
@@ -92,17 +99,21 @@ def insert_bdd(script):
 	global cnx, c
 	
 	if gl.counters['chunk'] >= gl.REF_CHUNK:
-		gl.data = [tuple(line) for line in gl.data[0:]]
+		gl.data = [tuple(line) for line in gl.data]
 		c.executemany(script, gl.data)
-		gl.data = []
 		com.log(f"{com.big_number(gl.counters['main'])} lignes insérées au total")
 		c.close()
+		com.save_csv([str(gl.counters['chunk']) + '_comitRunning...'], gl.TMP_FILE_CHUNK)
+		# breakpoint()
 		cnx.commit()
 		gl.counters['chunk'] += 1
 		com.save_csv([str(gl.counters['chunk'])], gl.TMP_FILE_CHUNK)
+		# breakpoint()
 		c = cnx.cursor()
 	else:
 		gl.counters['chunk'] += 1
+		
+	gl.data = []
 
 def init_params (params):
 	if len(params) > 0:
@@ -110,3 +121,24 @@ def init_params (params):
 		for key in params:
 			a = gl.__getattribute__(key)
 			gl.__setattr__(key, params[key])
+			
+def check_restart(squeeze_export = False):
+	if os.path.exists(gl.TMP_FILE_CHUNK):
+		if com.input_com('Injection de données en cours détectée. Reprendre ? (o/n)') == 'o':
+			try:
+				gl.REF_CHUNK = int(com.load_txt(gl.TMP_FILE_CHUNK)[0])
+				squeeze_export = True
+				squeeze_create_table = True
+			except ValueError:
+				s = "La reprise a échoué (un commit était probablement en cours). Appuyez sur 'c' pour continuer."
+				com.log(s)
+				breakpoint()
+				os.remove(gl.TMP_FILE_CHUNK)
+				gl.REF_CHUNK = 0
+				squeeze_create_table = False
+		else:
+			os.remove(gl.TMP_FILE_CHUNK)
+			squeeze_create_table = False
+	else:
+		squeeze_create_table = False
+	return (squeeze_export, squeeze_create_table)

@@ -8,13 +8,13 @@ ENV = 'PROD'
 BDD = 'SGE'
 # BDD = 'RFC'
 
-# ENV = 'DIRECT'
-# BDD = 'CAPC5'
+ENV = 'DIRECT'
+BDD = 'CAPC5'
 
 date = com.get_date().replace('-', '')
 QUERY_FILE = 'ReqList/queries/e_RL.sql'
 IN_FILE = 'C:/Py/IN/in.csv'
-IN_FILE = 'C:/Py/IN/pdl_fin_trv_arc.csv'
+# IN_FILE = 'C:/Py/IN/pdl_fin_trv_arc.csv'
 # IN_FILE = 'C:/Py/IN/perimetre_fin_trv.csv'
 # IN_FILE = 'C:/Py/IN/perimetre_aff_full.csv'
 OUT_FILE = 'C:/Py/OUT/out.csv'

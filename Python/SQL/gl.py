@@ -7,8 +7,8 @@ ENV = 'PROD'
 # BDD = 'ADAM'
 BDD = 'SGE'
 
-ENV = 'DIRECT'
-BDD = 'CAPC5'
+# ENV = 'DIRECT'
+# BDD = 'CAPC5'
 
 # ENV = 'LOCAL'
 # BDD = 'XE'
@@ -73,3 +73,5 @@ PROC = False
 data = []
 TMP_FILE_CHUNK = com.TMP_PATH_SQL + 'chunk.txt'
 REF_CHUNK = 0
+SQUEEZE_EXPORT = False
+SQUEEZE_CREATE_TABLE = False

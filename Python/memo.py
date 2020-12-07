@@ -94,7 +94,7 @@ try:
 	annee = int(annee) # On tente de convertir l'année
 	if annee<=0:
 		raise ValueError("l'année saisie est négative ou nulle")
-except ValueError:
+except ValueError as err: # ou plus générique : except Exception as err
 	print("La valeur saisie est invalide (l'année est peut-être négative).")
 
 # Nombres aléatoires=========================================================

@@ -1,4 +1,4 @@
-from SQL import execute, sql_import
+from SQL import execute, sql_import, check_restart
 from ReqList import run_reqList
 from datetime import datetime
 import common as com
@@ -13,23 +13,18 @@ in_file = 'C:/Py/IN/perimetre_aff_full.csv'
 out_file = f'C:/Py/OUT/out_AFF_FULL_FIN_TRV_{date}.csv'
 table_name = f'AFF_FULL_{date}'
 view_name = 'AFF'
-max_elt_insert = 50000
+max_elt_insert = 100000
 
-# in_file = 'C:/Py/IN/in_test.csv'
-# out_file = f'C:/Py/OUT/out_test_{date}.csv'
-# table_name = f'AFF_TEST_{date}'
-# view_name = 'AFF_TEST'
-# max_elt_insert = 40
+in_file = 'C:/Py/IN/in_test.csv'
+out_file = f'C:/Py/OUT/out_test_{date}.csv'
+table_name = f'AFF_TEST_{date}'
+view_name = 'AFF_TEST'
+max_elt_insert = 40
 
-restart_import = False
-if os.path.exists(gl.TMP_FILE_CHUNK):
-	if com.input_com('Injection de données en cours détectée. Reprendre ? (o/n)') == 'o':
-		gl.REF_CHUNK = int(com.load_txt(gl.TMP_FILE_CHUNK)[0])
-		restart_import = True
-	else:
-		os.remove(gl.TMP_FILE_CHUNK)
+squeeze_export = False
+(squeeze_export, squeeze_create_table) = check_restart(squeeze_export)
 		
-if not restart_import:
+if not squeeze_export:
 	com.log('Export SGE------------------------------------------------------------')
 	run_reqList(
 		  ENV = 'PROD'
@@ -46,6 +41,7 @@ if not restart_import:
 		, SEND_NOTIF = False
 		)
 
+if not squeeze_create_table:
 	com.log(f'Création de la table {table_name}------------------------------------')
 	execute(
 		  ENV = 'DIRECT'
