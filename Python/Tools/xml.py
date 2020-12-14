@@ -8,7 +8,7 @@ import math
 RE_EXP_TAG_ELT = '<(.*)>(.*)</(.*)>'
 RE_EXP_SUB_TAG = '<([a-z][^<]*[a-z])>$'
 IN_FILE = 'C:/Py/IN/in - test.xml'
-# IN_FILE = 'C:/Py/IN/Enedis_APR_20201101_115205318.xml'
+IN_FILE = 'C:/Py/IN/2020_12_01_SITES.xml'
 OUT_FILE = 'C:/Py/OUT/out.csv'
 SL_STEP_READ = 1000 * 10**3
 SL_STEP_WRITE = 100 * 10**3

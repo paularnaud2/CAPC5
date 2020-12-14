@@ -7,6 +7,6 @@ from Tools import *
 #flt()
 # shuf()
 #split()
-merge()
-#xml()
+#merge()
+xml()
 # csv_to_xls()

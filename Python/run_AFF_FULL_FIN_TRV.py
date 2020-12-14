@@ -15,11 +15,11 @@ table_name = f'AFF_FULL_{date}'
 view_name = 'AFF'
 max_elt_insert = 100000
 
-in_file = 'C:/Py/IN/in_test.csv'
-out_file = f'C:/Py/OUT/out_test_{date}.csv'
-table_name = f'AFF_TEST_{date}'
-view_name = 'AFF_TEST'
-max_elt_insert = 40
+# in_file = 'C:/Py/IN/in_test.csv'
+# out_file = f'C:/Py/OUT/out_test_{date}.csv'
+# table_name = f'AFF_TEST_{date}'
+# view_name = 'AFF_TEST'
+# max_elt_insert = 40
 
 squeeze_export = False
 (squeeze_export, squeeze_create_table) = check_restart(squeeze_export)

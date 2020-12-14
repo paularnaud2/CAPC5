@@ -16,14 +16,15 @@ final_table = f'SGE_FULL_{date}'
 view_name = 'SGE'
 max_elt_insert = 100000
 
-in_file = 'C:/Py/IN/in_test.csv'
-out_file = f'C:/Py/OUT/out_test_{date}.csv'
-tmp_table = f'SGE_TEST_TMP'
-final_table = f'SGE_TEST_{date}'
-view_name = 'SGE_TEST'
-max_elt_insert = 100
+# in_file = 'C:/Py/IN/in_test.csv'
+# out_file = f'C:/Py/OUT/out_test_{date}.csv'
+# tmp_table = f'SGE_TEST_TMP'
+# final_table = f'SGE_TEST_{date}'
+# view_name = 'SGE_TEST'
+# max_elt_insert = 100
 
-squeeze_export = False
+squeeze_export = True
+squeeze_import = True
 (squeeze_export, squeeze_create_table) = check_restart(squeeze_export)
 
 if not squeeze_export:
@@ -43,7 +44,7 @@ if not squeeze_export:
 		, SEND_NOTIF = False
 		)
 
-if not squeeze_create_table:
+if not squeeze_create_table and not squeeze_import:
 	com.log(f'Création de la table temporaire {tmp_table}------------------------------------')
 	execute(
 		  ENV = 'DIRECT'
@@ -53,16 +54,17 @@ if not squeeze_create_table:
 		, PROC = True
 		)
 
-com.print_com('')
-com.log('Export des données importées dans la table temporaire créée----------------------')
-sql_import(
-	  ENV = 'DIRECT'
-	, BDD = 'CAPC5'
-	, SCRIPT_FILE = 'SQL/scripts/insert_table_sge.sql'
-	, VAR_DICT = {'@@TABLE_NAME@@':tmp_table}
-	, IN_DIR = out_file
-	, NB_MAX_ELT_INSERT = max_elt_insert
-	)
+if not squeeze_import:
+	com.print_com('')
+	com.log('Export des données importées dans la table temporaire créée----------------------')
+	sql_import(
+		  ENV = 'DIRECT'
+		, BDD = 'CAPC5'
+		, SCRIPT_FILE = 'SQL/scripts/insert_table_sge.sql'
+		, VAR_DICT = {'@@TABLE_NAME@@':tmp_table}
+		, IN_DIR = out_file
+		, NB_MAX_ELT_INSERT = max_elt_insert
+		)
 
 com.print_com('')
 com.log(f'Création de la table finale {final_table}------------------------------------')
