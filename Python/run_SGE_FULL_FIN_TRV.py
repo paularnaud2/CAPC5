@@ -23,8 +23,8 @@ max_elt_insert = 100000
 # view_name = 'SGE_TEST'
 # max_elt_insert = 100
 
-squeeze_export = True
-squeeze_import = True
+squeeze_export = False
+squeeze_import = False
 (squeeze_export, squeeze_create_table) = check_restart(squeeze_export)
 
 if not squeeze_export:
