@@ -14,12 +14,16 @@ out_file = f'C:/Py/OUT/out_AFF_FULL_FIN_TRV_{date}.csv'
 table_name = f'AFF_FULL_{date}'
 view_name = 'AFF'
 max_elt_insert = 100000
+max_elt_st = 1000
+max_bdd_cnx = 8
 
 # in_file = 'C:/Py/IN/in_test.csv'
 # out_file = f'C:/Py/OUT/out_test_{date}.csv'
 # table_name = f'AFF_TEST_{date}'
 # view_name = 'AFF_TEST'
 # max_elt_insert = 40
+# max_elt_st = 100
+# max_bdd_cnx = 2
 
 squeeze_export = False
 (squeeze_export, squeeze_create_table) = check_restart(squeeze_export)
@@ -32,8 +36,9 @@ if not squeeze_export:
 		, QUERY_FILE = 'ReqList/queries/SGE_SUIVI_FIN_TRV_AFF.sql'
 		, IN_FILE = in_file
 		, OUT_FILE = out_file
-		, MAX_BDD_CNX = 8
+		, MAX_BDD_CNX = max_bdd_cnx
 		, SL_STEP_QUERY = 50
+		, NB_MAX_ELT_IN_STATEMENT = max_elt_st
 		, OPEN_OUT_FILE = False
 		, SQUEEZE_JOIN = True
 		, SQUEEZE_SQL = False

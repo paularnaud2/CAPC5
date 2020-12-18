@@ -4,7 +4,7 @@ from SQL.log import *
 import common as com
 from common import *
 import cx_Oracle as cx
-from time import time
+import time
 import Tools.dup as dup
 from os import makedirs, rename, startfile
 from os.path import exists
@@ -162,6 +162,18 @@ def connect(BDD, th_nb = 1, multi_thread = False, ENV = ''):
 		check_mepa(BDD, cnx, th_nb)
 	
 	return cnx
+	
+def gen_cnx_dict(BDD, ENV, nb):
+
+	init_instant_client()
+	(cnx_str, conf) = get_cnx_str(BDD, ENV)
+	gl.cnx_dict = dict()
+	i = 1
+	while i <= nb:
+		log(f'Connexion No. {i} en cours de création...')
+		gl.cnx_dict[i] =  cx.connect(cnx_str)
+		log(f'Connexion No. {i} créée')
+		i += 1
 
 def check_mepa(BDD, cnx, th_nb):
 	

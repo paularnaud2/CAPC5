@@ -1,8 +1,11 @@
 from common import *
 import ReqList.gl as gl
 import SQL.functions as sql
+import SQL.gl as glsql
 from ReqList.functions import get_sql_array_out
-from threading import Thread, RLock
+from threading import Thread, RLock, Barrier
+from multiprocessing import Process, Manager
+
 from math import ceil
 
 verrou = RLock()
@@ -25,9 +28,12 @@ def launch_threads(group_array, BDD):
 	
 	i = 0
 	thread_list = []
+	n = len(group_array)
+	b = Barrier(n)
+	sql.gen_cnx_dict(BDD, gl.ENV, n)
 	for group_list in group_array:
 		i += 1
-		th = Thread(target=get_sql_array_out_strd_th, args=(BDD, group_list, i, True,))
+		th = Thread(target=get_sql_array_out_strd_th, args=(BDD, group_list, i, True, b,))
 		#th = Thread(get_sql_array_out_strd_th(BDD, group_list, i))
 		thread_list.append(th)
 		th.start()
@@ -35,9 +41,12 @@ def launch_threads(group_array, BDD):
 	for th in thread_list:
 		th.join()
 
-def get_sql_array_out_strd_th(BDD, group_list, th_nb, multi_thread):
+def get_sql_array_out_strd_th(BDD, group_list, th_nb, multi_thread, b=None):
 
-	cnx = sql.connect(BDD, th_nb, multi_thread, ENV = gl.ENV)
+	# cnx = sql.connect(BDD, th_nb, multi_thread, ENV = gl.ENV)
+	cnx = glsql.cnx_dict[th_nb]
+	if b:
+		b.wait()
 	c = cnx.cursor()
 	array_out = get_sql_array_out(c, group_list, th_nb = th_nb, multi_thread = multi_thread)
 	log_get_sql_array_finish(array_out, th_nb)
