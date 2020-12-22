@@ -1,4 +1,5 @@
-from ReqList import *
+from ReqList import run_reqList
+from ReqList import gl
 
 # QDD SMO ADAM/GINKO
 ""

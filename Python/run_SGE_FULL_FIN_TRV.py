@@ -14,7 +14,7 @@ out_file = f'C:/Py/OUT/out_SGE_FULL_FIN_TRV_{date}.csv'
 tmp_table = f'SGE_FULL_TMP'
 final_table = f'SGE_FULL_{date}'
 view_name = 'SGE'
-max_elt_insert = 100000
+max_elt_insert = 20000
 
 # in_file = 'C:/Py/IN/in_test.csv'
 # out_file = f'C:/Py/OUT/out_test_{date}.csv'
