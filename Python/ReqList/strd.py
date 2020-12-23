@@ -4,7 +4,6 @@ import SQL.functions as sql
 import SQL.gl as glsql
 from ReqList.functions import get_sql_array_out
 from threading import Thread, RLock, Barrier
-from multiprocessing import Process, Manager
 
 from math import ceil
 
