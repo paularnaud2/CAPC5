@@ -14,7 +14,7 @@ BDD = 'CAPC5'
 # BDD = 'XE'
 
 SL_STEP = 100000
-#SL_STEP = 500
+# SL_STEP = 500
 
 date = com.get_date().replace('-', '')
 QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
@@ -24,22 +24,25 @@ OUT_RG_FOLDER = '{}_OUT_{}'.format(BDD, date)
 # OUT_FILE = OUT_DIR + 'out'.format(BDD)
 OUT_FILE = OUT_DIR + 'export_SQL_{}_{}'.format(BDD, date)
 
-GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
-#GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
-#GKO_INSTANCES = ['GKO1_IDF']
+GKO_INSTANCES = [
+    'GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO',
+    'GKO7_OUE', 'GKO8_ACL'
+]
+# GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
+# GKO_INSTANCES = ['GKO1_IDF']
 EXPORT_INSTANCES = False
 
 MAX_BDD_CNX = 10
 MERGE_RG_FILES = False
 EXPORT_RANGE = False
 
-MAX_CHECK_DUP = 1*10**6
+MAX_CHECK_DUP = 1 * 10**6
 CHECK_DUP = True
 OPEN_OUT_FILE = True
 
 RANGE_FIELD = "RANGE"
-LEFT_DEL = "" # "\""
-RIGHT_DEL = "" # "\""
+LEFT_DEL = ""  # "\""
+RIGHT_DEL = ""  # "\""
 PARALLEL = True
 
 ORACLE_CLIENT = 'C:/instantclient_19_6/'

@@ -1,10 +1,10 @@
-from SQL import execute, sql_import, check_restart
-from ReqList import run_reqList
-from datetime import datetime
-import common as com
-import time
 import os
-import SQL.gl as gl
+import time
+import SQL as sql
+import common as com
+
+from datetime import datetime
+from ReqList import run_reqList
 
 
 def run_aff(test=False):
@@ -29,7 +29,7 @@ def run_aff(test=False):
         max_bdd_cnx = 2
 
     squeeze_export = False
-    (squeeze_export, squeeze_create_table) = check_restart(squeeze_export)
+    (squeeze_export, squeeze_create_table) = sql.check_restart(squeeze_export)
 
     if not squeeze_export:
         com.log('Export SGE\
@@ -53,7 +53,7 @@ def run_aff(test=False):
     if not squeeze_create_table:
         com.log(f'Création de la table {table_name}\
 ------------------------------------')
-        execute(
+        sql.execute(
             ENV='DIRECT',
             BDD='CAPC5',
             SCRIPT_FILE='SQL/procs/create_table_aff.sql',
@@ -64,7 +64,7 @@ def run_aff(test=False):
     com.print_com('')
     com.log('Export des données importées dans la table créée\
 ----------------------')
-    sql_import(
+    sql.upload(
         ENV='DIRECT',
         BDD='CAPC5',
         SCRIPT_FILE='SQL/scripts/insert_table_aff.sql',
@@ -76,7 +76,7 @@ def run_aff(test=False):
     com.print_com('')
     com.log(f'Mise à jour de la vue {view_name}\
 -----------------------------------')
-    execute(
+    sql.execute(
         ENV='DIRECT',
         BDD='CAPC5',
         SCRIPT_FILE='SQL/scripts/update_view_aff.sql',
