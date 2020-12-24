@@ -7,6 +7,7 @@ from SQL.connect import connect
 from SQL.functions import get_final_script
 
 
+@com.log_exeptions
 def execute(**params):
     init_params(params)
     init()

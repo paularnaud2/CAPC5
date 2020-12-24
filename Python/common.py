@@ -29,6 +29,13 @@ sl_time_dict = {}
 sl_detail = {}
 
 
+def log_exeptions(f, **kwargs):
+    try:
+        f(**kwargs)
+    except Exception as err:
+        log(err)
+
+
 def extract_list(array_in, dir_out, col_nb=1):
 
     if isinstance(array_in[0], str):
