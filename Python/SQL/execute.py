@@ -3,7 +3,7 @@ import SQL.gl as gl
 
 from SQL.init import init
 from SQL.init import init_params
-from SQL.functions import connect
+from SQL.connect import connect
 from SQL.functions import get_final_script
 
 

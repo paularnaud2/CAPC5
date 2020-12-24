@@ -41,11 +41,7 @@ def launch_threads(group_array, BDD):
 		th.join()
 
 def get_sql_array_out_strd_th(BDD, group_list, th_nb, multi_thread, b=None):
-
-	# cnx = sql.connect(BDD, th_nb, multi_thread, ENV = gl.ENV)
 	cnx = glsql.cnx_dict[th_nb]
-	if b:
-		b.wait()
 	c = cnx.cursor()
 	array_out = get_sql_array_out(c, group_list, th_nb = th_nb, multi_thread = multi_thread)
 	log_get_sql_array_finish(array_out, th_nb)

@@ -65,7 +65,7 @@ bools = {}
 out_files = {}
 th_dic = {}
 query = ''
-is_init = False
+client_is_init = False
 
 # Execute
 SCRIPT_FILE = 'SQL/scripts/create_table_aff.sql'

@@ -1,8 +1,12 @@
 import re
 import common as com
 import SQL.gl as gl
+import cx_Oracle as cx
 
 from SQL.rg import restart
+from threading import RLock
+
+verrou = RLock()
 
 
 def init():
