@@ -9,7 +9,10 @@ from SQL.connect import connect
 from SQL.functions import get_final_script
 
 
+@com.log_exeptions
 def upload(**params):
+    com.print_com()
+    com.log('[SQL] upload')
     script = init_this(params)
     start_time = time()
     with open(gl.IN_DIR, 'r', encoding='utf-8') as in_file:

@@ -6,16 +6,15 @@ from os.path import exists
 from os import makedirs
 from SQL.functions import write_rows
 from SQL.connect import connect
+from SQL.connect import gen_cnx_dict
 from threading import Thread
 from threading import RLock
 from threading import Semaphore
 
 verrou = RLock()
-sem = Semaphore(gl.MAX_BDD_CNX)
 
 
 def process_query(c, query, elt, th_nb):
-
     log.process_query_init(elt, query, th_nb)
     c.execute(query)
     log.process_query_finish(elt, th_nb)
@@ -25,7 +24,6 @@ def process_query(c, query, elt, th_nb):
 
 
 def process_gko_query(inst):
-
     cnx = connect(inst)
     c = cnx.cursor()
     com.log("Exécution de la requête pour l'instance {}...".format(inst))
@@ -38,48 +36,27 @@ def process_gko_query(inst):
     cnx.close
 
 
-def process_range(elt='MONO', var=''):
-
-    with sem:
-        gl.counters['QUERY_RANGE'] += 1
-        cur_th = get_th_nb()
-        cnx = connect(gl.BDD,
-                      cur_th,
-                      gl.bools['RANGE_QUERY'] and gl.MAX_BDD_CNX > 1,
-                      ENV=gl.ENV)
-        elt_query = elt.replace("'", "''")
-        query = gl.query.replace(gl.VAR_STR + var + gl.VAR_STR, elt_query)
-        c = cnx.cursor()
-        process_query(c, query, elt, cur_th)
-        c.close()
-        cnx.close
-        with verrou:
-            gl.th_dic[cur_th] = 0
-
-
 def process_range_list(range_list, var):
-
     gl.counters['QUERY_RANGE'] = 0
     if range_list == ['MONO']:
         init_th_dict()
+        gen_cnx_dict(gl.BDD, gl.ENV, 1)
         process_range()
     else:
         lauch_threads(range_list, var)
 
 
 def lauch_threads(range_list, var):
-
     com.log("Plages à requêter : {}".format(range_list))
     init_th_dict()
     thread_list = []
+    gl.sem = Semaphore(gl.MAX_BDD_CNX)
+    gen_cnx_dict(gl.BDD, gl.ENV, gl.MAX_BDD_CNX)
     for elt in range_list:
-        if gl.PARALLEL:
-            th = Thread(target=process_range, args=(
-                elt,
-                var,
-            ))
-        else:
-            th = Thread(process_range(elt, var))
+        th = Thread(target=process_range, args=(
+            elt,
+            var,
+        ))
         thread_list.append(th)
         th.start()
 
@@ -89,8 +66,34 @@ def lauch_threads(range_list, var):
     com.print_com('|')
 
 
-def init_th_dict():
+@com.log_exeptions
+def process_range(elt='MONO', var=''):
+    with gl.sem:
+        # com.log(f'Entrée sémaphore pour elt {elt}')
+        gl.counters['QUERY_RANGE'] += 1
+        cur_th = get_th_nb()
+        cnx = gl.cnx_dict[cur_th]
+        elt_query = elt.replace("'", "''")
+        query = gl.query.replace(gl.VAR_STR + var + gl.VAR_STR, elt_query)
+        c = cnx.cursor()
+        process_query(c, query, elt, cur_th)
+        c.close()
+        with verrou:
+            gl.th_dic[cur_th] = 0
+        # com.log(f'Sortie sémaphore pour elt {elt}')
 
+
+def get_th_nb():
+    with verrou:
+        i = 1
+        while gl.th_dic[i] == 1:
+            i += 1
+
+        gl.th_dic[i] = 1
+    return i
+
+
+def init_th_dict():
     for i in range(1, gl.MAX_BDD_CNX + 1):
         gl.th_dic[i] = 0
 
@@ -120,14 +123,3 @@ def init_out_file(cursor, range_name='MONO'):
         elif gl.EXPORT_RANGE and range_name != 'MONO':
             out_file.write(com.CSV_SEPARATOR + "RANGE")
         out_file.write("\n")
-
-
-def get_th_nb():
-
-    with verrou:
-        i = 1
-        while gl.th_dic[i] == 1:
-            i += 1
-
-        gl.th_dic[i] = 1
-    return i

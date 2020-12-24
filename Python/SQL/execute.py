@@ -9,6 +9,8 @@ from SQL.functions import get_final_script
 
 @com.log_exeptions
 def execute(**params):
+    com.print_com()
+    com.log('[SQL] execute')
     init_params(params)
     init()
     script = get_final_script(gl.SCRIPT_FILE)

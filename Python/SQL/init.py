@@ -1,7 +1,6 @@
 import re
 import common as com
 import SQL.gl as gl
-import cx_Oracle as cx
 
 from SQL.rg import restart
 from threading import RLock
@@ -10,8 +9,6 @@ verrou = RLock()
 
 
 def init():
-    s = "Package SQL - Initialisation"
-    com.log(s, print_date=True)
     gl.bools['RANGE_QUERY'] = False
     gl.counters["row"] = 0
     set_conf()

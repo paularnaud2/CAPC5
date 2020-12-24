@@ -28,7 +28,6 @@ def launch_threads(group_array, BDD):
 	i = 0
 	thread_list = []
 	n = len(group_array)
-	b = Barrier(n)
 	sql.gen_cnx_dict(BDD, gl.ENV, n)
 	for group_list in group_array:
 		i += 1

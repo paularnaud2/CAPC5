@@ -43,7 +43,6 @@ OPEN_OUT_FILE = True
 RANGE_FIELD = "RANGE"
 LEFT_DEL = ""  # "\""
 RIGHT_DEL = ""  # "\""
-PARALLEL = True
 
 ORACLE_CLIENT = 'C:/instantclient_19_6/'
 CONF_FILE = ORACLE_CLIENT + 'conf_perso.txt'

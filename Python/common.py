@@ -1,3 +1,6 @@
+import os
+import traceback
+
 from datetime import datetime
 from math import floor
 from time import time
@@ -16,6 +19,7 @@ TMP_PATH_TOOLS = 'C:/Py/OUT/TMP/Tools/'
 TMP_PATH_REQLIST = 'C:/Py/OUT/TMP/ReqList/'
 TMP_PATH_QDD = 'C:/Py/OUT/TMP/QDD/'
 PY_IN = 'C:/Py/IN/'
+DEBUG = False
 LOG_FILE = ''
 LOG_OUTPUT = True
 LOG_FILE_INITIALISED = False
@@ -29,11 +33,22 @@ sl_time_dict = {}
 sl_detail = {}
 
 
-def log_exeptions(f, **kwargs):
-    try:
-        f(**kwargs)
-    except Exception as err:
-        log(err)
+def log_exeptions(f):
+    def new(*arg, **kwargs):
+        try:
+            return f(*arg, **kwargs)
+        except Exception:
+            with verrou:
+                s = "Une erreur est survenue :\n"
+                s += traceback.format_exc()
+                log(s)
+                print_com("Arrêt du traitement")
+                os._exit(1)
+
+    if DEBUG:
+        return f
+    else:
+        return new
 
 
 def extract_list(array_in, dir_out, col_nb=1):
@@ -112,7 +127,7 @@ def get_date():
     return d
 
 
-def print_com(str_in, nb_tab=0):
+def print_com(str_in='', nb_tab=0):
 
     if nb_tab != 0:
         for i in range(0, nb_tab):
