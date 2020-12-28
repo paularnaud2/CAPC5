@@ -1,65 +1,100 @@
-import ReqList.gl as gl
-from ReqList.functions import *
-from ReqList.join import *
-from ReqList.strd import get_sql_array_out_strd
-from ReqList.gko import get_sql_array_out_ginko
-from SQL.init import init
-from common import *
 import common as com
+import Tools.dup as dup
+import ReqList.gl as gl
 
-def get_sql_array(array_in, BDD, query_file):
-	
-	restart()
-	get_query_var(query_file)
-	gen_group_list(array_in)
-	export = get_export(BDD)
-	return export
+from time import time
+from os import startfile
+from SQL.init import init
+from ReqList.join import join_arrays
+from ReqList.functions import restart
+from ReqList.functions import set_query_var
+from ReqList.functions import gen_group_list
+from ReqList.strd import sql_download_strd
+from ReqList.gko import sql_download_ginko
 
-def get_export(BDD):
-	
-	init()
-	print_com("|")
-	log("Récupération de l'export SQL...")
-	gl.header = ''
-	gl.array_dict = {}
-	gl.bools["EXPORT_INSTANCES"] = gl.EXPORT_INSTANCES and BDD == 'GINKO'
-	
-	if BDD == 'GINKO':
-		array_out = get_sql_array_out_ginko()
-	else:
-		array_out = get_sql_array_out_strd(BDD)
-	
-	delete_folder(gl.TMP_PATH)
-	print_com("|")
-	s = "Export récupéré ({} lignes écrites)\n|"
-	bn = big_number(len(array_out))
-	log(s.format(bn))
-	
-	del gl.array_dict
-	return array_out
 
-def join_arrays(ar_left_in, ar_right_in):
-	
-	log("Jointure des deux tableaux (initialisation)")
-	check_void_right_array(ar_right_in)
-	log("Préparation du tableau de gauche...")
-	(ar_left, first_line_l) = prepare_array(ar_left_in)
-	save_csv(ar_left, gl.OUT_LEFT)
-	log_prepare(gl.OUT_LEFT, big_number(len(ar_left)))
+@com.log_exeptions
+def run_reqList(**params):
+    com.log("[ReqList] run_reqList")
+    start_time = time()
+    init_params(params)
+    # ar_left = load_csv (gl.IN_TEST_L)
+    # ar_right = load_csv (gl.IN_TEST_R)
+    com.log("Chargement du tableau de gauche...")
+    ar_left = com.load_csv(gl.IN_FILE)
+    com.log("Tableau de gauche chargé\n|")
+    if not gl.SQUEEZE_SQL:
+        sql_download_main(ar_left, gl.BDD, gl.QUERY_FILE)
 
-	log("Préparation du tableau de droite...")
-	(ar_right, first_line_r) = prepare_array(ar_right_in)
-	save_csv(ar_right, gl.OUT_RIGHT)
-	log_prepare(gl.OUT_RIGHT, big_number(len(ar_right)))
-	
-	log("Jointure des deux tableaux en cours...")
-	init_while_join(first_line_l, first_line_r)
-	while gl.bools["end_left"] == False or gl.bools["end_right"] == False:
-		(pdl_l, pdl_r) = update_pdl(ar_left, ar_right)
-		pdl_l = compare_inf(pdl_l, pdl_r, ar_left)
-		(pdl_l, pdl_r) = compare_sup(pdl_l, pdl_r, ar_left, ar_right)
-		pdl_r = compare_equal(pdl_l, pdl_r, ar_left, ar_right)
-		if incr_c_l(ar_left):
-			break
-	s = "Jointure effecutée. Le tableau de sortie comporte {} lignes (en-tête incluse)."
-	log(s.format(big_number(len(gl.out_array))))
+    if not gl.SQUEEZE_JOIN:
+        join_main(ar_left)
+
+    finish(start_time)
+
+
+def join_main(ar_left):
+    com.log("Chargement du tableau de droite...")
+    ar_right = com.load_csv(gl.OUT_SQL)
+    com.log("Tableau de droite chargé\n|")
+    join_arrays(ar_left, ar_right)
+    del ar_left
+    del ar_right
+    com.log("Sauvegarde du fichier de sortie...")
+    com.save_csv(gl.out_array, gl.OUT_FILE)
+    s = f"Fichier de sortie sauvegardé à l'adresse '{gl.OUT_FILE}'"
+    com.log(s)
+    del gl.out_array
+
+
+def finish(start_time):
+    if gl.CHECK_DUP:
+        dup.check_dup_key(gl.OUT_FILE)
+
+    com.print_com("")
+    s = "Exécution terminée en {}"
+    duration = com.get_duration_ms(start_time)
+    s = s.format(com.get_duration_string(duration))
+    com.log(s)
+    if gl.SEND_NOTIF:
+        com.send_notif(s, "ReqList", duration)
+    com.print_com("")
+    if gl.OPEN_OUT_FILE:
+        startfile(gl.OUT_FILE)
+
+
+def init_params(params):
+    if len(params) > 0:
+        com.log("Initialisation des paramètres")
+        for key in params:
+            gl.__getattribute__(key)
+            gl.__setattr__(key, params[key])
+
+
+def sql_download_main(array_in, BDD, query_file):
+    restart()
+    set_query_var(query_file)
+    gen_group_list(array_in)
+    sql_download(BDD)
+
+
+def sql_download(BDD):
+    init_download(BDD)
+    if BDD == 'GINKO':
+        sql_download_ginko()
+    else:
+        sql_download_strd(BDD)
+
+    com.delete_folder(gl.TMP_PATH)
+    com.print_com("|")
+    # s = "Export récupéré ({} lignes écrites)\n|"
+    # bn = com.big_number(len(array_out))
+    # com.log(s.format(bn))
+
+
+def init_download(BDD):
+    init()
+    com.print_com("|")
+    com.log(f"Récupération des données depuis la base {BDD}...")
+    gl.header = ''
+    gl.array_dict = {}
+    gl.bools["EXPORT_INSTANCES"] = gl.EXPORT_INSTANCES and BDD == 'GINKO'

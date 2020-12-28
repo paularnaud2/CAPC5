@@ -1,4 +1,3 @@
-import os
 import time
 import SQL as sql
 import common as com

@@ -13,7 +13,7 @@ BDD = 'SGE'
 
 date = com.get_date().replace('-', '')
 QUERY_FILE = 'ReqList/queries/e_RL.sql'
-IN_FILE = 'C:/Py/IN/in_glo11.csv'
+IN_FILE = 'C:/Py/IN/in.csv'
 # IN_FILE = 'C:/Py/IN/perimetre_fin_trv.csv'
 # IN_FILE = 'C:/Py/IN/perimetre_aff_full.csv'
 OUT_FILE = 'C:/Py/OUT/out.csv'

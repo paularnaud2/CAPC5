@@ -1,10 +1,9 @@
-from SQL import execute, sql_import, check_restart
-from ReqList import run_reqList
-from datetime import datetime
-import common as com
 import time
-import os
-import SQL.gl as gl
+import SQL as sql
+import common as com
+
+from datetime import datetime
+from ReqList import run_reqList
 
 
 def run_sge(test=False):
@@ -28,7 +27,7 @@ def run_sge(test=False):
 
     squeeze_export = False
     squeeze_import = False
-    (squeeze_export, squeeze_create_table) = check_restart(squeeze_export)
+    (squeeze_export, squeeze_create_table) = sql.check_restart(squeeze_export)
 
     if not squeeze_export:
         com.log('Export SGE\
@@ -51,7 +50,7 @@ def run_sge(test=False):
     if not squeeze_create_table and not squeeze_import:
         com.log(f'Création de la table temporaire {tmp_table}\
 ------------------------------------')
-        execute(
+        sql.execute(
             ENV='DIRECT',
             BDD='CAPC5',
             SCRIPT_FILE='SQL/procs/create_table_sge_tmp.sql',
@@ -63,7 +62,7 @@ def run_sge(test=False):
         com.print_com('')
         com.log('Export des données importées dans la table temporaire créée\
 ----------------------')
-        sql_import(
+        sql.upload(
             ENV='DIRECT',
             BDD='CAPC5',
             SCRIPT_FILE='SQL/scripts/insert_table_sge.sql',
@@ -75,7 +74,7 @@ def run_sge(test=False):
     com.print_com('')
     com.log(f'Création de la table finale {final_table}\
 ------------------------------------')
-    execute(
+    sql.execute(
         ENV='DIRECT',
         BDD='CAPC5',
         SCRIPT_FILE='SQL/procs/create_table_sge_final.sql',
@@ -86,7 +85,7 @@ def run_sge(test=False):
     com.print_com('')
     com.log('Copie de la table temporaire dans la table finale\
 --------------------')
-    execute(
+    sql.execute(
         ENV='DIRECT',
         BDD='CAPC5',
         SCRIPT_FILE='SQL/scripts/from_tmp_to_final.sql',
@@ -99,7 +98,7 @@ def run_sge(test=False):
     com.print_com('')
     com.log(f'Mise à jour de la vue {view_name}\
 -----------------------------------')
-    execute(
+    sql.execute(
         ENV='DIRECT',
         BDD='CAPC5',
         SCRIPT_FILE='SQL/scripts/update_view_sge.sql',
