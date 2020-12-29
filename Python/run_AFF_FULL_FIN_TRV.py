@@ -24,8 +24,8 @@ def run_aff(test=False):
         table_name = f'AFF_TEST_{date}'
         view_name = 'AFF_TEST'
         max_elt_insert = 40
-        max_elt_st = 100
-        max_bdd_cnx = 2
+        max_elt_st = 10
+        max_bdd_cnx = 6
 
     squeeze_export = False
     (squeeze_export, squeeze_create_table) = sql.check_restart(squeeze_export)

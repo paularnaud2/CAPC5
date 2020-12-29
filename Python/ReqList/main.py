@@ -86,9 +86,10 @@ def sql_download(BDD):
 
     com.delete_folder(gl.TMP_PATH)
     com.print_com("|")
-    # s = "Export récupéré ({} lignes écrites)\n|"
-    # bn = com.big_number(len(array_out))
-    # com.log(s.format(bn))
+    n = sum([gl.counters[elt] for elt in gl.counters])
+    bn = com.big_number(n)
+    s = f"Export récupéré ({bn} lignes écrites)\n|"
+    com.log(s)
 
 
 def init_download(BDD):
@@ -96,5 +97,5 @@ def init_download(BDD):
     com.print_com("|")
     com.log(f"Récupération des données depuis la base {BDD}...")
     gl.header = ''
-    gl.array_dict = {}
+    gl.counters = {}
     gl.bools["EXPORT_INSTANCES"] = gl.EXPORT_INSTANCES and BDD == 'GINKO'

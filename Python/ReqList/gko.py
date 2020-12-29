@@ -1,13 +1,13 @@
 import common as com
 import ReqList.gl as gl
 import SQL.connect as sql
-from ReqList.functions import process_group_list
+from ReqList.process import process_group_list
 from threading import Thread, RLock
 
 verrou = RLock()
 
 
-def get_sql_array_out_ginko():
+def sql_download_ginko():
 
     thread_list = []
     for inst in gl.GKO_INSTANCES:

@@ -1,37 +1,32 @@
 import common as com
 import ReqList.gl as gl
-import ReqList.log as log
 import SQL.gl as glsql
 import SQL.connect as sql
+import ReqList.file as file
 
 from math import ceil
 from threading import Thread
 from threading import RLock
 
-from ReqList.functions import process_group_list
+from ReqList.process import process_group_list
 
 verrou = RLock()
 
 
 def sql_download_strd(BDD):
     group_array = split_group_list()
-    if len(group_array) == 1:
+    n = len(group_array)
+    sql.gen_cnx_dict(BDD, gl.ENV, n)
+    if n == 1:
         sql_download_strd_th(BDD, gl.group_list, 1, False)
     else:
         launch_threads(group_array, BDD)
-
-    array_out = [gl.header]
-    for th_nb in gl.array_dict:
-        array_out += gl.array_dict[th_nb]
-
-    return array_out
+    file.gen_out_file()
 
 
 def launch_threads(group_array, BDD):
     i = 0
     thread_list = []
-    n = len(group_array)
-    sql.gen_cnx_dict(BDD, gl.ENV, n)
     for group_list in group_array:
         i += 1
         th = Thread(
@@ -50,8 +45,8 @@ def launch_threads(group_array, BDD):
         th.join()
 
 
-@com._exeptions
-def sql_download_strd_th(BDD, group_list, th_nb, multi_thread, b=None):
+@com.log_exeptions
+def sql_download_strd_th(BDD, group_list, th_nb, multi_thread):
     cnx = glsql.cnx_dict[th_nb]
     c = cnx.cursor()
     process_group_list(
@@ -60,7 +55,6 @@ def sql_download_strd_th(BDD, group_list, th_nb, multi_thread, b=None):
         th_nb=th_nb,
         multi_thread=multi_thread,
     )
-    log.log_get_sql_array_finish(th_nb)
     c.close()
     cnx.close()
 

@@ -47,6 +47,8 @@ VAR_STR = "@@IN1@@"
 TMP_PATH = com.TMP_PATH_REQLIST + BDD + '/'
 TMP_FILE_TYPE = '.csv'
 init_tmp_file_list = []
+EC = '_EC'
+QN = '_QN'
 
 counters = {}
 bools = {}

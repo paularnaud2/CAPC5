@@ -1,16 +1,34 @@
-from common import com
+import common as com
+import ReqList.gl as gl
 
 
-def log_get_sql_array_finish(th_nb):
-    cur_n_rows = 1
+def start_exec(inst, th_nb, multi_thread):
+    if inst != '':
+        s = f"Exécution des requêtes pour {inst}..."
+    elif multi_thread is True:
+        s = f"Exécution des requêtes (pool No. {th_nb})..."
+    else:
+        s = "Exécution des requêtes..."
+    com.log(s)
+
+
+def gen_group_list(elt_list, group_list):
+    bn1 = com.big_number(len(elt_list))
+    bn2 = com.big_number(len(group_list))
+    s = f"Liste des groupes construite : {bn1} éléments à traiter répartis"
+    s += f" en {bn2} groupes ({gl.NB_MAX_ELT_IN_STATEMENT} max par groupe)"
+    com.log(s)
+
+
+def get_sql_array_finish(th_nb):
+    n_rows = gl.counters[th_nb]
     if th_nb == 0:
         s_th = ''
     else:
-        s_th = " pour le pool No.{}".format(th_nb)
-    if cur_n_rows > 0:
-        bn = com.big_number(cur_n_rows)
-        s = "Résultat récupéré{} ({} lignes exportées)"
-        s = s.format(s_th, bn)
+        s_th = f" pour le pool No.{th_nb}"
+    if n_rows > 0:
+        bn = com.big_number(n_rows)
+        s = f"Résultat récupéré{s_th} ({bn} lignes exportées)"
         com.log(s)
     else:
-        com.log("Aucune ligne récupéré{}".format(s_th))
+        com.log(f"Aucune ligne récupéré{s_th}")
