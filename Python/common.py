@@ -1,4 +1,5 @@
 import os
+import sys
 import traceback
 
 from datetime import datetime
@@ -65,12 +66,15 @@ def delete_folder(path):
     rmtree(path)
 
 
-def send_notif(msg, package, duration=0):
+def send_notif(msg, package, duration=0, cond=True):
 
     if duration != 0:
         duration = duration / 1000
         if duration < MIN_DUR_NOTIF_TRIGGER:
             return
+
+    if not cond:
+        return
 
     try:
         from win10toast import ToastNotifier
@@ -227,6 +231,8 @@ def init_log(parent_module):
 
     log("Fichier de log initialisé ({})".format(LOG_OUT + LOG_FILE),
         print_date=True)
+    print_com("Version Python : " + sys.version)
+    print_com()
     arc_log_files()
     LOG_FILE_INITIALISED = True
 

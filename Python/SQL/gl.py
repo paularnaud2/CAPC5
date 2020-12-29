@@ -39,6 +39,7 @@ EXPORT_RANGE = False
 MAX_CHECK_DUP = 1 * 10**6
 CHECK_DUP = True
 OPEN_OUT_FILE = True
+SEND_NOTIF = True
 
 RANGE_FIELD = "RANGE"
 LEFT_DEL = ""  # "\""

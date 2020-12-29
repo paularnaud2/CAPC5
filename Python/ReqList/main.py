@@ -50,13 +50,11 @@ def finish(start_time):
     if gl.CHECK_DUP:
         dup.check_dup_key(gl.OUT_FILE)
 
-    com.print_com("")
     s = "Exécution terminée en {}"
     duration = com.get_duration_ms(start_time)
     s = s.format(com.get_duration_string(duration))
     com.log(s)
-    if gl.SEND_NOTIF:
-        com.send_notif(s, "ReqList", duration)
+    com.send_notif(s, "ReqList", duration, gl.SEND_NOTIF)
     com.print_com("")
     if gl.OPEN_OUT_FILE:
         startfile(gl.OUT_FILE)
@@ -88,8 +86,9 @@ def sql_download(BDD):
     com.print_com("|")
     n = sum([gl.counters[elt] for elt in gl.counters])
     bn = com.big_number(n)
-    s = f"Export récupéré ({bn} lignes écrites)\n|"
+    s = f"Export récupéré ({bn} lignes écrites)"
     com.log(s)
+    com.print_com("|")
 
 
 def init_download(BDD):

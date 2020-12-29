@@ -14,7 +14,6 @@ from SQL.process import process_gko_query
 
 @com.log_exeptions
 def download(**params):
-    com.print_com()
     com.log('[SQL] download')
     init_params(params)
     if gl.BDD == 'GINKO':
@@ -102,4 +101,4 @@ def finish():
 
     com.print_com("|")
     com.log("Traitement terminé")
-    com.send_notif(s, "SQL", dur)
+    com.send_notif(s, "SQL", dur, gl.SEND_NOTIF)

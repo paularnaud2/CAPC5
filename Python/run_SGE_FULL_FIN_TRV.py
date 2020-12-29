@@ -15,7 +15,7 @@ def run_sge(test=False):
     tmp_table = 'SGE_FULL_TMP'
     final_table = f'SGE_FULL_{date}'
     view_name = 'SGE'
-    max_elt_insert = 20000
+    max_elt_insert = 10000
 
     if test:
         in_file = 'C:/Py/IN/in_test.csv'
@@ -25,11 +25,12 @@ def run_sge(test=False):
         view_name = 'SGE_TEST'
         max_elt_insert = 100
 
-    squeeze_export = False
-    squeeze_import = False
-    (squeeze_export, squeeze_create_table) = sql.check_restart(squeeze_export)
+    squeeze_downl = False
+    squeeze_upl = False
+    (squeeze_downl, squeeze_create_table) = sql.check_restart(squeeze_downl)
 
-    if not squeeze_export:
+    com.log("Lancement du job " + __name__)
+    if not squeeze_downl:
         com.log('Export SGE\
 ------------------------------------------------------------')
         run_reqList(
@@ -47,7 +48,7 @@ def run_sge(test=False):
             SEND_NOTIF=False,
         )
 
-    if not squeeze_create_table and not squeeze_import:
+    if not squeeze_create_table and not squeeze_upl:
         com.log(f'Création de la table temporaire {tmp_table}\
 ------------------------------------')
         sql.execute(
@@ -58,7 +59,7 @@ def run_sge(test=False):
             PROC=True,
         )
 
-    if not squeeze_import:
+    if not squeeze_upl:
         com.print_com('')
         com.log('Export des données importées dans la table temporaire créée\
 ----------------------')
@@ -110,7 +111,8 @@ def run_sge(test=False):
 
     com.print_com('')
     dur = com.get_duration_ms(start_time)
-    s = "Traitement terminé en {}."
-    s = s.format(com.get_duration_string(dur))
+    sd = com.get_duration_string(dur)
+    s = f"Job {__name__} terminé en {sd}."
     com.log(s)
+    com.print_com('')
     com.send_notif(s, __name__, dur)

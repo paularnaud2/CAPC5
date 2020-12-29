@@ -10,11 +10,11 @@ def run_aff(test=False):
     # Définition des variables
     start_time = time.time()
     date = datetime.now().strftime("%Y%m%d")
-    in_file = 'C:/Py/IN/perimetre_aff_full.csv'
+    in_file = 'C:/Py/IN/perimetre_fin_trv.csv'
     out_file = f'C:/Py/OUT/out_AFF_FULL_FIN_TRV_{date}.csv'
     table_name = f'AFF_FULL_{date}'
     view_name = 'AFF'
-    max_elt_insert = 20000
+    max_elt_insert = 5000
     max_elt_st = 1000
     max_bdd_cnx = 8
 
@@ -27,10 +27,11 @@ def run_aff(test=False):
         max_elt_st = 10
         max_bdd_cnx = 6
 
-    squeeze_export = False
-    (squeeze_export, squeeze_create_table) = sql.check_restart(squeeze_export)
+    squeeze_downl = False
+    (squeeze_downl, squeeze_create_table) = sql.check_restart(squeeze_downl)
 
-    if not squeeze_export:
+    com.log("Lancement du job " + __name__)
+    if not squeeze_downl:
         com.log('Export SGE\
 ------------------------------------------------------------')
         run_reqList(
@@ -87,7 +88,8 @@ def run_aff(test=False):
 
     com.print_com('')
     dur = com.get_duration_ms(start_time)
-    s = "Traitement terminé en {}."
-    s = s.format(com.get_duration_string(dur))
+    sd = com.get_duration_string(dur)
+    s = f"Job {__name__} terminé en {sd}."
     com.log(s)
+    com.print_com('')
     com.send_notif(s, __name__, dur)

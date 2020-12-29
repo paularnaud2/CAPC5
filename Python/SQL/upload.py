@@ -1,6 +1,7 @@
+import os
 import common as com
 import SQL.gl as gl
-import os
+import SQL.log as log
 
 from time import time
 from SQL.init import init
@@ -11,7 +12,6 @@ from SQL.functions import get_final_script
 
 @com.log_exeptions
 def upload(**params):
-    com.print_com()
     com.log('[SQL] upload')
     script = init_this(params)
     start_time = time()
@@ -48,23 +48,10 @@ def init_this(params):
     init()
 
     script = get_final_script(gl.SCRIPT_FILE)
-    com.log(
-        "Script de base à executer pour chaque ligne du fichier csv d'entrée :"
-    )
-    com.print_com(script)
-    com.print_com('|')
-
+    log.script(script)
     gl.cnx = connect(BDD=gl.BDD, ENV=gl.ENV)
     gl.c = gl.cnx.cursor()
-
-    s1 = "Injection des données dans la BDD"
-    if gl.REF_CHUNK != 0:
-        bn = com.big_number(gl.REF_CHUNK * gl.NB_MAX_ELT_INSERT)
-        s = s1 + f" (reprise à partir de la ligne {bn})"
-    else:
-        s = s1
-    s += "..."
-    com.log(s)
+    log.inject()
     gl.data = []
     gl.counters['main'] = 0
     gl.counters['chunk'] = 0
@@ -76,12 +63,14 @@ def insert(script):
 
     if gl.counters['chunk'] >= gl.REF_CHUNK:
         gl.data = [tuple(line) for line in gl.data]
+        # breakpoint()
         gl.c.executemany(script, gl.data)
-        com.log(
-            f"{com.big_number(gl.counters['main'])} lignes insérées au total")
+        sn = com.big_number(gl.counters['main'])
+        com.log(f"{sn} lignes insérées au total")
+        # breakpoint()
         gl.c.close()
-        com.save_csv([str(gl.counters['chunk']) + '_comitRunning...'],
-                     gl.TMP_FILE_CHUNK)
+        sn = str(gl.counters['chunk'])
+        com.save_csv([sn + '_comitRunning...'], gl.TMP_FILE_CHUNK)
         gl.cnx.commit()
         gl.counters['chunk'] += 1
         com.save_csv([str(gl.counters['chunk'])], gl.TMP_FILE_CHUNK)
@@ -92,20 +81,17 @@ def insert(script):
     gl.data = []
 
 
-def check_restart(squeeze_export=False):
+def check_restart(squeeze_download=False):
     if os.path.exists(gl.TMP_FILE_CHUNK):
         if com.input_com(
                 'Injection de données en cours détectée. Reprendre ? (o/n)'
         ) == 'o':
             try:
                 gl.REF_CHUNK = int(com.load_txt(gl.TMP_FILE_CHUNK)[0])
-                squeeze_export = True
+                squeeze_download = True
                 squeeze_create_table = True
             except ValueError:
-                s = "La reprise a échoué"
-                s += "(un commit était probablement en cours)."
-                s += " Appuyez sur 'c' pour continuer."
-                com.log(s)
+                log.restart_fail()
                 breakpoint()
                 os.remove(gl.TMP_FILE_CHUNK)
                 gl.REF_CHUNK = 0
@@ -115,4 +101,4 @@ def check_restart(squeeze_export=False):
             squeeze_create_table = False
     else:
         squeeze_create_table = False
-    return (squeeze_export, squeeze_create_table)
+    return (squeeze_download, squeeze_create_table)
