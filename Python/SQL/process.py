@@ -38,8 +38,9 @@ def process_gko_query(inst):
 
 def process_range_list(range_list, var):
     gl.counters['QUERY_RANGE'] = 0
+    init_th_dict()
+    gl.sem = Semaphore(gl.MAX_BDD_CNX)
     if range_list == ['MONO']:
-        init_th_dict()
         gen_cnx_dict(gl.BDD, gl.ENV, 1)
         process_range()
     else:
@@ -48,9 +49,7 @@ def process_range_list(range_list, var):
 
 def lauch_threads(range_list, var):
     com.log("Plages à requêter : {}".format(range_list))
-    init_th_dict()
     thread_list = []
-    gl.sem = Semaphore(gl.MAX_BDD_CNX)
     gen_cnx_dict(gl.BDD, gl.ENV, gl.MAX_BDD_CNX)
     for elt in range_list:
         th = Thread(target=process_range, args=(

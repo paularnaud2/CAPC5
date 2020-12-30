@@ -7,18 +7,14 @@ ENV = 'PROD'
 # BDD = 'ADAM'
 BDD = 'SGE'
 
-ENV = 'DIRECT'
-BDD = 'CAPC5'
+# ENV = 'DIRECT'
+# BDD = 'CAPC5'
 
 # ENV = 'LOCAL'
 # BDD = 'XE'
 
-SL_STEP = 100000
-# SL_STEP = 500
-
 date = com.get_date().replace('-', '')
 QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
-OUT_FILE_TYPE = '.csv'
 OUT_DIR = 'C:/Py/OUT/'
 OUT_RG_FOLDER = '{}_OUT_{}'.format(BDD, date)
 # OUT_FILE = OUT_DIR + 'out'.format(BDD)
@@ -32,6 +28,7 @@ GKO_INSTANCES = [
 # GKO_INSTANCES = ['GKO1_IDF']
 EXPORT_INSTANCES = False
 
+SL_STEP = 100000
 MAX_BDD_CNX = 10
 MERGE_RG_FILES = False
 EXPORT_RANGE = False
@@ -51,6 +48,7 @@ CHECK_MEPA = False
 CHECK_MEPA_DIR = com.TMP_PATH_SQL + 'last_mepa_check.csv'
 CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'
 VAR_STR = '@@'
+OUT_FILE_TYPE = '.csv'
 RANGE_PATH = 'SQL/ranges/'
 RANGE_FILE_TYPE = '.csv'
 EC = '_EC'
