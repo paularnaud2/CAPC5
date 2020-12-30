@@ -19,7 +19,7 @@ def run_sge(test=False):
 
     if test:
         in_file = 'C:/Py/IN/in_test.csv'
-        out_file = f'C:/Py/OUT/out_test_{date}.csv'
+        out_file = f'C:/Py/OUT/out_test_SGE_{date}.csv'
         tmp_table = 'SGE_TEST_TMP'
         final_table = f'SGE_TEST_{date}'
         view_name = 'SGE_TEST'

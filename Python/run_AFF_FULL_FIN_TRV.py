@@ -20,7 +20,7 @@ def run_aff(test=False):
 
     if test:
         in_file = 'C:/Py/IN/in_test.csv'
-        out_file = f'C:/Py/OUT/out_test_{date}.csv'
+        out_file = f'C:/Py/OUT/out_test_AFF_{date}.csv'
         table_name = f'AFF_TEST_{date}'
         view_name = 'AFF_TEST'
         max_elt_insert = 40
