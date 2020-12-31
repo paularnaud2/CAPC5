@@ -37,7 +37,7 @@ def gen_cnx_dict(BDD, ENV, nb):
 
 def check_mepa(BDD, cnx, th_nb):
 
-    if BDD != 'SGE' or gl.CHECK_MEPA:
+    if BDD != 'SGE' or gl.check_mepa_ok:
         return
 
     from datetime import datetime
@@ -46,7 +46,7 @@ def check_mepa(BDD, cnx, th_nb):
     if exists(gl.CHECK_MEPA_DIR):
         d_old = com.load_csv(gl.CHECK_MEPA_DIR)[0]
         if d_now == d_old:
-            gl.CHECK_MEPA = True
+            gl.check_mepa_ok = True
             return
     else:
         com.log("Fichier de vérification MEPA introuvable")
@@ -69,14 +69,14 @@ def check_mepa(BDD, cnx, th_nb):
             import sys
             sys.exit()
 
-    gl.CHECK_MEPA = True
+    gl.check_mepa_ok = True
 
 
 def get_bdd_date(cnx):
 
     c = cnx.cursor()
     com.log("Exécution de la requête check MEPA : ")
-    com.print_com(gl.CHECK_MEPA_QUERY)
+    com.log_print(gl.CHECK_MEPA_QUERY)
     c.execute(gl.CHECK_MEPA_QUERY)
     com.log("Requête exécutée")
     a = c.fetchone()

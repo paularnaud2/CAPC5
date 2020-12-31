@@ -24,7 +24,7 @@ def init_params(params):
 
 
 def init_gko():
-    com.print_com("Réquête exécutée pour toutes les instances :\n{}\n;".format(
+    com.log_print("Réquête exécutée pour toutes les instances :\n{}\n;".format(
         gl.query))
     inst_list = gl.GKO_INSTANCES
     inst_list = restart(inst_list)

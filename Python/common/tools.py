@@ -36,3 +36,18 @@ def split_array(array_in, max_elt):
         cur_array = array_in[max_elt * i:max_elt * (i + 1)]
 
     return array_out
+
+
+def print_list(list):
+    for elt in list:
+        print(elt)
+
+
+def print_array(array, nb_tab=0):
+    for elt in array:
+        print(elt, nb_tab)
+
+
+def print_dict(dict):
+    for key in dict:
+        print(f'{key} : {dict[key]}')

@@ -61,7 +61,7 @@ def init_this(params):
 
 def insert(script):
 
-    if gl.counters['chunk'] >= gl.REF_CHUNK:
+    if gl.counters['chunk'] >= gl.ref_chunk:
         gl.data = [tuple(line) for line in gl.data]
         # breakpoint()
         gl.c.executemany(script, gl.data)
@@ -87,14 +87,14 @@ def check_restart(squeeze_download=False):
                 'Injection de données en cours détectée. Reprendre ? (o/n)'
         ) == 'o':
             try:
-                gl.REF_CHUNK = int(com.load_txt(gl.TMP_FILE_CHUNK)[0])
+                gl.ref_chunk = int(com.load_txt(gl.TMP_FILE_CHUNK)[0])
                 squeeze_download = True
                 squeeze_create_table = True
             except ValueError:
                 log.restart_fail()
                 breakpoint()
                 os.remove(gl.TMP_FILE_CHUNK)
-                gl.REF_CHUNK = 0
+                gl.ref_chunk = 0
                 squeeze_create_table = False
         else:
             os.remove(gl.TMP_FILE_CHUNK)

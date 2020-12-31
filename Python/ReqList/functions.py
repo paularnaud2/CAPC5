@@ -53,7 +53,7 @@ def set_query_var(query_file):
     query = query.replace('\n;', '')
     gl.query_var = query.replace(';', '')
     s = "Requête modèle :\n{}\n;"
-    com.print_com(s.format(gl.query_var))
+    com.log_print(s.format(gl.query_var))
 
 
 def prepare_elt_list(array_in):

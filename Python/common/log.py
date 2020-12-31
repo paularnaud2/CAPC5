@@ -6,12 +6,11 @@ from datetime import datetime
 
 
 def write_log(str_in):
-    if not g.LOG_OUTPUT or g.ROOT_PATH == '':
+    if not g.LOG_OUTPUT:
         return
 
     s = str(str_in)
-    with open(g.ROOT_PATH + g.paths['LOG'] + g.LOG_FILE, 'a',
-              encoding='utf-8') as in_file:
+    with open(g.paths['LOG'] + g.LOG_FILE, 'a', encoding='utf-8') as in_file:
         in_file.write(s + '\n')
 
 
@@ -35,19 +34,20 @@ def log(str_in, level=0, print_date=False, nb_tab=0):
         log_print(s, nb_tab)
 
 
-def init_log(parent_module, root_path='C:/Py/'):
+def init_log(parent_module='', root_path='C:/Py/'):
     if g.LOG_FILE_INITIALISED:
         return
 
     g.init_directories(root_path)
 
-    s = datetime.now().strftime("%Y%m%d%H%M%S")
-    g.LOG_FILE = s + '_' + parent_module + '.txt'
-    with open(g.ROOT_PATH + g.paths['LOG'] + g.LOG_FILE, 'w',
-              encoding='utf-8') as in_file:
+    s = datetime.now().strftime("%Y%m%d_%H%M%S")
+    if parent_module:
+        s += '_' + parent_module
+    g.LOG_FILE = s + '.txt'
+    with open(g.paths['LOG'] + g.LOG_FILE, 'w', encoding='utf-8') as in_file:
         in_file.write('')
 
-    log_path = g.ROOT_PATH + g.paths['LOG'] + g.LOG_FILE
+    log_path = g.paths['LOG'] + g.LOG_FILE
     s = f"Fichier de log initialisé ({log_path})"
     log(s, print_date=True)
     log_print("Version Python : " + sys.version)
@@ -119,16 +119,16 @@ def gen_sl_detail(range_name, th_nb=1, what='la plage', multi_thread=False):
     return th_name
 
 
-def list_print(list):
+def log_list(list):
     for elt in list:
         log_print(elt)
 
 
-def array_print(array, nb_tab=0):
+def log_array(array, nb_tab=0):
     for elt in array:
         log_print(elt, nb_tab)
 
 
-def dict_print(dict):
+def log_dict(dict):
     for key in dict:
         log_print(f'{key} : {dict[key]}')

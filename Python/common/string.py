@@ -4,17 +4,17 @@ from time import time
 
 def get_duration_string(duration_ms):
     if duration_ms >= 1000:
-        duration_s = duration_ms/1000
+        duration_s = duration_ms / 1000
         if duration_s > 60:
-            duration_m = duration_s//60
+            duration_m = duration_s // 60
             duration_s = duration_s % 60
             out = str(floor(duration_m)) + " minutes et "
-            + str(floor(duration_s)) + " secondes"
-            return(out)
+            +str(floor(duration_s)) + " secondes"
+            return (out)
         out = str(duration_s) + " secondes"
-        return(out)
+        return (out)
     out = str(duration_ms) + " ms"
-    return(out)
+    return (out)
 
 
 def get_duration_ms(start_time, end_time=''):
@@ -37,7 +37,7 @@ def big_number(str_in):
         out = s[position] + out
         if counter % 3 == 0 and position != 0:
             out = " " + out
-    return(out)
+    return (out)
 
 
 def reverse_string(str_in):

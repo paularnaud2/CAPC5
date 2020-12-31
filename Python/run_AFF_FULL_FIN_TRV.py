@@ -61,7 +61,7 @@ def run_aff(test=False):
             PROC=True,
         )
 
-    com.print_com('')
+    com.log_print('')
     com.log('Export des données importées dans la table créée\
 ----------------------')
     sql.upload(
@@ -73,7 +73,7 @@ def run_aff(test=False):
         NB_MAX_ELT_INSERT=max_elt_insert,
     )
 
-    com.print_com('')
+    com.log_print('')
     com.log(f'Mise à jour de la vue {view_name}\
 -----------------------------------')
     sql.execute(
@@ -86,10 +86,10 @@ def run_aff(test=False):
         },
     )
 
-    com.print_com('')
+    com.log_print('')
     dur = com.get_duration_ms(start_time)
     sd = com.get_duration_string(dur)
     s = f"Job {__name__} terminé en {sd}."
     com.log(s)
-    com.print_com('')
+    com.log_print('')
     com.send_notif(s, __name__, dur)

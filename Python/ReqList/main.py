@@ -55,7 +55,7 @@ def finish(start_time):
     s = s.format(com.get_duration_string(duration))
     com.log(s)
     com.send_notif(s, "ReqList", duration, gl.SEND_NOTIF)
-    com.print_com("")
+    com.log_print("")
     if gl.OPEN_OUT_FILE:
         startfile(gl.OUT_FILE)
 
@@ -83,17 +83,17 @@ def sql_download(BDD):
         sql_download_strd(BDD)
 
     com.delete_folder(gl.TMP_PATH)
-    com.print_com("|")
+    com.log_print("|")
     n = sum([gl.counters[elt] for elt in gl.counters])
     bn = com.big_number(n)
     s = f"Export récupéré ({bn} lignes écrites)"
     com.log(s)
-    com.print_com("|")
+    com.log_print("|")
 
 
 def init_download(BDD):
     init()
-    com.print_com("|")
+    com.log_print("|")
     com.log(f"Récupération des données depuis la base {BDD}...")
     gl.header = ''
     gl.counters = {}

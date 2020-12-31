@@ -2,8 +2,9 @@ import SQL.rg as rg
 import SQL.gl as gl
 import common as com
 
-from threading import Thread
+from time import time
 from os import startfile
+from threading import Thread
 
 from SQL.init import init
 from SQL.init import init_gko
@@ -15,6 +16,7 @@ from SQL.process import process_gko_query
 @com.log_exeptions
 def download(**params):
     com.log('[SQL] download')
+    start_time = time()
     init_params(params)
     if gl.BDD == 'GINKO':
         download_gko()
@@ -22,7 +24,7 @@ def download(**params):
         download_strd()
 
     group_by()
-    finish()
+    finish(start_time)
 
 
 def download_strd():
@@ -82,9 +84,9 @@ def group_by():
     com.log('Group by terminé')
 
 
-def finish():
+def finish(start_time):
 
-    dur = com.get_duration_ms(gl.start_time)
+    dur = com.get_duration_ms(start_time)
     bn = com.big_number(gl.counters["row"])
     s = "Export terminé. {} lignes écrites en {}."
     s = s.format(bn, com.get_duration_string(dur))
@@ -99,6 +101,6 @@ def finish():
         if gl.OPEN_OUT_FILE:
             startfile(out_dir)
 
-    com.print_com("|")
+    com.log_print("|")
     com.log("Traitement terminé")
     com.send_notif(s, "SQL", dur, gl.SEND_NOTIF)

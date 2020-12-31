@@ -17,14 +17,14 @@ def execute(**params):
     c = cnx.cursor()
     if gl.PROC:
         com.log("Execution de la procédure :")
-        com.print_com(script)
+        com.log_print(script)
         c.execute(script)
         com.log("Procédure executée")
     else:
         command_list = script.split(';')
         for command in command_list:
             com.log("Execution de la commande :")
-            com.print_com(command)
+            com.log_print(command)
             c.execute(command)
             com.log("Commande executée")
     c.close()

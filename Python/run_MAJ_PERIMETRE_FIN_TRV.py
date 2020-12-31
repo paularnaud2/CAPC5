@@ -18,4 +18,4 @@ def run_maj_perimetre(test=False):
     )
 
     com.log(f"Job {__name__} terminé.")
-    com.print_com('')
+    com.log_print('')

@@ -1,6 +1,6 @@
 # variables globales et constantes pour le package SQL (import SQL.gl as gl)
-import common as com
-from time import time
+from common import g
+from datetime import datetime
 
 ENV = 'PROD'
 # BDD = 'GINKO'
@@ -13,7 +13,7 @@ BDD = 'SGE'
 # ENV = 'LOCAL'
 # BDD = 'XE'
 
-date = com.get_date().replace('-', '')
+date = datetime.now().strftime("%Y%m%d")
 QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
 OUT_DIR = 'C:/Py/OUT/'
 OUT_RG_FOLDER = '{}_OUT_{}'.format(BDD, date)
@@ -30,10 +30,10 @@ EXPORT_INSTANCES = False
 
 SL_STEP = 100000
 MAX_BDD_CNX = 10
+MAX_CHECK_DUP = 1 * 10**6
+
 MERGE_RG_FILES = False
 EXPORT_RANGE = False
-
-MAX_CHECK_DUP = 1 * 10**6
 CHECK_DUP = True
 OPEN_OUT_FILE = True
 SEND_NOTIF = True
@@ -44,18 +44,17 @@ RIGHT_DEL = ""  # "\""
 
 ORACLE_CLIENT = 'C:/instantclient_19_6/'
 CONF_FILE = ORACLE_CLIENT + 'conf_perso.txt'
-CHECK_MEPA = False
-CHECK_MEPA_DIR = com.TMP_PATH_SQL + 'last_mepa_check.csv'
+TMP_FOLDER = 'SQL/'
+TMP_PATH = g.paths['TMP'] + TMP_FOLDER + BDD + '/'
+TMP_TRT_FILE = 'tmp.csv'
+CHECK_MEPA_DIR = g.paths['TMP'] + TMP_FOLDER + 'last_mepa_check.csv'
 CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'
-VAR_STR = '@@'
 OUT_FILE_TYPE = '.csv'
 RANGE_PATH = 'SQL/ranges/'
 RANGE_FILE_TYPE = '.csv'
+VAR_STR = '@@'
 EC = '_EC'
-TMP_PATH = com.TMP_PATH_SQL + BDD + '/'
-TMP_TRT_FILE = 'tmp.csv'
 
-start_time = time()
 conf = {}
 conf_env = {}
 counters = {}
@@ -64,15 +63,14 @@ out_files = {}
 th_dic = {}
 query = ''
 client_is_init = False
+check_mepa_ok = False
 
 # Execute
-SCRIPT_FILE = 'SQL/scripts/create_table_aff.sql'
-VAR_DICT = {}
 IN_DIR = 'C:/Py/OUT/in.csv'
+SCRIPT_FILE = 'SQL/scripts/create_table_aff.sql'
 NB_MAX_ELT_INSERT = 100000
 PROC = False
-data = []
-TMP_FILE_CHUNK = com.TMP_PATH_SQL + 'chunk.txt'
-REF_CHUNK = 0
-SQUEEZE_EXPORT = False
-SQUEEZE_CREATE_TABLE = False
+TMP_FILE_CHUNK = g.paths['TMP'] + TMP_FOLDER + 'chunk.txt'
+VAR_DICT = {}
+
+ref_chunk = 0

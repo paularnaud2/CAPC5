@@ -6,7 +6,7 @@ def process_query_init(elt, query, th_nb):
 
     if elt == 'MONO':
         com.log("Exécution de la requête :")
-        com.print_com(query + "\n;")
+        com.log_print(query + "\n;")
     elif gl.MAX_BDD_CNX == 1:
         s = "Exécution de la requête pour la plage {}"
         com.log(s.format(elt))
@@ -75,8 +75,8 @@ def write_rows_finish(range_name, i, th_nb):
 
 def inject():
     s1 = "Injection des données dans la BDD"
-    if gl.REF_CHUNK != 0:
-        bn = com.big_number(gl.REF_CHUNK * gl.NB_MAX_ELT_INSERT)
+    if gl.ref_chunk != 0:
+        bn = com.big_number(gl.ref_chunk * gl.NB_MAX_ELT_INSERT)
         s = s1 + f" (reprise à partir de la ligne {bn})"
     else:
         s = s1
@@ -87,7 +87,7 @@ def inject():
 def script(script):
     s = "Script de base à executer pour chaque ligne du fichier d'entrée :"
     com.log(s)
-    com.print_com(script)
+    com.log_print(script)
 
 
 def restart_fail():

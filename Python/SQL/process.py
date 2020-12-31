@@ -62,7 +62,7 @@ def lauch_threads(range_list, var):
     for th in thread_list:
         th.join()
 
-    com.print_com('|')
+    com.log_print('|')
 
 
 @com.log_exeptions
