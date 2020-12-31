@@ -4,9 +4,6 @@ import traceback
 from . import g
 from .log import log
 from .log import log_print
-from threading import RLock
-
-verrou = RLock()
 
 
 def log_exeptions(f):
@@ -14,7 +11,7 @@ def log_exeptions(f):
         try:
             return f(*arg, **kwargs)
         except Exception:
-            with verrou:
+            with g.verrou:
                 s = "Une erreur est survenue :\n"
                 s += traceback.format_exc()
                 log(s)

@@ -1,9 +1,8 @@
+import os
 import re
 import SQL.gl as gl
 import common as com
 
-from os import remove
-from os import makedirs
 from shutil import move
 
 
@@ -50,7 +49,7 @@ def restart(range_list):
         return range_list
 
     s = "Traitement en cours détecté. Tuer ? (o/n)"
-    if com.input_com(s) == 'o':
+    if com.log_input(s) == 'o':
         com.delete_folder(gl.TMP_PATH)
         return range_list
 
@@ -72,7 +71,7 @@ def modify_restart(range_list, file_list):
             list_out.append(elt)
         if comp_elt_ec in file_list:
             ec_path = gl.TMP_PATH + comp_elt_ec
-            remove(ec_path)
+            os.remove(ec_path)
             com.log("Fichier EC {} supprimé".format(ec_path))
 
     return list_out
@@ -87,11 +86,11 @@ def move_tmp_folder():
 
     com.log('Création du dossier de sortie {}...'.format(out_dir))
     if not exists(out_dir):
-        makedirs(out_dir)
+        os.makedirs(out_dir)
     else:
         com.delete_folder(out_dir)
         sleep(0.5)
-        makedirs(out_dir)
+        os.makedirs(out_dir)
     com.log('Dossier de sortie créé')
 
     file_list = com.get_file_list(gl.TMP_PATH)
@@ -116,7 +115,7 @@ def merge_tmp_files():
             com.merge_files(cur_dir, out_file, remove_header=False)
         else:
             com.merge_files(cur_dir, out_file, remove_header=True)
-        remove(cur_dir)
+        os.remove(cur_dir)
 
     com.log(
         "Fusion et suppression des {} fichiers temporaires terminée".format(
@@ -126,12 +125,12 @@ def merge_tmp_files():
 def init_merge():
     gl.bools["MERGE_OK"] = True
     file_list = com.get_file_list(gl.TMP_PATH)
-    out_file = gl.OUT_FILE + gl.RANGE_FILE_TYPE
+    out_file = gl.OUT_FILE
     if check_ec(file_list) or check_mono(file_list, out_file):
         return ('', '', True)
 
-    if com.exists(out_file):
-        remove(out_file)
+    if os.path.exists(out_file):
+        os.remove(out_file)
 
     com.log("Fusion et suppression de {} fichiers temporaires...".format(
         len(file_list)))

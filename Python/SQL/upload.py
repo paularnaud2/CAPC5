@@ -83,7 +83,7 @@ def insert(script):
 
 def check_restart(squeeze_download=False):
     if os.path.exists(gl.TMP_FILE_CHUNK):
-        if com.input_com(
+        if com.log_input(
                 'Injection de données en cours détectée. Reprendre ? (o/n)'
         ) == 'o':
             try:

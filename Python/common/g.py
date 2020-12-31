@@ -32,7 +32,7 @@ sl_detail = {}
 # Misc
 MIN_DUR_NOTIF_TRIGGER = 30
 CSV_SEPARATOR = ';'
-DEBUG = False
+DEBUG = True
 
-counter = {}
+counters = {}
 verrou = RLock()

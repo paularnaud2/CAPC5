@@ -2,6 +2,7 @@ import os
 import common as com
 import ReqList.gl as gl
 
+from os.path import exists
 from threading import RLock
 
 verrou = RLock()
@@ -38,7 +39,7 @@ def init_gen_out():
     if check_ec(file_list):
         return
 
-    if com.exists(out_file):
+    if exists(out_file):
         os.remove(out_file)
 
     s = f"Fusion et suppression de {len(file_list)} fichiers temporaires..."
@@ -60,8 +61,8 @@ def check_ec(file_list):
 def tmp_init(th_name):
 
     with verrou:
-        if not com.exists(gl.TMP_PATH):
-            com.makedirs(gl.TMP_PATH)
+        if not exists(gl.TMP_PATH):
+            os.makedirs(gl.TMP_PATH)
         gl.tmp_file[th_name] = gl.TMP_PATH + th_name + gl.TMP_FILE_TYPE
         gl.tmp_file[th_name + gl.EC] = (gl.TMP_PATH + th_name + gl.EC +
                                         gl.TMP_FILE_TYPE)

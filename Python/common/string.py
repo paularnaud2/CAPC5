@@ -8,8 +8,9 @@ def get_duration_string(duration_ms):
         if duration_s > 60:
             duration_m = duration_s // 60
             duration_s = duration_s % 60
-            out = str(floor(duration_m)) + " minutes et "
-            +str(floor(duration_s)) + " secondes"
+            dm = str(floor(duration_m))
+            ds = str(floor(duration_s))
+            out = f"{dm} minutes et {ds} secondes"
             return (out)
         out = str(duration_s) + " secondes"
         return (out)

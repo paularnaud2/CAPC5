@@ -29,7 +29,7 @@ def gen_cnx_dict(BDD, ENV, nb):
     gl.cnx_dict = dict()
     i = 1
     while i <= nb:
-        com.log(f'Connexion No. {i} en cours de création...')
+        com.log(f'Connexion No. {i} en cours de création ({BDD}, {ENV})...')
         gl.cnx_dict[i] = cx.connect(cnx_str)
         com.log(f'Connexion No. {i} créée')
         i += 1
@@ -65,7 +65,7 @@ def check_mepa(BDD, cnx, th_nb):
         print("Date BDD : {}".format(d_bdd))
         print("Date du jour : {}".format(d_now))
         s = "Continuer ? (o/n)"
-        if com.input_com(s) == 'n':
+        if com.log_input(s) == 'n':
             import sys
             sys.exit()
 

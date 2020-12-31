@@ -29,7 +29,6 @@ def download(**params):
 
 def download_strd():
     init()
-
     var = rg.get_var_name(gl.query)
     range_list = rg.gen_range_list(var)
     range_list = rg.restart(range_list)
@@ -61,7 +60,7 @@ def group_by():
     if not gl.bools["MERGE_OK"] or not gl.bools['RANGE_QUERY']:
         return
 
-    out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE
+    out_dir = gl.OUT_FILE
     header = com.get_csv_fields_list(out_dir)
     vol_fields = [elt for elt in header if 'VOL' in elt or 'COUNT' in elt]
     if len(vol_fields) == 0:
@@ -79,7 +78,7 @@ def group_by():
     df[vol_field] = df[vol_field].astype(int)
     df = df.groupby(by=gb_fields).sum()
     df = df.sort_values(by=vol_field, ascending=False)
-    out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE
+    out_dir = gl.OUT_FILE
     df.to_csv(path_or_buf=out_dir, sep=';', encoding='UTF-8')
     com.log('Group by terminé')
 
@@ -93,7 +92,7 @@ def finish(start_time):
     com.log(s)
 
     if gl.bools["MERGE_OK"]:
-        out_dir = gl.OUT_FILE + gl.OUT_FILE_TYPE
+        out_dir = gl.OUT_FILE
         com.log("Fichier de sortie {} alimenté avec succès".format(out_dir))
         if gl.counters["row"] < gl.MAX_CHECK_DUP and gl.CHECK_DUP:
             import Tools.dup as dup

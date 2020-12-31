@@ -1,7 +1,9 @@
 import re
+import os
 import common as com
 import SQL.gl as gl
 
+from common import g
 from SQL.rg import restart
 from threading import RLock
 
@@ -13,6 +15,13 @@ def init():
     gl.counters["row"] = 0
     set_conf()
     get_query()
+    init_tmp_dir()
+
+
+def init_tmp_dir():
+    gl.TMP_PATH = g.paths['TMP'] + gl.TMP_FOLDER + gl.BDD + '/'
+    if not os.path.exists(gl.TMP_PATH):
+        os.makedirs(gl.TMP_PATH)
 
 
 def init_params(params):

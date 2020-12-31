@@ -17,8 +17,8 @@ date = datetime.now().strftime("%Y%m%d")
 QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
 OUT_DIR = 'C:/Py/OUT/'
 OUT_RG_FOLDER = '{}_OUT_{}'.format(BDD, date)
-# OUT_FILE = OUT_DIR + 'out'.format(BDD)
-OUT_FILE = OUT_DIR + 'export_SQL_{}_{}'.format(BDD, date)
+OUT_FILE_TYPE = '.csv'
+OUT_FILE = OUT_DIR + 'export_SQL_{}_{}'.format(BDD, date) + OUT_FILE_TYPE
 
 GKO_INSTANCES = [
     'GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO',
@@ -45,11 +45,9 @@ RIGHT_DEL = ""  # "\""
 ORACLE_CLIENT = 'C:/instantclient_19_6/'
 CONF_FILE = ORACLE_CLIENT + 'conf_perso.txt'
 TMP_FOLDER = 'SQL/'
-TMP_PATH = g.paths['TMP'] + TMP_FOLDER + BDD + '/'
 TMP_TRT_FILE = 'tmp.csv'
 CHECK_MEPA_DIR = g.paths['TMP'] + TMP_FOLDER + 'last_mepa_check.csv'
 CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'
-OUT_FILE_TYPE = '.csv'
 RANGE_PATH = 'SQL/ranges/'
 RANGE_FILE_TYPE = '.csv'
 VAR_STR = '@@'

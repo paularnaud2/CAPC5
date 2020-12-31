@@ -3,6 +3,7 @@ import common as com
 import SQL.gl as gl
 import SQL.log as log
 
+from common import g
 from os import rename
 from threading import RLock
 
@@ -42,7 +43,7 @@ def write_row(row, out_file, range_name='MONO'):
             s = ''
         line_out += com.CSV_SEPARATOR + gl.LEFT_DEL + s.strip(
             '\r\n') + gl.RIGHT_DEL
-    if line_out.strip(com.CSV_SEPARATOR) == '':
+    if line_out.strip(g.CSV_SEPARATOR) == '':
         return 0
     if (gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES
             or gl.EXPORT_RANGE and range_name != 'MONO'):

@@ -2,8 +2,6 @@ import common as com
 import SQL.log as log
 import SQL.gl as gl
 
-from os.path import exists
-from os import makedirs
 from SQL.functions import write_rows
 from SQL.connect import connect
 from SQL.connect import gen_cnx_dict
@@ -101,8 +99,6 @@ def init_out_file(cursor, range_name='MONO'):
     # on initialise le fichier de sortie avec le nom
     # des différents champs en première ligne
 
-    if not exists(gl.TMP_PATH):
-        makedirs(gl.TMP_PATH)
     with verrou:
         gl.out_files[range_name] = gl.TMP_PATH + range_name + gl.OUT_FILE_TYPE
         gl.out_files[

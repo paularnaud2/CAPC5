@@ -1,5 +1,5 @@
 from common import init_log
-init_log('runJobs')
+init_log('runJobs', 'C:/PyNEW/')
 
 if __name__ == '__main__':
     from run_AFF_FULL_FIN_TRV import run_aff
@@ -9,6 +9,6 @@ if __name__ == '__main__':
     test = False
     test = True
 
-    # run_maj_perimetre()
+    run_maj_perimetre()
     run_aff(test)
     run_sge(test)
