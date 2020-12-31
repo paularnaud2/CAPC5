@@ -33,14 +33,14 @@ def init_params(params):
 
 
 def init_gko():
-    com.log_print("Réquête exécutée pour toutes les instances :\n{}\n;".format(
-        gl.query))
+    s = f"Réquête exécutée pour toutes les instances :\n{gl.query}\n;"
+    com.log_print(s)
     inst_list = gl.GKO_INSTANCES
     inst_list = restart(inst_list)
     if len(inst_list) == 0:
         com.log("Aucune instance à requêter.")
     else:
-        com.log("Instances à requêter : {}".format(inst_list))
+        com.log(f"Instances à requêter : {inst_list}")
 
     return inst_list
 

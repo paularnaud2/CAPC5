@@ -63,11 +63,9 @@ def insert(script):
 
     if gl.counters['chunk'] >= gl.ref_chunk:
         gl.data = [tuple(line) for line in gl.data]
-        # breakpoint()
         gl.c.executemany(script, gl.data)
         sn = com.big_number(gl.counters['main'])
         com.log(f"{sn} lignes insérées au total")
-        # breakpoint()
         gl.c.close()
         sn = str(gl.counters['chunk'])
         com.save_csv([sn + '_comitRunning...'], gl.TMP_FILE_CHUNK)
@@ -82,6 +80,7 @@ def insert(script):
 
 
 def check_restart(squeeze_download=False):
+    gl.ref_chunk = 0
     if os.path.exists(gl.TMP_FILE_CHUNK):
         if com.log_input(
                 'Injection de données en cours détectée. Reprendre ? (o/n)'
@@ -94,7 +93,6 @@ def check_restart(squeeze_download=False):
                 log.restart_fail()
                 breakpoint()
                 os.remove(gl.TMP_FILE_CHUNK)
-                gl.ref_chunk = 0
                 squeeze_create_table = False
         else:
             os.remove(gl.TMP_FILE_CHUNK)
