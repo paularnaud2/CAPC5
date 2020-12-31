@@ -2,6 +2,23 @@ from os import makedirs
 from os.path import exists
 from threading import RLock
 
+# Misc
+MIN_DUR_NOTIF_TRIGGER = 30
+CSV_SEPARATOR = ';'
+DEBUG = False
+
+counters = {}
+verrou = RLock()
+
+# Log
+LOG_LEVEL = 1
+LOG_FILE_INITIALISED = False
+LOG_FILE = None
+LOG_OUTPUT = True
+
+sl_time_dict = {}
+sl_detail = {}
+
 # Path
 paths = {}
 init_dir = {}
@@ -18,21 +35,3 @@ def init_directories(root_path):
         paths[key] = cur_path
         if not exists(cur_path):
             makedirs(cur_path)
-
-
-# Log
-LOG_LEVEL = 1
-LOG_FILE_INITIALISED = False
-LOG_FILE = None
-LOG_OUTPUT = True
-
-sl_time_dict = {}
-sl_detail = {}
-
-# Misc
-MIN_DUR_NOTIF_TRIGGER = 30
-CSV_SEPARATOR = ';'
-DEBUG = True
-
-counters = {}
-verrou = RLock()

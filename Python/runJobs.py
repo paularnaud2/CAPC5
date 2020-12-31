@@ -1,5 +1,5 @@
 from common import init_log
-init_log('runJobs', 'C:/PyNEW/')
+init_log('runJobs', 'C:/Py/')
 
 if __name__ == '__main__':
     from run_AFF_FULL_FIN_TRV import run_aff
