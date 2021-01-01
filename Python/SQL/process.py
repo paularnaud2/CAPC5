@@ -12,15 +12,6 @@ from threading import Semaphore
 verrou = RLock()
 
 
-def process_query(c, query, elt, th_nb):
-    log.process_query_init(elt, query, th_nb)
-    c.execute(query)
-    log.process_query_finish(elt, th_nb)
-    init_out_file(c, elt)
-    th_name = com.gen_sl_detail(elt, th_nb)
-    write_rows(c, elt, th_name, th_nb)
-
-
 def process_gko_query(inst):
     cnx = connect(inst)
     c = cnx.cursor()
@@ -78,6 +69,16 @@ def process_range(elt='MONO', var=''):
         with verrou:
             gl.th_dic[cur_th] = 0
         # com.log(f'Sortie sémaphore pour elt {elt}')
+
+
+def process_query(c, query, elt, th_nb):
+
+    log.process_query_init(elt, query, th_nb)
+    c.execute(query)
+    log.process_query_finish(elt, th_nb)
+    init_out_file(c, elt)
+    th_name = com.gen_sl_detail(elt, th_nb)
+    write_rows(c, elt, th_name, th_nb)
 
 
 def get_th_nb():
