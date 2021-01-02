@@ -5,17 +5,25 @@ import SQL.gl as gl
 
 from common import g
 from SQL.rg import restart
-from threading import RLock
-
-verrou = RLock()
 
 
 def init():
-    gl.bools['RANGE_QUERY'] = False
-    gl.counters["row"] = 0
+
+    init_gl()
     set_conf()
     get_query()
     init_tmp_dir()
+
+
+def init_gl():
+    gl.conf = {}
+    gl.conf_env = {}
+    gl.bools = {}
+    gl.counters = {}
+    gl.out_files = {}
+    gl.th_dic = {}
+
+    gl.counters["row"] = 0
 
 
 def init_tmp_dir():
@@ -30,19 +38,6 @@ def init_params(params):
         for key in params:
             gl.__getattribute__(key)
             gl.__setattr__(key, params[key])
-
-
-def init_gko():
-    s = f"Réquête exécutée pour toutes les instances :\n{gl.query}\n;"
-    com.log_print(s)
-    inst_list = gl.GKO_INSTANCES
-    inst_list = restart(inst_list)
-    if len(inst_list) == 0:
-        com.log("Aucune instance à requêter.")
-    else:
-        com.log(f"Instances à requêter : {inst_list}")
-
-    return inst_list
 
 
 def set_conf():
@@ -78,3 +73,16 @@ def get_query():
 
     query = query.replace('\n;', '')
     gl.query = query.replace(';', '')
+
+
+def init_gko():
+    s = f"Réquête exécutée pour toutes les instances :\n{gl.query}\n;"
+    com.log_print(s)
+    inst_list = gl.GKO_INSTANCES
+    inst_list = restart(inst_list)
+    if len(inst_list) == 0:
+        com.log("Aucune instance à requêter.")
+    else:
+        com.log(f"Instances à requêter : {inst_list}")
+
+    return inst_list

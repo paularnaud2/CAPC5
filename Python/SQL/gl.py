@@ -53,12 +53,7 @@ RANGE_FIELD = "RANGE"
 LEFT_DEL = ""  # "\""
 RIGHT_DEL = ""  # "\""
 
-conf = {}
-conf_env = {}
-counters = {}
-bools = {}
-out_files = {}
-th_dic = {}
+# Super globals
 client_is_init = False
 check_mepa_ok = False
 

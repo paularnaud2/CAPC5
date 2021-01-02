@@ -11,7 +11,7 @@ def restart():
         return
 
     s = "Traitement en cours détecté. Tuer ? (o/n)"
-    if com.input_com(s) == 'o':
+    if com.log_input(s) == 'o':
         com.delete_folder(gl.TMP_PATH)
         return
     return
@@ -82,7 +82,7 @@ def str_handle(array_in):
             s = "Attention il semble ne pas y avoir de header dans l'entrant"
             s += " (premier élément : {}) Continuer ? (o/n)"
             s = s.format(array_in[0])
-            if com.input_com(s) != 'o':
+            if com.log_input(s) != 'o':
                 sys.exit()
         elt_list = array_in[1:]
     else:
@@ -90,14 +90,14 @@ def str_handle(array_in):
             s = "Attention il semble ne pas y avoir de header dans l'entrant"
             s += " (première ligne : {}) Continuer ? (o/n)"
             s = s.format(array_in[0])
-            if com.input_com(s) != 'o':
+            if com.log_input(s) != 'o':
                 sys.exit()
 
         if gl.IN_FIELD_NB != 1:
             s = "Attention les requêtes se feront sur le {}ème champ "
             s += "du tableau d'entrée. Continuer ? (o/n)"
             s = s.format(gl.IN_FIELD_NB)
-            if com.input_com(s) != 'o':
+            if com.log_input(s) != 'o':
                 sys.exit()
         elt_list = [elt[gl.IN_FIELD_NB - 1] for elt in array_in[1:]]
 

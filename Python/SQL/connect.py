@@ -16,8 +16,7 @@ def connect(BDD, th_nb=1, multi_thread=False, ENV=''):
     log.connect_init(th_nb, BDD, conf, multi_thread)
     cnx = cx.connect(cnx_str)
     log.connect_finish(th_nb, BDD, multi_thread)
-    with verrou:
-        check_mepa(BDD, cnx, th_nb)
+    check_mepa(BDD, cnx, th_nb)
 
     return cnx
 
@@ -31,11 +30,12 @@ def gen_cnx_dict(BDD, ENV, nb):
     while i <= nb:
         com.log(f'Connexion No. {i} en cours de création ({BDD}, {ENV})...')
         gl.cnx_dict[i] = cx.connect(cnx_str)
+        check_mepa(BDD, gl.cnx_dict[i])
         com.log(f'Connexion No. {i} créée')
         i += 1
 
 
-def check_mepa(BDD, cnx, th_nb):
+def check_mepa(BDD, cnx, th_nb=0):
 
     if BDD != 'SGE' or gl.check_mepa_ok:
         return
@@ -51,7 +51,10 @@ def check_mepa(BDD, cnx, th_nb):
     else:
         com.log("Fichier de vérification MEPA introuvable")
 
-    com.log('Vérification MEPA (Pool No.{})...'.format(th_nb))
+    s = "Vérification MEPA"
+    if th_nb > 0:
+        s += f" (Pool No.{th_nb})..."
+    com.log(s)
     d_bdd = get_bdd_date(cnx)
     if d_bdd == d_now:
         com.save_csv([d_now], gl.CHECK_MEPA_DIR)

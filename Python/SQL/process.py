@@ -12,19 +12,6 @@ from threading import Semaphore
 verrou = RLock()
 
 
-def process_gko_query(inst):
-    cnx = connect(inst)
-    c = cnx.cursor()
-    com.log("Exécution de la requête pour l'instance {}...".format(inst))
-    c.execute(gl.query)
-    com.log("Requête exécutée pour {}".format(inst))
-    init_out_file(c, inst)
-    th_name = com.gen_sl_detail(inst, what="l'instance")
-    write_rows(c, inst, th_name)
-    c.close()
-    cnx.close
-
-
 def process_range_list(range_list, var):
     gl.counters['QUERY_RANGE'] = 0
     init_th_dict()
@@ -119,3 +106,16 @@ def init_out_file(cursor, range_name='MONO'):
         elif gl.EXPORT_RANGE and range_name != 'MONO':
             out_file.write(com.CSV_SEPARATOR + "RANGE")
         out_file.write("\n")
+
+
+def process_gko_query(inst):
+    cnx = connect(inst)
+    c = cnx.cursor()
+    com.log("Exécution de la requête pour l'instance {}...".format(inst))
+    c.execute(gl.query)
+    com.log("Requête exécutée pour {}".format(inst))
+    init_out_file(c, inst)
+    th_name = com.gen_sl_detail(inst, what="l'instance")
+    write_rows(c, inst, th_name)
+    c.close()
+    cnx.close
