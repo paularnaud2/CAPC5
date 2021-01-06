@@ -1,6 +1,9 @@
 import common as com
 import Tools.gl as gl
+
 from common import g
+from os import makedirs
+from os.path import exists
 
 IN_FILE = 'C:/Py/IN/out_sql.csv'
 OUT_FILE = 'C:/Py/OUT/out_dup.csv'
@@ -13,14 +16,14 @@ MAX_DUP_PRINT = 5
 
 def check_dup_key(in_dir, col_nb=1):
 
-    com.log_print("|")
-    s = "Vérification des doublons sur la colonne No.{} du fichier de sortie."
+    s = f"Vérification des doublons sur la colonne No.{col_nb} du fichier de sortie."
     s += " Chargement du fichier de sortie..."
-    com.log(s.format(col_nb))
+    com.log(s)
     array_in = com.load_csv(in_dir)
-    com.log(
-        "Fichier de sortie chargé. Sauvegarde de la colonne No.{}...".format(
-            col_nb))
+    s = f"Fichier de sortie chargé. Sauvegarde de la colonne No.{col_nb}..."
+    com.log(s)
+    if not exists(TMP_PATH):
+        makedirs(TMP_PATH)
     com.extract_list(array_in, IN_TMP_FILE, col_nb)
     com.log("Colonne No.{} sauvegardée à l'adresse {}".format(
         col_nb, IN_TMP_FILE))
@@ -77,7 +80,7 @@ def finish_remove(out_list, dup_list, out_dup_dir, out_dir, field_nb):
 
     s = "{} doublons trouvés. Liste (tronquée à {} éléments) :"
     com.log(s.format(bn_dup, MAX_DUP_PRINT))
-    com.print_array(dup_list[:MAX_DUP_PRINT])
+    com.log_array(dup_list[:MAX_DUP_PRINT], 1)
 
     com.save_csv(dup_list, out_dup_dir)
     s = "Liste des doublons sauvegardée à l'adresse '{}'"
@@ -143,7 +146,7 @@ def finish_find(dup_list, out_dir):
 
     s = "{} doublons trouvés. Liste (tronquée à {} éléments) :"
     com.log(s.format(bn, MAX_DUP_PRINT))
-    com.print_array(dup_list[:MAX_DUP_PRINT])
+    com.log_array(dup_list[:MAX_DUP_PRINT], 1)
 
     com.save_csv(dup_list, out_dir)
     s = "Liste des doublons sauvegardée à l'adresse '{}'"

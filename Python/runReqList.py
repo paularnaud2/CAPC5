@@ -1,11 +1,13 @@
-from ReqList import run_reqList
+from common import init_log
+init_log('runReqList', 'C:/Py/')
 
 if __name__ == '__main__':
+    from ReqList import run_reqList
     run_reqList(
-        MAX_BDD_CNX=4,
+        MAX_BDD_CNX=8,
         SQUEEZE_JOIN=True,
         SQUEEZE_SQL=False,
         CHECK_DUP=True,
-        NB_MAX_ELT_IN_STATEMENT=4,
+        NB_MAX_ELT_IN_STATEMENT=1000,
         SL_STEP_QUERY=10,
     )

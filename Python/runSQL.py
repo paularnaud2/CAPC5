@@ -1,6 +1,9 @@
-import SQL as sql
+from common import init_log
+init_log('runSQL', 'C:/Py/')
 
 if __name__ == '__main__':
+    import SQL as sql
+
     sql.download(
         MAX_BDD_CNX=10,
         MERGE_RG_FILES=True,

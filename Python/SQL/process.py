@@ -2,6 +2,7 @@ import common as com
 import SQL.log as log
 import SQL.gl as gl
 
+from common import g
 from SQL.functions import write_rows
 from SQL.connect import connect
 from SQL.connect import gen_cnx_dict
@@ -100,11 +101,11 @@ def init_out_file(cursor, range_name='MONO'):
             "\uFEFF" +
             fields[0])  # permet de forcer excel à lire le ficher en utf-8
         for elt in fields[1:]:
-            out_file.write(com.CSV_SEPARATOR + elt)
+            out_file.write(g.CSV_SEPARATOR + elt)
         if gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES:
-            out_file.write(com.CSV_SEPARATOR + "INSTANCE")
+            out_file.write(g.CSV_SEPARATOR + "INSTANCE")
         elif gl.EXPORT_RANGE and range_name != 'MONO':
-            out_file.write(com.CSV_SEPARATOR + "RANGE")
+            out_file.write(g.CSV_SEPARATOR + "RANGE")
         out_file.write("\n")
 
 

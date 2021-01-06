@@ -5,7 +5,7 @@ from threading import RLock
 # Misc
 MIN_DUR_NOTIF_TRIGGER = 30
 CSV_SEPARATOR = ';'
-DEBUG = False
+DEBUG = True
 
 counters = {}
 verrou = RLock()

@@ -43,9 +43,9 @@ def print_list(list):
         print(elt)
 
 
-def print_array(array, nb_tab=0):
+def print_array(array):
     for elt in array:
-        print(elt, nb_tab)
+        print(elt)
 
 
 def print_dict(dict):

@@ -7,5 +7,5 @@ if __name__ == '__main__':
     # from run_MAJ_PERIMETRE_FIN_TRV import run_maj_perimetre
 
     # run_maj_perimetre()
-    run_aff()
-    run_sge()
+    run_aff(test=True)
+    run_sge(test=True)

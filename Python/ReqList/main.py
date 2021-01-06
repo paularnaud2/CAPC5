@@ -15,21 +15,34 @@ from ReqList.gko import sql_download_ginko
 
 @com.log_exeptions
 def run_reqList(**params):
-    com.log("[ReqList] run_reqList")
-    start_time = time()
-    init_params(params)
-    # ar_left = load_csv (gl.IN_TEST_L)
-    # ar_right = load_csv (gl.IN_TEST_R)
-    com.log("Chargement du tableau de gauche...")
-    ar_left = com.load_csv(gl.IN_FILE)
-    com.log("Tableau de gauche chargé\n|")
+    ar_left = init_main(params)
     if not gl.SQUEEZE_SQL:
         sql_download_main(ar_left, gl.BDD, gl.QUERY_FILE)
 
     if not gl.SQUEEZE_JOIN:
         join_main(ar_left)
 
-    finish(start_time)
+    finish(gl.start_time)
+
+
+def init_main(params):
+    com.log("[ReqList] run_reqList")
+    init_params(params)
+    init_globals()
+    # ar_left = load_csv (gl.IN_TEST_L)
+    # ar_right = load_csv (gl.IN_TEST_R)
+    com.log("Chargement du tableau de gauche...")
+    ar_left = com.load_csv(gl.IN_FILE)
+    com.log("Tableau de gauche chargé\n|")
+    return ar_left
+
+
+def init_globals():
+    gl.counters = {}
+    gl.bools = {}
+    gl.tmp_file = {}
+    gl.ec_query_nb = {}
+    gl.start_time = time()
 
 
 def join_main(ar_left):
@@ -48,7 +61,9 @@ def join_main(ar_left):
 
 def finish(start_time):
     if gl.CHECK_DUP:
+        com.log_print("|")
         dup.check_dup_key(gl.OUT_FILE)
+        com.log_print('|')
 
     s = "Exécution terminée en {}"
     duration = com.get_duration_ms(start_time)
@@ -62,7 +77,7 @@ def finish(start_time):
 
 def init_params(params):
     if len(params) > 0:
-        com.log("Initialisation des paramètres")
+        com.log(f"Initialisation des paramètres : {params}")
         for key in params:
             gl.__getattribute__(key)
             gl.__setattr__(key, params[key])
@@ -88,7 +103,6 @@ def sql_download(BDD):
     bn = com.big_number(n)
     s = f"Export récupéré ({bn} lignes écrites)"
     com.log(s)
-    com.log_print("|")
 
 
 def init_download(BDD):

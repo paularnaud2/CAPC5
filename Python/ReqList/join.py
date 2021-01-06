@@ -54,7 +54,7 @@ def log_prepare(ar, bn_ar):
     if n_dup > 0:
         s = "Exemples de doublons (limités à {}) :"
         com.log(s.format(gl.MAX_DUP_PRINT))
-        com.print_array(gl.dup_list[:gl.MAX_DUP_PRINT])
+        com.log_array(gl.dup_list[:gl.MAX_DUP_PRINT])
 
 
 def check_first_line(first_line):
@@ -176,7 +176,7 @@ def debug(s, pdl_l, pdl_r, out_line):
     ])
     print([pdl_l, pdl_r])
     print(out_line)
-    com.print_array(gl.out_array)
+    com.log_array(gl.out_array)
 
 
 def del_dup(array_in):

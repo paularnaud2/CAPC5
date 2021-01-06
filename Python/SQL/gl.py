@@ -3,9 +3,9 @@ from common import g
 from datetime import datetime
 
 ENV = 'PROD'
+BDD = 'SGE'
 # BDD = 'GINKO'
 # BDD = 'ADAM'
-BDD = 'SGE'
 
 # ENV = 'DIRECT'
 # BDD = 'CAPC5'

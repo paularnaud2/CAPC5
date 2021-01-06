@@ -1,13 +1,11 @@
-# variables globales et constantes pour le package reqList (import ReqList.gl as gl)
-import common as com
-
+# variables globales et constantes pour le package reqList
 from common import g
 from datetime import datetime
 
 ENV = 'PROD'
+BDD = 'SGE'
 # BDD = 'GINKO'
 # BDD = 'ADAM'
-BDD = 'SGE'
 # BDD = 'RFC'
 
 # ENV = 'DIRECT'
@@ -55,8 +53,3 @@ TMP_PATH = TMP_DIR + BDD + '/'
 TMP_FILE_TYPE = '.csv'
 EC = '_EC'
 QN = '_QN'
-
-counters = {}
-bools = {}
-tmp_file = {}
-ec_query_nb = {}

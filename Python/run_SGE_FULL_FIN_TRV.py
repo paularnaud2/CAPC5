@@ -16,6 +16,7 @@ def run_sge(test=False):
     final_table = f'SGE_FULL_{date}'
     view_name = 'SGE'
     max_elt_insert = 10000
+    sl_step_query = 50
 
     if test:
         in_file = 'C:/Py/IN/in_test.csv'
@@ -40,7 +41,7 @@ def run_sge(test=False):
             IN_FILE=in_file,
             OUT_FILE=out_file,
             MAX_BDD_CNX=8,
-            SL_STEP_QUERY=50,
+            SL_STEP_QUERY=sl_step_query,
             OPEN_OUT_FILE=False,
             SQUEEZE_JOIN=True,
             SQUEEZE_SQL=False,

@@ -27,8 +27,10 @@ def gen_cnx_dict(BDD, ENV, nb):
     (cnx_str, conf) = get_cnx_str(BDD, ENV)
     gl.cnx_dict = dict()
     i = 1
+    s = f"Création des connexions pour la BDD {BDD} de l'environnement {ENV}"
+    com.log(s)
     while i <= nb:
-        com.log(f'Connexion No. {i} en cours de création ({BDD}, {ENV})...')
+        com.log(f'Connexion No. {i} en cours de création...')
         gl.cnx_dict[i] = cx.connect(cnx_str)
         check_mepa(BDD, gl.cnx_dict[i])
         com.log(f'Connexion No. {i} créée')

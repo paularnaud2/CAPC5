@@ -41,13 +41,13 @@ def write_row(row, out_file, range_name='MONO'):
         s = str(elt)
         if s == 'None':
             s = ''
-        line_out += com.CSV_SEPARATOR + gl.LEFT_DEL + s.strip(
+        line_out += g.CSV_SEPARATOR + gl.LEFT_DEL + s.strip(
             '\r\n') + gl.RIGHT_DEL
     if line_out.strip(g.CSV_SEPARATOR) == '':
         return 0
     if (gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES
             or gl.EXPORT_RANGE and range_name != 'MONO'):
-        line_out += com.CSV_SEPARATOR + range_name
+        line_out += g.CSV_SEPARATOR + range_name
     line_out += '\n'
     out_file.write(line_out)
     return 1

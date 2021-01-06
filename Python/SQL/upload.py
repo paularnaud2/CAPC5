@@ -36,10 +36,10 @@ def upload(**params):
 def finish_this(start_time):
     gl.cnx.close()
     os.remove(gl.TMP_FILE_CHUNK)
-    dur = com.get_duration_ms(start_time)
     bn = com.big_number(gl.counters['main'])
-    s = "Injection des données terminée. {} lignes insérées en {}."
-    s = s.format(bn, com.get_duration_string(dur))
+    dur = com.get_duration_ms(start_time)
+    durs = com.get_duration_string(dur)
+    s = f"Injection des données terminée. {bn} lignes insérées en {durs}."
     com.log(s)
 
 
@@ -47,14 +47,16 @@ def init_this(params):
     init_params(params)
     init()
 
-    script = get_final_script(gl.SCRIPT_FILE)
-    log.script(script)
-    gl.cnx = connect(BDD=gl.BDD, ENV=gl.ENV)
-    gl.c = gl.cnx.cursor()
-    log.inject()
-    gl.data = []
+    gl.ref_chunk = 0
     gl.counters['main'] = 0
     gl.counters['chunk'] = 0
+    gl.cnx = connect(BDD=gl.BDD, ENV=gl.ENV)
+    gl.c = gl.cnx.cursor()
+    gl.data = []
+
+    script = get_final_script(gl.SCRIPT_FILE)
+    log.script(script)
+    log.inject()
 
     return script
 
@@ -80,11 +82,9 @@ def insert(script):
 
 
 def check_restart(squeeze_download=False):
-    gl.ref_chunk = 0
     if os.path.exists(gl.TMP_FILE_CHUNK):
-        if com.log_input(
-                'Injection de données en cours détectée. Reprendre ? (o/n)'
-        ) == 'o':
+        s = "Injection de données en cours détectée. Reprendre ? (o/n)"
+        if com.log_input(s) == 'o':
             try:
                 gl.ref_chunk = int(com.load_txt(gl.TMP_FILE_CHUNK)[0])
                 squeeze_download = True
