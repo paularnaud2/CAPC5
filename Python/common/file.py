@@ -2,11 +2,13 @@ from . import g
 from os import listdir
 from os.path import join
 from os.path import isfile
+from time import sleep
 from shutil import rmtree
 
 
 def delete_folder(path):
     rmtree(path)
+    sleep(0.5)
 
 
 def merge_files(in_dir, out_dir, remove_header=False):

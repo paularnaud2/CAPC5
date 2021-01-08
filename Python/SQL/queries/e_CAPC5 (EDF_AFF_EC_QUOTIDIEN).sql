@@ -30,5 +30,4 @@ case nvl(a.fournisseur,'NULL')
 from perimetre p
 left join sge s on s.prm=p.prm
 left join aff a on a.prm=p.prm
-where p.PRM not in (select prm from TPRM_ELIGIBLES_EDF04012021)
 AND p.PRM LIKE '@@PRM_RANGE_2@@%'

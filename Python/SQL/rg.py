@@ -78,7 +78,6 @@ def modify_restart(range_list, file_list):
 
 
 def move_tmp_folder():
-    from time import sleep
     from os.path import exists
 
     gl.bools["MERGE_OK"] = False
@@ -89,7 +88,6 @@ def move_tmp_folder():
         os.makedirs(out_dir)
     else:
         com.delete_folder(out_dir)
-        sleep(0.5)
         os.makedirs(out_dir)
     com.log('Dossier de sortie créé')
 
