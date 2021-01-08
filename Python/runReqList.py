@@ -8,6 +8,6 @@ if __name__ == '__main__':
         SQUEEZE_JOIN=True,
         SQUEEZE_SQL=False,
         CHECK_DUP=True,
-        NB_MAX_ELT_IN_STATEMENT=1000,
-        SL_STEP_QUERY=10,
+        NB_MAX_ELT_IN_STATEMENT=500,
+        SL_STEP_QUERY=50,
     )

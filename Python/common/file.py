@@ -31,14 +31,19 @@ def get_file_list(in_dir):
     return file_list
 
 
-def load_txt(in_dir):
+def load_txt(in_dir, list_out=True):
     g.counters["txt_read"] = 0
-    out_list = []
+    out = []
     with open(in_dir, 'r', encoding='utf-8') as in_file:
         for line in in_file:
-            out_list.append(line)
+            out.append(line)
             g.counters["txt_read"] += 1
-    return out_list
+    if list_out is False:
+        s = ''
+        for line in out:
+            s += line
+            out = s
+    return out
 
 
 def count_lines(in_dir):

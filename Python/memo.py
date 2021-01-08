@@ -192,6 +192,9 @@ parametres = {"sep":" >> ", "end":" -\n"}
 print("Voici", "un", "exemple", "d'appel", **parametres)
 Voici >> un >> exemple >> d'appel -
 
+# Compréhension de dictionnaire
+dictOfWords = { i : 5 for i in listOfStr }
+
 # Fichiers===================================================================
 import os
 os.chdir("C:/tests python") # Changer le répertoire de travail courant

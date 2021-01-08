@@ -16,7 +16,9 @@ def run_sge(test=False):
     final_table = f'SGE_FULL_{date}'
     view_name = 'SGE'
     max_elt_insert = 10000
-    sl_step_query = 50
+    max_elt_st = 500
+    max_bdd_cnx = 8
+    sl_step_query = 100
 
     if test:
         in_file = 'C:/Py/IN/in_test.csv'
@@ -25,6 +27,9 @@ def run_sge(test=False):
         final_table = f'SGE_TEST_{date}'
         view_name = 'SGE_TEST'
         max_elt_insert = 100
+        max_elt_st = 10
+        max_bdd_cnx = 6
+        sl_step_query = 10
 
     squeeze_downl = False
     squeeze_upl = False
@@ -40,8 +45,9 @@ def run_sge(test=False):
             QUERY_FILE='ReqList/queries/SGE_SUIVI_FIN_TRV.sql',
             IN_FILE=in_file,
             OUT_FILE=out_file,
-            MAX_BDD_CNX=8,
+            MAX_BDD_CNX=max_bdd_cnx,
             SL_STEP_QUERY=sl_step_query,
+            NB_MAX_ELT_IN_STATEMENT=max_elt_st,
             OPEN_OUT_FILE=False,
             SQUEEZE_JOIN=True,
             SQUEEZE_SQL=False,

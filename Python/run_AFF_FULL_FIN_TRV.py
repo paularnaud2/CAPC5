@@ -15,8 +15,9 @@ def run_aff(test=False):
     table_name = f'AFF_FULL_{date}'
     view_name = 'AFF'
     max_elt_insert = 5000
-    max_elt_st = 1000
+    max_elt_st = 500
     max_bdd_cnx = 8
+    sl_step_query = 100
 
     if test:
         in_file = 'C:/Py/IN/in_test.csv'
@@ -26,6 +27,7 @@ def run_aff(test=False):
         max_elt_insert = 40
         max_elt_st = 10
         max_bdd_cnx = 6
+        sl_step_query = 10
 
     squeeze_downl = False
     (squeeze_downl, squeeze_create_table) = sql.check_restart(squeeze_downl)
@@ -41,7 +43,7 @@ def run_aff(test=False):
             IN_FILE=in_file,
             OUT_FILE=out_file,
             MAX_BDD_CNX=max_bdd_cnx,
-            SL_STEP_QUERY=50,
+            SL_STEP_QUERY=sl_step_query,
             NB_MAX_ELT_IN_STATEMENT=max_elt_st,
             OPEN_OUT_FILE=False,
             SQUEEZE_JOIN=True,

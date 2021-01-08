@@ -2,7 +2,6 @@ import common as com
 import ReqList.gl as gl
 import ReqList.log as log
 import ReqList.file as file
-import SQL.functions as sql
 
 from threading import RLock
 
@@ -37,10 +36,29 @@ def process_query(c, query, inst, query_nb, th_name, th_nb):
         th_name=th_name,
     )
     if gl.bools["EXPORT_INSTANCES"]:
-        res = sql.export_cursor(c, inst)
+        res = export_cursor(c, inst)
     else:
-        res = sql.export_cursor(c)
+        res = export_cursor(c)
 
     file.tmp_update(res, th_name, query_nb, c)
     with verrou:
         gl.counters[th_nb] += len(res)
+
+
+def export_cursor(cursor, inst=''):
+
+    out_list = []
+    for row in cursor:
+        newRow = []
+        for field in row:
+            s = str(field)
+            if s != 'None':
+                s = com.clean(s)
+            else:
+                s = ''
+            newRow.append(s)
+        if inst != '':
+            newRow.append(inst)
+        out_list.append(newRow)
+
+    return out_list

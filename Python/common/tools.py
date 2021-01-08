@@ -38,6 +38,14 @@ def split_array(array_in, max_elt):
     return array_out
 
 
+def list_to_dict(list_in, separator='='):
+    out = {}
+    for elt in list_in:
+        e = elt.split(separator)
+        out[e[0]] = e[1]
+    return out
+
+
 def print_list(list):
     for elt in list:
         print(elt)

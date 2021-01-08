@@ -26,6 +26,7 @@ init_dir['IN'] = 'IN/'
 init_dir['OUT'] = 'OUT/'
 init_dir['TMP'] = 'TMP/'
 init_dir['LOG'] = 'LOG/'
+init_dir['MAIL'] = 'MAIL/'
 
 
 def init_directories(root_path):

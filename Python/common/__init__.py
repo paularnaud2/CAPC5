@@ -30,6 +30,7 @@ from .file import count_lines
 from .file import delete_folder
 from .file import get_file_list
 
+from .csv import clean
 from .csv import load_csv
 from .csv import save_csv
 from .csv import csv_to_list
@@ -38,4 +39,5 @@ from .csv import write_csv_line
 from .csv import get_csv_fields_dict
 from .csv import get_csv_fields_list
 
+from .mail import mail
 from .deco import log_exeptions

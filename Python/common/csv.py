@@ -59,8 +59,19 @@ def write_csv_line(row, out_file):
 
 
 def extract_list(array_in, dir_out, col_nb=1):
+    out_list = []
     if isinstance(array_in[0], str):
         out_list = array_in[1:]
     else:
-        out_list = [elt[col_nb - 1] for elt in array_in[1:]]
+        # out_list = [elt[col_nb - 1] for elt in array_in[1:]]
+        for elt in array_in[1:]:
+            out_list.append(elt[col_nb - 1])
+
     save_csv(out_list, dir_out)
+
+
+def clean(s):
+    out = s.replace('\r', '')
+    out = out.replace('\n', '')
+    out = out.replace(g.CSV_SEPARATOR, '')
+    return out

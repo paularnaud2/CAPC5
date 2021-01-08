@@ -36,13 +36,15 @@ def write_rows(cursor, range_name='MONO', th_name='DEFAULT', th_nb=0):
 
 def write_row(row, out_file, range_name='MONO'):
 
-    line_out = gl.LEFT_DEL + str(row[0]).strip('\r\n') + gl.RIGHT_DEL
+    s = com.clean(str(row[0]))
+    line_out = gl.LEFT_DEL + s + gl.RIGHT_DEL
     for elt in row[1:]:
         s = str(elt)
         if s == 'None':
             s = ''
-        line_out += g.CSV_SEPARATOR + gl.LEFT_DEL + s.strip(
-            '\r\n') + gl.RIGHT_DEL
+        else:
+            s = com.clean(s)
+        line_out += g.CSV_SEPARATOR + gl.LEFT_DEL + s + gl.RIGHT_DEL
     if line_out.strip(g.CSV_SEPARATOR) == '':
         return 0
     if (gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES
@@ -51,20 +53,3 @@ def write_row(row, out_file, range_name='MONO'):
     line_out += '\n'
     out_file.write(line_out)
     return 1
-
-
-def export_cursor(cursor, inst=''):
-
-    out_list = []
-    for row in cursor:
-        str_row = [
-            str(field).strip('\r\n') if str(field) != 'None' else ''
-            for field in row
-        ]
-        if inst != '':
-            str_row.append(inst)
-        out_list.append(str_row)
-        with verrou:
-            gl.counters["row"] += 1
-
-    return out_list
