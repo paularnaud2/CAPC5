@@ -3,13 +3,13 @@ import sys
 from math import ceil
 from common import *
 
-import QDD.gl as gl
-from QDD.gstf import gen_sorted_temp_files
-from QDD.csf import check_in_files, compare_sorted_files
-from QDD.functions import *
-from QDD.init import init_msf, init_stf
-from QDD.fill_al import fill_array_list
-from QDD.empty_al import empty_array_list
+import qdd.gl as gl
+from qdd.gstf import gen_sorted_temp_files
+from qdd.csf import check_in_files, compare_sorted_files
+from qdd.functions import *
+from qdd.init import init_msf, init_stf
+from qdd.fill_al import fill_array_list
+from qdd.empty_al import empty_array_list
 
 
 def check_py_version(in_dir):
@@ -28,7 +28,7 @@ def check_py_version(in_dir):
 
 
 def sort_file(in_file_dir, out_file_dir, prompt=False, nb=0):
-    # La varialble nb sert à différentier les fichiers de sortie dans le cadre de QDD
+    # La varialble nb sert à différentier les fichiers de sortie dans le cadre de qdd
 
     s = "Début du tri de {}. Taille du fichier à trier en octets : {}"
     log(s.format(in_file_dir, big_number(os.path.getsize(in_file_dir))))

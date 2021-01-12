@@ -1,8 +1,8 @@
 from common import init_log
-init_log('runReqList', 'C:/Py/')
+init_log('run_reqlist', 'C:/Py/')
 
 if __name__ == '__main__':
-    from ReqList import run_reqList
+    from reqlist import run_reqList
     run_reqList(
         MAX_BDD_CNX=8,
         SQUEEZE_JOIN=True,

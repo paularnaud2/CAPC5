@@ -1,8 +1,8 @@
 from common import init_log
-init_log('runSQL', 'C:/Py/')
+init_log('run_sql', 'C:/Py/')
 
 if __name__ == '__main__':
-    import SQL as sql
+    import sql
 
     sql.download(
         MAX_BDD_CNX=10,
@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     # table_name = 'TEST_AFF'
     # sql.execute(
-    #     SCRIPT_FILE='SQL/procs/create_table_aff.sql',
+    #     SCRIPT_FILE='sql/procs/create_table_aff.sql',
     #     VAR_DICT={'@@TABLE_NAME@@': table_name},
     #     PROC=True,
     #     ENV='DIRECT',
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     # )
 
     # sql.upload(
-    #     SCRIPT_FILE='SQL/scripts/insert_table_aff.sql',
+    #     SCRIPT_FILE='sql/scripts/insert_table_aff.sql',
     #     IN_DIR='C:/Py/OUT/test.csv',
     #     VAR_DICT={'@@TABLE_NAME@@': table_name},
     #     NB_MAX_ELT_INSERT=100,

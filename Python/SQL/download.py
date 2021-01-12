@@ -1,21 +1,21 @@
-import SQL.rg as rg
-import SQL.gl as gl
+import sql.rg as rg
+import sql.gl as gl
 import common as com
 
 from time import time
 from os import startfile
 from threading import Thread
 
-from SQL.init import init
-from SQL.init import init_gko
-from SQL.init import init_params
-from SQL.process import process_range_list
-from SQL.process import process_gko_query
+from sql.init import init
+from sql.init import init_gko
+from sql.init import init_params
+from sql.process import process_range_list
+from sql.process import process_gko_query
 
 
 @com.log_exeptions
 def download(**params):
-    com.log('[SQL] download')
+    com.log('[sql] download')
     start_time = time()
     init_params(params)
     if gl.BDD == 'GINKO':
@@ -95,11 +95,11 @@ def finish(start_time):
         out_dir = gl.OUT_FILE
         com.log("Fichier de sortie {} alimenté avec succès".format(out_dir))
         if gl.counters["row"] < gl.MAX_CHECK_DUP and gl.CHECK_DUP:
-            import Tools.dup as dup
+            import tools.dup as dup
             dup.check_dup_key(out_dir)
         if gl.OPEN_OUT_FILE:
             startfile(out_dir)
 
     com.log_print("|")
     com.log("Traitement terminé")
-    com.send_notif(s, "SQL", dur, gl.SEND_NOTIF)
+    com.send_notif(s, "sql", dur, gl.SEND_NOTIF)

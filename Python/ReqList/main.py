@@ -1,16 +1,16 @@
 import common as com
-import Tools.dup as dup
-import ReqList.gl as gl
+import tools.dup as dup
+import reqlist.gl as gl
 
 from time import time
 from os import startfile
-from SQL.init import init
-from ReqList.join import join_arrays
-from ReqList.functions import restart
-from ReqList.functions import set_query_var
-from ReqList.functions import gen_group_list
-from ReqList.strd import sql_download_strd
-from ReqList.gko import sql_download_ginko
+from sql.init import init
+from reqlist.join import join_arrays
+from reqlist.functions import restart
+from reqlist.functions import set_query_var
+from reqlist.functions import gen_group_list
+from reqlist.strd import sql_download_strd
+from reqlist.gko import sql_download_ginko
 
 
 @com.log_exeptions
@@ -26,7 +26,7 @@ def run_reqList(**params):
 
 
 def init_main(params):
-    com.log("[ReqList] run_reqList")
+    com.log("[reqlist] run_reqList")
     init_params(params)
     init_globals()
     # ar_left = load_csv (gl.IN_TEST_L)
@@ -69,7 +69,7 @@ def finish(start_time):
     duration = com.get_duration_ms(start_time)
     s = s.format(com.get_duration_string(duration))
     com.log(s)
-    com.send_notif(s, "ReqList", duration, gl.SEND_NOTIF)
+    com.send_notif(s, "reqlist", duration, gl.SEND_NOTIF)
     com.log_print("")
     if gl.OPEN_OUT_FILE:
         startfile(gl.OUT_FILE)

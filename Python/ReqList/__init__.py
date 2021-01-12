@@ -1,4 +1,4 @@
 import common as com
-from ReqList.main import run_reqList
+from reqlist.main import run_reqList
 
-com.init_log('ReqList')
+com.init_log('reqlist')

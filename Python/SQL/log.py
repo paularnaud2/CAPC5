@@ -1,4 +1,4 @@
-import SQL.gl as gl
+import sql.gl as gl
 import common as com
 
 

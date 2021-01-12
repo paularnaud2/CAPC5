@@ -1,14 +1,14 @@
 import common as com
-import ReqList.gl as gl
-import SQL.gl as glsql
-import SQL.connect as sql
-import ReqList.file as file
+import reqlist.gl as gl
+import sql.gl as glsql
+import sql.connect as sql
+import reqlist.file as file
 
 from math import ceil
 from threading import Thread
 from threading import RLock
 
-from ReqList.process import process_group_list
+from reqlist.process import process_group_list
 
 verrou = RLock()
 

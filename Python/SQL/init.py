@@ -1,10 +1,10 @@
 import re
 import os
 import common as com
-import SQL.gl as gl
+import sql.gl as gl
 
 from common import g
-from SQL.rg import restart
+from sql.rg import restart
 
 
 def init():

@@ -1,5 +1,5 @@
 import common as com
-import ReqList.gl as gl
+import reqlist.gl as gl
 
 
 def start_exec(inst, th_nb, multi_thread):

@@ -1,14 +1,21 @@
-import SQL as sql
+import sql
 import common as com
 
 
 def run_maj_perimetre(test=False):
+
+    query_file = 'sql/queries/e_CAPC5 (FIN_TRV_PERIMETRE).sql'
+    out_file = 'C:/Py/IN/perimetre_fin_trv.csv'
+    if test:
+        query_file = 'sql/queries/e_CAPC5 (FIN_TRV_PERIMETRE_TEST).sql'
+        out_file = 'C:/Py/IN/perimetre_fin_trv_test.csv'
+
     com.log("Lancement du job " + __name__)
     sql.download(
         ENV='DIRECT',
         BDD='CAPC5',
-        QUERY_FILE='SQL/queries/e_CAPC5 (FIN_TRV_PERIMETRE).sql',
-        OUT_FILE='C:/Py/IN/perimetre_fin_trv.csv',
+        QUERY_FILE=query_file,
+        OUT_FILE=out_file,
         MAX_BDD_CNX=10,
         MERGE_RG_FILES=True,
         EXPORT_RANGE=False,

@@ -1,7 +1,7 @@
 import common as com
-import ReqList.gl as gl
-import SQL.connect as sql
-from ReqList.process import process_group_list
+import reqlist.gl as gl
+import sql.connect as sql
+from reqlist.process import process_group_list
 from threading import Thread, RLock
 
 verrou = RLock()

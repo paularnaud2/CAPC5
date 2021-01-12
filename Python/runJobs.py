@@ -1,5 +1,5 @@
 from common import init_log
-init_log('runJobs', 'C:/Py/')
+init_log('runJobs')
 
 if __name__ == '__main__':
     # from run_MAJ_PERIMETRE_FIN_TRV import run_maj_perimetre

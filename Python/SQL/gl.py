@@ -1,4 +1,4 @@
-# variables globales et constantes pour le package SQL (import SQL.gl as gl)
+# variables globales et constantes pour le package sql (import sql.gl as gl)
 from common import g
 from datetime import datetime
 
@@ -14,7 +14,7 @@ BDD = 'CAPC5'
 # BDD = 'XE'
 
 date = datetime.now().strftime("%Y%m%d")
-QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
+QUERY_FILE = 'sql/queries/e_{}.sql'.format(BDD)
 OUT_DIR = 'C:/Py/OUT/'
 OUT_RG_FOLDER = '{}_OUT_{}'.format(BDD, date)
 OUT_FILE_TYPE = '.csv'
@@ -40,12 +40,12 @@ SEND_NOTIF = True
 
 ORACLE_CLIENT = 'C:/instantclient_19_6/'
 CONF_FILE = ORACLE_CLIENT + 'conf_perso.txt'
-TMP_FOLDER = 'SQL/'
+TMP_FOLDER = 'sql/'
 TMP_TRT_FILE = 'tmp.csv'
 TMP_DIR = g.paths['TMP'] + TMP_FOLDER
 CHECK_MEPA_DIR = TMP_DIR + 'last_mepa_check.csv'
 CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'
-RANGE_PATH = 'SQL/ranges/'
+RANGE_PATH = 'sql/ranges/'
 RANGE_FILE_TYPE = '.csv'
 VAR_STR = '@@'
 EC = '_EC'
@@ -59,7 +59,7 @@ check_mepa_ok = False
 
 # Execute
 IN_DIR = 'C:/Py/OUT/in.csv'
-SCRIPT_FILE = 'SQL/scripts/create_table_aff.sql'
+SCRIPT_FILE = 'sql/scripts/create_table_aff.sql'
 NB_MAX_ELT_INSERT = 100000
 PROC = False
 VAR_DICT = {}

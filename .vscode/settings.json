@@ -1,3 +1,4 @@
 {
-  "terminal.integrated.cwd": "Python"
+  "terminal.integrated.cwd": "Python",
+  "python.pythonPath": "Python\\env\\Scripts\\python.exe"
 }

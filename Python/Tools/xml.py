@@ -1,5 +1,5 @@
 import re
-import Tools.gl as gl
+import tools.gl as gl
 import os
 from common import *
 import common as com

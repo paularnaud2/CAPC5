@@ -15,10 +15,9 @@ def send_notif(msg, package, duration=0, cond=True):
     try:
         from win10toast import ToastNotifier
     except ModuleNotFoundError:
-        s = "Échec de l'envoi de la notification windows. Le module win10toast \
-        n'est pas installé."
-
-        log.log(s)
+        s = "Échec de l'envoi de la notification windows."
+        s += " Le module win10toast n'est pas installé."
+        log(s)
         return
 
     toaster = ToastNotifier()

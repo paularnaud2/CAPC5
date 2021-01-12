@@ -1,7 +1,7 @@
 import common as com
-import ReqList.gl as gl
-import ReqList.log as log
-import ReqList.file as file
+import reqlist.gl as gl
+import reqlist.log as log
+import reqlist.file as file
 
 from threading import RLock
 

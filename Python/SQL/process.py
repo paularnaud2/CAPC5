@@ -1,11 +1,11 @@
 import common as com
-import SQL.log as log
-import SQL.gl as gl
+import sql.log as log
+import sql.gl as gl
 
 from common import g
-from SQL.functions import write_rows
-from SQL.connect import connect
-from SQL.connect import gen_cnx_dict
+from sql.functions import write_rows
+from sql.connect import connect
+from sql.connect import gen_cnx_dict
 from threading import Thread
 from threading import RLock
 from threading import Semaphore

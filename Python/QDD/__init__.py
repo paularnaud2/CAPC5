@@ -1,16 +1,16 @@
 from common import *
-init_log('QDD')
+init_log('qdd')
 
-import QDD.gl
-from QDD.main import *
-from QDD.init import set_dirs
-from Tools.split import split_file_main
+import qdd.gl
+from qdd.main import *
+from qdd.init import set_dirs
+from tools.split import split_file_main
 import os
 
 
-def runQDD():
+def run_qdd():
 
-    log("Package QDD - Début du traitement\n", print_date=True)
+    log("Package qdd - Début du traitement\n", print_date=True)
     start_time = time()
     dirs = set_dirs()
 
@@ -24,6 +24,6 @@ def runQDD():
     duration = get_duration_ms(start_time)
     s = s.format(get_duration_string(duration))
     log(s)
-    send_notif(s, "QDD", duration)
+    send_notif(s, "qdd", duration)
     log_print("")
     os.startfile(dirs["out"])

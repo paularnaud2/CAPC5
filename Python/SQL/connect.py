@@ -1,8 +1,8 @@
 import cx_Oracle as cx
 
 import common as com
-import SQL.gl as gl
-import SQL.log as log
+import sql.gl as gl
+import sql.log as log
 
 from threading import RLock
 

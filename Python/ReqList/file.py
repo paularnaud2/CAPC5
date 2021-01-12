@@ -1,6 +1,6 @@
 import os
 import common as com
-import ReqList.gl as gl
+import reqlist.gl as gl
 
 from os.path import exists
 from threading import RLock

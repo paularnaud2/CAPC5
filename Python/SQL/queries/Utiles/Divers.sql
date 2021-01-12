@@ -1,10 +1,10 @@
 --Colones et tables
-ALL_TAB_COLUMNS, USER_TAB_COLS, ALL_TABLES
-SELECT COLUMN_NAME FROM USER_TAB_COLS
+SELECT * FROM ALL_TAB_COLUMNS
 WHERE 1=1
-AND COLUMN_NAME LIKE '%CALENDR%'
-AND TABLE_NAME = 'T_SITUATION_CONTRACTUELLE'
-;
+AND COLUMN_NAME LIKE '%ANNUL%'
+AND OWNER LIKE '%IAP%'
+--AND TABLE_NAME = 'T_SITUATION_CONTRACTUELLE';
+ORDER BY 3
 
 --Requete pour generer la commande de désactivation d'une contrainte pour une table donnée : 
 select 'ALTER TABLE '||a.owner||'.'||a.table_name||' DISABLE CONSTRAINT '||a.constraint_name||';'

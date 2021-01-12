@@ -1,7 +1,7 @@
-import QDD.gl as gl
-from QDD.functions import *
+import qdd.gl as gl
+from qdd.functions import *
 from common import *
-from QDD.init import *
+from qdd.init import *
 import common as com
 from time import time
 

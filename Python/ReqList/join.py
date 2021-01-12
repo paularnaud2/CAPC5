@@ -1,6 +1,6 @@
 import sys
 import common as com
-import ReqList.gl as gl
+import reqlist.gl as gl
 
 
 def join_arrays(ar_left_in, ar_right_in):

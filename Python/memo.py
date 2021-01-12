@@ -234,7 +234,7 @@ with open('donnees', 'rb') as fichier:
 # Divers=======================================================================
 import sys
 sys.exit() # arrêter un script
-gl = __import__('ReqList.' + gl_file, fromlist=[None]) # importer un sous module avec la fonction spéciale __import__
+gl = __import__('reqlist.' + gl_file, fromlist=[None]) # importer un sous module avec la fonction spéciale __import__
 def run_reqList(**params): # les noms/valeurs sont convertis en dictionnaire params
 a = gl.__getattribute__(key) # récupérer un attribut depuis une string
 gl.__setattr__(key, params[key]) # valoriser un attribut depuis une string

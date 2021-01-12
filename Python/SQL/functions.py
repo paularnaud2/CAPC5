@@ -1,7 +1,7 @@
 # Package SQL
 import common as com
-import SQL.gl as gl
-import SQL.log as log
+import sql.gl as gl
+import sql.log as log
 
 from common import g
 from os import rename

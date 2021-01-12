@@ -1,8 +1,8 @@
 import os
 from common import *
 
-import QDD.gl as gl
-from QDD.functions import *
+import qdd.gl as gl
+from qdd.functions import *
 
 
 def fill_array_list():

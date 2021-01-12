@@ -1,18 +1,18 @@
 import os
 import common as com
-import SQL.gl as gl
-import SQL.log as log
+import sql.gl as gl
+import sql.log as log
 
 from time import time
-from SQL.init import init
-from SQL.init import init_params
-from SQL.connect import connect
-from SQL.functions import get_final_script
+from sql.init import init
+from sql.init import init_params
+from sql.connect import connect
+from sql.functions import get_final_script
 
 
 @com.log_exeptions
 def upload(**params):
-    com.log('[SQL] upload')
+    com.log('[sql] upload')
     script = init_this(params)
     start_time = time()
     with open(gl.IN_DIR, 'r', encoding='utf-8') as in_file:

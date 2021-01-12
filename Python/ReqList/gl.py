@@ -12,7 +12,7 @@ BDD = 'SGE'
 # BDD = 'CAPC5'
 
 date = datetime.now().strftime("%Y%m%d")
-QUERY_FILE = 'ReqList/queries/e_RL.sql'
+QUERY_FILE = 'reqlist/queries/e_RL.sql'
 IN_FILE = 'C:/Py/IN/in.csv'
 # IN_FILE = 'C:/Py/IN/perimetre_fin_trv.csv'
 # IN_FILE = 'C:/Py/IN/perimetre_aff_full.csv'
@@ -40,7 +40,7 @@ OPEN_OUT_FILE = True
 SEND_NOTIF = True
 DEBUG_JOIN = False
 
-TMP_FOLDER = 'ReqList/'
+TMP_FOLDER = 'reqlist/'
 TMP_DIR = g.paths['TMP'] + TMP_FOLDER
 OUT_LEFT = TMP_DIR + 'out_l.csv'
 OUT_RIGHT = TMP_DIR + 'out_r.csv'

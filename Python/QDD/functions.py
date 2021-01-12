@@ -1,6 +1,6 @@
 from time import time
 
-import QDD.gl as gl
+import qdd.gl as gl
 from common import *
 import common as com
 

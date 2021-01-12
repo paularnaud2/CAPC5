@@ -1,7 +1,7 @@
 import sys
 import common as com
-import ReqList.gl as gl
-import ReqList.log as log
+import reqlist.gl as gl
+import reqlist.log as log
 
 
 def restart():

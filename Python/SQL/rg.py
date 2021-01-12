@@ -1,6 +1,6 @@
 import os
 import re
-import SQL.gl as gl
+import sql.gl as gl
 import common as com
 
 from shutil import move

@@ -1,5 +1,5 @@
 import common as com
-import Tools.gl as gl
+import tools.gl as gl
 
 from common import g
 from os import makedirs
@@ -7,7 +7,7 @@ from os.path import exists
 
 IN_FILE = 'C:/Py/IN/out_sql.csv'
 OUT_FILE = 'C:/Py/OUT/out_dup.csv'
-TMP_FOLDER = 'Tools/'
+TMP_FOLDER = 'tools/'
 TMP_PATH = g.paths['TMP'] + TMP_FOLDER
 IN_TMP_FILE = TMP_PATH + 'in.csv'
 OUT_DUP_FILE = TMP_PATH + 'out_dup.csv'

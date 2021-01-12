@@ -1,15 +1,15 @@
 import common as com
-import SQL.gl as gl
+import sql.gl as gl
 
-from SQL.init import init
-from SQL.init import init_params
-from SQL.connect import connect
-from SQL.functions import get_final_script
+from sql.init import init
+from sql.init import init_params
+from sql.connect import connect
+from sql.functions import get_final_script
 
 
 @com.log_exeptions
 def execute(**params):
-    com.log('[SQL] execute')
+    com.log('[sql] execute')
     init_params(params)
     init()
     script = get_final_script(gl.SCRIPT_FILE)
