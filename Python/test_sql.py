@@ -13,12 +13,12 @@ def test_sql():
     max_elt_insert = 200
 
     com.log(f'Création de la table {table_name}\
- (test execute)-------------------------------')
+    (test execute)-------------------------------')
     sql.execute(
         ENV=env,
         BDD=bdd,
         SCRIPT_FILE='sql/procs/create_table_test.sql',
-        VAR_DICT={'@@TABLE_NAME@@': table_name},
+        VAR_DICT={'TABLE_NAME': table_name},
         PROC=True,
     )
     com.log_print('')
@@ -28,7 +28,7 @@ def test_sql():
         ENV=env,
         BDD=bdd,
         SCRIPT_FILE='sql/scripts/insert_table_test.sql',
-        VAR_DICT={'@@TABLE_NAME@@': table_name},
+        VAR_DICT={'TABLE_NAME': table_name},
         IN_DIR=in_file,
         NB_MAX_ELT_INSERT=max_elt_insert,
     )
@@ -39,6 +39,7 @@ def test_sql():
         ENV=env,
         BDD=bdd,
         QUERY_FILE='sql/queries/e_test.sql',
+        VAR_DICT={'TABLE_NAME': table_name},
         OUT_DIR=g.paths['OUT'],
         OUT_RG_FOLDER=g.paths['OUT'] + 'RG_TEST',
         OUT_FILE=g.paths['OUT'] + 'export_test.csv',
@@ -57,6 +58,7 @@ def test_sql():
         ENV=env,
         BDD=bdd,
         QUERY_FILE='sql/queries/e_test_rg.sql',
+        VAR_DICT={'TABLE_NAME': table_name},
         OUT_DIR=g.paths['OUT'],
         OUT_RG_FOLDER='RG_TEST',
         MAX_BDD_CNX=8,
@@ -73,6 +75,7 @@ def test_sql():
         ENV=env,
         BDD=bdd,
         QUERY_FILE='sql/queries/e_test_rg.sql',
+        VAR_DICT={'TABLE_NAME': table_name},
         OUT_DIR=g.paths['OUT'],
         OUT_RG_FOLDER='RG_TEST',
         OUT_FILE=g.paths['OUT'] + 'export_test_rg.csv',

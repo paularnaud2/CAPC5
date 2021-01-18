@@ -75,7 +75,9 @@ def get_query():
         query = query_file.read()
 
     query = query.replace('\n;', '')
-    gl.query = query.replace(';', '')
+    query = query.replace(';', '')
+    query = com.replace_from_dict(query, gl.VAR_DICT)
+    gl.query = query
 
 
 def init_gko():

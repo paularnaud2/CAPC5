@@ -20,7 +20,7 @@ SELECT /*+ PARALLEL(8) ORDERED */ DISTINCT pds.Reference PDS
 	AND rel.STATUTRELEVE <> '2'
 	AND rel.NATURERELEVE IN ('1', '6', '41')
 	-- AND pds.Reference IN ('19425180866829')
-	AND pds.Reference IN @@IN1@@
+	AND pds.Reference IN @@IN@@
 )
 
 SELECT a.PDS POINT, a.TYPE_PDS

@@ -18,6 +18,7 @@ from .tools import print_array
 
 from .string import big_number
 from .string import reverse_string
+from .string import replace_from_dict
 from .string import get_duration_ms
 from .string import get_duration_string
 

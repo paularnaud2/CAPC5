@@ -107,6 +107,6 @@ FROM (
 	FROM SGEL_PRM_SCH.T_PRM prm
 	WHERE 1=1
 	AND prm.PRM_SC_SEGMENT = 'C5'
-	AND prm.PRM_ID IN @@IN1@@
+	AND prm.PRM_ID IN @@IN@@
 ) prm
 LEFT JOIN t ON prm.CCD = t.CCD

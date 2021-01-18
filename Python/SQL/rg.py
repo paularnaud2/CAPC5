@@ -3,31 +3,32 @@ import re
 import sql.gl as gl
 import common as com
 
+from common import g
 from shutil import move
 
 
-def get_var_name(in_str):
-    exp = 'AND' + '(.*)' + gl.VAR_STR + '(.*)' + gl.VAR_STR
+def get_rg_file_name(in_str):
+    exp = 'AND' + '(.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
     m = re.search(exp, in_str)
     try:
-        var1 = m.group(2)
+        rg_file_name = m.group(2)
     except AttributeError:
         return ''
 
-    exp = '--AND' + '(.*)' + gl.VAR_STR + '(.*)' + gl.VAR_STR
+    exp = '--AND' + '(.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
     m = re.search(exp, in_str)
     try:
         m.group(2)
     except AttributeError:
-        return var1
+        return rg_file_name
 
     return ''
 
 
-def gen_range_list(var):
-    if var != '':
+def gen_range_list(rg_file_name):
+    if rg_file_name != '':
         gl.bools['RANGE_QUERY'] = True
-        range_dir = gl.RANGE_PATH + var + gl.RANGE_FILE_TYPE
+        range_dir = gl.RANGE_PATH + rg_file_name + gl.RANGE_FILE_TYPE
         range_list = com.load_csv(range_dir)
         s = "Requêtage par plage détecté. Requête modèle :\n{}\n;"
         com.log(s.format(gl.query))

@@ -29,10 +29,10 @@ def download(**params):
 
 def download_strd():
     init()
-    var = rg.get_var_name(gl.query)
-    range_list = rg.gen_range_list(var)
+    rg_file_name = rg.get_rg_file_name(gl.query)
+    range_list = rg.gen_range_list(rg_file_name)
     range_list = rg.restart(range_list)
-    process_range_list(range_list, var)
+    process_range_list(range_list, rg_file_name)
     if gl.MERGE_RG_FILES or not gl.bools['RANGE_QUERY']:
         rg.merge_tmp_files()
     else:

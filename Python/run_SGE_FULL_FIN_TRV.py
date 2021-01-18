@@ -62,7 +62,7 @@ def run_sge(test=False):
             ENV='DIRECT',
             BDD='CAPC5',
             SCRIPT_FILE='sql/procs/create_table_sge_tmp.sql',
-            VAR_DICT={'@@TABLE_NAME@@': tmp_table},
+            VAR_DICT={'TABLE_NAME': tmp_table},
             PROC=True,
         )
 
@@ -74,7 +74,7 @@ def run_sge(test=False):
             ENV='DIRECT',
             BDD='CAPC5',
             SCRIPT_FILE='sql/scripts/insert_table_sge.sql',
-            VAR_DICT={'@@TABLE_NAME@@': tmp_table},
+            VAR_DICT={'TABLE_NAME': tmp_table},
             IN_DIR=out_file,
             NB_MAX_ELT_INSERT=max_elt_insert,
         )
@@ -86,7 +86,7 @@ def run_sge(test=False):
         ENV='DIRECT',
         BDD='CAPC5',
         SCRIPT_FILE='sql/procs/create_table_sge_final.sql',
-        VAR_DICT={'@@TABLE_NAME@@': final_table},
+        VAR_DICT={'TABLE_NAME': final_table},
         PROC=True,
     )
 
@@ -98,8 +98,8 @@ def run_sge(test=False):
         BDD='CAPC5',
         SCRIPT_FILE='sql/scripts/from_tmp_to_final.sql',
         VAR_DICT={
-            '@@TMP_TABLE@@': tmp_table,
-            '@@FINAL_TABLE@@': final_table,
+            'TMP_TABLE': tmp_table,
+            'FINAL_TABLE': final_table,
         },
     )
 
@@ -111,8 +111,8 @@ def run_sge(test=False):
         BDD='CAPC5',
         SCRIPT_FILE='sql/scripts/update_view_sge.sql',
         VAR_DICT={
-            '@@TABLE_NAME@@': final_table,
-            '@@VIEW_NAME@@': view_name,
+            'TABLE_NAME': final_table,
+            'VIEW_NAME': view_name,
         },
     )
 

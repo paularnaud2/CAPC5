@@ -47,7 +47,6 @@ CHECK_MEPA_DIR = TMP_DIR + 'last_mepa_check.csv'
 CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'
 RANGE_PATH = 'sql/ranges/'
 RANGE_FILE_TYPE = '.csv'
-VAR_STR = '@@'
 EC = '_EC'
 RANGE_FIELD = "RANGE"
 LEFT_DEL = ""  # "\""

@@ -12,8 +12,7 @@ verrou = RLock()
 
 def get_final_script(script_file):
     script = com.read_file(script_file)
-    for key in gl.VAR_DICT:
-        script = script.replace(key, gl.VAR_DICT[key])
+    script = com.replace_from_dict(script, gl.VAR_DICT)
     return script
 
 

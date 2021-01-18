@@ -3,6 +3,7 @@ import reqlist.gl as gl
 import reqlist.log as log
 import reqlist.file as file
 
+from common import g
 from threading import RLock
 
 verrou = RLock()
@@ -21,7 +22,7 @@ def process_group_list(c, group_list, inst='', th_nb=1, multi_thread=False):
         query_nb += 1
         if query_nb <= gl.ec_query_nb[th_name]:
             continue
-        query = gl.query_var.replace(gl.VAR_STR, grp)
+        query = gl.query_var.replace(g.VAR_DEL + gl.VAR_IN + g.VAR_DEL, grp)
         process_query(c, query, inst, query_nb, th_name, th_nb)
     file.tmp_finish(th_name)
     log.get_sql_array_finish(th_nb)
