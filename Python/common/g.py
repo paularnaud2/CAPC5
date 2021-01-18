@@ -6,6 +6,7 @@ from threading import RLock
 MIN_DUR_NOTIF_TRIGGER = 30
 CSV_SEPARATOR = ';'
 DEBUG = True
+SLEEP_AFTER_DELETE_FOLDER = 0.5
 
 counters = {}
 verrou = RLock()

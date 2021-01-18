@@ -45,12 +45,15 @@ def restart(range_list):
         return range_list
 
     if gl.bools['RANGE_QUERY'] is False and gl.BDD != 'GINKO':
+        com.log(f"Suppression du dossier temporaire {gl.TMP_PATH}")
         com.delete_folder(gl.TMP_PATH)
+        os.makedirs(gl.TMP_PATH)
         return range_list
 
     s = "Traitement en cours détecté. Tuer ? (o/n)"
     if com.log_input(s) == 'o':
         com.delete_folder(gl.TMP_PATH)
+        os.makedirs(gl.TMP_PATH)
         return range_list
 
     list_out = modify_restart(range_list, file_list)
@@ -87,6 +90,7 @@ def move_tmp_folder():
     if not exists(out_dir):
         os.makedirs(out_dir)
     else:
+        com.log('Ancien dossier trouvé')
         com.delete_folder(out_dir)
         os.makedirs(out_dir)
     com.log('Dossier de sortie créé')
