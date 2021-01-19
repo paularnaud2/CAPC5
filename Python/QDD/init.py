@@ -26,6 +26,14 @@ def set_dirs():
     return dirs
 
 
+def init_params(params):
+    if len(params) > 0:
+        com.log(f"Initialisation des paramètres : {params}")
+        for key in params:
+            gl.__getattribute__(key)
+            gl.__setattr__(key, params[key])
+
+
 def init_stf(in_file_dir, out_file_dir):
 
     gl.counters["file"] = 0
@@ -34,6 +42,7 @@ def init_stf(in_file_dir, out_file_dir):
 
     gl.bool["dup_key"] = False
 
+    gl.prev_elt = []
     gl.cur_list = []
     gl.dup_list = []
     gl.dup_key_list = []
@@ -90,9 +99,9 @@ def init_compare(in_file_1, in_file_2):
     gl.counters["c2"] = 1
     gl.counters["out"] = 1
 
-    gl.txt["msg"] = "{bn_1} lignes parcourues en {ds}."
-    gl.txt["msg"] += " {bn_2} lignes parcourues au total et {bn_3} "
-    gl.txt["msg"] += " lignes écrites dans le fichier de sortie."
+    gl.msg = "{bn_1} lignes parcourues en {ds}."
+    gl.msg += " {bn_2} lignes parcourues au total et {bn_3} "
+    gl.msg += " lignes écrites dans le fichier de sortie."
 
     gl.label_1 = gl.IN_FILE_1
     gl.label_2 = gl.IN_FILE_2
@@ -141,6 +150,7 @@ def del_tmp_files():
 
 def init_msf():
 
+    gl.prev_elt = []
     gl.counters["tot_written_lines_out"] = 1
     gl.counters["row_max"] = floor(gl.MAX_ROW_LIST / gl.counters["file"])
     if gl.counters["row_max"] == 0:

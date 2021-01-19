@@ -58,8 +58,7 @@ def compare_equal(line_1_list, line_2_list, in_file_1, in_file_2, out_file):
         gl.counters["c1"] += 1
         line_2_list = read_list(in_file_2)
         gl.counters["c2"] += 1
-        com.step_log(gl.counters["c1"], gl.SL_STEP, gl.txt["msg"],
-                     gl.counters["out"])
+        com.step_log(gl.counters["c1"], gl.SL_STEP, gl.msg, gl.counters["out"])
 
     return (line_1_list, line_2_list)
 
@@ -87,8 +86,7 @@ def compare_inf(line_1_list, line_2_list, in_file_1, out_file):
             gl.counters["out"] += 1
         line_1_list = read_list(in_file_1)
         gl.counters["c1"] += 1
-        com.step_log(gl.counters["c1"], gl.SL_STEP, gl.txt["msg"],
-                     gl.counters["out"])
+        com.step_log(gl.counters["c1"], gl.SL_STEP, gl.msg, gl.counters["out"])
 
     return (line_1_list, line_2_list)
 

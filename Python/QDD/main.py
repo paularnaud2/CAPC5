@@ -7,6 +7,7 @@ from time import time
 from qdd.init import set_dirs
 from qdd.init import init_msf
 from qdd.init import init_stf
+from qdd.init import init_params
 from qdd.csf import check_in_files
 from qdd.csf import compare_sorted_files
 from qdd.gstf import gen_sorted_temp_files
@@ -18,10 +19,11 @@ from qdd.empty_al import empty_array_list
 from tools.split import split_file_main
 
 
-def run_qdd():
+def run_qdd(**params):
 
     com.log("[qdd] run_qdd")
     start_time = time()
+    init_params(params)
     dirs = set_dirs()
 
     check_py_version(dirs["in1"])
@@ -42,7 +44,8 @@ def run_qdd():
     com.log(s)
     com.send_notif(s, "qdd", duration)
     com.log_print("")
-    os.startfile(dirs["out"])
+    if gl.OPEN_OUT_FILE:
+        os.startfile(dirs["out"])
 
 
 def check_py_version(in_dir):

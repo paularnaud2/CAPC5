@@ -13,7 +13,7 @@ counters = {}
 verrou = RLock()
 
 # Log
-LOG_LEVEL = 1
+LOG_LEVEL = 0
 LOG_FILE_INITIALISED = False
 LOG_FILE = None
 LOG_OUTPUT = True
