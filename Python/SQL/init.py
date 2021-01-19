@@ -16,6 +16,10 @@ def init():
 
 
 def init_gl():
+    TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
+    gl.CHECK_MEPA_DIR = TMP_DIR + gl.CHECK_MEPA_FILE
+    gl.TMP_FILE_CHUNK = TMP_DIR + gl.CHUNK_FILE
+
     gl.conf = {}
     gl.conf_env = {}
     gl.bools = {}
@@ -29,7 +33,6 @@ def init_gl():
 def init_tmp_dir():
     gl.TMP_PATH = g.paths['TMP'] + gl.TMP_FOLDER + gl.BDD + '/'
     if os.path.exists(gl.TMP_PATH):
-        com.log(f"Le dossier temporaire {gl.TMP_PATH} existe bien")
         return
     else:
         com.log(f"Création du dossier temporaire {gl.TMP_PATH}")
@@ -76,7 +79,9 @@ def get_query():
         query = query_file.read()
 
     query = query.replace('\n;', '')
-    gl.query = query.replace(';', '')
+    query = query.replace(';', '')
+    query = com.replace_from_dict(query, gl.VAR_DICT)
+    gl.query = query
 
 
 def init_gko():

@@ -13,7 +13,7 @@ from threading import Semaphore
 verrou = RLock()
 
 
-def process_range_list(range_list, var):
+def process_range_list(range_list, rg_file_name):
     gl.counters['QUERY_RANGE'] = 0
     init_th_dict()
     gl.sem = Semaphore(gl.MAX_BDD_CNX)
@@ -21,17 +21,17 @@ def process_range_list(range_list, var):
         gen_cnx_dict(gl.BDD, gl.ENV, 1)
         process_range()
     else:
-        lauch_threads(range_list, var)
+        lauch_threads(range_list, rg_file_name)
 
 
-def lauch_threads(range_list, var):
+def lauch_threads(range_list, rg_file_name):
     com.log("Plages à requêter : {}".format(range_list))
     thread_list = []
     gen_cnx_dict(gl.BDD, gl.ENV, gl.MAX_BDD_CNX)
     for elt in range_list:
         th = Thread(target=process_range, args=(
             elt,
-            var,
+            rg_file_name,
         ))
         thread_list.append(th)
         th.start()
@@ -43,14 +43,17 @@ def lauch_threads(range_list, var):
 
 
 @com.log_exeptions
-def process_range(elt='MONO', var=''):
+def process_range(elt='MONO', rg_file_name=''):
     with gl.sem:
         # com.log(f'Entrée sémaphore pour elt {elt}')
         gl.counters['QUERY_RANGE'] += 1
         cur_th = get_th_nb()
         cnx = gl.cnx_dict[cur_th]
         elt_query = elt.replace("'", "''")
-        query = gl.query.replace(gl.VAR_STR + var + gl.VAR_STR, elt_query)
+        query = gl.query.replace(
+            g.VAR_DEL + rg_file_name + g.VAR_DEL,
+            elt_query,
+        )
         c = cnx.cursor()
         process_query(c, query, elt, cur_th)
         c.close()

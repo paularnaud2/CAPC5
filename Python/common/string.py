@@ -1,5 +1,6 @@
 from math import floor
 from time import time
+from . import g
 
 
 def get_duration_string(duration_ms):
@@ -47,3 +48,9 @@ def reverse_string(str_in):
         str_out = i + str_out
 
     return str_out
+
+
+def replace_from_dict(str_in, dict_in):
+    for key in dict_in:
+        str_in = str_in.replace(g.VAR_DEL + key + g.VAR_DEL, dict_in[key])
+    return str_in

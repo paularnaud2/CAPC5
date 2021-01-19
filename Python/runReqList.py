@@ -1,5 +1,5 @@
 from common import init_log
-init_log('run_reqlist', 'C:/Py/')
+init_log('run_reqlist')
 
 if __name__ == '__main__':
     from reqlist import run_reqList

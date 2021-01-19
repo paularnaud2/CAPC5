@@ -1,8 +1,8 @@
 import os
-from common import *
-
 import qdd.gl as gl
-from qdd.functions import *
+import common as com
+
+from qdd.functions import gen_one_line
 
 
 def fill_array_list():
@@ -10,29 +10,30 @@ def fill_array_list():
 
     gl.counters["iter"] += 1
     s = "Remplissage du tableau tampon - Itération No.{}"
-    log(s.format(gl.counters["iter"]))
+    com.log(s.format(gl.counters["iter"]))
     gl.counters["col"] = 0
     while gl.counters["col"] < gl.counters["file"]:
         gl.counters["col"] += 1
         s = "Lecture du fichier temporaire No.{}..."
-        log(s.format(gl.counters["col"]), 1)
-        tmp_file_dir = gl.TMP_DIR + '_' + str(
+        com.log(s.format(gl.counters["col"]), 1)
+        tmp_file_dir = gl.TMP_DIR + "tmp_" + str(
             gl.counters["col"]) + gl.FILE_TYPE
         if gl.counters["col"] > 1:
-            log("Suppression de la liste temporaire précédente...", 1)
+            com.log("Suppression de la liste temporaire précédente...", 1)
             del tmp_file_list
-            log("Liste temporaire supprimée", 1)
+            com.log("Liste temporaire supprimée", 1)
         tmp_file_list = read_tmp_file(tmp_file_dir)
-        # si le fichier temporaire courant n'existe plus on passe directement au suivant
+        # si le fichier temporaire courant n'existe plus
+        # on passe directement au suivant
         if tmp_file_list == "empty":
             s = "Fichier temporaire No.{} introuvable"
-            log(s.format(gl.counters["col"]), 1)
+            com.log(s.format(gl.counters["col"]), 1)
             continue
         s = "Écriture du fichier temporaire No.{} dans le tableau tampon..."
-        log(s.format(gl.counters["col"]), 1)
+        com.log(s.format(gl.counters["col"]), 1)
         n_written_rows = write_tmp_file_in_array(tmp_file_list)
         s = "Réécriture du fichier temporaire No.{}..."
-        log(s.format(gl.counters["col"]), 1)
+        com.log(s.format(gl.counters["col"]), 1)
         rewrite_tmp_file(tmp_file_list, tmp_file_dir, n_written_rows)
 
 
@@ -45,14 +46,15 @@ def read_tmp_file(tmp_file_dir):
     except FileNotFoundError:
         tmp_file_list = "empty"
     except MemoryError:
-        log_print(MemoryError)
+        com.log_print(MemoryError)
         breakpoint()
 
     return tmp_file_list
 
 
 def write_tmp_file_in_array(tmp_file_list):
-    # écriture dans le tableau d'un bout de fichier temporaire pour qu'il fasse au max counters["row_max"]
+    # écriture dans le tableau d'un bout de fichier temporaire pour
+    # qu'il fasse au max counters["row_max"]
 
     cur_rm = min(len(tmp_file_list), gl.counters["row_max"])
     counter = 0
@@ -74,5 +76,5 @@ def rewrite_tmp_file(tmp_file_list, tmp_file_dir, n_written_rows):
     else:
         # s'il est vide, on le supprime
         os.remove(tmp_file_dir)
-        log("Suppression du fichier temporaire No. {}".format(
+        com.log("Suppression du fichier temporaire No. {}".format(
             gl.counters["col"]))

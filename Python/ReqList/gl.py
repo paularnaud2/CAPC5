@@ -48,7 +48,7 @@ OUT_SQL = TMP_DIR + 'out_sql.csv'
 # IN_TEST_L = 'C:/Py/IN/Tests/test_L0.csv'
 # IN_TEST_R = 'C:/Py/IN/Tests/test_R0.csv'
 
-VAR_STR = "@@IN1@@"
+VAR_IN = "IN"
 TMP_PATH = TMP_DIR + BDD + '/'
 TMP_FILE_TYPE = '.csv'
 EC = '_EC'

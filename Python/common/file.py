@@ -1,4 +1,5 @@
 from . import g
+from .log import log
 from os import listdir
 from os.path import join
 from os.path import isfile
@@ -7,8 +8,10 @@ from shutil import rmtree
 
 
 def delete_folder(path):
+    log(f"Suppression du dossier {path}")
     rmtree(path)
-    sleep(0.5)
+    sleep(g.SLEEP_AFTER_DELETE_FOLDER)
+    log(f"Dossier {path} supprimé")
 
 
 def merge_files(in_dir, out_dir, remove_header=False):

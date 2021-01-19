@@ -1,5 +1,4 @@
 import common as com
-import tools.gl as gl
 
 from common import g
 from os import makedirs

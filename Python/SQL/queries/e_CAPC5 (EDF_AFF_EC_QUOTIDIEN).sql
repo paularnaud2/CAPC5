@@ -30,4 +30,4 @@ case nvl(a.fournisseur,'NULL')
 from perimetre p
 left join sge s on s.prm=p.prm
 left join aff a on a.prm=p.prm
-AND p.PRM LIKE '@@PRM_RANGE_2@@%'
+AND p.PRM LIKE '@@RG_PRM_2@@%'

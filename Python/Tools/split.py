@@ -1,4 +1,4 @@
-from common import *
+import common as com
 import tools.gl as gl
 from os import remove
 from math import ceil
@@ -8,41 +8,38 @@ MAX_LINE = 2 * 10**3
 MAX_FILE_NB = 3
 
 
-def split_file_main(in_dir=IN_DIR,
-                    max_line=MAX_LINE,
-                    add_header=True,
-                    prompt=False,
-                    n_line=0,
-                    max_file=MAX_FILE_NB):
+def split_file_main(
+    in_dir=IN_DIR,
+    max_line=MAX_LINE,
+    add_header=True,
+    prompt=False,
+    n_line=0,
+    max_file=MAX_FILE_NB,
+):
 
-    log("Lancement de l'outil de découpage de fichiers volumineux")
-
+    com.log("Lancement de l'outil de découpage de fichiers")
     init(in_dir)
-
     if prompt:
         prompt_split(in_dir, max_line, n_line)
 
     if not gl.bool["quit"]:
         split_file(in_dir, max_line, add_header, max_file)
-
-    log("Traitement terminé")
+    com.log("Traitement terminé")
 
 
 def init(in_dir):
-
     gl.bool["quit"] = False
     gl.counters["split_file"] = 0
-    gl.header = get_header(in_dir)
+    gl.header = com.get_header(in_dir)
 
 
 def prompt_split(in_dir, max_line, n_line):
-
     if n_line == 0:
-        log("Décompte du nombre de lignes du fichier d'entrée ({})..".format(
-            in_dir))
-        n_line = count_lines(in_dir)
-        log("Décompte terminé. Le fichier d'entrée comporte {} lignes.".format(
-            big_number(n_line)))
+        s = f"Décompte du nombre de lignes du fichier d'entrée ({in_dir}).."
+        com.log(s)
+        n_line = com.count_lines(in_dir)
+        s = f"Décompte terminé. Le fichier d'entrée comporte {n_line} lignes."
+        com.log(s)
 
     n_out_files = ceil(n_line / max_line)
 
@@ -52,8 +49,11 @@ def prompt_split(in_dir, max_line, n_line):
 
     n_line_2 = n_line + n_out_files - 1
     n_out_files = ceil(n_line_2 / max_line)
-    s = "Le fichier d'entrée dépasse les {} lignes. Il va être découpé en {} fichiers (nb max de fichiers fixé à {}). Continuer ? (o/n)"
-    a = input_com(s.format(big_number(max_line), n_out_files, MAX_FILE_NB))
+    bn = com.big_number(max_line)
+    s = f"Le fichier d'entrée dépasse les {bn} lignes."
+    s += f" Il va être découpé en {n_out_files} fichiers "
+    s += f"(nb max de fichiers fixé à {MAX_FILE_NB}). Continuer ? (o/n)"
+    a = com.log_input(s)
 
     if a == "n":
         gl.bool["quit"] = True
@@ -66,8 +66,13 @@ def split_file(in_dir, max_line, add_header, max_file):
         while True:
             gl.counters["split_file"] += 1
             split_dir = get_split_dir(in_dir)
-            if not gen_split_out(split_dir, max_line, in_file, add_header,
-                                 max_file):
+            if not gen_split_out(
+                    split_dir,
+                    max_line,
+                    in_file,
+                    add_header,
+                    max_file,
+            ):
                 break
 
     print("")
@@ -86,21 +91,21 @@ def gen_split_out(split_dir, max_line, in_file, add_header, max_file):
             in_line = in_file.readline()
             split_file.write(in_line)
 
-    s = "Fichier découpé No.{} ({}) généré avec succès"
-    s = s.format(gl.counters["split_file"], split_dir)
+    file_nb = gl.counters["split_file"]
+    s = f"Fichier découpé No.{file_nb} ({split_dir}) généré avec succès"
     if in_line == '':
         if i == 2 and add_header:
             remove(split_dir)
         else:
-            log(s)
+            com.log(s)
         return False
 
-    log(s)
+    com.log(s)
 
     if gl.counters["split_file"] >= max_file:
-        s = "Nombre maximum de fichiers atteint ({} fichiers max). Arrêt du traitement".format(
-            max_file)
-        log(s)
+        s = f"Nombre maximum de fichiers atteint ({max_file} fichiers max)."
+        s += " Arrêt du traitement"
+        com.log(s)
         return False
 
     return True
@@ -108,10 +113,10 @@ def gen_split_out(split_dir, max_line, in_file, add_header, max_file):
 
 def get_split_dir(in_dir):
 
-    rv_dir = reverse_string(in_dir)
+    rv_dir = com.reverse_string(in_dir)
     i = rv_dir.find(".")
     rv_ext = rv_dir[:i + 1]
-    ext = reverse_string(rv_ext)
+    ext = com.reverse_string(rv_ext)
     sd = in_dir.replace(ext, '')
     sd += "_{}".format(gl.counters["split_file"]) + ext
 

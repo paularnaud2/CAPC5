@@ -1,27 +1,29 @@
-from time import time
-
-import qdd.gl as gl
-from qdd.functions import *
-from qdd.init import init_prev_elt
 import common as com
+import qdd.gl as gl
+
+from qdd.init import init_prev_elt
+from qdd.functions import compare_elt
+from qdd.functions import write_min_elt
 
 
 def empty_array_list(out_file_dir):
     # on vide le tableau de listes triées dans le fichier de sortie trié
-
-    log("Vidange triée et sans doublons du tableau tampon dans le fichier de sortie..."
-        )
+    s = "Vidange triée et sans doublons du tableau"
+    s += " tampon dans le fichier de sortie..."
+    com.log(s)
     n_col = len(gl.array_list)
     with open(out_file_dir, 'a', encoding='utf-8') as out_file:
-        init_sl_time()
+        com.init_sl_time()
         (cursor, max_cursor, void_cursor) = init_cursors()
         init_prev_elt(gl.array_list[0])
         while cursor != void_cursor:
             (min_elt, min_col) = get_min_elt(cursor, n_col)
             write_min_elt(min_elt, out_file)
             if cursor[min_col] == max_cursor[min_col] - 1:
-                # si l'une des listes a été entièrement parcourue, alors on réécrit le tableau de listes
-                # en supprimant les éléments déjà extraits vers le fichier de sortie et on sort de la boucle
+                # si l'une des listes a été entièrement parcourue,
+                # alors on réécrit le tableau de listes
+                # en supprimant les éléments déjà extraits vers
+                # le fichier de sortie et on sort de la boucle
                 cursor[min_col] += 1
                 for i, l in enumerate(gl.array_list):
                     gl.array_list[i] = l[cursor[i]:]

@@ -59,7 +59,7 @@ def run_aff(test=False):
             ENV='DIRECT',
             BDD='CAPC5',
             SCRIPT_FILE='sql/procs/create_table_aff.sql',
-            VAR_DICT={'@@TABLE_NAME@@': table_name},
+            VAR_DICT={'TABLE_NAME': table_name},
             PROC=True,
         )
 
@@ -70,7 +70,7 @@ def run_aff(test=False):
         ENV='DIRECT',
         BDD='CAPC5',
         SCRIPT_FILE='sql/scripts/insert_table_aff.sql',
-        VAR_DICT={'@@TABLE_NAME@@': table_name},
+        VAR_DICT={'TABLE_NAME': table_name},
         IN_DIR=out_file,
         NB_MAX_ELT_INSERT=max_elt_insert,
     )
@@ -83,8 +83,8 @@ def run_aff(test=False):
         BDD='CAPC5',
         SCRIPT_FILE='sql/scripts/update_view_aff.sql',
         VAR_DICT={
-            '@@TABLE_NAME@@': table_name,
-            '@@VIEW_NAME@@': view_name,
+            'TABLE_NAME': table_name,
+            'VIEW_NAME': view_name,
         },
     )
 
