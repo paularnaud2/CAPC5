@@ -1,8 +1,8 @@
-from time import time
-
 import qdd.gl as gl
-from common import *
 import common as com
+
+from common import g
+from os.path import exists
 
 
 def compare_elt(elt1, elt2):
@@ -30,13 +30,14 @@ def write_min_elt(min_elt, out_file):
         gl.bool["dup_key"] = False
         write_elt(out_file, min_elt, True)
         gl.counters["tot_written_lines_out"] += 1
-        step_log(gl.counters["tot_written_lines_out"], gl.SL_STEP)
+        com.step_log(gl.counters["tot_written_lines_out"], gl.SL_STEP)
         gl.prev_elt = min_elt
     elif check_dup(min_elt):
-        # on n'écrit pas les doublons purs dans le fichier de sortie mais on écrit les doublons de clé
+        # on n'écrit pas les doublons purs dans le fichier de sortie
+        # mais on écrit les doublons de clé
         write_elt(out_file, min_elt, True)
         gl.counters["tot_written_lines_out"] += 1
-        step_log(gl.counters["tot_written_lines_out"], gl.SL_STEP)
+        com.step_log(gl.counters["tot_written_lines_out"], gl.SL_STEP)
 
 
 def check_dup(elt):
@@ -46,7 +47,8 @@ def check_dup(elt):
         gl.dup_list.append(elt)
         return False
     else:
-        # on enregistre et différentie les cas de doublons sur la clé de recherche
+        # on enregistre et différentie les cas de doublons
+        # sur la clé de recherche
         if not gl.bool["dup_key"]:
             gl.dup_key_list.append(gl.prev_elt)
             gl.bool["dup_key"] = True
@@ -88,13 +90,9 @@ def temp_files():
     counter = 0
     while counter < gl.counters["file"]:
         counter += 1
-        tmp_file_dir = gl.TMP_DIR + '_' + str(counter) + gl.FILE_TYPE
-        try:
-            with open(tmp_file_dir, 'r', encoding='utf-8') as tmp_file:
-                line = tmp_file.readline()
+        tmp_file_dir = gl.TMP_DIR + "tmp_" + str(counter) + gl.FILE_TYPE
+        if exists(tmp_file_dir):
             return True
-        except FileNotFoundError:
-            pass
 
     return False
 

@@ -1,9 +1,12 @@
 import qdd.gl as gl
-from qdd.functions import *
-from common import *
-from qdd.init import *
 import common as com
-from time import time
+
+from common import g
+from qdd.init import init_compare
+from qdd.init import init_out_file
+from qdd.functions import write_elt
+from qdd.functions import read_list
+from qdd.functions import compare_elt
 
 
 def compare_sorted_files(in_file_dir_1, in_file_dir_2, out_file_dir):
@@ -12,7 +15,7 @@ def compare_sorted_files(in_file_dir_1, in_file_dir_2, out_file_dir):
         with open(in_file_dir_1, 'r', encoding='utf-8') as in_file_1:
             with open(in_file_dir_2, 'r', encoding='utf-8') as in_file_2:
                 (line_1_list, line_2_list) = init_compare(in_file_1, in_file_2)
-                init_sl_time()
+                com.init_sl_time()
                 while compare_elt(line_1_list, line_2_list) != " ":
                     (line_1_list,
                      line_2_list) = compare_equal(line_1_list, line_2_list,
@@ -34,10 +37,10 @@ def finish(out_file_dir):
     s += "\t\t{} lignes parcourues dans le fichier 1\n"
     s += "\t\t{} lignes parcourues dans le fichier 2\n"
     s += "\t\t{} lignes écrites dans le fichier de sortie"
-    nb_out = big_number(gl.counters["out"])
-    nb_1 = big_number(gl.counters["c1"])
-    nb_2 = big_number(gl.counters["c2"])
-    log(s.format(out_file_dir, nb_1, nb_2, nb_out))
+    nb_out = com.big_number(gl.counters["out"])
+    nb_1 = com.big_number(gl.counters["c1"])
+    nb_2 = com.big_number(gl.counters["c2"])
+    com.log(s.format(out_file_dir, nb_1, nb_2, nb_out))
 
 
 def compare_equal(line_1_list, line_2_list, in_file_1, in_file_2, out_file):
@@ -55,8 +58,8 @@ def compare_equal(line_1_list, line_2_list, in_file_1, in_file_2, out_file):
         gl.counters["c1"] += 1
         line_2_list = read_list(in_file_2)
         gl.counters["c2"] += 1
-        step_log(gl.counters["c1"], gl.SL_STEP, gl.txt["msg"],
-                 gl.counters["out"])
+        com.step_log(gl.counters["c1"], gl.SL_STEP, gl.txt["msg"],
+                     gl.counters["out"])
 
     return (line_1_list, line_2_list)
 
@@ -84,8 +87,8 @@ def compare_inf(line_1_list, line_2_list, in_file_1, out_file):
             gl.counters["out"] += 1
         line_1_list = read_list(in_file_1)
         gl.counters["c1"] += 1
-        step_log(gl.counters["c1"], gl.SL_STEP, gl.txt["msg"],
-                 gl.counters["out"])
+        com.step_log(gl.counters["c1"], gl.SL_STEP, gl.txt["msg"],
+                     gl.counters["out"])
 
     return (line_1_list, line_2_list)
 
@@ -113,7 +116,8 @@ def check_in_files(in_file_dir_1, in_file_dir_2, out_file_dir):
             line_2_list = line_2.strip("\n").split(g.CSV_SEPARATOR)
 
             if len(line_1_list) != len(line_2_list):
-                s = "Les fichiers à comparer doivent comporter le même nombre de champs"
+                s = "Les fichiers à comparer doivent comporter le même nombre"
+                s += " de champs"
                 raise Exception(s)
 
             init_out_file(out_file_dir, line_1, gl.COMPARE_FIELD)

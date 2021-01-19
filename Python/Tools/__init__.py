@@ -1,14 +1,6 @@
 import common as com
 
 
-def csv_to_xls():
-    from tools.csv_to_xls import csv_to_xls_folder
-    com.LOG_FILE_INITIALISED = False
-    com.init_log('tools')
-    com.LOG_OUTPUT = True
-    csv_to_xls_folder()
-
-
 def fdup():
     from tools.dup import find_dup_main
     com.LOG_OUTPUT = False

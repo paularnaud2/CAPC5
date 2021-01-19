@@ -16,6 +16,10 @@ def init():
 
 
 def init_gl():
+    TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
+    gl.CHECK_MEPA_DIR = TMP_DIR + gl.CHECK_MEPA_FILE
+    gl.TMP_FILE_CHUNK = TMP_DIR + gl.CHUNK_FILE
+
     gl.conf = {}
     gl.conf_env = {}
     gl.bools = {}

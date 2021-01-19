@@ -1,6 +1,4 @@
 # variables globales et constantes pour le package qdd (import qdd.gl as gl)
-from time import time
-import common as com
 
 IN_FILE_1 = 'SGE'
 # IN_FILE_1 = 'OLD'
@@ -14,18 +12,21 @@ MAX_LINE_SPLIT = 900 * 10**3
 COMPARE_FIELD_NB = 1
 COMPARE_SEPARATOR = '|'
 
-EQUAL_OUT = False  # écrire les lignes égales dans le fichier de sortie
-DIFF_OUT = False  # écrire les lignes différentes dans le fichier de sortie (prend effet uniquement si EQUAL_OUT = True)
+# écrire les lignes égales dans le fichier de sortie
+EQUAL_OUT = False
+# écrire les lignes différentes dans le fichier de sortie
+# (prend effet uniquement si EQUAL_OUT = True)
+DIFF_OUT = False
 EQUAL_LABEL = 'E'
 
 FILE_TYPE = '.csv'
 IN_DIR = 'C:/Py/OUT/'
 OUT_DIR = 'C:/Py/OUT/'
-OUT_FILE = 'qdd_out'
-OUT_E_FILE = 'qdd_out_e'
-OUT_DUP_FILE = OUT_DIR + OUT_FILE + "_dup"
+OUT_FILE = 'out'
+OUT_E_FILE = 'out_e'
+OUT_DUP_FILE = OUT_DIR + "qdd_out_dup"
 OUT_DUP_KEY_FILE = OUT_DIR + OUT_FILE + "_dup_key" + FILE_TYPE
-TMP_DIR = com.TMP_PATH_QDD + 'tmp'
+TMP_FOLDER = 'qdd/'
 DEFAULT_FIELD = "FIELD"
 COMPARE_FIELD = "COMPARE_RES"
 MAX_DUP_PRINT = 5
@@ -43,14 +44,13 @@ txt = {}
 header = ''
 
 prev_elt = []
-"""
+
 # Test 20
 IN_DIR = 'C:/Py/IN/Tests/'
 IN_FILE_1 = 'export_test1'
 IN_FILE_2 = 'export_test2'
 MAX_ROW_LIST = 15
 MAX_LINE_SPLIT = 100
-"""
 """
 # Test 100k
 IN_FILE_1 = 'export_test3'

@@ -1,5 +1,4 @@
 # variables globales et constantes pour le package sql (import sql.gl as gl)
-from common import g
 from datetime import datetime
 
 ENV = 'PROD'
@@ -42,8 +41,7 @@ ORACLE_CLIENT = 'C:/instantclient_19_6/'
 CONF_FILE = ORACLE_CLIENT + 'conf_perso.txt'
 TMP_FOLDER = 'sql/'
 TMP_TRT_FILE = 'tmp.csv'
-TMP_DIR = g.paths['TMP'] + TMP_FOLDER
-CHECK_MEPA_DIR = TMP_DIR + 'last_mepa_check.csv'
+CHECK_MEPA_FILE = 'last_mepa_check.csv'
 CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'
 RANGE_PATH = 'sql/ranges/'
 RANGE_FILE_TYPE = '.csv'
@@ -63,4 +61,3 @@ NB_MAX_ELT_INSERT = 100000
 PROC = False
 VAR_DICT = {}
 CHUNK_FILE = 'chunk.txt'
-TMP_FILE_CHUNK = TMP_DIR + CHUNK_FILE

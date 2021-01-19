@@ -1,19 +1,25 @@
 import os
-from math import floor
 import qdd.gl as gl
-from common import *
 import common as com
-from qdd.functions import *
+
+from os.path import exists
+from common import g
+from math import floor
+from qdd.functions import read_list
 
 
 def set_dirs():
 
     dirs = {}
 
+    gl.TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
+    if exists(gl.TMP_DIR):
+        com.delete_folder(gl.TMP_DIR)
+    os.makedirs(gl.TMP_DIR)
     dirs["in1"] = gl.IN_DIR + gl.IN_FILE_1 + gl.FILE_TYPE
-    dirs["out1"] = gl.TMP_DIR + "_" + gl.OUT_FILE + "_1" + gl.FILE_TYPE
+    dirs["out1"] = gl.TMP_DIR + gl.OUT_FILE + "_1" + gl.FILE_TYPE
     dirs["in2"] = gl.IN_DIR + gl.IN_FILE_2 + gl.FILE_TYPE
-    dirs["out2"] = gl.TMP_DIR + "_" + gl.OUT_FILE + "_2" + gl.FILE_TYPE
+    dirs["out2"] = gl.TMP_DIR + gl.OUT_FILE + "_2" + gl.FILE_TYPE
     dirs["out"] = gl.OUT_DIR + gl.OUT_FILE + gl.FILE_TYPE
     dirs["out_e"] = gl.OUT_DIR + gl.OUT_E_FILE + gl.FILE_TYPE
 
@@ -67,8 +73,8 @@ def get_header(first_line, last_field=''):
             counter = 1
             for elt in line_list[1:]:
                 counter += 1
-                header = header + g.CSV_SEPARATOR + gl.DEFAULT_FIELD + "_" + str(
-                    counter)
+                header = header + g.CSV_SEPARATOR + gl.DEFAULT_FIELD
+                header += "_" + str(counter)
 
     if last_field != "":
         header = header + g.CSV_SEPARATOR + last_field
@@ -85,8 +91,8 @@ def init_compare(in_file_1, in_file_2):
     gl.counters["out"] = 1
 
     gl.txt["msg"] = "{bn_1} lignes parcourues en {ds}."
-    gl.txt[
-        "msg"] += " {bn_2} lignes parcourues au total et {bn_3} lignes écrites dans le fichier de sortie."
+    gl.txt["msg"] += " {bn_2} lignes parcourues au total et {bn_3} "
+    gl.txt["msg"] += " lignes écrites dans le fichier de sortie."
 
     gl.label_1 = gl.IN_FILE_1
     gl.label_2 = gl.IN_FILE_2
@@ -106,10 +112,11 @@ def init_equal_diff_bool():
             gl.bool["EQUAL"] = True
             gl.bool["DIFF"] = gl.DIFF_OUT
         else:
-            s = "Attention les fichiers à comparer dépassent les {} lignes et le paramètre EQUAL_OUT est activé.".format(
-                big_number(gl.MAX_ROW_EQUAL_OUT))
-            s = s + "\nÉcrire les champs égaux dans le fichier de sortie ? (o/n)"
-            if input_com(s) == "o":
+            bn = com.big_number(gl.MAX_ROW_EQUAL_OUT)
+            s = f"Attention les fichiers à comparer dépassent les {bn} lignes"
+            s += " et le paramètre EQUAL_OUT est activé."
+            s += "\nÉcrire les champs égaux dans le fichier de sortie ? (o/n)"
+            if com.log_input(s) == "o":
                 gl.bool["EQUAL"] = True
                 gl.bool["DIFF"] = gl.DIFF_OUT
             else:
@@ -126,7 +133,7 @@ def del_tmp_files():
     while True:
         try:
             counter += 1
-            tmp_file_dir = gl.TMP_DIR + '_' + str(counter) + gl.FILE_TYPE
+            tmp_file_dir = gl.TMP_DIR + str(counter) + gl.FILE_TYPE
             os.remove(tmp_file_dir)
         except FileNotFoundError:
             break
@@ -149,5 +156,7 @@ def init_array_list():
         counter += 1
         gl.array_list.append([])
 
-    s = "Tableau tampon initialisé. Il pourra contenir un maximum de {} lignes."
-    log(s.format(big_number(gl.counters["row_max"])))
+    nb = gl.counters["row_max"]
+    s = "Tableau tampon initialisé."
+    s += f" Il pourra contenir un maximum de {nb} lignes."
+    com.log(s)
