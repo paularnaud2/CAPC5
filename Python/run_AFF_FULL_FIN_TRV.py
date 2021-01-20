@@ -71,7 +71,7 @@ def run_aff(test=False):
         BDD='CAPC5',
         SCRIPT_FILE='sql/scripts/insert_table_aff.sql',
         VAR_DICT={'TABLE_NAME': table_name},
-        IN_DIR=out_file,
+        UPLOAD_IN=out_file,
         NB_MAX_ELT_INSERT=max_elt_insert,
     )
 

@@ -16,7 +16,7 @@ def upload(**params):
     com.log('[sql] upload')
     script = init_this(params)
     start_time = time()
-    with open(gl.IN_DIR, 'r', encoding='utf-8') as in_file:
+    with open(gl.UPLOAD_IN, 'r', encoding='utf-8') as in_file:
         # on saute la première ligne (entête)
         in_file.readline()
         for line in in_file:

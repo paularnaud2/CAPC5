@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     # sql.upload(
     #     SCRIPT_FILE='sql/scripts/insert_table_aff.sql',
-    #     IN_DIR='C:/Py/OUT/test.csv',
+    #     UPLOAD_IN='C:/Py/OUT/test.csv',
     #     VAR_DICT={'@@TABLE_NAME@@': table_name},
     #     NB_MAX_ELT_INSERT=100,
     #     ENV='DIRECT',

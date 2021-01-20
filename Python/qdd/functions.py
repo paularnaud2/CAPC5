@@ -1,3 +1,5 @@
+import sys
+import os
 import qdd.gl as gl
 import common as com
 
@@ -111,3 +113,20 @@ def read_list(in_file):
     line = in_file.readline()
     line_list = line.strip("\n").split(g.CSV_SEPARATOR)
     return line_list
+
+
+def check_py_version(in_dir):
+
+    a = str(sys.version).find("32 bit") != -1
+    b = gl.MAX_ROW_LIST > gl.MAX_ROW_LIST_PY_VERSION_ALERT
+    c = os.path.getsize(in_dir) > gl.MAX_FILE_SIZE_PY_VERSION_ALERT
+
+    if a and b and c:
+        s = "Attention vous utilisez la version 32 bit de Python qui est"
+        s += " limitée à 2 GO de mémoire RAM."
+        s += "\nAvec la valeur actuelle du paramètre MAX_ROW_LIST, vous"
+        s += " risquez un Memory Error."
+        s += "\nUtilisation de la version 64 bit conseillée."
+        s += "\nContinuer ? (o/n)"
+        if com.log_input(s) == 'n':
+            sys.exit()

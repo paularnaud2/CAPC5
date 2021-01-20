@@ -98,6 +98,7 @@ def init_compare(in_file_1, in_file_2):
     gl.counters["c1"] = 1
     gl.counters["c2"] = 1
     gl.counters["out"] = 1
+    gl.counters["diff"] = 0
 
     gl.msg = "{bn_1} lignes parcourues en {ds}."
     gl.msg += " {bn_2} lignes parcourues au total et {bn_3} "
@@ -170,3 +171,13 @@ def init_array_list():
     s = "Tableau tampon initialisé."
     s += f" Il pourra contenir un maximum de {nb} lignes."
     com.log(s)
+
+
+def init_file_match(dir, in1, in2):
+    gl.IN_DIR = dir
+    gl.IN_FILE_1 = in1
+    gl.IN_FILE_2 = in2
+    gl.MAX_LINE_SPLIT = 10**6
+    gl.EQUAL_OUT = False
+    gl.DIFF_OUT = False
+    gl.OPEN_OUT_FILE = True

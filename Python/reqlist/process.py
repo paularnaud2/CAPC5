@@ -54,7 +54,7 @@ def export_cursor(cursor, inst=''):
         for field in row:
             s = str(field)
             if s != 'None':
-                s = com.clean(s)
+                s = com.csv_clean(s)
             else:
                 s = ''
             newRow.append(s)

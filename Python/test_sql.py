@@ -1,7 +1,9 @@
 import sql
 import common as com
+
 from common import g
 from test import gl
+
 com.init_log('test_sql')
 
 
@@ -26,7 +28,7 @@ def upload():
         BDD=gl.SQL_BDD,
         SCRIPT_FILE='sql/scripts/insert_table_test.sql',
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        IN_DIR=gl.SQL_IN_FILE,
+        UPLOAD_IN=gl.SQL_IN_FILE,
         NB_MAX_ELT_INSERT=gl.SQL_MAX_ELT_INSERT,
     )
     com.log_print('')
@@ -40,8 +42,6 @@ def download_simple():
         BDD=gl.SQL_BDD,
         QUERY_FILE='sql/queries/e_test.sql',
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        OUT_DIR=g.paths['OUT'],
-        OUT_RG_FOLDER=g.paths['OUT'] + 'RG_TEST',
         OUT_FILE=g.paths['OUT'] + gl.SQL_DL_OUT,
         MAX_BDD_CNX=8,
         MERGE_RG_FILES=True,
@@ -61,8 +61,6 @@ def download_rg_merge():
         BDD=gl.SQL_BDD,
         QUERY_FILE='sql/queries/e_test_rg.sql',
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        OUT_DIR=g.paths['OUT'],
-        OUT_RG_FOLDER='RG_TEST',
         OUT_FILE=g.paths['OUT'] + gl.SQL_DL_RG_OUT,
         MAX_BDD_CNX=8,
         MERGE_RG_FILES=True,
@@ -81,8 +79,7 @@ def download_rg_no_merge():
         BDD=gl.SQL_BDD,
         QUERY_FILE='sql/queries/e_test_rg.sql',
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        OUT_DIR=g.paths['OUT'],
-        OUT_RG_FOLDER='RG_TEST',
+        OUT_RG_DIR=g.paths['OUT'] + 'RG_TEST/',
         MAX_BDD_CNX=8,
         MERGE_RG_FILES=False,
         EXPORT_RANGE=False,

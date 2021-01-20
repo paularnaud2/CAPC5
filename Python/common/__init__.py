@@ -31,7 +31,7 @@ from .file import count_lines
 from .file import delete_folder
 from .file import get_file_list
 
-from .csv import clean
+from .csv import csv_clean
 from .csv import load_csv
 from .csv import save_csv
 from .csv import csv_to_list

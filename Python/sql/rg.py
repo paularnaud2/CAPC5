@@ -28,7 +28,7 @@ def get_rg_file_name(in_str):
 def gen_range_list(rg_file_name):
     if rg_file_name != '':
         gl.bools['RANGE_QUERY'] = True
-        range_dir = gl.RANGE_PATH + rg_file_name + gl.RANGE_FILE_TYPE
+        range_dir = gl.RANGE_PATH + rg_file_name + gl.FILE_TYPE
         range_list = com.load_csv(range_dir)
         s = "Requêtage par plage détecté. Requête modèle :\n{}\n;"
         com.log(s.format(gl.query))
@@ -69,8 +69,8 @@ def modify_restart(range_list, file_list):
 
     list_out = []
     for elt in range_list:
-        comp_elt = elt + gl.RANGE_FILE_TYPE
-        comp_elt_ec = elt + gl.EC + gl.RANGE_FILE_TYPE
+        comp_elt = elt + gl.FILE_TYPE
+        comp_elt_ec = elt + gl.EC + gl.FILE_TYPE
         if comp_elt not in file_list:
             list_out.append(elt)
         if comp_elt_ec in file_list:
@@ -85,7 +85,7 @@ def move_tmp_folder():
     from os.path import exists
 
     gl.bools["MERGE_OK"] = False
-    out_dir = gl.OUT_DIR + gl.OUT_RG_FOLDER + '/'
+    out_dir = gl.OUT_RG_DIR
 
     com.log('Création du dossier de sortie {}...'.format(out_dir))
     if not exists(out_dir):
@@ -152,7 +152,7 @@ def check_ec(file_list):
 
 
 def check_mono(file_list, out_file):
-    if file_list == ['MONO' + gl.RANGE_FILE_TYPE]:
+    if file_list == ['MONO' + gl.FILE_TYPE]:
         cur_dir = gl.TMP_PATH + file_list[0]
         move(cur_dir, out_file)
         return True

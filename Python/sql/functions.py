@@ -35,14 +35,14 @@ def write_rows(cursor, range_name='MONO', th_name='DEFAULT', th_nb=0):
 
 def write_row(row, out_file, range_name='MONO'):
 
-    s = com.clean(str(row[0]))
+    s = com.csv_clean(str(row[0]))
     line_out = gl.LEFT_DEL + s + gl.RIGHT_DEL
     for elt in row[1:]:
         s = str(elt)
         if s == 'None':
             s = ''
         else:
-            s = com.clean(s)
+            s = com.csv_clean(s)
         line_out += g.CSV_SEPARATOR + gl.LEFT_DEL + s + gl.RIGHT_DEL
     if line_out.strip(g.CSV_SEPARATOR) == '':
         return 0

@@ -3,7 +3,6 @@ import common as com
 
 from common import g
 from qdd.init import init_compare
-from qdd.init import init_out_file
 from qdd.functions import write_elt
 from qdd.functions import read_list
 from qdd.functions import compare_elt
@@ -14,21 +13,18 @@ def compare_sorted_files(in_file_dir_1, in_file_dir_2, out_file_dir):
     with open(out_file_dir, 'a', encoding='utf-8') as out_file:
         with open(in_file_dir_1, 'r', encoding='utf-8') as in_file_1:
             with open(in_file_dir_2, 'r', encoding='utf-8') as in_file_2:
-                (line_1_list, line_2_list) = init_compare(in_file_1, in_file_2)
-                com.init_sl_time()
-                while compare_elt(line_1_list, line_2_list) != " ":
-                    (line_1_list,
-                     line_2_list) = compare_equal(line_1_list, line_2_list,
-                                                  in_file_1, in_file_2,
-                                                  out_file)
-                    (line_1_list,
-                     line_2_list) = compare_inf(line_1_list, line_2_list,
-                                                in_file_1, out_file)
-                    (line_1_list,
-                     line_2_list) = compare_sup(line_1_list, line_2_list,
-                                                in_file_2, out_file)
+                comp(in_file_1, in_file_2, out_file)
 
     finish(out_file_dir)
+
+
+def comp(in1, in2, out):
+    (l1, l2) = init_compare(in1, in2)
+    com.init_sl_time()
+    while compare_elt(l1, l2) != " ":
+        (l1, l2) = compare_equal(l1, l2, in1, in2, out)
+        (l1, l2) = compare_inf(l1, l2, in1, out)
+        (l1, l2) = compare_sup(l1, l2, in2, out)
 
 
 def finish(out_file_dir):
@@ -46,10 +42,12 @@ def finish(out_file_dir):
 def compare_equal(line_1_list, line_2_list, in_file_1, in_file_2, out_file):
 
     while compare_elt(line_1_list, line_2_list) == "=":
-        if line_1_list != line_2_list and gl.bool["DIFF"]:
-            line_diff = compare_line(line_1_list, line_2_list)
-            write_elt(out_file, line_diff, True)
-            gl.counters["out"] += 1
+        if line_1_list != line_2_list:
+            gl.counters["diff"] += 1
+            if gl.bool["DIFF"]:
+                line_diff = compare_line(line_1_list, line_2_list)
+                write_elt(out_file, line_diff, True)
+                gl.counters["out"] += 1
         elif gl.bool["EQUAL"]:
             line_1_list.append(gl.EQUAL_LABEL)
             write_elt(out_file, line_1_list, True)
@@ -80,6 +78,7 @@ def compare_line(line_1_list, line_2_list):
 def compare_inf(line_1_list, line_2_list, in_file_1, out_file):
 
     while compare_elt(line_1_list, line_2_list) == "<":
+        gl.counters["diff"] += 1
         if gl.bool["DIFF"]:
             line_1_list.append(gl.label_1)
             write_elt(out_file, line_1_list, True)
@@ -94,6 +93,7 @@ def compare_inf(line_1_list, line_2_list, in_file_1, out_file):
 def compare_sup(line_1_list, line_2_list, in_file_2, out_file):
 
     while compare_elt(line_1_list, line_2_list) == ">":
+        gl.counters["diff"] += 1
         if gl.bool["DIFF"]:
             line_2_list.append(gl.label_2)
             write_elt(out_file, line_2_list, True)
@@ -114,8 +114,9 @@ def check_in_files(in_file_dir_1, in_file_dir_2, out_file_dir):
             line_2_list = line_2.strip("\n").split(g.CSV_SEPARATOR)
 
             if len(line_1_list) != len(line_2_list):
-                s = "Les fichiers à comparer doivent comporter le même nombre"
-                s += " de champs"
-                raise Exception(s)
-
-            init_out_file(out_file_dir, line_1, gl.COMPARE_FIELD)
+                s = "Les fichiers à comparer ne comportent pas le même nombre"
+                s += " de champs. Arrêt du traitement de comparaison."
+                com.log(s)
+                return False
+            else:
+                return line_1

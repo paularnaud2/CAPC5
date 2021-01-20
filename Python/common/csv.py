@@ -70,7 +70,7 @@ def extract_list(array_in, dir_out, col_nb=1):
     save_csv(out_list, dir_out)
 
 
-def clean(s):
+def csv_clean(s):
     out = s.replace('\r', '')
     out = out.replace('\n', '')
     out = out.replace(g.CSV_SEPARATOR, '')

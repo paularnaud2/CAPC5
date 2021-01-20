@@ -1,5 +1,4 @@
 # variables globales et constantes pour le package reqList
-from common import g
 from datetime import datetime
 
 ENV = 'PROD'
@@ -41,15 +40,13 @@ SEND_NOTIF = True
 DEBUG_JOIN = False
 
 TMP_FOLDER = 'reqlist/'
-TMP_DIR = g.paths['TMP'] + TMP_FOLDER
-OUT_LEFT = TMP_DIR + 'out_l.csv'
-OUT_RIGHT = TMP_DIR + 'out_r.csv'
-OUT_SQL = TMP_DIR + 'out_sql.csv'
+OUT_LEFT_FILE = 'out_l.csv'
+OUT_RIGHT_FILE = 'out_r.csv'
+OUT_SQL_FILE = 'out_sql.csv'
 # IN_TEST_L = 'C:/Py/IN/Tests/test_L0.csv'
 # IN_TEST_R = 'C:/Py/IN/Tests/test_R0.csv'
 
 VAR_IN = "IN"
-TMP_PATH = TMP_DIR + BDD + '/'
 TMP_FILE_TYPE = '.csv'
 EC = '_EC'
 QN = '_QN'

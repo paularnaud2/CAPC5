@@ -75,7 +75,7 @@ def run_sge(test=False):
             BDD='CAPC5',
             SCRIPT_FILE='sql/scripts/insert_table_sge.sql',
             VAR_DICT={'TABLE_NAME': tmp_table},
-            IN_DIR=out_file,
+            UPLOAD_IN=out_file,
             NB_MAX_ELT_INSERT=max_elt_insert,
         )
 

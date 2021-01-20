@@ -92,10 +92,9 @@ def init_out_file(cursor, range_name='MONO'):
     # des différents champs en première ligne
 
     with verrou:
-        gl.out_files[range_name] = gl.TMP_PATH + range_name + gl.OUT_FILE_TYPE
-        gl.out_files[
-            range_name +
-            gl.EC] = gl.TMP_PATH + range_name + gl.EC + gl.OUT_FILE_TYPE
+        gl.out_files[range_name] = gl.TMP_PATH + range_name + gl.FILE_TYPE
+        gl.out_files[range_name +
+                     gl.EC] = gl.TMP_PATH + range_name + gl.EC + gl.FILE_TYPE
 
     with open(gl.out_files[range_name + gl.EC], 'w',
               encoding='utf-8') as out_file:

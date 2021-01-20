@@ -4,6 +4,7 @@ import reqlist.gl as gl
 
 from time import time
 from os import startfile
+from common import g
 from sql.init import init
 from reqlist.join import join_arrays
 from reqlist.functions import restart
@@ -38,6 +39,13 @@ def init_main(params):
 
 
 def init_globals():
+
+    TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
+    gl.OUT_LEFT = TMP_DIR + gl.OUT_LEFT_FILE
+    gl.OUT_RIGHT = TMP_DIR + gl.OUT_RIGHT_FILE
+    gl.OUT_SQL = TMP_DIR + gl.OUT_SQL_FILE
+    gl.TMP_PATH = TMP_DIR + gl.BDD + '/'
+
     gl.counters = {}
     gl.bools = {}
     gl.tmp_file = {}

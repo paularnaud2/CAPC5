@@ -4,32 +4,33 @@ from common import g
 from os import makedirs
 from os.path import exists
 
-IN_FILE = 'C:/Py/IN/out_sql.csv'
-OUT_FILE = 'C:/Py/OUT/out_dup.csv'
+# IN_FILE = 'C:/Py/IN/out_sql.csv'
+# OUT_FILE = 'C:/Py/OUT/out_dup.csv'
+TMP_IN = 'in.csv'
+TMP_OUT = 'out_dup.csv'
 TMP_FOLDER = 'tools/'
-TMP_PATH = g.paths['TMP'] + TMP_FOLDER
-IN_TMP_FILE = TMP_PATH + 'in.csv'
-OUT_DUP_FILE = TMP_PATH + 'out_dup.csv'
 MAX_DUP_PRINT = 5
 
 
 def check_dup_key(in_dir, col_nb=1):
 
-    s = f"Vérification des doublons sur la colonne No.{col_nb} du fichier de sortie."
-    s += " Chargement du fichier de sortie..."
+    s = f"Vérification des doublons sur la colonne No.{col_nb}"
+    s += " du fichier de sortie. Chargement du fichier de sortie..."
     com.log(s)
     array_in = com.load_csv(in_dir)
     s = f"Fichier de sortie chargé. Sauvegarde de la colonne No.{col_nb}..."
     com.log(s)
-    if not exists(TMP_PATH):
-        makedirs(TMP_PATH)
-    com.extract_list(array_in, IN_TMP_FILE, col_nb)
-    com.log("Colonne No.{} sauvegardée à l'adresse {}".format(
-        col_nb, IN_TMP_FILE))
-    find_dup_main(IN_TMP_FILE, OUT_DUP_FILE)
+    tmp_path = g.paths['TMP'] + TMP_FOLDER
+    in_tmp_file = tmp_path + TMP_IN
+    out_dup_file = tmp_path + TMP_OUT
+    if not exists(tmp_path):
+        makedirs(tmp_path)
+    com.extract_list(array_in, in_tmp_file, col_nb)
+    com.log(f"Colonne No.{col_nb} sauvegardée à l'adresse {in_tmp_file}")
+    find_dup_main(in_tmp_file, out_dup_file)
 
 
-def find_dup_main(in_dir=IN_FILE, out_dir=OUT_DUP_FILE):
+def find_dup_main(in_dir, out_dir):
 
     com.log(
         "Recherche des doublons dans le fichier {} en cours...".format(in_dir))
@@ -41,9 +42,9 @@ def find_dup_main(in_dir=IN_FILE, out_dir=OUT_DUP_FILE):
 
 
 def remove_dup_main(
-    in_dir=IN_FILE,
-    out_dup_dir=OUT_DUP_FILE,
-    out_dir=OUT_FILE,
+    in_dir,
+    out_dup_dir,
+    out_dir,
     field_nb=0,
 ):
 

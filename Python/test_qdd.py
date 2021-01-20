@@ -1,5 +1,6 @@
 import qdd
 import common as com
+
 com.init_log('test_qdd')
 
 
@@ -10,6 +11,8 @@ def test_qdd():
         IN_FILE_2='qdd_test12',
         MAX_ROW_LIST=15,
         MAX_LINE_SPLIT=100,
+        EQUAL_OUT=False,
+        DIFF_OUT=False,
         OPEN_OUT_FILE=False,
     )
 
