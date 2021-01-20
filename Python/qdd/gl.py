@@ -1,4 +1,5 @@
 # variables globales et constantes pour le package qdd (import qdd.gl as gl)
+import conf as cfg
 
 IN_FILE_NAME_1 = 'SGE'
 IN_FILE_NAME_2 = 'GINKO'
@@ -20,8 +21,8 @@ DIFF_OUT = False
 EQUAL_LABEL = 'E'
 
 FILE_TYPE = '.csv'
-IN_DIR = 'C:/Py/OUT/'
-OUT_DIR = 'C:/Py/OUT/'
+IN_DIR = cfg.ROOT_PATH + 'OUT/'
+OUT_DIR = cfg.ROOT_PATH + 'OUT/'
 OUT_FILE_NAME = 'qdd_out'
 OUT_E_FILE = 'out_e'
 TMP_FOLDER = 'qdd/'

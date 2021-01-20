@@ -1,8 +1,8 @@
-import cx_Oracle as cx
-
+import conf as cfg
 import common as com
 import sql.gl as gl
 import sql.log as log
+import cx_Oracle as cx
 
 from threading import RLock
 
@@ -114,5 +114,5 @@ def init_instant_client():
         if gl.client_is_init is False:
             com.log("Initialisation du client Oracle...")
             gl.client_is_init = True
-            cx.init_oracle_client(gl.ORACLE_CLIENT)
+            cx.init_oracle_client(cfg.ORACLE_CLIENT)
             com.log("Client Oracle initialisé")

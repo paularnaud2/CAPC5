@@ -1,4 +1,5 @@
 # variables globales et constantes pour le package reqList
+import conf as cfg
 from datetime import datetime
 
 ENV = 'PROD'
@@ -12,8 +13,8 @@ BDD = 'SGE'
 
 date = datetime.now().strftime("%Y%m%d")
 QUERY_FILE = 'reqlist/queries/e_RL.sql'
-IN_FILE = 'C:/Py/IN/in.csv'
-OUT_FILE = 'C:/Py/OUT/export_RL_{}_{}.csv'.format(BDD, date)
+IN_FILE = cfg.ROOT_PATH + 'IN/in.csv'
+OUT_FILE = cfg.ROOT_PATH + 'OUT/export_RL_{}_{}.csv'.format(BDD, date)
 
 GKO_INSTANCES = [
     'GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO',
@@ -40,8 +41,8 @@ TMP_FOLDER = 'reqlist/'
 OUT_LEFT_FILE = 'out_l.csv'
 OUT_RIGHT_FILE = 'out_r.csv'
 OUT_SQL_FILE = 'out_sql.csv'
-# IN_TEST_L = 'C:/Py/IN/Tests/test_L0.csv'
-# IN_TEST_R = 'C:/Py/IN/Tests/test_R0.csv'
+# IN_TEST_L = 'test/test_L0.csv'
+# IN_TEST_R = 'test/test_R0.csv'
 
 VAR_IN = "IN"
 TMP_FILE_TYPE = '.csv'

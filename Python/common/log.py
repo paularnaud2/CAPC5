@@ -34,11 +34,11 @@ def log(str_in, level=0, print_date=False, nb_tab=0):
         log_print(s, nb_tab)
 
 
-def init_log(parent_module='', root_path='C:/Py/'):
+def init_log(parent_module=''):
     if g.LOG_FILE_INITIALISED:
         return
 
-    g.init_directories(root_path)
+    g.init_directories()
 
     s = datetime.now().strftime("%Y%m%d_%H%M%S")
     if parent_module:

@@ -1,5 +1,6 @@
 import re
 import os
+import conf as cfg
 import common as com
 import sql.gl as gl
 
@@ -48,7 +49,7 @@ def init_params(params):
 
 
 def set_conf():
-    with open(gl.CONF_FILE, 'r', encoding='utf-8') as conf_file:
+    with open(cfg.CONF_FILE, 'r', encoding='utf-8') as conf_file:
         for line in conf_file:
             (ENV, BDD, conf) = get_one_conf(line)
             if BDD != '':

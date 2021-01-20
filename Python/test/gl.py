@@ -1,4 +1,4 @@
-# general
+# main
 TEST_DIR = 'test/'
 
 # test_sql

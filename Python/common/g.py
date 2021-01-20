@@ -1,3 +1,4 @@
+import conf as cfg
 from os import makedirs
 from os.path import exists
 from threading import RLock
@@ -31,10 +32,10 @@ init_dir['LOG'] = 'LOG/'
 init_dir['MAIL'] = 'MAIL/'
 
 
-def init_directories(root_path):
+def init_directories():
     global paths
     for key in init_dir:
-        cur_path = root_path + init_dir[key]
+        cur_path = cfg.ROOT_PATH + init_dir[key]
         paths[key] = cur_path
         if not exists(cur_path):
             makedirs(cur_path)
