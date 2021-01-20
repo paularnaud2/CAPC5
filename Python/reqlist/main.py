@@ -30,8 +30,6 @@ def init_main(params):
     com.log("[reqlist] run_reqList")
     init_params(params)
     init_globals()
-    # ar_left = load_csv (gl.IN_TEST_L)
-    # ar_right = load_csv (gl.IN_TEST_R)
     com.log("Chargement du tableau de gauche...")
     ar_left = com.load_csv(gl.IN_FILE)
     com.log("Tableau de gauche chargé\n|")
@@ -57,6 +55,8 @@ def join_main(ar_left):
     com.log("Chargement du tableau de droite...")
     ar_right = com.load_csv(gl.OUT_SQL)
     com.log("Tableau de droite chargé\n|")
+    # ar_left = com.load_csv (gl.IN_TEST_L)
+    # ar_right = com.load_csv (gl.IN_TEST_R)
     join_arrays(ar_left, ar_right)
     del ar_left
     del ar_right

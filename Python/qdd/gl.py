@@ -1,8 +1,8 @@
 # variables globales et constantes pour le package qdd (import qdd.gl as gl)
 
-IN_FILE_1 = 'SGE'
+IN_FILE_NAME_1 = 'SGE'
+IN_FILE_NAME_2 = 'GINKO'
 # IN_FILE_1 = 'OLD'
-IN_FILE_2 = 'GINKO'
 # IN_FILE_2 = 'NEW'
 
 MAX_ROW_LIST = 12 * 10**6
@@ -22,10 +22,8 @@ EQUAL_LABEL = 'E'
 FILE_TYPE = '.csv'
 IN_DIR = 'C:/Py/OUT/'
 OUT_DIR = 'C:/Py/OUT/'
-OUT_FILE = 'qdd_out'
+OUT_FILE_NAME = 'qdd_out'
 OUT_E_FILE = 'out_e'
-OUT_DUP_FILE = OUT_DIR + "qdd_out_dup"
-OUT_DUP_KEY_FILE = OUT_DIR + OUT_FILE + "_dup_key" + FILE_TYPE
 TMP_FOLDER = 'qdd/'
 DEFAULT_FIELD = "FIELD"
 COMPARE_FIELD = "COMPARE_RES"

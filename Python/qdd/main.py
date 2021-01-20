@@ -3,6 +3,7 @@ import qdd.gl as gl
 import common as com
 
 from time import time
+from common import g
 from qdd.init import set_dirs
 from qdd.init import init_params
 from qdd.init import init_out_file
@@ -44,9 +45,16 @@ def run_qdd(**params):
         os.startfile(dirs["out"])
 
 
-def file_match(dir, in1, in2):
+def file_match(in1, in2, diff_out='', err=True):
     com.log("[qdd] file_match")
-    init_file_match(dir, in1, in2)
+    init_file_match()
+    if diff_out == '':
+        diff_out = g.paths['OUT'] + 'file_match_out.csv'
+    res = compare_files(in1, in2, diff_out)
+    if err and not res:
+        os.startfile(diff_out)
+        assert res is True
+    return res
 
 
 def compare_files(in_1, in_2, out):

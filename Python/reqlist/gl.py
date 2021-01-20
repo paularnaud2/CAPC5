@@ -13,9 +13,6 @@ BDD = 'SGE'
 date = datetime.now().strftime("%Y%m%d")
 QUERY_FILE = 'reqlist/queries/e_RL.sql'
 IN_FILE = 'C:/Py/IN/in.csv'
-# IN_FILE = 'C:/Py/IN/perimetre_fin_trv.csv'
-# IN_FILE = 'C:/Py/IN/perimetre_aff_full.csv'
-OUT_FILE = 'C:/Py/OUT/out.csv'
 OUT_FILE = 'C:/Py/OUT/export_RL_{}_{}.csv'.format(BDD, date)
 
 GKO_INSTANCES = [

@@ -16,11 +16,11 @@ def set_dirs():
     if exists(gl.TMP_DIR):
         com.delete_folder(gl.TMP_DIR)
     os.makedirs(gl.TMP_DIR)
-    dirs["in1"] = gl.IN_DIR + gl.IN_FILE_1 + gl.FILE_TYPE
-    dirs["out1"] = gl.TMP_DIR + gl.OUT_FILE + "_1" + gl.FILE_TYPE
-    dirs["in2"] = gl.IN_DIR + gl.IN_FILE_2 + gl.FILE_TYPE
-    dirs["out2"] = gl.TMP_DIR + gl.OUT_FILE + "_2" + gl.FILE_TYPE
-    dirs["out"] = gl.OUT_DIR + gl.OUT_FILE + gl.FILE_TYPE
+    dirs["in1"] = gl.IN_DIR + gl.IN_FILE_NAME_1 + gl.FILE_TYPE
+    dirs["out1"] = gl.TMP_DIR + gl.OUT_FILE_NAME + "_1" + gl.FILE_TYPE
+    dirs["in2"] = gl.IN_DIR + gl.IN_FILE_NAME_2 + gl.FILE_TYPE
+    dirs["out2"] = gl.TMP_DIR + gl.OUT_FILE_NAME + "_2" + gl.FILE_TYPE
+    dirs["out"] = gl.OUT_DIR + gl.OUT_FILE_NAME + gl.FILE_TYPE
     dirs["out_e"] = gl.OUT_DIR + gl.OUT_E_FILE + gl.FILE_TYPE
 
     return dirs
@@ -47,6 +47,10 @@ def init_stf(in_file_dir, out_file_dir):
     gl.dup_list = []
     gl.dup_key_list = []
     gl.array_list = [[]]
+
+    gl.OUT_DUP_FILE = gl.OUT_DIR + "qdd_out_dup"
+    gl.OUT_DUP_KEY_FILE = gl.OUT_DIR + gl.OUT_FILE_NAME
+    gl.OUT_DUP_KEY_FILE += "_dup_key" + gl.FILE_TYPE
 
     del_tmp_files()
     with open(in_file_dir, 'r', encoding='utf-8') as in_file:
@@ -104,8 +108,8 @@ def init_compare(in_file_1, in_file_2):
     gl.msg += " {bn_2} lignes parcourues au total et {bn_3} "
     gl.msg += " lignes écrites dans le fichier de sortie."
 
-    gl.label_1 = gl.IN_FILE_1
-    gl.label_2 = gl.IN_FILE_2
+    gl.LABEL_1 = gl.IN_FILE_NAME_1
+    gl.LABEL_2 = gl.IN_FILE_NAME_2
 
     in_file_1.readline()
     in_file_2.readline()
@@ -173,11 +177,8 @@ def init_array_list():
     com.log(s)
 
 
-def init_file_match(dir, in1, in2):
-    gl.IN_DIR = dir
-    gl.IN_FILE_1 = in1
-    gl.IN_FILE_2 = in2
-    gl.MAX_LINE_SPLIT = 10**6
+def init_file_match():
+    gl.IN_FILE_NAME_1 = '1'
+    gl.IN_FILE_NAME_2 = '2'
     gl.EQUAL_OUT = False
     gl.DIFF_OUT = False
-    gl.OPEN_OUT_FILE = True

@@ -71,7 +71,7 @@ def compare_line(line_1_list, line_2_list):
         else:
             line_diff.append(elt_1 + gl.COMPARE_SEPARATOR + elt_2)
 
-    line_diff.append(gl.label_1 + gl.COMPARE_SEPARATOR + gl.label_2)
+    line_diff.append(gl.LABEL_1 + gl.COMPARE_SEPARATOR + gl.LABEL_2)
     return line_diff
 
 
@@ -80,7 +80,7 @@ def compare_inf(line_1_list, line_2_list, in_file_1, out_file):
     while compare_elt(line_1_list, line_2_list) == "<":
         gl.counters["diff"] += 1
         if gl.bool["DIFF"]:
-            line_1_list.append(gl.label_1)
+            line_1_list.append(gl.LABEL_1)
             write_elt(out_file, line_1_list, True)
             gl.counters["out"] += 1
         line_1_list = read_list(in_file_1)
@@ -95,7 +95,7 @@ def compare_sup(line_1_list, line_2_list, in_file_2, out_file):
     while compare_elt(line_1_list, line_2_list) == ">":
         gl.counters["diff"] += 1
         if gl.bool["DIFF"]:
-            line_2_list.append(gl.label_2)
+            line_2_list.append(gl.LABEL_2)
             write_elt(out_file, line_2_list, True)
             gl.counters["out"] += 1
         line_2_list = read_list(in_file_2)
