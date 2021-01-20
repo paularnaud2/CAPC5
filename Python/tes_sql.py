@@ -96,6 +96,7 @@ def compare():
 
 
 def test_sql():
+    execute()
     upload()
     download_simple()
     download_rg_merge()
