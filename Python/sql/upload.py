@@ -5,6 +5,7 @@ import sql.log as log
 
 from time import time
 from sql.init import init
+from sql.init import init_gl
 from sql.init import init_params
 from sql.connect import connect
 from sql.functions import get_final_script
@@ -82,6 +83,7 @@ def insert(script):
 
 
 def check_restart(squeeze_download=False):
+    init_gl()
     if os.path.exists(gl.TMP_FILE_CHUNK):
         s = "Injection de données en cours détectée. Reprendre ? (o/n)"
         if com.log_input(s) == 'o':

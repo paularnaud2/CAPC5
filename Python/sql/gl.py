@@ -3,11 +3,11 @@ from datetime import datetime
 
 ENV = 'PROD'
 BDD = 'SGE'
-# BDD = 'GINKO'
+BDD = 'GINKO'
 # BDD = 'ADAM'
 
-ENV = 'DIRECT'
-BDD = 'CAPC5'
+# ENV = 'DIRECT'
+# BDD = 'CAPC5'
 
 # ENV = 'LOCAL'
 # BDD = 'XE'

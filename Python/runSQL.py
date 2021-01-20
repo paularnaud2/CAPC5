@@ -1,8 +1,8 @@
+import sql
 from common import init_log
 init_log('run_sql')
 
 if __name__ == '__main__':
-    import sql
 
     sql.download(
         MAX_BDD_CNX=10,
