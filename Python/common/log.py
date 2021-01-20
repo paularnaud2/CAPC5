@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 def write_log(str_in):
-    if not g.LOG_OUTPUT:
+    if not g.LOG_OUTPUT or not g.LOG_FILE_INITIALISED:
         return
 
     s = str(str_in)
@@ -34,8 +34,8 @@ def log(str_in, level=0, print_date=False, nb_tab=0):
         log_print(s, nb_tab)
 
 
-def init_log(parent_module=''):
-    if g.LOG_FILE_INITIALISED:
+def init_log(parent_module='', force_init=False):
+    if g.LOG_FILE_INITIALISED and not force_init:
         return
 
     g.init_directories()

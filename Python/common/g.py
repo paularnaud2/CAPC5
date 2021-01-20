@@ -24,18 +24,15 @@ sl_detail = {}
 
 # Path
 paths = {}
-init_dir = {}
-init_dir['IN'] = 'IN/'
-init_dir['OUT'] = 'OUT/'
-init_dir['TMP'] = 'TMP/'
-init_dir['LOG'] = 'LOG/'
-init_dir['MAIL'] = 'MAIL/'
+paths['IN'] = cfg.ROOT_PATH + 'IN/'
+paths['OUT'] = cfg.ROOT_PATH + 'OUT/'
+paths['TMP'] = cfg.ROOT_PATH + 'TMP/'
+paths['LOG'] = cfg.ROOT_PATH + 'LOG/'
+paths['MAIL'] = cfg.ROOT_PATH + 'MAIL/'
 
 
 def init_directories():
-    global paths
-    for key in init_dir:
-        cur_path = cfg.ROOT_PATH + init_dir[key]
-        paths[key] = cur_path
+    for key in paths:
+        cur_path = paths[key]
         if not exists(cur_path):
             makedirs(cur_path)

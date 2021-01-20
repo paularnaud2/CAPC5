@@ -1,13 +1,13 @@
 import qdd
 import common as com
-from common import g
-from test import gl
 import qdd.gl as qgl
 
-com.init_log('test_qdd')
+from common import g
+from test import gl
 
 
 def test_qdd():
+    com.init_log('test_qdd', True)
     qdd.run_qdd(
         IN_DIR=gl.TEST_DIR,
         IN_FILE_NAME_1=gl.IN11,

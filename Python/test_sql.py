@@ -4,8 +4,6 @@ import common as com
 from common import g
 from test import gl
 
-com.init_log('test_sql')
-
 
 def execute():
     com.log(f'Création de la table {gl.SQL_TABLE_NAME}\
@@ -93,6 +91,7 @@ def compare():
 
 
 def test_sql():
+    com.init_log('test_sql', True)
     execute()
     upload()
     download_simple()
