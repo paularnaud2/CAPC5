@@ -1,0 +1,198 @@
+37a698d837c920fed8b2ede010fab27324f3f8d0:sql/init.py[36m:[m    gl.[1;31mTMP_FILE_CHUNK[m = TMP_DIR + gl.CHUNK_FILE
+37a698d837c920fed8b2ede010fab27324f3f8d0:sql/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+37a698d837c920fed8b2ede010fab27324f3f8d0:sql/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+37a698d837c920fed8b2ede010fab27324f3f8d0:sql/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+37a698d837c920fed8b2ede010fab27324f3f8d0:sql/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+37a698d837c920fed8b2ede010fab27324f3f8d0:sql/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+37a698d837c920fed8b2ede010fab27324f3f8d0:sql/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+37a698d837c920fed8b2ede010fab27324f3f8d0:sql/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+fe1c49312f7fbbffdb721964dadfd2a8f7e6c505:sql/init.py[36m:[m    gl.[1;31mTMP_FILE_CHUNK[m = TMP_DIR + gl.CHUNK_FILE
+fe1c49312f7fbbffdb721964dadfd2a8f7e6c505:sql/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+fe1c49312f7fbbffdb721964dadfd2a8f7e6c505:sql/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+fe1c49312f7fbbffdb721964dadfd2a8f7e6c505:sql/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+fe1c49312f7fbbffdb721964dadfd2a8f7e6c505:sql/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+fe1c49312f7fbbffdb721964dadfd2a8f7e6c505:sql/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+fe1c49312f7fbbffdb721964dadfd2a8f7e6c505:sql/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+fe1c49312f7fbbffdb721964dadfd2a8f7e6c505:sql/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+9fe1f9cb1f3ad59c70ce964923c9ecb1007dba44:sql_/init.py[36m:[m    gl.[1;31mTMP_FILE_CHUNK[m = TMP_DIR + gl.CHUNK_FILE
+9fe1f9cb1f3ad59c70ce964923c9ecb1007dba44:sql_/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+9fe1f9cb1f3ad59c70ce964923c9ecb1007dba44:sql_/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+9fe1f9cb1f3ad59c70ce964923c9ecb1007dba44:sql_/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+9fe1f9cb1f3ad59c70ce964923c9ecb1007dba44:sql_/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+9fe1f9cb1f3ad59c70ce964923c9ecb1007dba44:sql_/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+9fe1f9cb1f3ad59c70ce964923c9ecb1007dba44:sql_/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+9fe1f9cb1f3ad59c70ce964923c9ecb1007dba44:sql_/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+d13a19b1d2e98421d32bd7f4b7f81c21d4482cca:sql_/init.py[36m:[m    gl.[1;31mTMP_FILE_CHUNK[m = TMP_DIR + gl.CHUNK_FILE
+d13a19b1d2e98421d32bd7f4b7f81c21d4482cca:sql_/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+d13a19b1d2e98421d32bd7f4b7f81c21d4482cca:sql_/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+d13a19b1d2e98421d32bd7f4b7f81c21d4482cca:sql_/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+d13a19b1d2e98421d32bd7f4b7f81c21d4482cca:sql_/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+d13a19b1d2e98421d32bd7f4b7f81c21d4482cca:sql_/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+d13a19b1d2e98421d32bd7f4b7f81c21d4482cca:sql_/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+d13a19b1d2e98421d32bd7f4b7f81c21d4482cca:sql_/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+bca6edd60d27f8729097ca3bc29890bdd55d18bb:SQL/init.py[36m:[m    gl.[1;31mTMP_FILE_CHUNK[m = TMP_DIR + gl.CHUNK_FILE
+bca6edd60d27f8729097ca3bc29890bdd55d18bb:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+bca6edd60d27f8729097ca3bc29890bdd55d18bb:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+bca6edd60d27f8729097ca3bc29890bdd55d18bb:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+bca6edd60d27f8729097ca3bc29890bdd55d18bb:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+bca6edd60d27f8729097ca3bc29890bdd55d18bb:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+bca6edd60d27f8729097ca3bc29890bdd55d18bb:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+bca6edd60d27f8729097ca3bc29890bdd55d18bb:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+9bf101461e2ec060ca366cfb5403dda217d5f686:SQL/init.py[36m:[m    gl.[1;31mTMP_FILE_CHUNK[m = TMP_DIR + gl.CHUNK_FILE
+9bf101461e2ec060ca366cfb5403dda217d5f686:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+9bf101461e2ec060ca366cfb5403dda217d5f686:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+9bf101461e2ec060ca366cfb5403dda217d5f686:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+9bf101461e2ec060ca366cfb5403dda217d5f686:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+9bf101461e2ec060ca366cfb5403dda217d5f686:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+9bf101461e2ec060ca366cfb5403dda217d5f686:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+9bf101461e2ec060ca366cfb5403dda217d5f686:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+52fb24c6234757d2f2e5951938343cd1ef8516de:SQL/init.py[36m:[m    gl.[1;31mTMP_FILE_CHUNK[m = TMP_DIR + gl.CHUNK_FILE
+52fb24c6234757d2f2e5951938343cd1ef8516de:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+52fb24c6234757d2f2e5951938343cd1ef8516de:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+52fb24c6234757d2f2e5951938343cd1ef8516de:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+52fb24c6234757d2f2e5951938343cd1ef8516de:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+52fb24c6234757d2f2e5951938343cd1ef8516de:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+52fb24c6234757d2f2e5951938343cd1ef8516de:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+52fb24c6234757d2f2e5951938343cd1ef8516de:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+5847313a83ec68d975e260cbbfc168b5d7c92da0:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+5847313a83ec68d975e260cbbfc168b5d7c92da0:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+5847313a83ec68d975e260cbbfc168b5d7c92da0:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+5847313a83ec68d975e260cbbfc168b5d7c92da0:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+5847313a83ec68d975e260cbbfc168b5d7c92da0:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+5847313a83ec68d975e260cbbfc168b5d7c92da0:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+5847313a83ec68d975e260cbbfc168b5d7c92da0:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+5847313a83ec68d975e260cbbfc168b5d7c92da0:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+ddb4b1503afcd3f7f39a529ab6a668d3f025c138:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+ddb4b1503afcd3f7f39a529ab6a668d3f025c138:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+ddb4b1503afcd3f7f39a529ab6a668d3f025c138:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+ddb4b1503afcd3f7f39a529ab6a668d3f025c138:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+ddb4b1503afcd3f7f39a529ab6a668d3f025c138:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+ddb4b1503afcd3f7f39a529ab6a668d3f025c138:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+ddb4b1503afcd3f7f39a529ab6a668d3f025c138:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+ddb4b1503afcd3f7f39a529ab6a668d3f025c138:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+ef22e06caf9b9b244fd9909cb33d9ce9134b057c:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+ef22e06caf9b9b244fd9909cb33d9ce9134b057c:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+ef22e06caf9b9b244fd9909cb33d9ce9134b057c:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+ef22e06caf9b9b244fd9909cb33d9ce9134b057c:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+ef22e06caf9b9b244fd9909cb33d9ce9134b057c:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+ef22e06caf9b9b244fd9909cb33d9ce9134b057c:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+ef22e06caf9b9b244fd9909cb33d9ce9134b057c:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+ef22e06caf9b9b244fd9909cb33d9ce9134b057c:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+8836266bbc22e71d3ae7709615555a5c1e1ff594:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+8836266bbc22e71d3ae7709615555a5c1e1ff594:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+8836266bbc22e71d3ae7709615555a5c1e1ff594:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+8836266bbc22e71d3ae7709615555a5c1e1ff594:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+8836266bbc22e71d3ae7709615555a5c1e1ff594:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+8836266bbc22e71d3ae7709615555a5c1e1ff594:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+8836266bbc22e71d3ae7709615555a5c1e1ff594:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+8836266bbc22e71d3ae7709615555a5c1e1ff594:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+c6b2aede2ea36d08cabfb7786bb1830ee8b909bf:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+c6b2aede2ea36d08cabfb7786bb1830ee8b909bf:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+c6b2aede2ea36d08cabfb7786bb1830ee8b909bf:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+c6b2aede2ea36d08cabfb7786bb1830ee8b909bf:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+c6b2aede2ea36d08cabfb7786bb1830ee8b909bf:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+c6b2aede2ea36d08cabfb7786bb1830ee8b909bf:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+c6b2aede2ea36d08cabfb7786bb1830ee8b909bf:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+c6b2aede2ea36d08cabfb7786bb1830ee8b909bf:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+be87107732340c9c210f94b6c0644462ff8aa2b8:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+be87107732340c9c210f94b6c0644462ff8aa2b8:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+be87107732340c9c210f94b6c0644462ff8aa2b8:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+be87107732340c9c210f94b6c0644462ff8aa2b8:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+be87107732340c9c210f94b6c0644462ff8aa2b8:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+be87107732340c9c210f94b6c0644462ff8aa2b8:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+be87107732340c9c210f94b6c0644462ff8aa2b8:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+be87107732340c9c210f94b6c0644462ff8aa2b8:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+6b0d37931be22bf6b60ed417ecc45bf8a3262d87:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+6b0d37931be22bf6b60ed417ecc45bf8a3262d87:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+6b0d37931be22bf6b60ed417ecc45bf8a3262d87:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+6b0d37931be22bf6b60ed417ecc45bf8a3262d87:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+6b0d37931be22bf6b60ed417ecc45bf8a3262d87:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+6b0d37931be22bf6b60ed417ecc45bf8a3262d87:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+6b0d37931be22bf6b60ed417ecc45bf8a3262d87:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+6b0d37931be22bf6b60ed417ecc45bf8a3262d87:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+5d77746c44fd560ded6cc40f02694a06d39e1e75:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+5d77746c44fd560ded6cc40f02694a06d39e1e75:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+5d77746c44fd560ded6cc40f02694a06d39e1e75:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+5d77746c44fd560ded6cc40f02694a06d39e1e75:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+5d77746c44fd560ded6cc40f02694a06d39e1e75:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+5d77746c44fd560ded6cc40f02694a06d39e1e75:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+5d77746c44fd560ded6cc40f02694a06d39e1e75:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+5d77746c44fd560ded6cc40f02694a06d39e1e75:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+101c0a3b778010b442fad38a826f9abee0849c96:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+101c0a3b778010b442fad38a826f9abee0849c96:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+101c0a3b778010b442fad38a826f9abee0849c96:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+101c0a3b778010b442fad38a826f9abee0849c96:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+101c0a3b778010b442fad38a826f9abee0849c96:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+101c0a3b778010b442fad38a826f9abee0849c96:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+101c0a3b778010b442fad38a826f9abee0849c96:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+101c0a3b778010b442fad38a826f9abee0849c96:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+440b44d77532678134d974fe377f1f1e6ded9558:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+440b44d77532678134d974fe377f1f1e6ded9558:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+440b44d77532678134d974fe377f1f1e6ded9558:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+440b44d77532678134d974fe377f1f1e6ded9558:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+440b44d77532678134d974fe377f1f1e6ded9558:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+440b44d77532678134d974fe377f1f1e6ded9558:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+440b44d77532678134d974fe377f1f1e6ded9558:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+440b44d77532678134d974fe377f1f1e6ded9558:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+f6430e89af483c985c62a2891d79a6c0f255a59f:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = com.TMP_PATH_SQL + 'chunk.txt'
+f6430e89af483c985c62a2891d79a6c0f255a59f:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+f6430e89af483c985c62a2891d79a6c0f255a59f:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+f6430e89af483c985c62a2891d79a6c0f255a59f:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+f6430e89af483c985c62a2891d79a6c0f255a59f:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+f6430e89af483c985c62a2891d79a6c0f255a59f:SQL/upload.py[36m:[m                gl.REF_CHUNK = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+f6430e89af483c985c62a2891d79a6c0f255a59f:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+f6430e89af483c985c62a2891d79a6c0f255a59f:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+0025169db03179d7e18dde750877b0caad3dfb3f:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = com.TMP_PATH_SQL + 'chunk.txt'
+0025169db03179d7e18dde750877b0caad3dfb3f:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+0025169db03179d7e18dde750877b0caad3dfb3f:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+0025169db03179d7e18dde750877b0caad3dfb3f:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+0025169db03179d7e18dde750877b0caad3dfb3f:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+0025169db03179d7e18dde750877b0caad3dfb3f:SQL/upload.py[36m:[m                gl.REF_CHUNK = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+0025169db03179d7e18dde750877b0caad3dfb3f:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+0025169db03179d7e18dde750877b0caad3dfb3f:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+afde18ae4bb99f5188970dd39ee91e9d7d4a5936:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = TMP_DIR + CHUNK_FILE
+afde18ae4bb99f5188970dd39ee91e9d7d4a5936:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+afde18ae4bb99f5188970dd39ee91e9d7d4a5936:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+afde18ae4bb99f5188970dd39ee91e9d7d4a5936:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+afde18ae4bb99f5188970dd39ee91e9d7d4a5936:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+afde18ae4bb99f5188970dd39ee91e9d7d4a5936:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+afde18ae4bb99f5188970dd39ee91e9d7d4a5936:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+afde18ae4bb99f5188970dd39ee91e9d7d4a5936:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+05815442c95b9aa41ee36b6c0c8d97d9f39ecca1:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = com.TMP_PATH_SQL + 'chunk.txt'
+05815442c95b9aa41ee36b6c0c8d97d9f39ecca1:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+05815442c95b9aa41ee36b6c0c8d97d9f39ecca1:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+05815442c95b9aa41ee36b6c0c8d97d9f39ecca1:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+05815442c95b9aa41ee36b6c0c8d97d9f39ecca1:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+05815442c95b9aa41ee36b6c0c8d97d9f39ecca1:SQL/upload.py[36m:[m                gl.REF_CHUNK = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+05815442c95b9aa41ee36b6c0c8d97d9f39ecca1:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+05815442c95b9aa41ee36b6c0c8d97d9f39ecca1:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+e762c8582865d387e9b51a0632cb63324dd6abc2:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = g.paths['TMP'] + TMP_FOLDER + 'chunk.txt'
+e762c8582865d387e9b51a0632cb63324dd6abc2:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+e762c8582865d387e9b51a0632cb63324dd6abc2:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+e762c8582865d387e9b51a0632cb63324dd6abc2:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+e762c8582865d387e9b51a0632cb63324dd6abc2:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+e762c8582865d387e9b51a0632cb63324dd6abc2:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+e762c8582865d387e9b51a0632cb63324dd6abc2:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+e762c8582865d387e9b51a0632cb63324dd6abc2:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+aaec5c66d46361f82e4d538ce8eafb4407caeb2e:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = com.TMP_PATH_SQL + 'chunk.txt'
+aaec5c66d46361f82e4d538ce8eafb4407caeb2e:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+aaec5c66d46361f82e4d538ce8eafb4407caeb2e:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+aaec5c66d46361f82e4d538ce8eafb4407caeb2e:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+aaec5c66d46361f82e4d538ce8eafb4407caeb2e:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+aaec5c66d46361f82e4d538ce8eafb4407caeb2e:SQL/upload.py[36m:[m                gl.REF_CHUNK = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+aaec5c66d46361f82e4d538ce8eafb4407caeb2e:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+aaec5c66d46361f82e4d538ce8eafb4407caeb2e:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+2c4a7377d9392bead9cddc2cc856106063986e6a:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = g.paths['TMP'] + TMP_FOLDER + 'chunk.txt'
+2c4a7377d9392bead9cddc2cc856106063986e6a:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+2c4a7377d9392bead9cddc2cc856106063986e6a:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+2c4a7377d9392bead9cddc2cc856106063986e6a:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+2c4a7377d9392bead9cddc2cc856106063986e6a:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+2c4a7377d9392bead9cddc2cc856106063986e6a:SQL/upload.py[36m:[m                gl.ref_chunk = int(com.load_txt(gl.[1;31mTMP_FILE_CHUNK[m)[0])
+2c4a7377d9392bead9cddc2cc856106063986e6a:SQL/upload.py[36m:[m                os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+2c4a7377d9392bead9cddc2cc856106063986e6a:SQL/upload.py[36m:[m            os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+34dd27bb97c597b4920924834cfb94ced5d093ea:SQL/gl.py[36m:[m[1;31mTMP_FILE_CHUNK[m = g.paths['TMP'] + TMP_FOLDER + 'chunk.txt'
+34dd27bb97c597b4920924834cfb94ced5d093ea:SQL/upload.py[36m:[m    os.remove(gl.[1;31mTMP_FILE_CHUNK[m)
+34dd27bb97c597b4920924834cfb94ced5d093ea:SQL/upload.py[36m:[m        com.save_csv([sn + '_comitRunning...'], gl.[1;31mTMP_FILE_CHUNK[m)
+34dd27bb97c597b4920924834cfb94ced5d093ea:SQL/upload.py[36m:[m        com.save_csv([str(gl.counters['chunk'])], gl.[1;31mTMP_FILE_CHUNK[m)
+34dd27bb97c597b4920924834cfb94ced5d093ea:SQL/upload.py[36m:[m    if os.path.exists(gl.[1;31mTMP_FILE_CHUNK[m):
+34dd27bb97c597b4920924834cfb94ced5d093ea:SQL/upload.py[36m:[m                gl.ref_chunk = int(c

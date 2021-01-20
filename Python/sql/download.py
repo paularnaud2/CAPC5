@@ -45,7 +45,6 @@ def download_gko():
     thread_list = []
     for inst in inst_list:
         th = Thread(target=process_gko_query, args=(inst, ))
-        # th = Thread(process_gko_query(inst))
         thread_list.append(th)
         th.start()
 

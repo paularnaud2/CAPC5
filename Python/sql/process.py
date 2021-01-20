@@ -115,9 +115,9 @@ def init_out_file(cursor, range_name='MONO'):
 def process_gko_query(inst):
     cnx = connect(inst)
     c = cnx.cursor()
-    com.log("Exécution de la requête pour l'instance {}...".format(inst))
+    com.log(f"Exécution de la requête pour l'instance {inst}...")
     c.execute(gl.query)
-    com.log("Requête exécutée pour {}".format(inst))
+    com.log(f"Requête exécutée pour {inst}")
     init_out_file(c, inst)
     th_name = com.gen_sl_detail(inst, what="l'instance")
     write_rows(c, inst, th_name)
