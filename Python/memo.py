@@ -238,3 +238,6 @@ gl = __import__('reqlist.' + gl_file, fromlist=[None]) # importer un sous module
 def run_reqList(**params): # les noms/valeurs sont convertis en dictionnaire params
 a = gl.__getattribute__(key) # récupérer un attribut depuis une string
 gl.__setattr__(key, params[key]) # valoriser un attribut depuis une string
+# Execution d'un fichier python (code venant de flask/config
+with open(filename, mode="rb") as config_file:
+                exec(compile(config_file.read(), filename, "exec"), d.__dict__)
