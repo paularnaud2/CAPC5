@@ -36,18 +36,19 @@ def write_rows(cursor, range_name='MONO', th_name='DEFAULT', th_nb=0):
 def write_row(row, out_file, range_name='MONO'):
 
     s = com.csv_clean(str(row[0]))
-    line_out = gl.LEFT_DEL + s + gl.RIGHT_DEL
+    line_out = s
     for elt in row[1:]:
         s = str(elt)
         if s == 'None':
             s = ''
         else:
             s = com.csv_clean(s)
-        line_out += g.CSV_SEPARATOR + gl.LEFT_DEL + s + gl.RIGHT_DEL
+        line_out += g.CSV_SEPARATOR + s
     if line_out.strip(g.CSV_SEPARATOR) == '':
         return 0
-    if (gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES
-            or gl.EXPORT_RANGE and range_name != 'MONO'):
+    if gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES:
+        line_out += g.CSV_SEPARATOR + range_name[5:]
+    elif gl.EXPORT_RANGE and range_name != 'MONO':
         line_out += g.CSV_SEPARATOR + range_name
     line_out += '\n'
     out_file.write(line_out)

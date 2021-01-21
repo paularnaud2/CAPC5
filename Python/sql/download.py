@@ -18,6 +18,7 @@ def download(**params):
     com.log('[sql] download')
     start_time = time()
     init_params(params)
+    init()
     if gl.BDD == 'GINKO':
         download_gko()
     else:
@@ -28,7 +29,6 @@ def download(**params):
 
 
 def download_strd():
-    init()
     rg_file_name = rg.get_rg_file_name(gl.query)
     range_list = rg.gen_range_list(rg_file_name)
     range_list = rg.restart(range_list)
@@ -40,7 +40,6 @@ def download_strd():
 
 
 def download_gko():
-    init()
     inst_list = init_gko()
     thread_list = []
     for inst in inst_list:
