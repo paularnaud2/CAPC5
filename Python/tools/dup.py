@@ -1,8 +1,6 @@
 import common as com
 
 from common import g
-from os import makedirs
-from os.path import exists
 
 # IN_FILE = 'C:/Py/IN/out_sql.csv'
 # OUT_FILE = 'C:/Py/OUT/out_dup.csv'
@@ -23,8 +21,7 @@ def check_dup_key(in_dir, col_nb=1):
     tmp_path = g.paths['TMP'] + TMP_FOLDER
     in_tmp_file = tmp_path + TMP_IN
     out_dup_file = tmp_path + TMP_OUT
-    if not exists(tmp_path):
-        makedirs(tmp_path)
+    com.mkdirs(tmp_path)
     com.extract_list(array_in, in_tmp_file, col_nb)
     com.log(f"Colonne No.{col_nb} sauvegardée à l'adresse {in_tmp_file}")
     find_dup_main(in_tmp_file, out_dup_file)

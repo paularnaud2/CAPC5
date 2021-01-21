@@ -25,10 +25,10 @@ def sbf():
     search_big_file()
 
 
-def split():
-    from tools.split import split_file_main
+def splt():
+    from tools.split import split
     com.LOG_OUTPUT = False
-    split_file_main(add_header=False, prompt=False)
+    split(add_header=False, prompt=False)
 
 
 def merge():

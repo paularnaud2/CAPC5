@@ -22,7 +22,7 @@ def sort_file(in_file_dir, out_file_dir, prompt=False, nb=0):
     com.log(s)
     init_stf(in_file_dir, out_file_dir)
     gen_sorted_temp_files(in_file_dir, out_file_dir)
-    com.log_print("|")
+    com.log_print('|')
     nb_files = gl.counters["file"]
     if nb_files > 1:
         s = f"Tri multiple (sur {nb_files} fichiers)"
@@ -30,6 +30,7 @@ def sort_file(in_file_dir, out_file_dir, prompt=False, nb=0):
         com.log(s)
         merge_sorted_files(out_file_dir)
     finish(out_file_dir, prompt, nb)
+    com.log_print('|')
 
 
 def merge_sorted_files(out_file_dir):
@@ -67,12 +68,10 @@ def finish(out_file_dir, prompt, nb):
             s = "{} doublons de clé trouvés. Liste écrite dans le fichier '{}'"
             com.log(s.format(n_dup_key, gl.OUT_DUP_KEY_FILE))
 
-    com.log_print("")
-
 
 def prompt_dup_key(n_dup_key):
 
-    com.log_print("")
+    com.log_print('|')
     bn = com.big_number(n_dup_key)
     s = f"Attention : {bn} lignes différentes mais avec la même clé de"
     s += " recherche ont été identifiées."
@@ -87,7 +86,7 @@ def prompt_dup_key(n_dup_key):
     s += "\nd -> ne pas sauvegarder la liste des doublons et continuer"
     s += "\n"
     command = com.log_input(s)
-    com.log_print("")
+    com.log_print('|')
     if command == 'a':
         write_list(gl.dup_key_list, gl.OUT_DUP_KEY_FILE)
         s = "Liste des doublons de clés écrite dans le fichier '{}'"

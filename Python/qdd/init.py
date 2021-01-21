@@ -2,7 +2,6 @@ import os
 import qdd.gl as gl
 import common as com
 
-from os.path import exists
 from common import g
 from math import floor
 from qdd.functions import read_list
@@ -13,9 +12,7 @@ def set_dirs():
     dirs = {}
 
     gl.TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
-    if exists(gl.TMP_DIR):
-        com.delete_folder(gl.TMP_DIR)
-    os.makedirs(gl.TMP_DIR)
+    com.mkdirs(gl.TMP_DIR, True)
     dirs["in1"] = gl.IN_DIR + gl.IN_FILE_NAME_1 + gl.FILE_TYPE
     dirs["out1"] = gl.TMP_DIR + gl.OUT_FILE_NAME + "_1" + gl.FILE_TYPE
     dirs["in2"] = gl.IN_DIR + gl.IN_FILE_NAME_2 + gl.FILE_TYPE
@@ -89,7 +86,7 @@ def get_header(first_line, last_field=''):
                 header = header + g.CSV_SEPARATOR + gl.DEFAULT_FIELD
                 header += "_" + str(counter)
 
-    if last_field != "":
+    if last_field != '':
         header = header + g.CSV_SEPARATOR + last_field
 
     return header

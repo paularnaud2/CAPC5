@@ -1,17 +1,28 @@
 from . import g
 from .log import log
 from os import listdir
+from os import makedirs
 from os.path import join
 from os.path import isfile
+from os.path import exists
 from time import sleep
 from shutil import rmtree
 
 
-def delete_folder(path):
-    log(f"Suppression du dossier {path}")
-    rmtree(path)
+def delete_folder(dir):
+    log(f"Suppression du dossier {dir}")
+    rmtree(dir)
     sleep(g.SLEEP_AFTER_DELETE_FOLDER)
-    log(f"Dossier {path} supprimé")
+    log(f"Dossier {dir} supprimé")
+
+
+def mkdirs(dir, delete=False):
+    if exists(dir) and not delete:
+        return
+    if exists(dir) and delete:
+        delete_folder(dir)
+    log(f"Création du dossier {dir}")
+    makedirs(dir)
 
 
 def merge_files(in_dir, out_dir, remove_header=False):

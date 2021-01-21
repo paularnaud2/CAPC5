@@ -1,6 +1,6 @@
-from common import *
+import common as com
 import tools.gl as gl
-from tools.split import split_file_main
+from tools.split import split
 
 IN_FILE = 'C:/Py/OUT/export_RL_SGE_20201106.csv'
 SL_STEP = 500 * 10**3
@@ -15,8 +15,9 @@ def filter_main():
 
     init()
 
-    log("Filtrage en cours")
-    s = "{bn_1} lignes parcourues en {ds}. {bn_2} lignes parcourues au total ({bn_3} lignes écrites dans la liste de sortie)."
+    com.log("Filtrage en cours")
+    s = "{bn_1} lignes parcourues en {ds}. {bn_2} lignes parcourues au total "
+    s += "({bn_3} lignes écrites dans la liste de sortie)."
     with open(IN_FILE, 'r', encoding='utf-8') as in_file:
         process_header(in_file)
         while True:
@@ -24,33 +25,33 @@ def filter_main():
             if line == '':
                 break
             gl.counters["read"] += 1
-            line_list = csv_to_list(line)
+            line_list = com.csv_to_list(line)
             if filter(line_list):
                 line_list = extract_col(line_list)
                 gl.cur_list.append(line_list)
                 gl.counters["out"] += 1
-            step_log(gl.counters['read'],
-                     SL_STEP,
-                     what=s,
-                     nb=gl.counters["out"])
-    log("Filtrage terminé")
+            com.step_log(gl.counters['read'],
+                         SL_STEP,
+                         what=s,
+                         nb=gl.counters["out"])
+    com.log("Filtrage terminé")
     s = "{} lignes parcourues et {} lignes à écrire dans le fichier de sortie."
-    bn1 = big_number(gl.counters["read"])
-    bn2 = big_number(gl.counters["out"])
+    bn1 = com.big_number(gl.counters["read"])
+    bn2 = com.big_number(gl.counters["out"])
     s = s.format(bn1, bn2)
-    log(s)
+    com.log(s)
 
-    log("Ecriture du fichier de sortie...")
-    save_csv(gl.cur_list, OUT_FILE)
+    com.log("Ecriture du fichier de sortie...")
+    com.save_csv(gl.cur_list, OUT_FILE)
     s = "Traitement terminé, fichier de sortie {} généré avec succès"
-    log(s.format(OUT_FILE))
+    com.log(s.format(OUT_FILE))
 
-    #split_file_main(OUT_FILE, MAX_LINE_SPLIT, True, True, gl.counters["out"])
+    split(OUT_FILE, MAX_LINE_SPLIT, True, True, gl.counters["out"])
 
 
 def filter(in_list):
 
-    if FILTER == False:
+    if FILTER is False:
         return True
 
     # On garde les lignes qui vérifient ces critères
@@ -62,20 +63,13 @@ def filter(in_list):
 
 def extract_col(line):
 
-    if EXTRACT_COL == False:
+    if EXTRACT_COL is False:
         return line
 
-    new_line = [line[fields['PRM']]\
-    , line[fields['AFFAIRE']]\
-    , line[fields['SI']]\
-    , line[fields['PRESTATION']]\
-    , line[fields['STATUT']]\
-    , line[fields['ETAT_EXTERNE']]\
-    , line[fields['FOURNISSEUR']]\
-    , line[fields['DATE_DEMANDE']]\
-    , line[fields['DATE_EFFET']]\
-    , line[fields['PS_INIT']]\
-    , line[fields['PS_CIBLE']]\
+    new_line = [
+        line[fields['PRM']],
+        line[fields['AFFAIRE']],
+        line[fields['SI']],
     ]
 
     return new_line
@@ -85,7 +79,7 @@ def process_header(in_file):
 
     line = in_file.readline()
     gl.counters["read"] += 1
-    line_list = csv_to_list(line)
+    line_list = com.csv_to_list(line)
     line_list = extract_col(line_list)
     gl.cur_list.append(line_list)
     gl.counters["out"] += 1
@@ -95,10 +89,10 @@ def init():
 
     global fields
 
-    log("Package tools - Outil de filtrage\n", print_date=True)
+    com.log("Package tools - Outil de filtrage\n", print_date=True)
 
     gl.counters["read"] = 0
     gl.counters["out"] = 0
     gl.cur_list = []
-    init_sl_time()
-    fields = get_csv_fields_dict(IN_FILE)
+    com.init_sl_time()
+    fields = com.get_csv_fields_dict(IN_FILE)

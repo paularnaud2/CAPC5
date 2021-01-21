@@ -32,6 +32,7 @@ def upload(**params):
         insert(script)
 
     finish_this(start_time)
+    com.log_print('')
 
 
 def finish_this(start_time):

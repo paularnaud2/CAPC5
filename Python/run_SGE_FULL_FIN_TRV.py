@@ -67,7 +67,6 @@ def run_sge(test=False):
         )
 
     if not squeeze_upl:
-        com.log_print('')
         com.log('Export des données importées dans la table temporaire créée\
 ----------------------')
         sql.upload(
@@ -79,7 +78,6 @@ def run_sge(test=False):
             NB_MAX_ELT_INSERT=max_elt_insert,
         )
 
-    com.log_print('')
     com.log(f'Création de la table finale {final_table}\
 ------------------------------------')
     sql.execute(
@@ -90,7 +88,6 @@ def run_sge(test=False):
         PROC=True,
     )
 
-    com.log_print('')
     com.log('Copie de la table temporaire dans la table finale\
 --------------------')
     sql.execute(
@@ -103,7 +100,6 @@ def run_sge(test=False):
         },
     )
 
-    com.log_print('')
     com.log(f'Mise à jour de la vue {view_name}\
 -----------------------------------')
     sql.execute(
@@ -116,7 +112,6 @@ def run_sge(test=False):
         },
     )
 
-    com.log_print('')
     dur = com.get_duration_ms(start_time)
     sd = com.get_duration_string(dur)
     s = f"Job {__name__} terminé en {sd}."

@@ -47,7 +47,7 @@ def gen_img_dict():
         line = read_one_line(in_file)
         fill_parse_dict(line)
         init_sl_time()
-        while line != "":
+        while line != '':
             line = read_one_line(in_file)
             fill_parse_dict(line)
 

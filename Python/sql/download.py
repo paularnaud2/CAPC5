@@ -95,11 +95,12 @@ def finish(start_time):
         com.log("Fichier de sortie {} alimenté avec succès".format(out_dir))
         if gl.counters["row"] < gl.MAX_CHECK_DUP and gl.CHECK_DUP:
             import tools.dup as dup
-            com.log_print("|")
+            com.log_print('|')
             dup.check_dup_key(out_dir)
         if gl.OPEN_OUT_FILE:
             startfile(out_dir)
 
-    com.log_print("|")
+    com.log_print('|')
     com.log("Traitement terminé")
+    com.log_print('')
     com.send_notif(s, "sql", dur, gl.SEND_NOTIF)

@@ -82,18 +82,12 @@ def modify_restart(range_list, file_list):
 
 
 def move_tmp_folder():
-    from os.path import exists
 
     gl.bools["MERGE_OK"] = False
     out_dir = gl.OUT_RG_DIR
 
     com.log('Création du dossier de sortie {}...'.format(out_dir))
-    if not exists(out_dir):
-        os.makedirs(out_dir)
-    else:
-        com.log('Ancien dossier trouvé')
-        com.delete_folder(out_dir)
-        os.makedirs(out_dir)
+    com.mkdirs(out_dir, True)
     com.log('Dossier de sortie créé')
 
     file_list = com.get_file_list(gl.TMP_PATH)

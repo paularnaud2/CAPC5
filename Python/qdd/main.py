@@ -4,6 +4,7 @@ import common as com
 
 from time import time
 from common import g
+from tools.split import split
 from qdd.init import set_dirs
 from qdd.init import init_params
 from qdd.init import init_out_file
@@ -12,7 +13,6 @@ from qdd.csf import check_in_files
 from qdd.csf import compare_sorted_files
 from qdd.sort import sort_file
 from qdd.functions import check_py_version
-from tools.split import split_file_main
 
 
 def run_qdd(**params):
@@ -26,21 +26,15 @@ def run_qdd(**params):
     sort_file(dirs["in1"], dirs["out1"], True, 1)
     sort_file(dirs["in2"], dirs["out2"], True, 2)
     if not compare_files(dirs["out1"], dirs["out2"], dirs["out"]):
-        com.log_print("")
-        split_file_main(
-            dirs["out"],
-            gl.MAX_LINE_SPLIT,
-            True,
-            True,
-            gl.counters["out"],
-        )
+        com.log_print('|')
+        split(dirs["out"], gl.MAX_LINE_SPLIT, True, True, gl.counters["out"])
 
     s = "Exécution terminée en {}"
     duration = com.get_duration_ms(start_time)
     s = s.format(com.get_duration_string(duration))
     com.log(s)
     com.send_notif(s, "qdd", duration)
-    com.log_print("")
+    com.log_print('')
     if gl.OPEN_OUT_FILE:
         os.startfile(dirs["out"])
 
@@ -54,6 +48,7 @@ def file_match(in1, in2, diff_out='', err=True):
     if err and not res:
         os.startfile(diff_out)
         assert res is True
+    com.log_print('')
     return res
 
 

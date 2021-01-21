@@ -30,3 +30,4 @@ def execute(**params):
     c.close()
     cnx.commit()
     cnx.close()
+    com.log_print('')

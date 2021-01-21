@@ -1,13 +1,12 @@
 import conf as cfg
-from os import makedirs
-from os.path import exists
+from .file import mkdirs
 from threading import RLock
 
 # Misc
 MIN_DUR_NOTIF_TRIGGER = 30
 CSV_SEPARATOR = ';'
 DEBUG = True
-SLEEP_AFTER_DELETE_FOLDER = 0.5
+SLEEP_AFTER_DELETE_FOLDER = 0.1
 VAR_DEL = '@@'
 
 counters = {}
@@ -34,5 +33,4 @@ paths['MAIL'] = cfg.ROOT_PATH + 'MAIL/'
 def init_directories():
     for key in paths:
         cur_path = paths[key]
-        if not exists(cur_path):
-            makedirs(cur_path)
+        mkdirs(cur_path)

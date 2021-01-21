@@ -15,7 +15,6 @@ def execute():
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
         PROC=True,
     )
-    com.log_print('')
 
 
 def upload():
@@ -29,7 +28,6 @@ def upload():
         UPLOAD_IN=gl.SQL_IN_FILE,
         NB_MAX_ELT_INSERT=gl.SQL_MAX_ELT_INSERT,
     )
-    com.log_print('')
 
 
 def download_simple():
@@ -47,7 +45,6 @@ def download_simple():
         CHECK_DUP=True,
         OPEN_OUT_FILE=False,
     )
-    com.log_print('')
 
 
 def download_rg_merge():
@@ -83,7 +80,6 @@ def download_rg_no_merge():
         EXPORT_RANGE=False,
         CHECK_DUP=True,
     )
-    com.log_print('')
 
 
 def compare():

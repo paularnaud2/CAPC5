@@ -8,7 +8,7 @@ MAX_LINE = 2 * 10**3
 MAX_FILE_NB = 3
 
 
-def split_file_main(
+def split(
     in_dir=IN_DIR,
     max_line=MAX_LINE,
     add_header=True,
@@ -75,7 +75,7 @@ def split_file(in_dir, max_line, add_header, max_file):
             ):
                 break
 
-    print("")
+    print('')
 
 
 def gen_split_out(split_dir, max_line, in_file, add_header, max_file):
