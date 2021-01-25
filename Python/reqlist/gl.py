@@ -1,10 +1,10 @@
 # variables globales et constantes pour le package reqList
-import conf as cfg
+from common import g
 from datetime import datetime
 
 ENV = 'PROD'
 BDD = 'SGE'
-# BDD = 'GINKO'
+BDD = 'GINKO'
 # BDD = 'ADAM'
 # BDD = 'RFC'
 
@@ -13,16 +13,16 @@ BDD = 'SGE'
 
 date = datetime.now().strftime("%Y%m%d")
 QUERY_FILE = 'reqlist/queries/e_RL.sql'
-IN_FILE = cfg.ROOT_PATH + 'IN/in.csv'
-OUT_FILE = cfg.ROOT_PATH + 'OUT/export_RL_{}_{}.csv'.format(BDD, date)
+IN_FILE = f"{g.paths['IN']}in.csv"
+OUT_FILE = f"{g.paths['OUT']}export_RL_{BDD}_{date}.csv"
 
 GKO_INSTANCES = [
     'GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO',
     'GKO7_OUE', 'GKO8_ACL'
 ]
-# GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN']
+GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
 # GKO_INSTANCES = ['GKO2_MMN']
-EXPORT_INSTANCES = False
+EXPORT_INSTANCES = True
 
 MAX_BDD_CNX = 8
 SL_STEP_QUERY = 10

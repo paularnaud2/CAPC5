@@ -17,9 +17,9 @@ def restart():
     return
 
 
-def gen_group_list(array_in):
+def gen_group_list():
     com.log("Construction des groupes d'éléments...")
-    elt_list = prepare_elt_list(array_in)
+    elt_list = prepare_elt_list(gl.ar_in)
 
     i = 0
     cur_elt_list = []
@@ -69,9 +69,9 @@ def prepare_elt_list(array_in):
         elt_list.append(elt)
     elt_list.sort()
 
-    s = "Liste des éléments préparée, elle contient {} éléments."
     bn = com.big_number(len(elt_list))
-    com.log(s.format(bn))
+    s = f"Liste des éléments préparée, elle contient {bn} éléments."
+    com.log(s)
 
     return elt_list
 

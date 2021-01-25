@@ -8,36 +8,25 @@ from math import ceil
 from threading import Thread
 from threading import RLock
 
-from reqlist.process import process_group_list
+from reqlist.process import process_grp
 
 verrou = RLock()
 
 
-def sql_download_strd(BDD):
+def download():
     group_array = split_group_list()
     n = len(group_array)
-    sql.gen_cnx_dict(BDD, gl.ENV, n)
-    if n == 1:
-        sql_download_strd_th(BDD, gl.group_list, 1, False)
-    else:
-        launch_threads(group_array, BDD)
+    sql.gen_cnx_dict(gl.BDD, gl.ENV, n)
+    launch_threads(group_array)
     file.gen_out_file()
 
 
-def launch_threads(group_array, BDD):
+def launch_threads(group_array):
     i = 0
     thread_list = []
-    for group_list in group_array:
+    for grp in group_array:
         i += 1
-        th = Thread(
-            target=sql_download_strd_th,
-            args=(
-                BDD,
-                group_list,
-                i,
-                True,
-            ),
-        )
+        th = Thread(target=dl_th, args=(grp, i))
         thread_list.append(th)
         th.start()
 
@@ -46,15 +35,10 @@ def launch_threads(group_array, BDD):
 
 
 @com.log_exeptions
-def sql_download_strd_th(BDD, group_list, th_nb, multi_thread):
+def dl_th(grp, th_nb):
     cnx = glsql.cnx_dict[th_nb]
     c = cnx.cursor()
-    process_group_list(
-        c,
-        group_list,
-        th_nb=th_nb,
-        multi_thread=multi_thread,
-    )
+    process_grp(c, grp, th_nb=th_nb)
     c.close()
     cnx.close()
 
@@ -78,10 +62,12 @@ def split_group_list():
 
     n = len(gl.group_list)
     if n > 1:
-        s = "Les {} groupes seront traités en parallèle sur {} pools"
-        s += " de connexion différents"
-        s = s + " ({} groupes max à traiter par pool)."
+        gl.bools['MULTI_TH'] = True
         bn = com.big_number(n)
-        com.log(s.format(bn, len(array_out), n_max))
+        s = f"Les {bn} groupes seront traités en parallèle sur"
+        s += f" {len(array_out)} pools"
+        s += " de connexion différents"
+        s = s + f" ({n_max} groupes max à traiter par pool)."
+        com.log(s)
 
     return array_out

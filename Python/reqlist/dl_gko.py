@@ -3,13 +3,13 @@ import reqlist.gl as gl
 import sql.connect as sql
 import reqlist.file as file
 
-from reqlist.process import process_group_list
+from reqlist.process import process_grp
 from threading import Thread, RLock
 
 verrou = RLock()
 
 
-def sql_download_ginko():
+def download():
 
     thread_list = []
     for inst in gl.GKO_INSTANCES:
@@ -27,16 +27,6 @@ def sql_download_ginko():
 def process_inst_gko(inst):
     cnx = sql.connect(inst)
     c = cnx.cursor()
-    process_group_list(c, gl.group_list, inst=inst[5:])
-
-    # cur_n_rows = len(array_out)
-    # if cur_n_rows > 0:
-    #     bn = com.big_number(cur_n_rows)
-    #     s = f"Résultat récupéré pour {inst[5:]}"
-    #     s += f" ({bn} lignes exportées au total)"
-    #     com.log(s)
-    # else:
-    #     s = f"Aucune ligne récupéré pour l'instance {inst[5:]}"
-    #     com.log(s)
+    process_grp(c, gl.group_list, inst=inst[5:])
     c.close()
     cnx.close()

@@ -1,15 +1,24 @@
+import conf as cfg
+
 # main
 TEST_DIR = 'test/'
 
 # test_sql
 TEST_SQL_DIR = TEST_DIR + 'sql/'
-SQL_ENV = 'DIRECT'
-SQL_BDD = 'CAPC5'
+SQL_ENV = cfg.TEST_ENV
+SQL_BDD = cfg.TEST_BDD
 SQL_TABLE_NAME = 'TEST'
+SQL_CREATE_TABLE = TEST_SQL_DIR + 'create_table_test.sql'
+SQL_INSERT_TABLE = TEST_SQL_DIR + 'insert_table_test.sql'
+SQL_QUERY = TEST_SQL_DIR + 'e_test.sql'
+SQL_QUERY_RG = TEST_SQL_DIR + 'e_test_rg.sql'
 SQL_IN_FILE = TEST_SQL_DIR + 'test_sql_in.csv'
 SQL_DL_OUT = 'export_test.csv'
-SQL_DL_RG_OUT = 'export_test_rg.csv'
+SQL_DL_OUT_RG = 'export_test_rg.csv'
 SQL_MAX_ELT_INSERT = 200
+
+# test_reqlist
+TEST_SQL_DIR = TEST_DIR + 'reqlist/'
 
 # test_qdd
 TEST_QDD_DIR = TEST_DIR + 'qdd/'

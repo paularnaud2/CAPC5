@@ -5,7 +5,7 @@ if __name__ == '__main__':
     from reqlist import run_reqList
     run_reqList(
         MAX_BDD_CNX=8,
-        SQUEEZE_JOIN=True,
+        SQUEEZE_JOIN=False,
         SQUEEZE_SQL=False,
         CHECK_DUP=True,
         NB_MAX_ELT_IN_STATEMENT=500,

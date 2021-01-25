@@ -9,15 +9,15 @@ from threading import RLock
 verrou = RLock()
 
 
-def process_group_list(c, group_list, inst='', th_nb=1, multi_thread=False):
+def process_grp(c, group_list, inst='', th_nb=1):
 
-    th_name = com.gen_sl_detail(inst, th_nb, multi_thread=multi_thread)
+    th_name = com.gen_sl_detail(inst, th_nb, multi_thread=gl.bools['MULTI_TH'])
     file.tmp_init(th_name)
     with verrou:
         gl.counters[th_nb] = 0
     query_nb = 0
 
-    log.start_exec(inst, th_nb, multi_thread)
+    log.start_exec(inst, th_nb)
     for grp in group_list:
         query_nb += 1
         if query_nb <= gl.ec_query_nb[th_name]:

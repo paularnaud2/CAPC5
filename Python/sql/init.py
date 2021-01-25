@@ -80,8 +80,7 @@ def get_query():
     with open(gl.QUERY_FILE, 'r', encoding='utf-8') as query_file:
         query = query_file.read()
 
-    query = query.replace('\n;', '')
-    query = query.replace(';', '')
+    query = query.strip('\r\n;')
     query = com.replace_from_dict(query, gl.VAR_DICT)
     gl.query = query
 
