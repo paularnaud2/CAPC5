@@ -13,7 +13,7 @@ from reqlist.join import join_arrays
 def run_reqList(**params):
     init(params)
     if not gl.SQUEEZE_SQL:
-        download(gl.BDD, gl.QUERY_FILE)
+        download(gl.QUERY_FILE)
 
     if not gl.SQUEEZE_JOIN:
         join()

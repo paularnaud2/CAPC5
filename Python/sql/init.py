@@ -1,5 +1,4 @@
 import re
-import os
 import conf as cfg
 import common as com
 import sql.gl as gl
