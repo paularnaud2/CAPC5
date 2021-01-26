@@ -16,7 +16,7 @@ def run_reqList(**params):
         download(gl.BDD, gl.QUERY_FILE)
 
     if not gl.SQUEEZE_JOIN:
-        join_main()
+        join()
 
     finish(gl.start_time)
 
@@ -30,9 +30,10 @@ def init(params):
     com.log("Tableau d'entrée chargé\n|")
 
 
-def join_main(ldir='', rdir=''):
-
+def join(ldir='', rdir='', out=''):
     if ldir or rdir:
+        init_globals()
+        com.mkdirs(gl.TMP_PATH, True)
         com.log(f"Chargement des tableaux {ldir} et {rdir}...")
         gl.ar_in = com.load_csv(ldir)
         ar_right = com.load_csv(rdir)
@@ -42,9 +43,11 @@ def join_main(ldir='', rdir=''):
         ar_right = com.load_csv(gl.OUT_SQL)
         com.log("Tableau de droite chargé\n|")
     join_arrays(gl.ar_in, ar_right)
+    if not out:
+        out = gl.OUT_FILE
     com.log("Sauvegarde du fichier de sortie...")
-    com.save_csv(gl.out_array, gl.OUT_FILE)
-    s = f"Fichier de sortie sauvegardé à l'adresse '{gl.OUT_FILE}'"
+    com.save_csv(gl.out_array, out)
+    s = f"Fichier de sortie sauvegardé à l'adresse '{out}'"
     com.log(s)
 
 

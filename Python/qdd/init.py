@@ -45,7 +45,7 @@ def init_stf(in_file_dir, out_file_dir):
     gl.dup_key_list = []
     gl.array_list = [[]]
 
-    gl.OUT_DUP_FILE = gl.OUT_DIR + "qdd_out_dup"
+    gl.OUT_DUP_FILE = gl.OUT_DIR + gl.OUT_DUP_FILE_NAME
     gl.OUT_DUP_KEY_FILE = gl.OUT_DIR + gl.OUT_FILE_NAME
     gl.OUT_DUP_KEY_FILE += "_dup_key" + gl.FILE_TYPE
 

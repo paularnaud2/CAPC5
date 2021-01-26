@@ -1,7 +1,6 @@
 import sql
 import common as com
 
-from common import g
 from test import gl
 
 
@@ -35,8 +34,8 @@ def download(query, out, merge=True):
         BDD=gl.SQL_BDD,
         QUERY_FILE=query,
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        OUT_FILE=g.paths['OUT'] + out,
-        OUT_RG_DIR=g.paths['OUT'] + 'RG_TEST/',
+        OUT_FILE=out,
+        OUT_RG_DIR=gl.SQL_DL_OUT_RG_FOLDER,
         MAX_BDD_CNX=8,
         MERGE_RG_FILES=merge,
         EXPORT_RANGE=False,
@@ -51,6 +50,7 @@ def compare():
 
 def test_sql():
     com.init_log('test_sql', True)
+    com.mkdirs(gl.SQL_OUT, True)
     execute()
     upload()
     download(gl.SQL_QUERY, gl.SQL_DL_OUT)

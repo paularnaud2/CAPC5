@@ -24,6 +24,7 @@ FILE_TYPE = '.csv'
 IN_DIR = cfg.ROOT_PATH + 'OUT/'
 OUT_DIR = cfg.ROOT_PATH + 'OUT/'
 OUT_FILE_NAME = 'qdd_out'
+OUT_DUP_FILE_NAME = 'qdd_out_dup'
 OUT_E_FILE = 'out_e'
 TMP_FOLDER = 'qdd/'
 DEFAULT_FIELD = "FIELD"

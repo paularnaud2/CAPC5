@@ -50,7 +50,7 @@ SELECT pds.REFERENCE as PDS
 		  'LUSDT', 'LU',
 		  'CUADT4', 'CU4',
 		  'MUADT4', 'MU4')as FTA
-, srv.USAGE as CTX
+, srv.USAGE as CAT_CLIENT_CTX
 , DECODE(ctr.STATUTEXTRAIT,
 		  '0', 'en cours de souscription',
 		  '1', 'actif',
@@ -99,7 +99,7 @@ WHERE 1=1
 	AND srv.ROLE = 'com.hermes.crm.contrat.businessobject.ServiceSouscritAcheminementElecBTInf36'
 	AND pa.MATERIEL_ROLE LIKE 'com.hermes.ref.materiel.businessobject.Compteur%'
 	--AND pa.MATERIEL_ROLE NOT LIKE 'com.hermes.ref.materiel.businessobject.CompteurAMM%'
-	AND pds.REFERENCE IN ('22234876949527', '22565412341065', '22452677208285', '21178002857066', '22118813260640', '21247177850967', '21241823422616', '21230680057978', '21573371796674', '22579305248513')
+	AND pds.REFERENCE = '21323299524057'
 ;
 
 --Découpage territoire

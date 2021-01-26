@@ -59,10 +59,8 @@ def check_ec(file_list):
 
 
 def tmp_init(th_name):
-
     with verrou:
-        if not exists(gl.TMP_PATH):
-            os.makedirs(gl.TMP_PATH)
+        com.mkdirs(gl.TMP_PATH)
         gl.tmp_file[th_name] = gl.TMP_PATH + th_name + gl.TMP_FILE_TYPE
         gl.tmp_file[th_name + gl.EC] = (gl.TMP_PATH + th_name + gl.EC +
                                         gl.TMP_FILE_TYPE)

@@ -34,11 +34,7 @@ def init_gl():
 
 def init_tmp_dir():
     gl.TMP_PATH = g.paths['TMP'] + gl.TMP_FOLDER + gl.BDD + '/'
-    if os.path.exists(gl.TMP_PATH):
-        return
-    else:
-        com.log(f"Création du dossier temporaire {gl.TMP_PATH}")
-        os.makedirs(gl.TMP_PATH)
+    com.mkdirs(gl.TMP_PATH)
 
 
 def init_params(params):
