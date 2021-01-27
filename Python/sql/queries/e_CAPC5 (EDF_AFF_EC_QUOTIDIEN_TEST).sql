@@ -32,3 +32,4 @@ left join sge s on s.prm=p.prm
 left join aff a on a.prm=p.prm
 WHERE 1=1
 AND p.PRM LIKE '@@RG_PRM_2@@%'
+AND ROWNUM <= 10
