@@ -4,7 +4,7 @@ from datetime import datetime
 
 ENV = 'PROD'
 BDD = 'SGE'
-BDD = 'GINKO'
+# BDD = 'GINKO'
 # BDD = 'ADAM'
 
 # ENV = 'DIRECT'
@@ -23,8 +23,8 @@ OUT_RG_DIR = f"{g.paths['OUT']}{BDD}_OUT_{date}/"
 # 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL',
 # ]
 GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
-# GKO_INSTANCES = ['GKO1_IDF']
-EXPORT_INSTANCES = True
+GKO_INSTANCES = ['GKO1_IDF']
+EXPORT_INSTANCES = False
 
 SL_STEP = 100000
 MAX_BDD_CNX = 10

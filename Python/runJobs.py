@@ -11,5 +11,8 @@ if __name__ == '__main__':
     from run_SGE_FULL_FIN_TRV import run_sge
     run_sge()
 
-    from common import mail
-    mail('fin_trv')
+    from run_GEN_OUT_FILE import run_gen_out_file
+    run_gen_out_file()
+
+    # from common import mail
+    # mail('fin_trv')

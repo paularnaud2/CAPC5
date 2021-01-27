@@ -22,7 +22,7 @@ FROM
 		AND srv.DATEFIN IS NULL
 		AND srv.ROLE = 'com.hermes.crm.contrat.businessobject.ServiceSouscritAcheminementElecBTInf36'
 		-- AND pds.REFERENCE IN ('07103762586065', '07112735090291', '07130390661967')
-		AND pds.REFERENCE LIKE '211%'
+		-- AND pds.REFERENCE LIKE '211%'
 		-- AND ROWNUM <= 100
 )
 WHERE RANG = '1'

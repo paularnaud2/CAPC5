@@ -5,7 +5,7 @@ init_log('run_sql')
 if __name__ == '__main__':
 
     sql.download(
-        MAX_BDD_CNX=10,
+        MAX_BDD_CNX=8,
         MERGE_RG_FILES=True,
         EXPORT_RANGE=False,
         CHECK_DUP=True,
