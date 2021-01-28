@@ -1,4 +1,4 @@
-# variables globales et constantes pour le package reqList (import ReqList.gl as gl)
+# variables globales et constantes pour le package reqList (import reqlist.gl as gl)
 import common as com
 from time import time
 

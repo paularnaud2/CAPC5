@@ -1,4 +1,4 @@
-# variables globales et constantes pour le package SQL (import SQL.gl as gl)
+# variables globales et constantes pour le package SQL (import sql.gl as gl)
 import common as com
 from time import time
 
@@ -6,7 +6,7 @@ from time import time
 #BDD = 'ADAM'
 BDD = 'SGE'
 
-SL_STEP = 50*10**3
+SL_STEP = 50 * 10**3
 #SL_STEP = 500
 
 QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
@@ -14,11 +14,14 @@ OUT_FILE_TYPE = '.csv'
 OUT_FILE = 'C:/Py/OUT/{}'.format(BDD)
 #OUT_FILE = 'C:/Py/OUT/out.csv'.format(BDD)
 
-GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
+GKO_INSTANCES = [
+    'GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO',
+    'GKO7_OUE', 'GKO8_ACL'
+]
 #GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
 #GKO_INSTANCES = ['GKO1_IDF']
 EXPORT_INSTANCES = False
-MAX_CHECK_DUP = 1*10**6
+MAX_CHECK_DUP = 1 * 10**6
 
 start_time = time()
 conf = {}

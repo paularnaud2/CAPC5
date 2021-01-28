@@ -1,3 +1,3 @@
-from QDD import runQDD
+from qdd import runQDD
 
 runQDD()

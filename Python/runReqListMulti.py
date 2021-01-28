@@ -1,4 +1,4 @@
-from ReqList import *
+from reqlist import *
 
 # QDD SMO ADAM/GINKO
 ""

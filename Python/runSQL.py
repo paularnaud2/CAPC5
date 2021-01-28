@@ -1,3 +1,3 @@
-from SQL import export
+from sql import export
 
 export()

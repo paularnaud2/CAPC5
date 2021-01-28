@@ -1,4 +1,4 @@
-# variables globales et constantes pour le package QDD (import QDD.gl as gl)
+# variables globales et constantes pour le package QDD (import qdd.gl as gl)
 from time import time
 import common as com
 
@@ -7,9 +7,9 @@ IN_FILE_1 = 'OLD'
 IN_FILE_2 = 'GINKO'
 IN_FILE_2 = 'NEW'
 
-MAX_ROW_LIST = 12*10**6
-SL_STEP = 5*10**6
-MAX_LINE_SPLIT = 900*10**3
+MAX_ROW_LIST = 12 * 10**6
+SL_STEP = 5 * 10**6
+MAX_LINE_SPLIT = 900 * 10**3
 
 COMPARE_FIELD_NB = 1
 COMPARE_SEPARATOR = '|'
@@ -29,9 +29,9 @@ TMP_DIR = com.TMP_PATH_QDD + 'tmp'
 DEFAULT_FIELD = "FIELD"
 COMPARE_FIELD = "COMPARE_RES"
 MAX_DUP_PRINT = 5
-MAX_ROW_LIST_PY_VERSION_ALERT = 5*10**6
-MAX_FILE_SIZE_PY_VERSION_ALERT = 100*10**6
-MAX_ROW_EQUAL_OUT = 1*10**6
+MAX_ROW_LIST_PY_VERSION_ALERT = 5 * 10**6
+MAX_FILE_SIZE_PY_VERSION_ALERT = 100 * 10**6
+MAX_ROW_EQUAL_OUT = 1 * 10**6
 
 bool = {}
 counters = {}
@@ -43,7 +43,6 @@ txt = {}
 header = ''
 
 prev_elt = []
-
 """
 # Test 20
 IN_DIR = 'C:/Py/IN/Tests/'

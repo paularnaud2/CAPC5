@@ -1,3 +1,3 @@
-from ReqList import *
+from reqlist import *
 
 run_reqList()

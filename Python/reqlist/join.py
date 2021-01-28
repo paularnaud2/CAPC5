@@ -1,5 +1,5 @@
 from common import *
-import ReqList.gl as gl
+import reqlist.gl as gl
 import common as com
 import sys
 
