@@ -27,6 +27,7 @@ RL_LEFT = TEST_RL_DIR + 'left.csv'
 RL_RIGHT = TEST_RL_DIR + 'right.csv'
 RL_QUERY = TEST_RL_DIR + 'query.sql'
 RL_OUT_JOIN = RL_OUT + 'join.csv'
+RL_OUT_JOIN_REF = TEST_RL_DIR + 'join_ref.csv'
 
 # test_qdd
 TEST_QDD_DIR = TEST_DIR + 'qdd/'

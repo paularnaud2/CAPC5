@@ -1,5 +1,6 @@
 import common as com
 import reqlist as rl
+import qdd as q
 
 from test import gl
 from test_sql import upload
@@ -26,6 +27,7 @@ def test_reqlist():
     com.init_log('test_reqlist', True)
     com.mkdirs(gl.RL_OUT, True)
     rl.join(gl.RL_LEFT, gl.RL_RIGHT, gl.RL_OUT_JOIN)
+    q.file_match(gl.RL_OUT_JOIN_REF, gl.RL_OUT_JOIN, gl.FILE_MATCH_OUT)
     # execute()
     # upload()
     # com.log('Test reqlist')

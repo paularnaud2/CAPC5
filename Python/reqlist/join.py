@@ -78,6 +78,7 @@ def init_while_join(first_line_l, first_line_r):
     gl.out_array.append(first_line_l + first_line_r[1:])
     gl.counters["c_l"] = 0
     gl.counters["c_r"] = 0
+    gl.counters["out"] = 0
     gl.bools["end_left"] = False
     gl.bools["end_right"] = False
 
@@ -100,6 +101,7 @@ def compare_inf(pdl_l, pdl_r, ar_left):
     while pdl_l < pdl_r:
         out_line = ar_left[gl.counters["c_l"]] + gl.blank_right_row
         gl.out_array.append(out_line)
+        gl.counters["out"] += 1
         debug('compare_inf', pdl_l, pdl_r, out_line)
         if incr_c_l(ar_left):
             break
@@ -112,6 +114,7 @@ def compare_sup(pdl_l, pdl_r, ar_left, ar_right):
     while pdl_l > pdl_r:
         out_line = ar_left[gl.counters["c_l"]] + gl.blank_right_row
         gl.out_array.append(out_line)
+        gl.counters["out"] += 1
         debug('compare_sup', pdl_l, pdl_r, out_line)
         if not gl.bools["end_right"]:
             if incr_c_r(ar_right):
@@ -131,6 +134,7 @@ def compare_equal(pdl_l, pdl_r, ar_left, ar_right):
         out_line = ar_left[gl.counters["c_l"]] + ar_right[
             gl.counters["c_r"]][1:]
         gl.out_array.append(out_line)
+        gl.counters["out"] += 1
         debug('compare_equal', pdl_l, pdl_r, out_line)
         if incr_c_r(ar_right):
             break
@@ -171,12 +175,13 @@ def debug(s, pdl_l, pdl_r, out_line):
         return
 
     print(s)
-    print([
-        gl.counters["c_l"] + 2, gl.counters["c_r"] + 2, gl.counters["c_r"] + 2
-    ])
+    print([gl.counters["c_l"] + 2, gl.counters["c_r"] + 2])
     print([pdl_l, pdl_r])
     print(out_line)
     com.log_array(gl.out_array)
+    com.log_print()
+    if pdl_l == '01103762594604':
+        print(pdl_l)
 
 
 def del_dup(array_in):
