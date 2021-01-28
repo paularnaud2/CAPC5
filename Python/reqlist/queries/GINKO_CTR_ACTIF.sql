@@ -14,7 +14,7 @@ FROM
 		AND ctr.STATUTEXTRAIT IN ('1', '2', '3')
 		AND srv.DATEFIN IS NULL
 		AND srv.ROLE = 'com.hermes.crm.contrat.businessobject.ServiceSouscritAcheminementElecBTInf36'
-		AND pds.REFERENCE IN @@IN@@
+		AND pds.REFERENCE IN @@IN1@@
 		--AND pds.REFERENCE LIKE '211%'
 		--AND ROWNUM < 11
 )

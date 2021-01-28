@@ -1,0 +1,4 @@
+1;cx_Oracle;cx_Oracle-7.3.0-cp38-cp38-win32.whl;cx_Oracle
+1;win32;pywin32-227-cp38-cp38-win32.whl;pywin32
+2;win32com;pypiwin32-223-py3-none-any.whl;pypiwin32
+3;win10toast;win10toast-0.9-py2.py3-none-any.whl;win10toast

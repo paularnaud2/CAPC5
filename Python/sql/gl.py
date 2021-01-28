@@ -1,61 +1,37 @@
-# variables globales et constantes pour le package sql (import sql.gl as gl)
-from common import g
-from datetime import datetime
+# variables globales et constantes pour le package SQL (import SQL.gl as gl)
+import common as com
+from time import time
 
-ENV = 'PROD'
+#BDD = 'GINKO'
+#BDD = 'ADAM'
 BDD = 'SGE'
-# BDD = 'GINKO'
-# BDD = 'ADAM'
 
-# ENV = 'DIRECT'
-# BDD = 'CAPC5'
+SL_STEP = 50*10**3
+#SL_STEP = 500
 
-# ENV = 'LOCAL'
-# BDD = 'XE'
+QUERY_FILE = 'SQL/queries/e_{}.sql'.format(BDD)
+OUT_FILE_TYPE = '.csv'
+OUT_FILE = 'C:/Py/OUT/{}'.format(BDD)
+#OUT_FILE = 'C:/Py/OUT/out.csv'.format(BDD)
 
-date = datetime.now().strftime("%Y%m%d")
-QUERY_FILE = f'sql/queries/e_{BDD}.sql'
-OUT_FILE = f"{g.paths['OUT']}export_SQL_{BDD}_{date}.csv"
-OUT_RG_DIR = f"{g.paths['OUT']}{BDD}_OUT_{date}/"
-
-# GKO_INSTANCES = [
-# 'GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB',
-# 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL',
-# ]
-GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
-GKO_INSTANCES = ['GKO1_IDF']
+GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB', 'GKO5_MED', 'GKO6_SUO', 'GKO7_OUE', 'GKO8_ACL']
+#GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
+#GKO_INSTANCES = ['GKO1_IDF']
 EXPORT_INSTANCES = False
+MAX_CHECK_DUP = 1*10**6
 
-SL_STEP = 100000
-MAX_BDD_CNX = 10
-MAX_CHECK_DUP = 1 * 10**6
-
-MERGE_RG_FILES = True
-EXPORT_RANGE = False
-CHECK_DUP = True
-OPEN_OUT_FILE = True
-SEND_NOTIF = True
-
-FILE_TYPE = '.csv'
-TMP_FOLDER = 'sql/'
-CHECK_MEPA_FILE = 'last_mepa_check.csv'
-CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'
-RANGE_PATH = 'sql/ranges/'
+start_time = time()
+conf = {}
+counters = {}
+bools = {}
+out_files = {}
+query = ''
+CONF_FILE = 'C:/oracle/conf_perso.txt'
+VAR_STR = '@@'
+RANGE_PATH = 'SQL/ranges/'
+RANGE_FILE_TYPE = '.csv'
 EC = '_EC'
-RANGE_FIELD = "RANGE"
-
-# Super globals
-client_is_init = False
-check_mepa_ok = False
-
-# Globales paramétrables
-VAR_DICT = {}
-
-# Execute
-SCRIPT_FILE = 'sql/scripts/create_table_aff.sql'
-NB_MAX_ELT_INSERT = 100000
-PROC = False
-CHUNK_FILE = 'chunk.txt'
-
-# Upload
-UPLOAD_IN = g.paths['OUT'] + 'OUT/in.csv'
+TMP_PATH = com.TMP_PATH_SQL + BDD + '/'
+TMP_TRT_FILE = 'tmp.csv'
+OUT_PDL_LIST_FILE = com.TMP_PATH_SQL + 'out_pdl_list.csv'
+MAX_BDD_CNX = 8

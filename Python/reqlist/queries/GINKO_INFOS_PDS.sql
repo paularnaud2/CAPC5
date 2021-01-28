@@ -9,7 +9,6 @@ FROM
 	SELECT pds.REFERENCE as POINT
 		, TO_CHAR(ctr.DATEEFFET, 'DD/MM/YYYY') DATE_DEBUT_SCN_GKO
 		, TO_CHAR(pds.DATEMODIFICATION, 'DD/MM/YYYY') DATE_MODIF_GKO
-		, SUBSTR(pds.PALIERTECHNIQUE, 4, 2)  P_RAC
 		, DECODE(ctr.EXTRAITSERVICESSOUSCRIT
 			, 'CUSDT', 'CUST'
 			, 'MUADT', 'MUDT'
@@ -17,16 +16,7 @@ FROM
 			, 'LUSDT', 'LU'
 			, 'CUADT4', 'CU4'
 			, 'MUADT4', 'MU4')as FTA_GKO
-		, DECODE(ctr.STATUTEXTRAIT,
-		  '0', 'en cours de souscription',
-		  '1', 'actif',
-		  '2', 'en cours de modification',
-		  '3', 'en cours de cessation',
-		  '4', 'cessé',
-		  '5', 'cessation partielle',
-		  '8', 'annulé',
-		  'inconnu') as STATUT
-		, REPLACE(srv.PUISSANCESOUSCRITE1_VALUE,'.',',') PS
+		, srv.PUISSANCESOUSCRITE1_VALUE as PS_GKO
 		, act.NOM FRN_GKO
 		, DENSE_RANK() OVER (PARTITION BY pds.REFERENCE ORDER BY ctr.STATUTEXTRAIT, srv.STATUT) as RANG
 	FROM GAHFLD.TESPACEDELIVRAISON edl
@@ -47,7 +37,7 @@ FROM
 		AND ctr.EXTRAITSERVICESSOUSCRIT <> 'injection'
 		AND srv.DATEFIN IS NULL
 		AND srv.ROLE = 'com.hermes.crm.contrat.businessobject.ServiceSouscritAcheminementElecBTInf36'
-		AND pds.REFERENCE IN @@IN@@
+		AND pds.REFERENCE IN @@IN1@@
 		--AND pds.REFERENCE IN ('22234876949527', '22565412341065', '22452677208285', '21178002857066', '22118813260640', '21247177850967', '21241823422616', '21230680057978', '21573371796674', '22579305248513')
 		--AND pds.REFERENCE LIKE '211%'
 )

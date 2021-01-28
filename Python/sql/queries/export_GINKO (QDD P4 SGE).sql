@@ -1,3 +1,4 @@
+--SELECT *
 SELECT POINT
 FROM
 (

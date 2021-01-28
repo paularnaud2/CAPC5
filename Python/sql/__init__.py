@@ -1,5 +1,12 @@
-from sql.download import download
-from sql.upload import upload
-from sql.upload import check_restart
-from sql.execute import execute
-from sql.init import init
+from common import *
+init_log('SQL')
+
+from SQL.main import export_strd, export_gko
+import SQL.gl as gl
+
+def export():
+
+	if gl.BDD == 'GINKO':
+		export_gko()
+	else:
+		export_strd()
