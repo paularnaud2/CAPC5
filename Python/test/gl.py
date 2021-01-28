@@ -23,16 +23,25 @@ SQL_MAX_ELT_INSERT = 200
 # test_reqlist
 TEST_RL_DIR = TEST_DIR + 'reqlist/'
 RL_OUT = g.paths['TMP'] + TEST_RL_DIR
-RL_LEFT = TEST_RL_DIR + 'left.csv'
-RL_RIGHT = TEST_RL_DIR + 'right.csv'
 RL_QUERY = TEST_RL_DIR + 'query.sql'
 RL_OUT_JOIN = RL_OUT + 'join.csv'
-RL_OUT_JOIN_REF = TEST_RL_DIR + 'join_ref.csv'
+
+RL_LEFT_1 = TEST_RL_DIR + 'left_1.csv'
+RL_RIGHT_1 = TEST_RL_DIR + 'right_1.csv'
+RL_OUT_JOIN_REF_1 = TEST_RL_DIR + 'join_ref_1.csv'
+
+RL_LEFT_2 = TEST_RL_DIR + 'left_2.csv'
+RL_RIGHT_2 = TEST_RL_DIR + 'right_2.csv'
+RL_OUT_JOIN_REF_2 = TEST_RL_DIR + 'join_ref_2.csv'
+
+RL_LEFT_3 = TEST_RL_DIR + 'left_3.csv'
+RL_RIGHT_3 = TEST_RL_DIR + 'right_3.csv'
+RL_OUT_JOIN_REF_3 = TEST_RL_DIR + 'join_ref_3.csv'
 
 # test_qdd
 TEST_QDD_DIR = TEST_DIR + 'qdd/'
 QDD_OUT = g.paths['TMP'] + TEST_QDD_DIR
-FILE_MATCH_OUT = QDD_OUT + 'file_match.csv'
+FILE_MATCH_OUT = g.paths['TMP'] + TEST_DIR + 'file_match.csv'
 IN11 = 'in_11'
 IN12 = 'in_12'
 REF1 = 'out_ref_1.csv'

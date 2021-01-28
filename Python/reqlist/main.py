@@ -16,7 +16,7 @@ def run_reqList(**params):
         download(gl.QUERY_FILE)
 
     if not gl.SQUEEZE_JOIN:
-        join()
+        left_join()
 
     finish(gl.start_time)
 
@@ -30,7 +30,9 @@ def init(params):
     com.log("Tableau d'entrée chargé\n|")
 
 
-def join(ldir='', rdir='', out=''):
+def left_join(ldir='', rdir='', out='', debug=False):
+    if debug:
+        gl.DEBUG_JOIN = True
     if ldir or rdir:
         init_globals()
         com.mkdirs(gl.TMP_PATH, True)

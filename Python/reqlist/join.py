@@ -113,9 +113,10 @@ def compare_inf(pdl_l, pdl_r, ar_left):
 def compare_sup(pdl_l, pdl_r, ar_left, ar_right):
     while pdl_l > pdl_r:
         out_line = ar_left[gl.counters["c_l"]] + gl.blank_right_row
-        gl.out_array.append(out_line)
-        gl.counters["out"] += 1
-        debug('compare_sup', pdl_l, pdl_r, out_line)
+        if gl.bools["end_right"]:
+            gl.out_array.append(out_line)
+            gl.counters["out"] += 1
+        debug('compare_sup', pdl_l, pdl_r)
         if not gl.bools["end_right"]:
             if incr_c_r(ar_right):
                 break
@@ -125,6 +126,9 @@ def compare_sup(pdl_l, pdl_r, ar_left, ar_right):
                 break
             pdl_l = ar_left[gl.counters["c_l"]][0]
 
+    if pdl_l < pdl_r:
+        gl.out_array.append(out_line)
+        gl.counters["out"] += 1
     return (pdl_l, pdl_r)
 
 
@@ -170,7 +174,7 @@ def incr_c_r(ar_right):
     return False
 
 
-def debug(s, pdl_l, pdl_r, out_line):
+def debug(s, pdl_l, pdl_r, out_line=[]):
     if not gl.DEBUG_JOIN:
         return
 
@@ -180,8 +184,8 @@ def debug(s, pdl_l, pdl_r, out_line):
     print(out_line)
     com.log_array(gl.out_array)
     com.log_print()
-    if pdl_l == '01103762594604':
-        print(pdl_l)
+    # if s == 'compare_sup':
+    #     print(pdl_l)
 
 
 def del_dup(array_in):

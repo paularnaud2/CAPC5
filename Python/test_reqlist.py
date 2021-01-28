@@ -15,19 +15,25 @@ def reqlist(out, in_file):
         # IN_FILE=g.paths['OUT'] + in_file,
         # OUT_FILE=g.paths['OUT'] + out,
         MAX_BDD_CNX=8,
+        NB_MAX_ELT_IN_STATEMENT=500,
+        SL_STEP_QUERY=50,
         SQUEEZE_JOIN=False,
         SQUEEZE_SQL=False,
         CHECK_DUP=True,
-        NB_MAX_ELT_IN_STATEMENT=500,
-        SL_STEP_QUERY=50,
     )
+
+
+def left_join(left, right, ref):
+    rl.left_join(left, right, gl.RL_OUT_JOIN, debug=False)
+    q.file_match(ref, gl.RL_OUT_JOIN, gl.FILE_MATCH_OUT)
 
 
 def test_reqlist():
     com.init_log('test_reqlist', True)
     com.mkdirs(gl.RL_OUT, True)
-    rl.join(gl.RL_LEFT, gl.RL_RIGHT, gl.RL_OUT_JOIN)
-    q.file_match(gl.RL_OUT_JOIN_REF, gl.RL_OUT_JOIN, gl.FILE_MATCH_OUT)
+    left_join(gl.RL_LEFT_1, gl.RL_RIGHT_1, gl.RL_OUT_JOIN_REF_1)
+    left_join(gl.RL_LEFT_2, gl.RL_RIGHT_2, gl.RL_OUT_JOIN_REF_2)
+    left_join(gl.RL_LEFT_3, gl.RL_RIGHT_3, gl.RL_OUT_JOIN_REF_3)
     # execute()
     # upload()
     # com.log('Test reqlist')

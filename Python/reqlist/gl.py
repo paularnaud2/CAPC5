@@ -35,7 +35,7 @@ SQUEEZE_SQL = False
 CHECK_DUP = True
 OPEN_OUT_FILE = True
 SEND_NOTIF = True
-DEBUG_JOIN = True
+DEBUG_JOIN = False
 
 TMP_FOLDER = 'reqlist/'
 OUT_LEFT_FILE = 'out_l.csv'
