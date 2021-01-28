@@ -11,7 +11,7 @@ def test_runJobs():
     run_maj_perimetre(test=True)
     run_aff(test=True)
     run_sge(test=True)
-    run_gen_out_file(test=True)
+    # run_gen_out_file(test=True)
     # com.mail(
     #     mail_name='fin_trv',
     #     recipients_file='recipients_test.txt',
