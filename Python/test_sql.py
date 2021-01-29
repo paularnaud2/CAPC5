@@ -1,4 +1,5 @@
 import sql
+import qdd as q
 import common as com
 
 from test import gl
@@ -44,10 +45,6 @@ def download(query, out, merge=True):
     )
 
 
-def compare():
-    com.log(f'Comparaison des fichiers {gl.SQL_DL_OUT} et {gl.SQL_DL_OUT_RG}')
-
-
 def test_sql():
     com.init_log('test_sql', True)
     com.mkdirs(gl.SQL_OUT, True)
@@ -58,7 +55,9 @@ def test_sql():
     download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG)
     com.log("Téléchargement des données par plages sans merge")
     download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG, False)
-    compare()
+
+    q.file_match(gl.SQL_DL_OUT, gl.SQL_DL_OUT_RG, gl.FILE_MATCH_OUT)
+    q.file_match(gl.SQL_RG_REF, gl.SQL_RG_COMP, gl.FILE_MATCH_OUT)
 
 
 if __name__ == '__main__':

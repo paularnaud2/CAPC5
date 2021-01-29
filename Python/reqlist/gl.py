@@ -4,7 +4,7 @@ from datetime import datetime
 
 ENV = 'PROD'
 BDD = 'SGE'
-BDD = 'GINKO'
+# BDD = 'GINKO'
 # BDD = 'ADAM'
 # BDD = 'RFC'
 
@@ -41,10 +41,11 @@ TMP_FOLDER = 'reqlist/'
 OUT_LEFT_FILE = 'out_l.csv'
 OUT_RIGHT_FILE = 'out_r.csv'
 OUT_SQL_FILE = 'out_sql.csv'
-# IN_TEST_L = 'test/test_L0.csv'
-# IN_TEST_R = 'test/test_R0.csv'
 
 VAR_IN = "IN"
 TMP_FILE_TYPE = '.csv'
 EC = '_EC'
 QN = '_QN'
+
+# Globales paramétrables
+VAR_DICT = {}

@@ -39,9 +39,18 @@ def run_qdd(**params):
         os.startfile(dirs["out"])
 
 
-def file_match(in1, in2, diff_out='', err=True):
+def file_match(in1, in2, diff_out='', err=True, sort=True):
     com.log("[qdd] file_match")
+    s = f"Comparaison des fichiers {in1} et {in2} en cours..."
+    com.log(s)
     init_file_match()
+    if sort:
+        arr1 = sorted(com.load_csv(in1))
+        in1 = gl.TMP_SORTED_1
+        com.save_csv(arr1, in1)
+        arr2 = sorted(com.load_csv(in2))
+        in2 = gl.TMP_SORTED_2
+        com.save_csv(arr2, in2)
     if diff_out == '':
         diff_out = g.paths['OUT'] + 'file_match_out.csv'
     res = compare_files(in1, in2, diff_out)
@@ -55,9 +64,6 @@ def file_match(in1, in2, diff_out='', err=True):
 def compare_files(in_1, in_2, out):
 
     start_time = time()
-    s = f"Comparaison des fichiers {in_1} et {in_2} en cours..."
-    com.log(s)
-
     header = check_in_files(in_1, in_2, out)
     if not header:
         return False

@@ -72,9 +72,7 @@ def get_one_conf(in_str):
 
 
 def get_query():
-    with open(gl.QUERY_FILE, 'r', encoding='utf-8') as query_file:
-        query = query_file.read()
-
+    query = com.read_file(gl.QUERY_FILE)
     query = query.strip('\r\n;')
     query = com.replace_from_dict(query, gl.VAR_DICT)
     gl.query = query

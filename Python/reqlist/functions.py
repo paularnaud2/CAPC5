@@ -50,8 +50,9 @@ def gen_group(elt_list):
 
 def set_query_var(query_file):
     query = com.read_file(query_file)
-    query = query.replace('\n;', '')
-    gl.query_var = query.replace(';', '')
+    query = query.strip('\r\n;')
+    query = com.replace_from_dict(query, gl.VAR_DICT)
+    gl.query_var = query
     s = "Requête modèle :\n{}\n;"
     com.log_print(s.format(gl.query_var))
 

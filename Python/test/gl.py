@@ -18,13 +18,21 @@ SQL_OUT = g.paths['TMP'] + TEST_SQL_DIR
 SQL_DL_OUT = SQL_OUT + 'sql_test_out.csv'
 SQL_DL_OUT_RG = SQL_OUT + 'sql_test_out_rg.csv'
 SQL_DL_OUT_RG_FOLDER = SQL_OUT + 'RG_TEST/'
+SQL_RG_REF = TEST_SQL_DIR + '01_ref.csv'
+SQL_RG_COMP = SQL_DL_OUT_RG_FOLDER + '01.csv'
 SQL_MAX_ELT_INSERT = 200
 
 # test_reqlist
 TEST_RL_DIR = TEST_DIR + 'reqlist/'
-RL_OUT = g.paths['TMP'] + TEST_RL_DIR
-RL_QUERY = TEST_RL_DIR + 'query.sql'
-RL_OUT_JOIN = RL_OUT + 'join.csv'
+RL_OUT_DIR = g.paths['TMP'] + TEST_RL_DIR
+RL_OUT_JOIN = RL_OUT_DIR + 'join.csv'
+
+RL_IN_1 = RL_OUT_DIR + 'in1.csv'
+RL_OUT_1 = RL_OUT_DIR + 'out1.csv'
+RL_QUERY_1 = TEST_RL_DIR + 'query1.sql'
+RL_IN_2 = RL_OUT_DIR + 'in2.csv'
+RL_OUT_2 = RL_OUT_DIR + 'out2.csv'
+RL_QUERY_2 = TEST_RL_DIR + 'query2.sql'
 
 RL_LEFT_1 = TEST_RL_DIR + 'left_1.csv'
 RL_RIGHT_1 = TEST_RL_DIR + 'right_1.csv'

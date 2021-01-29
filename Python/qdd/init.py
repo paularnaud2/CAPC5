@@ -7,6 +7,16 @@ from math import floor
 from qdd.functions import read_list
 
 
+def init_file_match():
+    gl.IN_FILE_NAME_1 = '1'
+    gl.IN_FILE_NAME_2 = '2'
+    set_dirs()
+    gl.TMP_SORTED_1 = gl.TMP_DIR + 'sorted_1.csv'
+    gl.TMP_SORTED_2 = gl.TMP_DIR + 'sorted_2.csv'
+    gl.EQUAL_OUT = False
+    gl.DIFF_OUT = False
+
+
 def set_dirs():
 
     dirs = {}
@@ -172,10 +182,3 @@ def init_array_list():
     s = "Tableau tampon initialisé."
     s += f" Il pourra contenir un maximum de {nb} lignes."
     com.log(s)
-
-
-def init_file_match():
-    gl.IN_FILE_NAME_1 = '1'
-    gl.IN_FILE_NAME_2 = '2'
-    gl.EQUAL_OUT = False
-    gl.DIFF_OUT = False
