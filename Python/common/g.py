@@ -1,4 +1,4 @@
-import conf as cfg
+import conf_main as cfg
 from .file import mkdirs
 from threading import RLock
 

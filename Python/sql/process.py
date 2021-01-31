@@ -112,7 +112,7 @@ def init_out_file(cursor, range_name='MONO'):
 
 
 def process_gko_query(inst):
-    cnx = connect(inst)
+    cnx = connect(gl.ENV, inst)
     c = cnx.cursor()
     com.log(f"Exécution de la requête pour l'instance {inst}...")
     c.execute(gl.query)

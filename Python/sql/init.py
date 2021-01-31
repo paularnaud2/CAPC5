@@ -1,5 +1,3 @@
-import re
-import conf as cfg
 import common as com
 import sql.gl as gl
 
@@ -10,7 +8,6 @@ from sql.rg import restart
 def init():
 
     init_gl()
-    set_conf()
     get_query()
     init_tmp_dir()
 
@@ -42,33 +39,6 @@ def init_params(params):
         for key in params:
             gl.__getattribute__(key)
             gl.__setattr__(key, params[key])
-
-
-def set_conf():
-    with open(cfg.CONF_FILE, 'r', encoding='utf-8') as conf_file:
-        for line in conf_file:
-            (ENV, BDD, conf) = get_one_conf(line)
-            if BDD != '':
-                gl.conf_env[(ENV, BDD)] = conf
-                gl.conf[BDD] = conf
-
-
-def get_one_conf(in_str):
-    conf = {}
-    exp = 'ENV=(.*);BDD=(.*);HOST=(.*);PORT=(.*);SERVICE_NAME=(.*);'
-    exp += 'USER=(.*);PWD=(.*);TNS_NAME=(.*)$'
-    m = re.search(exp, in_str)
-
-    ENV = m.group(1)
-    BDD = m.group(2)
-    conf["HOST"] = m.group(3)
-    conf["PORT"] = m.group(4)
-    conf["SERVICE_NAME"] = m.group(5)
-    conf["USER"] = m.group(6)
-    conf["PWD"] = m.group(7)
-    conf["TNS_NAME"] = m.group(8)
-
-    return (ENV, BDD, conf)
 
 
 def get_query():

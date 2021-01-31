@@ -25,7 +25,7 @@ def download():
 
 @com.log_exeptions
 def process_inst_gko(inst):
-    cnx = sql.connect(inst)
+    cnx = sql.connect(gl.ENV, inst)
     c = cnx.cursor()
     process_grp(c, gl.group_list, inst=inst[5:])
     c.close()

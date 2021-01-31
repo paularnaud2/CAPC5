@@ -4,4 +4,5 @@ Python/Install/gl.py
 ~$*.xlsm
 .vscode/.ropeproject/objectdb
 Excel/confidential.txt
-Python/conf.py
+Python/conf_oracle.py
+Python/conf_main.py

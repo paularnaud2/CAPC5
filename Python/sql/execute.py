@@ -13,7 +13,7 @@ def execute(**params):
     init_params(params)
     init()
     script = get_final_script(gl.SCRIPT_FILE)
-    cnx = connect(BDD=gl.BDD, ENV=gl.ENV)
+    cnx = connect(ENV=gl.ENV, BDD=gl.BDD)
     c = cnx.cursor()
     if gl.PROC:
         com.log("Execution de la procédure :")

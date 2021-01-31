@@ -26,14 +26,13 @@ def process_query_finish(elt, th_nb):
             elt, th_nb))
 
 
-def connect_init(th_nb, BDD, conf, multi_thread):
+def connect_init(ENV, BDD, cnx_str, th_nb, multi_thread):
 
     if multi_thread is False:
-        s = "Connexion à la base {}..."
-        s = s.format(BDD)
+        s = f"Connexion à la base '{BDD}' de l'environnement '{ENV}' ({cnx_str})"
     else:
-        s = "Connexion à la base {} (pool No.{})..."
-        s = s.format(BDD, th_nb)
+        s = f"Connexion à la base '{BDD}' de l'environnement '{ENV}'"
+        s += f" ({cnx_str})"
     com.log(s)
 
 

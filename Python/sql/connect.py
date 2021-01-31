@@ -1,19 +1,20 @@
-import conf as cfg
+import conf_main as cfg
 import common as com
 import sql.gl as gl
 import sql.log as log
 import cx_Oracle as cx
 
+from conf_oracle import c
 from threading import RLock
 
 verrou = RLock()
 
 
-def connect(BDD, th_nb=1, multi_thread=False, ENV=''):
+def connect(ENV, BDD, th_nb=1, multi_thread=False):
 
     init_instant_client()
-    (cnx_str, conf) = get_cnx_str(BDD, ENV)
-    log.connect_init(th_nb, BDD, conf, multi_thread)
+    cnx_str = c[(ENV, BDD)]
+    log.connect_init(ENV, BDD, cnx_str, th_nb, multi_thread)
     cnx = cx.connect(cnx_str)
     log.connect_finish(th_nb, BDD, multi_thread)
     check_mepa(BDD, cnx, th_nb)
@@ -24,10 +25,11 @@ def connect(BDD, th_nb=1, multi_thread=False, ENV=''):
 def gen_cnx_dict(BDD, ENV, nb):
 
     init_instant_client()
-    (cnx_str, conf) = get_cnx_str(BDD, ENV)
+    cnx_str = c[(ENV, BDD)]
     gl.cnx_dict = dict()
     i = 1
-    s = f"Création des connexions pour la BDD {BDD} de l'environnement {ENV}"
+    s = f"Création des connexions pour la BDD '{BDD}' de l'environnement '{ENV}'"
+    s += f" ({cnx_str})"
     com.log(s)
     while i <= nb:
         com.log(f'Connexion No. {i} en cours de création...')
@@ -89,24 +91,6 @@ def get_bdd_date(cnx):
     a = a[:10]
 
     return a
-
-
-def get_cnx_str(BDD, ENV):
-
-    if ENV == '':
-        conf = gl.conf[BDD]
-    else:
-        conf = gl.conf_env[(ENV, BDD)]
-    cnx_str = '{user}/{pwd}@{host}:{port}/{srv}'
-    cnx_str = cnx_str.format(
-        user=conf["USER"],
-        pwd=conf["PWD"],
-        host=conf["HOST"],
-        port=conf["PORT"],
-        srv=conf["SERVICE_NAME"],
-    )
-
-    return (cnx_str, conf)
 
 
 def init_instant_client():
