@@ -53,10 +53,3 @@ def shuf():
     from tools.shuf import shuffle_csv
     com.LOG_OUTPUT = False
     shuffle_csv()
-
-
-def xml():
-    from tools.xml import parse_xml
-    # com.LOG_FILE_INITIALISED = True
-    com.LOG_OUTPUT = False
-    parse_xml()
