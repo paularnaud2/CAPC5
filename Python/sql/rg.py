@@ -8,14 +8,14 @@ from shutil import move
 
 
 def get_rg_file_name(in_str):
-    exp = 'AND' + '(.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
+    exp = '(.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
     m = re.search(exp, in_str)
     try:
         rg_file_name = m.group(2)
     except AttributeError:
         return ''
 
-    exp = '--AND' + '(.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
+    exp = '(.*--.*AND.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
     m = re.search(exp, in_str)
     try:
         m.group(2)
