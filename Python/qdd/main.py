@@ -4,7 +4,7 @@ import common as com
 
 from time import time
 from common import g
-from tools.split import split
+from toolSplit import split_file
 from qdd.init import set_dirs
 from qdd.init import init_params
 from qdd.init import init_out_file
@@ -27,7 +27,14 @@ def run_qdd(**params):
     sort_file(dirs["in2"], dirs["out2"], True, 2)
     if not compare_files(dirs["out1"], dirs["out2"], dirs["out"]):
         com.log_print('|')
-        split(dirs["out"], gl.MAX_LINE_SPLIT, True, True, gl.counters["out"])
+        split_file(
+            in_dir=dirs["out"],
+            max_line=gl.MAX_LINE_SPLIT,
+            add_header=True,
+            prompt=True,
+            n_line=gl.counters["out"],
+            max_file=gl.MAX_FILE_NB_SPLIT,
+        )
 
     s = "Exécution terminée en {}"
     duration = com.get_duration_ms(start_time)

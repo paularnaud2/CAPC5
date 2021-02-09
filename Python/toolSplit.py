@@ -1,19 +1,20 @@
 import common as com
 import tools.gl as gl
+
 from os import remove
 from math import ceil
 
-IN_DIR = 'C:/Py/IN/2020_09_03_SITES.xml'
+IN_DIR = 'C:/Py/IN/Enedis_APR_20201030_092105813.xml'
 MAX_LINE = 2 * 10**3
 MAX_FILE_NB = 3
 
 
-def split(
+def split_file(
     in_dir=IN_DIR,
     max_line=MAX_LINE,
     add_header=True,
     prompt=False,
-    n_line=0,
+    n_line=0,  # si valorisé différent de 0, évite d'avoir à compter les lignes du fichier d'entrée
     max_file=MAX_FILE_NB,
 ):
 
@@ -23,7 +24,7 @@ def split(
         prompt_split(in_dir, max_line, n_line)
 
     if not gl.bool["quit"]:
-        split_file(in_dir, max_line, add_header, max_file)
+        split_file_func(in_dir, max_line, add_header, max_file)
     com.log("Traitement terminé")
 
 
@@ -60,7 +61,7 @@ def prompt_split(in_dir, max_line, n_line):
         return
 
 
-def split_file(in_dir, max_line, add_header, max_file):
+def split_file_func(in_dir, max_line, add_header, max_file):
 
     with open(in_dir, 'r', encoding='utf-8') as in_file:
         while True:
@@ -80,16 +81,16 @@ def split_file(in_dir, max_line, add_header, max_file):
 
 def gen_split_out(split_dir, max_line, in_file, add_header, max_file):
 
-    with open(split_dir, 'w', encoding='utf-8') as split_file:
+    with open(split_dir, 'w', encoding='utf-8') as file:
         i = 0
         if gl.counters["split_file"] > 1 and add_header:
-            split_file.write(gl.header)
+            file.write(gl.header)
             i = 1
         in_line = 'init'
         while i < max_line and in_line != '':
             i += 1
             in_line = in_file.readline()
-            split_file.write(in_line)
+            file.write(in_line)
 
     file_nb = gl.counters["split_file"]
     s = f"Fichier découpé No.{file_nb} ({split_dir}) généré avec succès"
@@ -121,3 +122,7 @@ def get_split_dir(in_dir):
     sd += "_{}".format(gl.counters["split_file"]) + ext
 
     return sd
+
+
+if __name__ == '__main__':
+    split_file()

@@ -67,3 +67,15 @@ IN32 = 'in_32'
 REF3 = 'out_ref_3.csv'
 REF_DUP3 = 'out_ref_dup_31.csv'
 OUT3 = '3'
+
+# test tools
+TOOLS_OUT = g.paths['TMP'] + 'tools/'
+
+# test XML
+XML_IN = 'test/tools/in.xml'
+XML_OUT = TOOLS_OUT + 'out.csv'
+XML_OUT_REF = 'test/tools/out_ref.csv'
+
+# test split
+S_OUT = TOOLS_OUT + 'out_2.csv'
+S_OUT_REF = 'test/tools/out_2_ref.csv'

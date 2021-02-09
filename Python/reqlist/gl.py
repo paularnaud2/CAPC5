@@ -5,7 +5,7 @@ from datetime import datetime
 ENV = 'PROD'
 BDD = 'SGE'
 # BDD = 'GINKO'
-# BDD = 'ADAM'
+BDD = 'ADAM'
 # BDD = 'RFC'
 
 # ENV = 'DIRECT'
