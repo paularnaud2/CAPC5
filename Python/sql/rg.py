@@ -10,19 +10,13 @@ from shutil import move
 def get_rg_file_name(in_str):
     exp = '(.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
     m = re.search(exp, in_str)
-    try:
+    exp_comment = '(.*-{2,}.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
+    m_comment = re.search(exp_comment, in_str)
+    if m and not m_comment:
         rg_file_name = m.group(2)
-    except AttributeError:
-        return ''
-
-    exp = '(.*--.*AND.*)' + g.VAR_DEL + '(RG_.*)' + g.VAR_DEL
-    m = re.search(exp, in_str)
-    try:
-        m.group(2)
-    except AttributeError:
         return rg_file_name
-
-    return ''
+    else:
+        return ''
 
 
 def gen_range_list(rg_file_name):
