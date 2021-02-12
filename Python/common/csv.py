@@ -28,8 +28,6 @@ def load_csv(in_dir):
     with open(in_dir, 'r', encoding='utf-8') as in_file:
         for line in in_file:
             line_list = csv_to_list(line)
-            if len(line_list) == 1:
-                line_list = line_list[0]
             out_list.append(line_list)
             g.counters["csv_read"] += 1
 
@@ -37,9 +35,7 @@ def load_csv(in_dir):
 
 
 def csv_to_list(line_in):
-    txt = line_in.strip("\n\ufeff")
-    line_list = txt.split(g.CSV_SEPARATOR)
-    return line_list
+    return line_in.strip('\n').split(g.CSV_SEPARATOR)
 
 
 def save_csv(array_in, out_file_dir, att='w'):
@@ -50,10 +46,9 @@ def save_csv(array_in, out_file_dir, att='w'):
 
 def write_csv_line(row, out_file):
     if isinstance(row, str):
-        out_file.write(row + '\n')
-        return
-
-    line_out = g.CSV_SEPARATOR.join(row)
+        line_out = row
+    else:
+        line_out = g.CSV_SEPARATOR.join(row)
     line_out += '\n'
     out_file.write(line_out)
 

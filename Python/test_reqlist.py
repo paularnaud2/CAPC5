@@ -27,7 +27,7 @@ def reqlist(in_file, out_file, query_file):
 
 def left_join(left, right, ref):
     rl.left_join(left, right, gl.RL_OUT_JOIN, debug=False)
-    q.file_match(ref, gl.RL_OUT_JOIN, gl.FILE_MATCH_OUT)
+    q.file_match(ref, gl.RL_OUT_JOIN, gl.FM)
 
 
 def test_reqlist():
@@ -44,7 +44,7 @@ def test_reqlist():
     com.log('Test reqlist')
     reqlist(gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_1)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_2, gl.RL_QUERY_2)
-    q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, gl.FILE_MATCH_OUT)
+    q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, gl.FM)
 
 
 if __name__ == '__main__':

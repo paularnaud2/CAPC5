@@ -1,5 +1,5 @@
 c = {
-    ('PROD', 'SGE'): 'ronlysge/g9EL_nKhJfry@infra-oclsgemip02-prod-scan:1531/SGEP01D_GIM_SGE2PRD',
+    ('PROD', 'SGE'): 'ronlysge/g9EL_nKhJfry@infra-oclgimmut18-prd-scan:1531/SGEP01C_GIM_SGE2PRD',
     ('PROD', 'ADAM'): 'ADA_RO/nI_m-uX4XcKk@infra-oclgimmut44-prod-scan.distribution.edf.fr:1531/ADAM',
     ('PROD', 'GKO1_IDF'): 'MY_USER/MY_PWD@infra-oclgimmut56-prod-scan:1531/GAHP51D_GIM_IDF_FLDNET',
     ('PROD', 'GKO2_MMN'): 'MY_USER/MY_PWD@infra-oclgimmut56-prod-scan:1531/GAHP52D_GIM_MMN_FLDNET',

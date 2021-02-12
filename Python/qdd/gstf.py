@@ -2,7 +2,6 @@ import qdd.gl as gl
 import common as com
 
 from qdd.init import init_prev_elt
-from qdd.functions import gen_one_line
 from qdd.functions import write_elt
 from qdd.functions import write_min_elt
 
@@ -10,16 +9,17 @@ from qdd.functions import write_min_elt
 def gen_sorted_temp_files(in_file_dir, out_file_dir):
     # génération de fichiers temporaires triés
 
+    has_header = com.has_header(in_file_dir)
     com.log("Génération de la première liste à trier en cours...")
     com.init_sl_time()
     with open(in_file_dir, 'r', encoding='utf-8') as in_file:
         first_line = in_file.readline()
-        if not gl.bool["has_header"]:
-            gen_one_line(first_line.strip('\ufeff'), gl.cur_list)
+        if not has_header:
+            gl.cur_list.append(com.csv_to_list(first_line))
         gl.counters["sf_read"] = 1
         for line in in_file:
             gl.counters["sf_read"] += 1
-            gen_one_line(line, gl.cur_list)
+            gl.cur_list.append(com.csv_to_list(line))
             com.step_log(gl.counters["sf_read"], gl.SL_STEP,
                          'lignes parcourues')
             check_max_row(gl.counters["sf_read"])

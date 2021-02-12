@@ -116,5 +116,5 @@ def run_sge(test=False):
     sd = com.get_duration_string(dur)
     s = f"Job {__name__} terminé en {sd}."
     com.log(s)
-    com.log_print('')
+    com.log_print()
     com.send_notif(s, __name__, dur)

@@ -39,7 +39,7 @@ def get_conf():
     if not exists(conf_dir):
         log(f"Fichier de configuration mail absent ({conf_dir})")
         return
-    conf_list = csv.load_csv(conf_dir)
+    conf_list = file.load_txt(conf_dir)
     conf = tools.list_to_dict(conf_list)
     return conf
 
@@ -52,7 +52,7 @@ def get_recipients(mail_name, recipients_file):
     if not exists(recipients_dir):
         log(f"Fichier des destinataires du mail absent ({recipients_dir})")
         return ''
-    recipients = csv.load_csv(recipients_dir)
+    recipients = file.load_txt(recipients_dir)
     return recipients
 
 

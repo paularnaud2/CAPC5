@@ -23,7 +23,7 @@ def gen_range_list(rg_file_name):
     if rg_file_name != '':
         gl.bools['RANGE_QUERY'] = True
         range_dir = gl.RANGE_PATH + rg_file_name + gl.FILE_TYPE
-        range_list = com.load_csv(range_dir)
+        range_list = com.load_txt(range_dir)
         s = "Requêtage par plage détecté. Requête modèle :\n{}\n;"
         com.log(s.format(gl.query))
     else:

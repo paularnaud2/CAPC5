@@ -1,6 +1,3 @@
-from common import init_log
-init_log('test')
+import common as com
 
-if __name__ == '__main__':
-    from common import mail
-    mail('fin_trv')
+print(com.csv_to_list('test'))

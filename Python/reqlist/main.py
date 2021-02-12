@@ -1,8 +1,8 @@
 import common as com
-import tools.dup as dup
 import reqlist.gl as gl
 
 from os import startfile
+from toolDup import check_dup_key
 from reqlist.init import init_params
 from reqlist.init import init_globals
 from reqlist.dl import download
@@ -56,7 +56,7 @@ def left_join(ldir='', rdir='', out='', debug=False):
 def finish(start_time):
     if gl.CHECK_DUP:
         com.log_print('|')
-        dup.check_dup_key(gl.OUT_FILE)
+        check_dup_key(gl.OUT_FILE)
         com.log_print('|')
 
     s = "Exécution terminée en {}"
@@ -64,6 +64,6 @@ def finish(start_time):
     s = s.format(com.get_duration_string(duration))
     com.log(s)
     com.send_notif(s, "reqlist", duration, gl.SEND_NOTIF)
-    com.log_print('')
+    com.log_print()
     if gl.OPEN_OUT_FILE:
         startfile(gl.OUT_FILE)

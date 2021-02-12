@@ -78,28 +78,19 @@ def prepare_elt_list(array_in):
 
 
 def str_handle(array_in):
-    if isinstance(array_in[0], str):
-        if len(array_in[0]) == len(array_in[1]):
-            s = "Attention il semble ne pas y avoir de header dans l'entrant"
-            s += " (premier élément : {}) Continuer ? (o/n)"
-            s = s.format(array_in[0])
-            if com.log_input(s) != 'o':
-                sys.exit()
-        elt_list = array_in[1:]
-    else:
-        if len(array_in[0][0]) == len(array_in[1][0]):
-            s = "Attention il semble ne pas y avoir de header dans l'entrant"
-            s += " (première ligne : {}) Continuer ? (o/n)"
-            s = s.format(array_in[0])
-            if com.log_input(s) != 'o':
-                sys.exit()
+    if not com.has_header(array_in):
+        s = "Attention il semble ne pas y avoir de header dans l'entrant"
+        s += f" (premier élément : {array_in[0]}) Continuer ? (o/n)"
+        if com.log_input(s) != 'o':
+            sys.exit()
 
-        if gl.IN_FIELD_NB != 1:
-            s = "Attention les requêtes se feront sur le {}ème champ "
-            s += "du tableau d'entrée. Continuer ? (o/n)"
-            s = s.format(gl.IN_FIELD_NB)
-            if com.log_input(s) != 'o':
-                sys.exit()
-        elt_list = [elt[gl.IN_FIELD_NB - 1] for elt in array_in[1:]]
+    if gl.IN_FIELD_NB != 1:
+        s = "Attention les requêtes se feront sur le {}ème champ "
+        s += "du tableau d'entrée. Continuer ? (o/n)"
+        s = s.format(gl.IN_FIELD_NB)
+        if com.log_input(s) != 'o':
+            sys.exit()
+
+    elt_list = [elt[gl.IN_FIELD_NB - 1] for elt in array_in[1:]]
 
     return elt_list

@@ -99,9 +99,7 @@ def init_out_file(cursor, range_name='MONO'):
     with open(gl.out_files[range_name + gl.EC], 'w',
               encoding='utf-8') as out_file:
         fields = [elt[0] for elt in cursor.description]
-        out_file.write(
-            "\uFEFF" +
-            fields[0])  # permet de forcer excel à lire le ficher en utf-8
+        out_file.write(fields[0])
         for elt in fields[1:]:
             out_file.write(g.CSV_SEPARATOR + elt)
         if gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES:

@@ -60,46 +60,13 @@ def init_stf(in_file_dir, out_file_dir):
     gl.OUT_DUP_KEY_FILE += "_dup_key" + gl.FILE_TYPE
 
     del_tmp_files()
-    with open(in_file_dir, 'r', encoding='utf-8') as in_file:
-        first_line = in_file.readline()
-    init_out_file(out_file_dir, first_line)
-
-    gl.bool["one_field"] = first_line.find(g.CSV_SEPARATOR) == -1
+    com.gen_header(in_file_dir, out_dir=out_file_dir)
 
 
 def init_prev_elt(list_in):
 
     if gl.prev_elt == []:
         gl.prev_elt = ['' for elt in list_in[0]]
-
-
-def init_out_file(out_file_dir, first_line, last_field=''):
-
-    first_line = first_line.strip('\n')
-    header = get_header(first_line, last_field)
-    with open(out_file_dir, 'w', encoding='utf-8') as out_file:
-        out_file.write(header)
-
-
-def get_header(first_line, last_field=''):
-
-    gl.bool["has_header"] = not first_line[1].isdigit()
-    if gl.bool["has_header"]:
-        header = first_line
-    else:
-        line_list = first_line.split(g.CSV_SEPARATOR)
-        header = gl.DEFAULT_FIELD + "_1"
-        if len(line_list) > 0:
-            counter = 1
-            for elt in line_list[1:]:
-                counter += 1
-                header = header + g.CSV_SEPARATOR + gl.DEFAULT_FIELD
-                header += "_" + str(counter)
-
-    if last_field != '':
-        header = header + g.CSV_SEPARATOR + last_field
-
-    return header
 
 
 def init_compare(in_file_1, in_file_2):

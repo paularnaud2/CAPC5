@@ -84,7 +84,7 @@ def gen_split_out(split_dir, max_line, in_file, add_header, max_file):
     with open(split_dir, 'w', encoding='utf-8') as file:
         i = 0
         if gl.counters["split_file"] > 1 and add_header:
-            file.write(gl.header)
+            file.write(gl.header + '\n')
             i = 1
         in_line = 'init'
         while i < max_line and in_line != '':

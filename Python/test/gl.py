@@ -49,7 +49,7 @@ RL_OUT_JOIN_REF_3 = TEST_RL_DIR + 'join_ref_3.csv'
 # test_qdd
 TEST_QDD_DIR = TEST_DIR + 'qdd/'
 QDD_OUT = g.paths['TMP'] + TEST_QDD_DIR
-FILE_MATCH_OUT = g.paths['TMP'] + TEST_DIR + 'file_match.csv'
+FM = g.paths['TMP'] + TEST_DIR + 'file_match_out.csv'
 IN11 = 'in_11'
 IN12 = 'in_12'
 REF1 = 'out_ref_1.csv'
@@ -72,10 +72,15 @@ OUT3 = '3'
 TOOLS_OUT = g.paths['TMP'] + 'tools/'
 
 # test XML
-XML_IN = 'test/tools/in.xml'
-XML_OUT = TOOLS_OUT + 'out.csv'
-XML_OUT_REF = 'test/tools/out_ref.csv'
+XML_IN = TEST_DIR + 'tools/xml_in.xml'
+XML_OUT = TOOLS_OUT + 'out_xml.csv'
+XML_OUT_REF = TEST_DIR + 'tools/xml_out_ref.csv'
 
 # test split
-S_OUT = TOOLS_OUT + 'out_2.csv'
-S_OUT_REF = 'test/tools/out_2_ref.csv'
+S_OUT = TOOLS_OUT + 'out_xml_2.csv'
+S_OUT_REF = TEST_DIR + 'tools/split_out_ref.csv'
+
+# test dup
+DUP_IN = TEST_DIR + 'tools/dup_in.csv'
+DUP_OUT = TOOLS_OUT + 'out_dup.csv'
+DUP_OUT_REF = TEST_DIR + 'tools/dup_out_ref.csv'

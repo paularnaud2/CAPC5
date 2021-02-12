@@ -27,4 +27,4 @@ def run_gen_out_file(test=False):
     )
 
     com.log(f"Job {__name__} terminé.")
-    com.log_print('')
+    com.log_print()

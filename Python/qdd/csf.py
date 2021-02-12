@@ -104,19 +104,17 @@ def compare_sup(line_1_list, line_2_list, in_file_2, out_file):
     return (line_1_list, line_2_list)
 
 
-def check_in_files(in_file_dir_1, in_file_dir_2, out_file_dir):
+def compare_headers(in1, in2):
 
-    with open(in_file_dir_1, 'r', encoding='utf-8') as in_file_1:
-        with open(in_file_dir_2, 'r', encoding='utf-8') as in_file_2:
-            line_1 = in_file_1.readline()
-            line_1_list = line_1.strip("\n").split(g.CSV_SEPARATOR)
-            line_2 = in_file_2.readline()
-            line_2_list = line_2.strip("\n").split(g.CSV_SEPARATOR)
+    line1 = com.get_header(in1)
+    line2 = com.get_header(in2)
 
-            if len(line_1_list) != len(line_2_list):
-                s = "Les fichiers à comparer ne comportent pas le même nombre"
-                s += " de champs. Arrêt du traitement de comparaison."
-                com.log(s)
-                return False
-            else:
-                return line_1
+    if line1 != line2:
+        s = "Les fichiers à comparer ont des en-têtes différentes :\n"
+        s += f"{line1}\n"
+        s += f"{line2}\n"
+        s += " Arrêt du traitement de comparaison."
+        com.log(s)
+        return False
+
+    return True

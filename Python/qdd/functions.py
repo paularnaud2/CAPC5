@@ -8,7 +8,6 @@ from os.path import exists
 
 
 def compare_elt(elt1, elt2):
-
     if elt1 == [''] and elt2 == ['']:
         return " "
     if elt1 == ['']:
@@ -24,7 +23,6 @@ def compare_elt(elt1, elt2):
 
 
 def write_min_elt(min_elt, out_file):
-
     cur_key = min_elt[gl.COMPARE_FIELD_NB - 1]
     prev_key = gl.prev_elt[gl.COMPARE_FIELD_NB - 1]
 
@@ -43,7 +41,6 @@ def write_min_elt(min_elt, out_file):
 
 
 def check_dup(elt):
-
     if elt == gl.prev_elt:
         # doublon pure écarté
         gl.dup_list.append(elt)
@@ -58,18 +55,7 @@ def check_dup(elt):
         return True
 
 
-def gen_one_line(line, list_in):
-
-    txt = line.strip("\n")
-    if gl.bool["one_field"]:
-        line_list = [txt]
-    else:
-        line_list = txt.split(g.CSV_SEPARATOR)
-    list_in.append(line_list)
-
-
 def write_elt(out_file, elt, append=False):
-
     txt = elt[0]
     for field in elt[1:]:
         txt += g.CSV_SEPARATOR + field
@@ -81,14 +67,12 @@ def write_elt(out_file, elt, append=False):
 
 
 def write_list(in_list, out_file_dir):
-
     with open(out_file_dir, 'w', encoding='utf-8') as out_file:
         for elt in in_list:
             write_elt(out_file, elt)
 
 
 def temp_files():
-
     counter = 0
     while counter < gl.counters["file"]:
         counter += 1
@@ -100,7 +84,6 @@ def temp_files():
 
 
 def array_list_not_void():
-
     for elt in gl.array_list:
         if elt != []:
             return True
@@ -109,14 +92,12 @@ def array_list_not_void():
 
 
 def read_list(in_file):
-
     line = in_file.readline()
     line_list = line.strip("\n").split(g.CSV_SEPARATOR)
     return line_list
 
 
 def check_py_version(in_dir):
-
     a = str(sys.version).find("32 bit") != -1
     b = gl.MAX_ROW_LIST > gl.MAX_ROW_LIST_PY_VERSION_ALERT
     c = os.path.getsize(in_dir) > gl.MAX_FILE_SIZE_PY_VERSION_ALERT

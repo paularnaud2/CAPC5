@@ -28,6 +28,7 @@ N_ROW = 0
 
 def parse_xml(in_dir, out_dir, open_out_file=False):
 
+    com.log(f"[toolParseXML] Parsing XML du fichier {in_dir}")
     gen_img_dict(in_dir)
     save_img_dict(gl.parse_dict, out_dir)
     finish(out_dir, open_out_file)
@@ -40,6 +41,7 @@ def finish(out_dir, open_out_file):
     s = "Parsing terminé. {} lignes écrites en {}."
     s = s.format(bn, com.get_duration_string(dur))
     com.log(s)
+    com.log_print()
     if open_out_file:
         os.startfile(out_dir)
 
@@ -59,7 +61,6 @@ def gen_img_dict(in_dir):
 
     even_dict()
     com.log('Dictionnaire image généré.')
-    print('')
 
 
 def save_img_dict(dict, out_dir, att='w'):
@@ -84,7 +85,6 @@ def save_img_dict(dict, out_dir, att='w'):
                          what='lignes écrites')
 
     com.log("Fichier csv généré à l'adresse {}".format(out_dir))
-    print('')
 
 
 def read_one_line(in_file):

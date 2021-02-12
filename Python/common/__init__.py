@@ -26,11 +26,14 @@ from .file import mkdirs
 from .file import load_txt
 from .file import save_list
 from .file import read_file
-from .file import get_header
 from .file import merge_files
 from .file import count_lines
 from .file import delete_folder
 from .file import get_file_list
+
+from .header import get_header
+from .header import gen_header
+from .header import has_header
 
 from .csv import csv_clean
 from .csv import load_csv

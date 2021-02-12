@@ -2,8 +2,6 @@ import os
 import qdd.gl as gl
 import common as com
 
-from qdd.functions import gen_one_line
-
 
 def fill_array_list():
     # remplissage du tableau avec les fichiers temporaires
@@ -58,11 +56,10 @@ def write_tmp_file_in_array(tmp_file_list):
 
     cur_rm = min(len(tmp_file_list), gl.counters["row_max"])
     counter = 0
-    while counter < cur_rm and len(
-            gl.array_list[gl.counters["col"] - 1]) < gl.counters["row_max"]:
+    cur_l = gl.array_list[gl.counters["col"] - 1]
+    while counter < cur_rm and len(cur_l) < gl.counters["row_max"]:
         counter += 1
-        gen_one_line(tmp_file_list[counter - 1],
-                     gl.array_list[gl.counters["col"] - 1])
+        cur_l.append(com.csv_to_list(tmp_file_list[counter - 1]))
     return counter
 
 

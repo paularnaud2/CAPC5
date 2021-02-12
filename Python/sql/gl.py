@@ -7,8 +7,8 @@ BDD = 'SGE'
 BDD = 'GINKO'
 # BDD = 'ADAM'
 
-ENV = 'DIRECT'
-BDD = 'CAPC5'
+# ENV = 'DIRECT'
+# BDD = 'CAPC5'
 
 # ENV = 'LOCAL'
 # BDD = 'XE'

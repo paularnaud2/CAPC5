@@ -1,5 +1,5 @@
 <intervention>
-   <prmId>prm_1</prmId>
+   <prmId>prmId_1</prmId>
    <prmDonnesGenerales>
       <adresseInstallation>
          <numeroEtNomVoie>numeroEtNomVoie_1</numeroEtNomVoie>
@@ -25,7 +25,7 @@
 </intervention>
 
 <intervention>
-   <prmId>prm_2</prmId>
+   <prmId>prmId_2</prmId>
    <codeDR>codeDR_2</codeDR>
    <prmDonnesGenerales>
       <adresseInstallation>
@@ -57,7 +57,7 @@
 </intervention>
 
 <intervention>
-   <prmId>prm_3</prmId>
+   <prmId>prmId_3</prmId>
    <codeDR>codeDR_3</codeDR>
    <prmDonnesGenerales>
       <adresseInstallation>

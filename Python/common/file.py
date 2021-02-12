@@ -49,16 +49,19 @@ def get_file_list(in_dir):
 
 def load_txt(in_dir, list_out=True):
     g.counters["txt_read"] = 0
-    out = []
+    if list_out:
+        out = []
+    else:
+        out = ''
+
     with open(in_dir, 'r', encoding='utf-8') as in_file:
         for line in in_file:
-            out.append(line)
+            if list_out:
+                out.append(line.strip('\n'))
+            else:
+                out += line
             g.counters["txt_read"] += 1
-    if list_out is False:
-        s = ''
-        for line in out:
-            s += line
-            out = s
+
     return out
 
 
@@ -69,14 +72,6 @@ def count_lines(in_dir):
             i += 1
 
     return i
-
-
-def get_header(in_dir):
-
-    with open(in_dir, 'r', encoding='utf-8') as in_file:
-        header = in_file.readline()
-
-    return header
 
 
 def save_list(list, out_file_dir):

@@ -7,9 +7,8 @@ from common import g
 from toolSplit import split_file
 from qdd.init import set_dirs
 from qdd.init import init_params
-from qdd.init import init_out_file
 from qdd.init import init_file_match
-from qdd.csf import check_in_files
+from qdd.csf import compare_headers
 from qdd.csf import compare_sorted_files
 from qdd.sort import sort_file
 from qdd.functions import check_py_version
@@ -41,7 +40,7 @@ def run_qdd(**params):
     s = s.format(com.get_duration_string(duration))
     com.log(s)
     com.send_notif(s, "qdd", duration)
-    com.log_print('')
+    com.log_print()
     if gl.OPEN_OUT_FILE:
         os.startfile(dirs["out"])
 
@@ -64,17 +63,16 @@ def file_match(in1, in2, diff_out='', err=True, sort=True):
     if err and not res:
         os.startfile(diff_out)
         assert res is True
-    com.log_print('')
+    com.log_print()
     return res
 
 
 def compare_files(in_1, in_2, out):
 
     start_time = time()
-    header = check_in_files(in_1, in_2, out)
-    if not header:
+    if not compare_headers(in_1, in_2):
         return False
-    init_out_file(out, header, gl.COMPARE_FIELD)
+    com.gen_header(in_1, gl.COMPARE_FIELD, out)
     compare_sorted_files(in_1, in_2, out)
 
     duration = com.get_duration_ms(start_time)
