@@ -8,27 +8,31 @@ from qdd.functions import read_list
 
 
 def init_file_match():
+
+    init_tmp_dir()
     gl.IN_FILE_NAME_1 = '1'
     gl.IN_FILE_NAME_2 = '2'
-    set_dirs()
-    gl.TMP_SORTED_1 = gl.TMP_DIR + 'sorted_1.csv'
-    gl.TMP_SORTED_2 = gl.TMP_DIR + 'sorted_2.csv'
+    gl.OUT_DIR = g.paths['OUT'] + 'file_match_out.csv'
+    gl.TMP_1 = gl.TMP_DIR + 'tmp_1.csv'
+    gl.TMP_2 = gl.TMP_DIR + 'tmp_2.csv'
     gl.EQUAL_OUT = False
     gl.DIFF_OUT = False
+
+
+def init_tmp_dir():
+    gl.TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
+    com.mkdirs(gl.TMP_DIR, True)
 
 
 def set_dirs():
 
     dirs = {}
 
-    gl.TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
-    com.mkdirs(gl.TMP_DIR, True)
     dirs["in1"] = gl.IN_DIR + gl.IN_FILE_NAME_1 + gl.FILE_TYPE
     dirs["out1"] = gl.TMP_DIR + gl.OUT_FILE_NAME + "_1" + gl.FILE_TYPE
     dirs["in2"] = gl.IN_DIR + gl.IN_FILE_NAME_2 + gl.FILE_TYPE
     dirs["out2"] = gl.TMP_DIR + gl.OUT_FILE_NAME + "_2" + gl.FILE_TYPE
     dirs["out"] = gl.OUT_DIR + gl.OUT_FILE_NAME + gl.FILE_TYPE
-    dirs["out_e"] = gl.OUT_DIR + gl.OUT_E_FILE + gl.FILE_TYPE
 
     return dirs
 

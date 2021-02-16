@@ -56,8 +56,8 @@ def test_sql():
     com.log("Téléchargement des données par plages sans merge")
     download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG, False)
 
-    q.file_match(gl.SQL_DL_OUT, gl.SQL_DL_OUT_RG, gl.FM)
-    q.file_match(gl.SQL_RG_REF, gl.SQL_RG_COMP, gl.FM)
+    q.file_match(gl.SQL_DL_OUT, gl.SQL_DL_OUT_RG)
+    q.file_match(gl.SQL_RG_REF, gl.SQL_RG_COMP)
 
 
 if __name__ == '__main__':

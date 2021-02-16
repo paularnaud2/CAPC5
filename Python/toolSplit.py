@@ -1,101 +1,107 @@
+import re
+import sys
 import common as com
 import tools.gl as gl
 
 from os import remove
 from math import ceil
 
-IN_DIR = 'C:/Py/IN/Enedis_APR_20201030_092105813.xml'
-MAX_LINE = 2 * 10**3
-MAX_FILE_NB = 3
+
+def init_vars():
+    # Input variables default values
+    gl.IN_DIR = 'C:/Py/IN/Enedis_APR_20201030_092105813.xml'
+    gl.OUT_DIR = ''
+    gl.MAX_LINE = 2 * 10**3
+    gl.MAX_FILE_NB = 3
+    gl.ADD_HEADER = True
+    gl.PROMPT = False
+    gl.N_LINE = 0  # if > 0, avoids having to count input file number of rows
+
+    # Global variables
+    gl.QUIT = False
+    gl.N_OUT = 0
 
 
-def split_file(
-    in_dir=IN_DIR,
-    max_line=MAX_LINE,
-    add_header=True,
-    prompt=False,
-    n_line=0,  # si valorisé différent de 0, évite d'avoir à compter les lignes du fichier d'entrée
-    max_file=MAX_FILE_NB,
-):
-
+def split_file(**params):
     com.log("Lancement de l'outil de découpage de fichiers")
-    init(in_dir)
-    if prompt:
-        prompt_split(in_dir, max_line, n_line)
+    init_vars()
+    init_params(params)
+    prompt_split()
+    (file_dir, file_name, ext) = split_in_dir()
+    gl.header = com.get_header(gl.IN_DIR)
+    with open(gl.IN_DIR, 'r', encoding='utf-8') as in_file:
+        while True:
+            gl.N_OUT += 1
+            out_dir = f'{file_dir}/{file_name}_{gl.N_OUT}.{ext}'
+            if not gen_split_out(out_dir, in_file):
+                break
 
-    if not gl.bool["quit"]:
-        split_file_func(in_dir, max_line, add_header, max_file)
     com.log("Traitement terminé")
+    com.log_print()
 
 
-def init(in_dir):
-    gl.bool["quit"] = False
-    gl.counters["split_file"] = 0
-    gl.header = com.get_header(in_dir)
+def init_params(params):
+    if len(params) > 0:
+        com.log(f"Initialisation des paramètres : {params}")
+        for key in params:
+            gl.__getattribute__(key)
+            gl.__setattr__(key, params[key])
 
 
-def prompt_split(in_dir, max_line, n_line):
-    if n_line == 0:
-        s = f"Décompte du nombre de lignes du fichier d'entrée ({in_dir}).."
-        com.log(s)
-        n_line = com.count_lines(in_dir)
-        s = f"Décompte terminé. Le fichier d'entrée comporte {n_line} lignes."
-        com.log(s)
+def split_in_dir():
+    exp = r'(.*)/(\w*).(\w*)$'
+    m = re.search(exp, gl.IN_DIR)
+    (file_dir, file_name, ext) = (m.group(1), m.group(2), m.group(3))
+    if gl.OUT_DIR:
+        file_dir = gl.OUT_DIR
 
-    n_out_files = ceil(n_line / max_line)
+    return (file_dir, file_name, ext)
 
+
+def prompt_split():
+    if not gl.PROMPT:
+        return
+
+    if gl.N_LINE == 0:
+        com.log(
+            f"Décompte du nombre de lignes du fichier d'entrée ({gl.IN_DIR})..."
+        )
+        n_line = com.count_lines(gl.IN_DIR)
+        com.log(
+            f"Décompte terminé. Le fichier d'entrée comporte {gl.N_LINE} lignes."
+        )
+
+    n_out_files = ceil(gl.N_LINE / gl.MAX_LINE)
     if n_out_files == 1:
-        gl.bool["quit"] = True
         return
 
     n_line_2 = n_line + n_out_files - 1
-    n_out_files = ceil(n_line_2 / max_line)
-    bn = com.big_number(max_line)
+    n_out_files = ceil(n_line_2 / gl.MAX_LINE)
+    bn = com.big_number(gl.MAX_LINE)
     s = f"Le fichier d'entrée dépasse les {bn} lignes."
     s += f" Il va être découpé en {n_out_files} fichiers "
-    s += f"(nb max de fichiers fixé à {MAX_FILE_NB}). Continuer ? (o/n)"
-    a = com.log_input(s)
-
-    if a == "n":
-        gl.bool["quit"] = True
-        return
+    s += f"(nb max de fichiers fixé à {gl.MAX_FILE_NB}). Continuer ? (o/n)"
+    if com.log_input(s) == "n":
+        sys.exit()
 
 
-def split_file_func(in_dir, max_line, add_header, max_file):
-
-    with open(in_dir, 'r', encoding='utf-8') as in_file:
-        while True:
-            gl.counters["split_file"] += 1
-            split_dir = get_split_dir(in_dir)
-            if not gen_split_out(
-                    split_dir,
-                    max_line,
-                    in_file,
-                    add_header,
-                    max_file,
-            ):
-                break
-
-    print('')
-
-
-def gen_split_out(split_dir, max_line, in_file, add_header, max_file):
+def gen_split_out(split_dir, in_file):
 
     with open(split_dir, 'w', encoding='utf-8') as file:
         i = 0
-        if gl.counters["split_file"] > 1 and add_header:
+        if gl.N_OUT > 1 and gl.ADD_HEADER:
             file.write(gl.header + '\n')
             i = 1
         in_line = 'init'
-        while i < max_line and in_line != '':
+        while i < gl.MAX_LINE and in_line != '':
             i += 1
             in_line = in_file.readline()
             file.write(in_line)
 
-    file_nb = gl.counters["split_file"]
+    file_nb = gl.N_OUT
     s = f"Fichier découpé No.{file_nb} ({split_dir}) généré avec succès"
     if in_line == '':
-        if i == 2 and add_header:
+        if i == 2 and gl.ADD_HEADER:
             remove(split_dir)
         else:
             com.log(s)
@@ -103,25 +109,13 @@ def gen_split_out(split_dir, max_line, in_file, add_header, max_file):
 
     com.log(s)
 
-    if gl.counters["split_file"] >= max_file:
-        s = f"Nombre maximum de fichiers atteint ({max_file} fichiers max)."
+    if gl.N_OUT >= gl.MAX_FILE_NB:
+        s = f"Nombre maximum de fichiers atteint ({gl.MAX_FILE_NB} fichiers max)."
         s += " Arrêt du traitement"
         com.log(s)
         return False
 
     return True
-
-
-def get_split_dir(in_dir):
-
-    rv_dir = com.reverse_string(in_dir)
-    i = rv_dir.find(".")
-    rv_ext = rv_dir[:i + 1]
-    ext = com.reverse_string(rv_ext)
-    sd = in_dir.replace(ext, '')
-    sd += "_{}".format(gl.counters["split_file"]) + ext
-
-    return sd
 
 
 if __name__ == '__main__':

@@ -20,11 +20,11 @@ def qdd(in1, in2, out, ref, mrl, ref_dup='', dup_nb=1):
     )
     left = gl.TEST_QDD_DIR + ref
     right = gl.QDD_OUT + out + qgl.FILE_TYPE
-    q.file_match(left, right, gl.FM)
+    q.file_match(left, right)
     if ref_dup:
         left = gl.TEST_QDD_DIR + ref_dup
         right = f'{qgl.OUT_DUP_FILE}{dup_nb}{qgl.FILE_TYPE}'
-        q.file_match(left, right, gl.FM)
+        q.file_match(left, right)
 
 
 def test_qdd():

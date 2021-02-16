@@ -77,8 +77,12 @@ XML_OUT = TOOLS_OUT + 'out_xml.csv'
 XML_OUT_REF = TEST_DIR + 'tools/xml_out_ref.csv'
 
 # test split
-S_OUT = TOOLS_OUT + 'out_xml_2.csv'
-S_OUT_REF = TEST_DIR + 'tools/split_out_ref.csv'
+S_OUT_1 = TOOLS_OUT + 'in_1.csv'
+S_OUT_2 = TOOLS_OUT + 'in_2.csv'
+S_OUT_3 = TOOLS_OUT + 'in_3.csv'
+S_OUT_REF_1 = TEST_DIR + 'tools/split_out_ref_1.csv'
+S_OUT_REF_2 = TEST_DIR + 'tools/split_out_ref_2.csv'
+S_OUT_REF_3 = TEST_DIR + 'tools/split_out_ref_3.csv'
 
 # test dup
 DUP_IN = TEST_DIR + 'tools/dup_in.csv'
