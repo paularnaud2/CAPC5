@@ -2,6 +2,9 @@ import sys
 import common as com
 import reqlist.gl as gl
 
+from toolDup import find_dup_list
+from toolDup import del_dup_list
+
 
 def join_arrays(ar_left_in, ar_right_in):
     com.log("Jointure des deux tableaux (initialisation)")
@@ -25,44 +28,36 @@ def join_arrays(ar_left_in, ar_right_in):
         pdl_r = compare_equal(pdl_l, pdl_r, ar_left, ar_right)
         if incr_c_l(ar_left):
             break
-    s = "Jointure effecutée. Le tableau de sortie comporte {}"
+    bn = com.big_number(len(gl.out_array))
+    s = f"Jointure effecutée. Le tableau de sortie comporte {bn}"
     s += " lignes (en-tête incluse)."
-    com.log(s.format(com.big_number(len(gl.out_array))))
+    com.log(s)
 
 
-def prepare_array(array_in):
+def prepare_array(arr):
     # tri et suppression de doublons
+    if not com.has_header(arr):
+        com.log("Le tableau à préparer doit contenir une en-tête.")
+        com.log("Arrêt du traitement.")
+        sys.exit()
 
-    array_out = array_in
-    if isinstance(array_out[0], str):
-        array_out = [[elt] for elt in array_out]
-    first_line = array_out[0]
-    check_first_line(first_line)
-    del array_out[0]
-    array_out = del_dup(array_out)
+    first_line = arr[0]
+    gl.dup_list = find_dup_list(arr)
+    arr = del_dup_list(arr[1:])
 
-    return (array_out, first_line)
+    return (arr, first_line)
 
 
 def log_prepare(ar, bn_ar):
     n_dup = len(gl.dup_list)
     bn_dup = com.big_number(n_dup)
-    s = "Tableau préparé et enregistré sous '{}'"
-    s += " ({} lignes, {} doublons écartés)"
-    com.log(s.format(ar, bn_ar, bn_dup))
+    s = f"Tableau préparé et enregistré sous '{ar}'"
+    s += f" ({bn_ar} lignes, {bn_dup} doublons écartés)"
+    com.log(s)
 
     if n_dup > 0:
-        s = "Exemples de doublons (limités à {}) :"
-        com.log(s.format(gl.MAX_DUP_PRINT))
+        com.log(f"Exemples de doublons (limités à {gl.MAX_DUP_PRINT}) :")
         com.log_array(gl.dup_list[:gl.MAX_DUP_PRINT])
-
-
-def check_first_line(first_line):
-    if is_elt(first_line[0]):
-        s = "Le tableau à préparer doit contenir une en-tête."
-        s += " Arrêt du traitement."
-        com.log(s)
-        sys.exit()
 
 
 def check_void_right_array(ar_right_in):
@@ -186,35 +181,3 @@ def debug(s, pdl_l, pdl_r, out_line=[]):
     com.log_print()
     # if s == 'compare_sup':
     #     print(pdl_l)
-
-
-def del_dup(array_in):
-    # suppression des doublons
-
-    array_out = array_in
-    array_out.sort()
-    dup_list = []
-    gl.counters["dup"] = 0
-    old_line = array_out[0]
-    i = 1
-    for line in array_out[1:]:
-        if line == old_line:
-            dup_list.append(array_out[i])
-            del array_out[i]
-        else:
-            old_line = line
-            i += 1
-
-    gl.counters["dup"] = len(dup_list)
-    if len(dup_list) > 0:
-        gl.dup_list = del_dup(dup_list)
-    else:
-        gl.dup_list = []
-
-    return array_out
-
-
-def is_elt(str_in):
-    a = str_in[0].isdigit()
-    b = len(str_in) >= 2
-    return a and b

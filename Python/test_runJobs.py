@@ -12,11 +12,6 @@ def test_runJobs():
     run_aff(test=True)
     run_sge(test=True)
     run_gen_out_file(test=True)
-    # com.mail(
-    #     mail_name='fin_trv',
-    #     recipients_file='recipients_test.txt',
-    #     subject_file='subject_test.txt',
-    # )
 
 
 if __name__ == '__main__':

@@ -25,35 +25,51 @@ def find_dup(in_dir, out_dir, open_out=False, main=True):
     finish(dup_list, out_dir, open_out)
 
 
-def find_dup_col(in_dir, col_nb=1):
+def find_dup_col(in_dir):
     com.log("[toolDup] find_dup_col")
     com.log(f"Chargement du fichier {in_dir}...")
     array_in = com.load_csv(in_dir)
 
-    com.log(f"Fichier chargé. Sauvegarde de la colonne No.{col_nb}...")
+    com.log("Fichier chargé. Sauvegarde de la colonne No.1...")
     tmp_path = g.paths['TMP'] + TMP_FOLDER
     com.mkdirs(tmp_path)
     in_tmp_file = tmp_path + TMP_IN
     out_dup_file = tmp_path + TMP_OUT
-    com.extract_list(array_in, in_tmp_file, col_nb)
-    com.log(f"Colonne No.{col_nb} sauvegardée à l'adresse {in_tmp_file}")
+    com.extract_list(array_in, in_tmp_file)
+    com.log(f"Colonne No.1 sauvegardée à l'adresse {in_tmp_file}")
     find_dup(in_tmp_file, out_dup_file, main=False)
 
 
 def find_dup_list(in_list):
-    seen = {}
-    dupes = []
-
-    for elt in in_list:
-        elt = elt.strip("\n")
-        if elt not in seen:
-            seen[elt] = 1
+    in_sorted = sorted(in_list)
+    dup_list = []
+    old_elt = in_sorted[0]
+    for elt in in_sorted[1:]:
+        if elt == old_elt:
+            dup_list.append(elt)
         else:
-            if seen[elt] == 1:
-                dupes.append(elt)
-            seen[elt] += 1
+            old_elt = elt
 
-    return dupes
+    return dup_list
+
+
+def del_dup_list(in_list):
+    # if in_list elements are hashable
+    if isinstance(in_list[0], str):
+        out_list = [set(in_list)]
+        out_list.sort()
+        return out_list
+
+    # if not
+    in_sorted = sorted(in_list)
+    out_list = [in_sorted[0]]
+    old_elt = in_sorted[0]
+    for elt in in_sorted[1:]:
+        if elt > old_elt:
+            out_list.append(elt)
+            old_elt = elt
+
+    return out_list
 
 
 def finish(dup_list, out_dir, open_out):
