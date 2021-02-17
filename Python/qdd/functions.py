@@ -4,7 +4,9 @@ import qdd.gl as gl
 import common as com
 
 from common import g
+from math import ceil
 from os.path import exists
+from toolSplit import split_file
 
 
 def compare_elt(elt1, elt2):
@@ -111,3 +113,35 @@ def check_py_version(in_dir):
         s += "\nContinuer ? (o/n)"
         if com.log_input(s) == 'n':
             sys.exit()
+
+
+def check_split(in_dir):
+
+    prompt_split()
+    split_file(
+        IN_DIR=in_dir,
+        OUT_DIR='',
+        MAX_LINE=gl.MAX_LINE_SPLIT,
+        MAX_FILE_NB=gl.MAX_FILE_NB_SPLIT,
+        ADD_HEADER=True,
+    )
+
+
+def prompt_split():
+    n_line = gl.counters["out"]
+    n_out_files = ceil(n_line / gl.MAX_LINE_SPLIT)
+    if n_out_files == 1:
+        return
+
+    n_line_2 = n_line + n_out_files - 1
+    n_out_files = ceil(n_line_2 / gl.MAX_LINE_SPLIT)
+    bn = com.big_number(gl.MAX_LINE_SPLIT)
+    s = f"Le fichier d'entrée dépasse les {bn} lignes."
+    s += f" Il va être découpé en {n_out_files} fichiers "
+    s += f"(nb max de fichiers fixé à {gl.MAX_FILE_NB_SPLIT}). Continuer ? (o/n)"
+    if gl.TEST_PROMPT:
+        com.log(s)
+        com.log_print('o')
+        return
+    if com.log_input(s) == "n":
+        sys.exit()

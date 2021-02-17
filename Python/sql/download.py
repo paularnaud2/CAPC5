@@ -5,7 +5,7 @@ import common as com
 from time import time
 from os import startfile
 from threading import Thread
-from toolDup import check_dup_key
+from toolDup import find_dup_col
 from sql.init import init
 from sql.init import init_gko
 from sql.init import init_params
@@ -94,7 +94,10 @@ def finish(start_time):
         com.log("Fichier de sortie {} alimenté avec succès".format(out_dir))
         if gl.counters["row"] < gl.MAX_CHECK_DUP and gl.CHECK_DUP:
             com.log_print('|')
-            check_dup_key(out_dir)
+            s = "Vérification des doublons sur la première colonne"
+            s += " du fichier de sortie."
+            com.log(s)
+            find_dup_col(out_dir)
         if gl.OPEN_OUT_FILE:
             startfile(out_dir)
 

@@ -2,9 +2,9 @@ import common as com
 
 
 def fdup():
-    from tools.dup import find_dup_main
+    from tools.dup import find_dup
     com.LOG_OUTPUT = False
-    find_dup_main()
+    find_dup()
 
 
 def rdup(field_nb=0):

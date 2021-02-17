@@ -1,10 +1,8 @@
 import re
-import sys
 import common as com
 import tools.gl as gl
 
 from os import remove
-from math import ceil
 
 
 def init_vars():
@@ -14,8 +12,6 @@ def init_vars():
     gl.MAX_LINE = 2 * 10**3
     gl.MAX_FILE_NB = 3
     gl.ADD_HEADER = True
-    gl.PROMPT = False
-    gl.N_LINE = 0  # if > 0, avoids having to count input file number of rows
 
     # Global variables
     gl.QUIT = False
@@ -26,7 +22,6 @@ def split_file(**params):
     com.log("Lancement de l'outil de découpage de fichiers")
     init_vars()
     init_params(params)
-    prompt_split()
     (file_dir, file_name, ext) = split_in_dir()
     gl.header = com.get_header(gl.IN_DIR)
     with open(gl.IN_DIR, 'r', encoding='utf-8') as in_file:
@@ -56,33 +51,6 @@ def split_in_dir():
         file_dir = gl.OUT_DIR
 
     return (file_dir, file_name, ext)
-
-
-def prompt_split():
-    if not gl.PROMPT:
-        return
-
-    if gl.N_LINE == 0:
-        com.log(
-            f"Décompte du nombre de lignes du fichier d'entrée ({gl.IN_DIR})..."
-        )
-        n_line = com.count_lines(gl.IN_DIR)
-        com.log(
-            f"Décompte terminé. Le fichier d'entrée comporte {gl.N_LINE} lignes."
-        )
-
-    n_out_files = ceil(gl.N_LINE / gl.MAX_LINE)
-    if n_out_files == 1:
-        return
-
-    n_line_2 = n_line + n_out_files - 1
-    n_out_files = ceil(n_line_2 / gl.MAX_LINE)
-    bn = com.big_number(gl.MAX_LINE)
-    s = f"Le fichier d'entrée dépasse les {bn} lignes."
-    s += f" Il va être découpé en {n_out_files} fichiers "
-    s += f"(nb max de fichiers fixé à {gl.MAX_FILE_NB}). Continuer ? (o/n)"
-    if com.log_input(s) == "n":
-        sys.exit()
 
 
 def gen_split_out(split_dir, in_file):

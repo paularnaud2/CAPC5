@@ -10,7 +10,7 @@ TMP_FOLDER = 'tools/'
 MAX_DUP_PRINT = 5
 
 
-def check_dup_key(in_dir, col_nb=1):
+def find_dup_col(in_dir, col_nb=1):
 
     s = f"Vérification des doublons sur la colonne No.{col_nb}"
     s += " du fichier de sortie. Chargement du fichier de sortie..."
@@ -24,10 +24,10 @@ def check_dup_key(in_dir, col_nb=1):
     com.mkdirs(tmp_path)
     com.extract_list(array_in, in_tmp_file, col_nb)
     com.log(f"Colonne No.{col_nb} sauvegardée à l'adresse {in_tmp_file}")
-    find_dup_main(in_tmp_file, out_dup_file)
+    find_dup(in_tmp_file, out_dup_file)
 
 
-def find_dup_main(in_dir, out_dir):
+def find_dup(in_dir, out_dir):
 
     com.log(
         "Recherche des doublons dans le fichier {} en cours...".format(in_dir))
