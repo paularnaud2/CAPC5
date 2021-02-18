@@ -241,3 +241,5 @@ gl.__setattr__(key, params[key]) # valoriser un attribut depuis une string
 # Execution d'un fichier python (code venant de flask/config
 with open(filename, mode="rb") as config_file:
                 exec(compile(config_file.read(), filename, "exec"), d.__dict__)
+# Interpreter path
+sys.executable

@@ -2,7 +2,7 @@ import common as com
 import reqlist.gl as gl
 
 from os import startfile
-from toolDup import find_dup_col
+from toolDup import find_dup
 from reqlist.init import init_params
 from reqlist.init import init_globals
 from reqlist.dl import download
@@ -59,7 +59,7 @@ def finish(start_time):
         s = "Vérification des doublons sur la première colonne"
         s += " du fichier de sortie."
         com.log(s)
-        find_dup_col(gl.OUT_FILE)
+        find_dup(gl.OUT_FILE, col=1)
         com.log_print('|')
 
     s = "Exécution terminée en {}"

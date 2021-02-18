@@ -77,13 +77,13 @@ def move_tmp_folder():
     gl.bools["MERGE_OK"] = False
     out_dir = gl.OUT_RG_DIR
 
-    com.log('Création du dossier de sortie {}...'.format(out_dir))
+    com.log(f"Création du dossier de sortie '{out_dir}'...")
     com.mkdirs(out_dir, True)
     com.log('Dossier de sortie créé')
 
     file_list = com.get_file_list(gl.TMP_PATH)
-    com.log('Déplacement de {} fichiers vers le dossier de sortie...'.format(
-        len(file_list)))
+    n = len(file_list)
+    com.log(f"Déplacement de {n} fichiers vers le dossier de sortie....")
     for elt in file_list:
         cur_dir = gl.TMP_PATH + elt
         target_dir = out_dir + elt

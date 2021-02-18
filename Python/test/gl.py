@@ -1,5 +1,8 @@
-from common import g
+import toolDup
 import conf_main as cfg
+import tools.gl as tools
+
+from common import g
 
 # main
 TEST_DIR = 'test/'
@@ -15,6 +18,8 @@ SQL_QUERY = TEST_SQL_DIR + 'export.sql'
 SQL_QUERY_RG = TEST_SQL_DIR + 'export_rg.sql'
 SQL_IN_FILE = TEST_SQL_DIR + 'in.csv'
 SQL_OUT = g.paths['TMP'] + TEST_SQL_DIR
+SQL_OUT_DUP = g.paths['TMP'] + tools.TMP_FOLDER + toolDup.TMP_OUT
+SQL_OUT_DUP_REF = TEST_SQL_DIR + 'out_dup_ref.csv'
 SQL_DL_OUT = SQL_OUT + 'sql_test_out.csv'
 SQL_DL_OUT_RG = SQL_OUT + 'sql_test_out_rg.csv'
 SQL_DL_OUT_RG_FOLDER = SQL_OUT + 'RG_TEST/'
@@ -71,25 +76,26 @@ OUT3 = '3'
 OUT_SPLIT_3 = '3_3'
 
 # test tools
-TOOLS_OUT = g.paths['TMP'] + 'tools/'
+TEST_TOOL_DIR = TEST_DIR + tools.TMP_FOLDER
+TOOLS_OUT = g.paths['TMP'] + TEST_TOOL_DIR
 
 # test XML
-XML_IN = TEST_DIR + 'tools/xml_in.xml'
+XML_IN = TEST_TOOL_DIR + 'xml_in.xml'
 XML_OUT = TOOLS_OUT + 'out_xml.csv'
-XML_OUT_REF = TEST_DIR + 'tools/xml_out_ref.csv'
+XML_OUT_REF = TEST_TOOL_DIR + 'xml_out_ref.csv'
 
 # test split
 S_OUT_1 = TOOLS_OUT + 'in_1.csv'
 S_OUT_2 = TOOLS_OUT + 'in_2.csv'
 S_OUT_3 = TOOLS_OUT + 'in_3.csv'
-S_OUT_REF_1 = TEST_DIR + 'tools/split_out_ref_1.csv'
-S_OUT_REF_2 = TEST_DIR + 'tools/split_out_ref_2.csv'
-S_OUT_REF_3 = TEST_DIR + 'tools/split_out_ref_3.csv'
+S_OUT_REF_1 = TEST_TOOL_DIR + 'split_out_ref_1.csv'
+S_OUT_REF_2 = TEST_TOOL_DIR + 'split_out_ref_2.csv'
+S_OUT_REF_3 = TEST_TOOL_DIR + 'split_out_ref_3.csv'
 
 # test dup
-DUP_IN = TEST_DIR + 'tools/dup_in.csv'
+DUP_IN = TEST_TOOL_DIR + 'dup_in.csv'
 DUP_OUT = TOOLS_OUT + 'out_dup.csv'
-DUP_OUT_REF = TEST_DIR + 'tools/dup_out_ref.csv'
-DEL_DUP_OUT_REF = TEST_DIR + 'tools/del_dup_out_ref.csv'
-DUP_COL_IN = TEST_DIR + 'tools/dup_col_in.csv'
-DUP_COL_REF = TEST_DIR + 'tools/dup_out_ref_2.csv'
+DUP_OUT_REF = TEST_TOOL_DIR + 'dup_out_ref.csv'
+DEL_DUP_OUT_REF = TEST_TOOL_DIR + 'del_dup_out_ref.csv'
+DUP_COL_IN = TEST_TOOL_DIR + 'dup_col_in.csv'
+DUP_COL_REF = TEST_TOOL_DIR + 'dup_out_ref_2.csv'

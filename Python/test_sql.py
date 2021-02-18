@@ -6,7 +6,7 @@ from test import gl
 
 
 def execute():
-    com.log('Test sql.execute)----------------------')
+    com.log('Test sql.execute----------------------')
     sql.execute(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -17,7 +17,7 @@ def execute():
 
 
 def upload():
-    com.log('Test sql.upload)----------------------')
+    com.log('Test sql.upload----------------------')
     sql.upload(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -29,7 +29,7 @@ def upload():
 
 
 def download(query, out, merge=True):
-    com.log('Test sql.download)----------------------')
+    com.log('Test sql.download----------------------')
     sql.download(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -37,7 +37,7 @@ def download(query, out, merge=True):
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
         OUT_FILE=out,
         OUT_RG_DIR=gl.SQL_DL_OUT_RG_FOLDER,
-        MAX_BDD_CNX=8,
+        MAX_BDD_CNX=3,
         MERGE_RG_FILES=merge,
         EXPORT_RANGE=False,
         CHECK_DUP=True,
@@ -48,6 +48,7 @@ def download(query, out, merge=True):
 def test_sql():
     com.init_log('test_sql', True)
     com.mkdirs(gl.SQL_OUT, True)
+    com.log_print()
     execute()
     upload()
     download(gl.SQL_QUERY, gl.SQL_DL_OUT)
@@ -57,7 +58,9 @@ def test_sql():
     download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG, False)
 
     q.file_match(gl.SQL_DL_OUT, gl.SQL_DL_OUT_RG)
+    q.file_match(gl.SQL_OUT_DUP, gl.SQL_OUT_DUP_REF)
     q.file_match(gl.SQL_RG_REF, gl.SQL_RG_COMP)
+    q.file_match(gl.SQL_IN_FILE, gl.SQL_DL_OUT)
 
 
 if __name__ == '__main__':

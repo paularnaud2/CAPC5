@@ -7,6 +7,7 @@ from qdd.init import set_dirs
 from qdd.init import init_params
 from qdd.init import init_tmp_dir
 from qdd.init import init_file_match
+from toolDup import del_dup_list
 from qdd.csf import compare_headers
 from qdd.csf import compare_sorted_files
 from qdd.sort import sort_file
@@ -39,7 +40,7 @@ def run_qdd(**params):
         os.startfile(dirs["out"])
 
 
-def file_match(in1, in2, compare=False, sort=True):
+def file_match(in1, in2, compare=False, sort=True, del_dup=False):
     com.log("[qdd] file_match")
     s = f"Comparaison des fichiers {in1} et {in2} en cours..."
     com.log(s)
@@ -48,6 +49,9 @@ def file_match(in1, in2, compare=False, sort=True):
     if sort:
         ar1.sort()
         ar2.sort()
+    if del_dup:
+        ar1 = del_dup_list(ar1)
+        ar2 = del_dup_list(ar2)
     if compare:
         init_file_match()
         com.save_csv(ar1, gl.TMP_1)

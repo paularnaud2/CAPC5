@@ -44,7 +44,7 @@ def test_reqlist():
     com.log('Test reqlist')
     reqlist(gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_1)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_2, gl.RL_QUERY_2)
-    q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2)
+    q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, del_dup=True)
 
 
 if __name__ == '__main__':

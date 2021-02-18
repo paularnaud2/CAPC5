@@ -6,7 +6,6 @@ from toolParseXML import parse_xml
 from toolSplit import split_file
 from toolDup import del_dup
 from toolDup import find_dup
-from toolDup import find_dup_col
 from toolDup import find_dup_list
 
 
@@ -36,7 +35,7 @@ def test_tools():
     find_dup(gl.DUP_IN, gl.DUP_OUT)
     q.file_match(gl.DUP_OUT, gl.DUP_OUT_REF)
 
-    find_dup_col(gl.DUP_COL_IN)
+    find_dup(gl.DUP_COL_IN, col=1)
     q.file_match(gl.DUP_OUT, gl.DUP_OUT_REF)
 
     del_dup(gl.DUP_IN, gl.DUP_OUT)

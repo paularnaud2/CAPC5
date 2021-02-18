@@ -1,6 +1,7 @@
 import os
 import common as com
 
+from tools import gl
 from common import g
 
 # Input variables default values
@@ -9,17 +10,28 @@ OUT_FIND_DUP = 'C:/Py/OUT/out_find_dup.csv'
 OUT_DEL_DUP = 'C:/Py/OUT/out_del_dup.csv'
 
 # Const
-TMP_IN = 'in.csv'
 TMP_OUT = 'out_dup.csv'
-TMP_FOLDER = 'tools/'
 MAX_DUP_PRINT = 5
 
 
-def find_dup(in_dir, out_dir, open_out=False, main=True):
+def find_dup(in_dir, out_dir='', open_out=False, main=True, col=0):
     if main:
         com.log("[toolDup] find_dup")
-    com.log(f"Recherche des doublons dans le fichier {in_dir}")
-    cur_list = com.load_txt(in_dir)
+    s = "Recherche des doublons dans "
+    if not out_dir:
+        tmp_path = g.paths['TMP'] + gl.TMP_FOLDER
+        com.mkdirs(tmp_path)
+        out_dir = tmp_path + TMP_OUT
+    if col == 0:
+        com.log(f"{s} le fichier {in_dir}")
+        cur_list = com.load_txt(in_dir)
+    else:
+        com.log(f"{s}la colonne No.{col} du fichier {in_dir}")
+        cur_list = com.load_csv(in_dir)
+        cur_list = [x[col - 1] for x in cur_list]
+        if com.has_header(cur_list):
+            cur_list = cur_list[1:]
+
     bn = com.big_number(len(cur_list))
     com.log(f"Fichier chargé, {bn} lignes à analyser.")
     dup_list = find_dup_list(cur_list)
@@ -38,21 +50,6 @@ def del_dup(in_dir, out_dir, open_out=False, main=True):
     else:
         out_list = del_dup_list(cur_list)
     finish_del(out_list, out_dir, open_out)
-
-
-def find_dup_col(in_dir):
-    com.log("[toolDup] find_dup_col")
-    com.log(f"Chargement du fichier '{in_dir}'...")
-    array_in = com.load_csv(in_dir)
-
-    com.log("Fichier chargé. Sauvegarde de la colonne No.1...")
-    tmp_path = g.paths['TMP'] + TMP_FOLDER
-    com.mkdirs(tmp_path)
-    in_tmp_file = tmp_path + TMP_IN
-    out_dup_file = tmp_path + TMP_OUT
-    com.extract_list(array_in, in_tmp_file)
-    com.log(f"Colonne No.1 sauvegardée à l'adresse {in_tmp_file}")
-    find_dup(in_tmp_file, out_dup_file, main=False)
 
 
 def find_dup_list(in_list):
@@ -104,7 +101,6 @@ def finish_find(dup_list, out_dir, open_out):
 
     com.save_csv(dup_list, out_dir)
     com.log(f"Liste des doublons sauvegardée dans '{out_dir}'")
-    com.log_print()
     if open_out:
         os.startfile(out_dir)
 
@@ -115,7 +111,6 @@ def finish_del(out_list, out_dir, open_out):
     com.save_list(out_list, out_dir)
     bn_out = com.big_number(len(out_list))
     com.log(f"Liste  sauvegardée, elle comporte {bn_out} lignes.")
-    com.log_print()
     if open_out:
         os.startfile(out_dir)
 
