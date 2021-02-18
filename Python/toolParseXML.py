@@ -35,7 +35,7 @@ def init_vars():
 
 def parse_xml(**params):
     init_vars()
-    com.log(f"[toolParseXML] Parsing XML du fichier {gl.IN_DIR}")
+    com.log(f"[toolParseXML] parse_xml")
     init_params(params)
     gen_img_dict()
     save_img_dict()
@@ -62,7 +62,7 @@ def finish():
 
 
 def gen_img_dict():
-    s = f'Génération du dictionnaire image à partir du fichier {gl.IN_DIR}...'
+    s = f"Génération du dictionnaire image à partir du fichier '{gl.IN_DIR}'..."
     com.log(s)
     gl.parse_dict = {}
     with open(gl.IN_DIR, 'r', encoding='utf-8', errors='ignore') as in_file:

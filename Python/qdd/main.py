@@ -61,8 +61,6 @@ def file_match(in1, in2, compare=False, sort=True):
             com.log("Les deux fichiers sont identiques")
         else:
             com.log("Les deux fichiers sont différents")
-            os.startfile(com.full_path(in1))
-            os.startfile(com.full_path(in2))
 
     assert res is True
     com.log_print()

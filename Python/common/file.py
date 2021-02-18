@@ -10,15 +10,6 @@ from time import sleep
 from shutil import rmtree
 
 
-def full_path(in_dir):
-    if 'C:/' in in_dir:
-        return in_dir
-
-    cur_path = getcwd().replace("\\", "/")
-    s = f'{cur_path}/{in_dir}'
-    return s
-
-
 def delete_folder(dir):
     log(f"Suppression du dossier {dir}")
     rmtree(dir)

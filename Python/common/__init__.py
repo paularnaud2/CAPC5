@@ -25,7 +25,6 @@ from .string import get_duration_string
 from .file import mkdirs
 from .file import load_txt
 from .file import save_list
-from .file import full_path
 from .file import read_file
 from .file import merge_files
 from .file import count_lines

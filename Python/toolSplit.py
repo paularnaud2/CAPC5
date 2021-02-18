@@ -19,7 +19,7 @@ def init_vars():
 
 
 def split_file(**params):
-    com.log("Lancement de l'outil de découpage de fichiers")
+    com.log("[toolSplit] split_file")
     init_vars()
     init_params(params)
     (file_dir, file_name, ext) = split_in_dir()

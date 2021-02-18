@@ -4,8 +4,10 @@ import common as com
 from test import gl
 from toolParseXML import parse_xml
 from toolSplit import split_file
+from toolDup import del_dup
 from toolDup import find_dup
 from toolDup import find_dup_col
+from toolDup import find_dup_list
 
 
 def split():
@@ -35,6 +37,14 @@ def test_tools():
     q.file_match(gl.DUP_OUT, gl.DUP_OUT_REF)
 
     find_dup_col(gl.DUP_COL_IN)
+    q.file_match(gl.DUP_OUT, gl.DUP_OUT_REF)
+
+    del_dup(gl.DUP_IN, gl.DUP_OUT)
+    q.file_match(gl.DUP_OUT, gl.DEL_DUP_OUT_REF)
+
+    list_in = com.load_csv(gl.DUP_IN)
+    dup_list = find_dup_list(list_in)
+    com.save_csv(dup_list, gl.DUP_OUT)
     q.file_match(gl.DUP_OUT, gl.DUP_OUT_REF)
 
 
