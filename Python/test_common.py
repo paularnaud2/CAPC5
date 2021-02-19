@@ -2,6 +2,7 @@ import common as com
 
 
 def test_common():
+    com.init_log('test_common', True)
     com.mail(
         mail_name='fin_trv',
         recipients_file='recipients_test.txt',
