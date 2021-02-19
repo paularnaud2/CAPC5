@@ -1,7 +1,6 @@
 import smtplib
 
 from . import g
-from . import csv
 from . import file
 from . import log
 from . import tools
@@ -19,8 +18,6 @@ def mail(mail_name, recipients_file='', subject_file=''):
     To = ", ".join(recipients)
     subject = get_subject(mail_name, subject_file)
     body = get_body(mail_name)
-    if recipients == '' or subject == '' or body == '':
-        return
 
     msg = MIMEMultipart()
     msg["Subject"] = subject
@@ -37,8 +34,9 @@ def mail(mail_name, recipients_file='', subject_file=''):
 def get_conf():
     conf_dir = g.paths['MAIL'] + 'conf.txt'
     if not exists(conf_dir):
-        log(f"Fichier de configuration mail absent ({conf_dir})")
-        return
+        s = f"Fichier de configuration mail absent ({conf_dir})"
+        log(s)
+        raise Exception(s)
     conf_list = file.load_txt(conf_dir)
     conf = tools.list_to_dict(conf_list)
     return conf
@@ -50,8 +48,9 @@ def get_recipients(mail_name, recipients_file):
     else:
         recipients_dir = g.paths['MAIL'] + mail_name + '_recipients.txt'
     if not exists(recipients_dir):
-        log(f"Fichier des destinataires du mail absent ({recipients_dir})")
-        return ''
+        s = f"Fichier des destinataires du mail absent ({recipients_dir})"
+        log(s)
+        raise Exception(s)
     recipients = file.load_txt(recipients_dir)
     return recipients
 
@@ -62,8 +61,9 @@ def get_subject(mail_name, subject_file):
     else:
         subject_dir = g.paths['MAIL'] + mail_name + '_subject.txt'
     if not exists(subject_dir):
-        log(f"Fichier d'objet du mail absent ({subject_dir})")
-        return ''
+        s = f"Fichier d'objet du mail absent ({subject_dir})"
+        log(s)
+        raise Exception(s)
     subject = file.load_txt(subject_dir, list_out=False)
     return subject
 
@@ -71,8 +71,9 @@ def get_subject(mail_name, subject_file):
 def get_body(mail_name):
     body_dir = g.paths['MAIL'] + mail_name + '_body.html'
     if not exists(body_dir):
-        log(f"Fichier corps html du mail absent ({body_dir})")
-        return ''
+        s = f"Fichier corps html du mail absent ({body_dir})"
+        log(s)
+        raise Exception(s)
     html = file.load_txt(body_dir, list_out=False)
     body = MIMEText(html, "html")
     return body

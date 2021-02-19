@@ -58,7 +58,7 @@ def test_sql():
     download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG, False)
 
     q.file_match(gl.SQL_DL_OUT, gl.SQL_DL_OUT_RG)
-    q.file_match(gl.SQL_OUT_DUP, gl.SQL_OUT_DUP_REF)
+    q.file_match(gl.OUT_DUP_TMP, gl.SQL_OUT_DUP_REF)
     q.file_match(gl.SQL_RG_REF, gl.SQL_RG_COMP)
     q.file_match(gl.SQL_IN_FILE, gl.SQL_DL_OUT)
 

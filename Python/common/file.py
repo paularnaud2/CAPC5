@@ -2,7 +2,6 @@ from . import g
 from .log import log
 from os import listdir
 from os import makedirs
-from os import getcwd
 from os.path import join
 from os.path import isfile
 from os.path import exists

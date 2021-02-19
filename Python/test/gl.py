@@ -6,6 +6,7 @@ from common import g
 
 # main
 TEST_DIR = 'test/'
+OUT_DUP_TMP = g.paths['TMP'] + tools.TMP_FOLDER + toolDup.TMP_OUT
 
 # test_sql
 TEST_SQL_DIR = TEST_DIR + 'sql/'
@@ -18,7 +19,6 @@ SQL_QUERY = TEST_SQL_DIR + 'export.sql'
 SQL_QUERY_RG = TEST_SQL_DIR + 'export_rg.sql'
 SQL_IN_FILE = TEST_SQL_DIR + 'in.csv'
 SQL_OUT = g.paths['TMP'] + TEST_SQL_DIR
-SQL_OUT_DUP = g.paths['TMP'] + tools.TMP_FOLDER + toolDup.TMP_OUT
 SQL_OUT_DUP_REF = TEST_SQL_DIR + 'out_dup_ref.csv'
 SQL_DL_OUT = SQL_OUT + 'sql_test_out.csv'
 SQL_DL_OUT_RG = SQL_OUT + 'sql_test_out_rg.csv'
@@ -31,6 +31,7 @@ SQL_MAX_ELT_INSERT = 200
 TEST_RL_DIR = TEST_DIR + 'reqlist/'
 RL_OUT_DIR = g.paths['TMP'] + TEST_RL_DIR
 RL_OUT_JOIN = RL_OUT_DIR + 'join.csv'
+RL_OUT_DUP_REF = TEST_RL_DIR + 'out_dup_ref.csv'
 
 RL_IN_1 = RL_OUT_DIR + 'in1.csv'
 RL_OUT_1 = RL_OUT_DIR + 'out1.csv'

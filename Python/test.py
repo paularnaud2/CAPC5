@@ -1,3 +1,6 @@
-import common as com
+# import common as com
+import os
 
-print(com.csv_to_list('test'))
+path = 'con.txt'
+a = os.path.exists(path)
+print(a)
