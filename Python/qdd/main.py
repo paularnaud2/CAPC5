@@ -40,7 +40,7 @@ def run_qdd(**params):
         os.startfile(dirs["out"])
 
 
-def file_match(in1, in2, compare=False, sort=True, del_dup=False):
+def file_match(in1, in2, sort=True, del_dup=False):
     com.log("[qdd] file_match")
     s = f"Comparaison des fichiers {in1} et {in2} en cours..."
     com.log(s)
@@ -52,19 +52,18 @@ def file_match(in1, in2, compare=False, sort=True, del_dup=False):
     if del_dup:
         ar1 = del_dup_list(ar1)
         ar2 = del_dup_list(ar2)
-    if compare:
+
+    res = ar1 == ar2
+    if res:
+        com.log("Les deux fichiers sont identiques")
+    else:
+        com.log("Les deux fichiers sont différents.")
         init_file_match()
         com.save_csv(ar1, gl.TMP_1)
         com.save_csv(ar2, gl.TMP_2)
-        res = compare_files(gl.TMP_1, gl.TMP_2, gl.OUT_DIR)
-        if not res:
-            os.startfile(gl.OUT_DIR)
-    else:
-        res = ar1 == ar2
-        if res:
-            com.log("Les deux fichiers sont identiques")
-        else:
-            com.log("Les deux fichiers sont différents")
+        com.log(f"Comparaison de '{gl.TMP_1}' et '{gl.TMP_2}'...")
+        compare_files(gl.TMP_1, gl.TMP_2, gl.OUT_DIR)
+        os.startfile(gl.OUT_DIR)
 
     assert res is True
     com.log_print()
@@ -73,8 +72,7 @@ def file_match(in1, in2, compare=False, sort=True, del_dup=False):
 def compare_files(in_1, in_2, out):
 
     start_time = time()
-    if not compare_headers(in_1, in_2):
-        return False
+    compare_headers(in_1, in_2)
     com.gen_header(in_1, gl.COMPARE_FIELD, out)
     compare_sorted_files(in_1, in_2, out)
 

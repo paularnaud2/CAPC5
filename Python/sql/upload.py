@@ -1,4 +1,5 @@
 import os
+import sys
 import common as com
 import sql.gl as gl
 import sql.log as log
@@ -17,6 +18,13 @@ def upload(**params):
     script = init_this(params)
     start_time = time()
     com.log(f"Ouverture du fichier d'entrée {gl.UPLOAD_IN}")
+    if not com.has_header(gl.UPLOAD_IN):
+        s = "Attention il semble ne pas y avoir de header dans le"
+        s += f" fichier d'entrée '{gl.UPLOAD_IN}'"
+        com.log(s)
+        s = "La première ligne du fichier ne sera pas insérée. Continuer ? (o/n)"
+        if com.log_input(s) != 'o':
+            sys.exit()
     with open(gl.UPLOAD_IN, 'r', encoding='utf-8') as in_file:
         # on saute la première ligne (entête)
         in_file.readline()

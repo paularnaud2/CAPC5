@@ -15,7 +15,7 @@ def reqlist(in_file, out_file, query_file):
         IN_FILE=in_file,
         OUT_FILE=out_file,
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        MAX_BDD_CNX=4,
+        MAX_BDD_CNX=3,
         NB_MAX_ELT_IN_STATEMENT=100,
         SL_STEP_QUERY=5,
         SQUEEZE_JOIN=False,

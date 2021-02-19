@@ -1,7 +1,7 @@
+import sys
 import qdd.gl as gl
 import common as com
 
-from common import g
 from qdd.init import init_compare
 from qdd.functions import write_elt
 from qdd.functions import read_list
@@ -110,11 +110,11 @@ def compare_headers(in1, in2):
     line2 = com.get_header(in2)
 
     if line1 != line2:
-        s = "Les fichiers à comparer ont des en-têtes différentes :\n"
+        s = "Attention : les fichiers à comparer ont des en-têtes différentes :\n"
         s += f"{line1}\n"
         s += f"{line2}\n"
-        s += " Arrêt du traitement de comparaison."
-        com.log(s)
-        return False
+        s += "La comparaison ignorera ces en-têtes. Continuer ? (o/n)"
+        if com.log_input(s) == 'n':
+            sys.exit()
 
     return True

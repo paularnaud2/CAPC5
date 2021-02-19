@@ -30,7 +30,6 @@ def qdd(in1, in2, out, ref, mrl, ref_dup='', dup_nb=1, tp=False, mls=100):
 def file_match(ref, out):
     left = gl.TEST_QDD_DIR + ref
     right = gl.QDD_OUT + out + qgl.FILE_TYPE
-    q.file_match(left, right, True)
     q.file_match(left, right)
 
 
