@@ -1,3 +1,4 @@
+import ssl
 import smtplib
 
 from . import g
@@ -14,6 +15,17 @@ def mail(mail_name, recipients_file='', subject_file=''):
     host = conf['HOST']
     sender = conf['SENDER']
     From = conf['FROM']
+    if 'USER' in conf:
+        user = conf['USER']
+        pwd = conf['PWD']
+        ctx = ssl.create_default_context()
+    else:
+        ctx = ''
+
+    if 'PORT' in conf:
+        port = conf['PORT']
+    else:
+        port = ''
     recipients = get_recipients(mail_name, recipients_file)
     To = ", ".join(recipients)
     subject = get_subject(mail_name, subject_file)
@@ -26,7 +38,9 @@ def mail(mail_name, recipients_file='', subject_file=''):
     msg.attach(body)
 
     log(f"Envoi du mail '{mail_name}' à {recipients}...")
-    with smtplib.SMTP(host) as server:
+    with smtplib.SMTP_SSL(host, port, context=ctx) as server:
+        if pwd:
+            server.login(user, pwd)
         server.sendmail(sender, recipients, msg.as_string())
     log('Mail envoyé')
 
