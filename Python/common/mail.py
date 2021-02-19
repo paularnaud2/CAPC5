@@ -15,6 +15,7 @@ def mail(mail_name, recipients_file='', subject_file=''):
     host = conf['HOST']
     sender = conf['SENDER']
     From = conf['FROM']
+
     if 'USER' in conf:
         user = conf['USER']
         pwd = conf['PWD']
@@ -26,6 +27,7 @@ def mail(mail_name, recipients_file='', subject_file=''):
         port = conf['PORT']
     else:
         port = ''
+
     recipients = get_recipients(mail_name, recipients_file)
     To = ", ".join(recipients)
     subject = get_subject(mail_name, subject_file)
@@ -38,10 +40,14 @@ def mail(mail_name, recipients_file='', subject_file=''):
     msg.attach(body)
 
     log(f"Envoi du mail '{mail_name}' à {recipients}...")
-    with smtplib.SMTP_SSL(host, port, context=ctx) as server:
-        if pwd:
+    if ctx:
+        with smtplib.SMTP_SSL(host, port, context=ctx) as server:
             server.login(user, pwd)
-        server.sendmail(sender, recipients, msg.as_string())
+            server.sendmail(sender, recipients, msg.as_string())
+    else:
+        with smtplib.SMTP(host, port) as server:
+            server.sendmail(sender, recipients, msg.as_string())
+
     log('Mail envoyé')
 
 
