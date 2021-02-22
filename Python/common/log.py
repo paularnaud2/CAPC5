@@ -47,12 +47,12 @@ def init_log(parent_module='', force_init=False):
     with open(g.paths['LOG'] + g.LOG_FILE, 'w', encoding='utf-8') as in_file:
         in_file.write('')
 
+    g.LOG_FILE_INITIALISED = True
     log_path = g.paths['LOG'] + g.LOG_FILE
     s = f"Fichier de log initialisé ({log_path})"
     log(s, print_date=True)
     log_print("Version Python : " + sys.version)
     log_print()
-    g.LOG_FILE_INITIALISED = True
 
 
 def step_log(counter, step, what='lignes écrites', nb=0, th_name='DEFAULT'):
