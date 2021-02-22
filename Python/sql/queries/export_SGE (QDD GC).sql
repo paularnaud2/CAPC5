@@ -22,8 +22,10 @@ FROM SGEL_PRM_SCH.T_PERSONNE pers
 inner join sgel_prm_sch.t_situation_contractuelle scn on pers.prs_id = scn.scn_client_final_id
 inner join SGEL_PRM_SCH.T_PERSONNE pers2 on pers2.prs_id = scn.scn_interlocuteur_client_id
 left join SGEL_PRM_SCH.T_PERSONNE pers3 on pers3.prs_id = scn.scn_interlocuteur_tech_id
-WHERE pers.PRS_MOR_NUMERO_SIRET IN ('41003460703064', '39748093003498','57202552610945', '55204648400325', '55204944792805','34240439903453', '38012986627454', '55214153300018','20004248900019')
-AND scn.scn_situ_type ='C'
-AND scn.scn_etat_contractuel_code = 'SERVC'
-ORDER BY pers.PRS_MOR_NUMERO_SIRET
-;
+WHERE pers.PRS_MOR_NUMERO_SIRET = ('41003460703064', '39748093003498',
+'57202552610945', '55204648400325', '55204944792805',
+'34240439903453', '38012986627454', '55214153300018',
+'20004248900019')
+	AND scn.scn_situ_type ='C'
+	AND scn.scn_etat_contractuel_code = 'SERVC'
+ORDER BY pers.PRS_MOR_NUMERO_SIRET;

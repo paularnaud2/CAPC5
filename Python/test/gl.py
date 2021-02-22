@@ -1,5 +1,5 @@
 from common import g
-import conf_main as cfg
+import conf_main_default as cfg
 
 # main
 TEST_DIR = 'test/'

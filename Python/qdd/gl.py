@@ -1,5 +1,5 @@
 # variables globales et constantes pour le package qdd (import qdd.gl as gl)
-import conf_main as cfg
+import conf_main_default as cfg
 
 IN_FILE_NAME_1 = 'SGE'
 IN_FILE_NAME_2 = 'GINKO'

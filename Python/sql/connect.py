@@ -1,4 +1,4 @@
-import conf_main as cfg
+import conf_main_default as cfg
 import common as com
 import sql.gl as gl
 import sql.log as log
@@ -14,6 +14,7 @@ def connect(ENV, BDD, th_nb=1, multi_thread=False):
 
     init_instant_client()
     cnx_str = c[(ENV, BDD)]
+    print(cnx_str)
     log.connect_init(ENV, BDD, cnx_str, th_nb, multi_thread)
     cnx = cx.connect(cnx_str)
     log.connect_finish(th_nb, BDD, multi_thread)
