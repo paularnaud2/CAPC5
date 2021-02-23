@@ -21,6 +21,7 @@ def init_gl():
     gl.conf_env = {}
     gl.bools = {}
     gl.bools['RANGE_QUERY'] = False
+    gl.bools["COUNT"] = False
     gl.counters = {}
     gl.out_files = {}
     gl.th_dic = {}

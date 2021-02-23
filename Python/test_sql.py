@@ -6,7 +6,6 @@ from test import gl
 
 
 def execute():
-    com.log('Test sql.execute----------------------')
     sql.execute(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -17,7 +16,6 @@ def execute():
 
 
 def upload():
-    com.log('Test sql.upload----------------------')
     sql.upload(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -29,7 +27,6 @@ def upload():
 
 
 def download(query, out, merge=True):
-    com.log('Test sql.download----------------------')
     sql.download(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -46,21 +43,40 @@ def download(query, out, merge=True):
 
 
 def test_sql():
-    com.init_log('test_sql', True)
-    com.mkdirs(gl.SQL_OUT, True)
-    com.log_print()
-    execute()
-    upload()
-    download(gl.SQL_QUERY, gl.SQL_DL_OUT)
-    com.log("Téléchargement des données par plages avec merge")
-    download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG)
-    com.log("Téléchargement des données par plages sans merge")
-    download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG, False)
+    # com.init_log('test_sql', True)
+    # com.mkdirs(gl.SQL_OUT, True)
+    # com.log_print()
 
-    q.file_match(gl.SQL_DL_OUT, gl.SQL_DL_OUT_RG)
-    q.file_match(gl.OUT_DUP_TMP, gl.SQL_OUT_DUP_REF)
-    q.file_match(gl.SQL_RG_REF, gl.SQL_RG_COMP)
+    com.log('Test sql.execute-----------------------------')
+    execute()
+
+    com.log('Test sql.upload------------------------------')
+    upload()
+
+    com.log('Test sql.dowload-----------------------------')
+    download(gl.SQL_QUERY, gl.SQL_DL_OUT)
     q.file_match(gl.SQL_IN_FILE, gl.SQL_DL_OUT)
+    q.file_match(gl.OUT_DUP_TMP, gl.SQL_OUT_DUP_REF)
+
+    com.log("Test sql.dowload RG avec merge---------------")
+    download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG)
+    q.file_match(gl.SQL_DL_OUT, gl.SQL_DL_OUT_RG)
+
+    com.log("Test sql.dowload RG sans merge---------------")
+    download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG, False)
+    q.file_match(gl.SQL_RG_REF, gl.SQL_RG_COMP)
+
+    com.log("Test count simple----------------------------")
+    download(gl.SQL_QUERY_COUNT_1, gl.SQL_DL_OUT_COUNT)
+    q.file_match(gl.SQL_DL_OUT_COUNT, gl.SQL_DL_OUT_COUNT_1_REF)
+    download(gl.SQL_QUERY_COUNT_1_RG, gl.SQL_DL_OUT_COUNT)
+    q.file_match(gl.SQL_DL_OUT_COUNT, gl.SQL_DL_OUT_COUNT_1_REF)
+
+    com.log("Test count group by--------------------------")
+    download(gl.SQL_QUERY_COUNT_2, gl.SQL_DL_OUT_COUNT)
+    q.file_match(gl.SQL_DL_OUT_COUNT, gl.SQL_DL_OUT_COUNT_2_REF)
+    download(gl.SQL_QUERY_COUNT_2_RG, gl.SQL_DL_OUT_COUNT)
+    q.file_match(gl.SQL_DL_OUT_COUNT, gl.SQL_DL_OUT_COUNT_2_REF)
 
 
 if __name__ == '__main__':

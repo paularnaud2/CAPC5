@@ -91,7 +91,6 @@ def finish_find(dup_list, out_dir, open_out):
     n = len(dup_list)
     if n == 0:
         com.log("Aucun doublon trouvé.")
-        com.log_print()
         return
 
     bn = com.big_number(len(dup_list))

@@ -13,15 +13,6 @@ def get_csv_fields_dict(in_dir):
     return fields
 
 
-def get_csv_fields_list(in_dir):
-    with open(in_dir, 'r', encoding='utf-8') as in_file:
-        header = in_file.readline()
-
-    line_list = csv_to_list(header)
-
-    return line_list
-
-
 def load_csv(in_dir):
     g.counters["csv_read"] = 0
     out_list = []

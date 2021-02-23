@@ -49,10 +49,9 @@ def init_gen_out():
 
 def check_ec(file_list):
     for elt in file_list:
-        if gl.EC in elt or gl.EC in elt:
-            s = "Elément inatendu trouvé dans les fichiers temporaire ({})."
+        if gl.EC in elt or gl.QN in elt:
+            s = f"Elément inatendu trouvé dans les fichiers temporaire ({elt})."
             s += " Abandon de la fusion des fichiers temporaires."
-            com.log(s.format(elt))
             gl.bools["MERGE_OK"] = False
             return True
     return False
@@ -61,18 +60,17 @@ def check_ec(file_list):
 def tmp_init(th_name):
     with verrou:
         com.mkdirs(gl.TMP_PATH)
-        gl.tmp_file[th_name] = gl.TMP_PATH + th_name + gl.TMP_FILE_TYPE
-        gl.tmp_file[th_name + gl.EC] = (gl.TMP_PATH + th_name + gl.EC +
-                                        gl.TMP_FILE_TYPE)
-        gl.tmp_file[th_name + gl.QN] = (gl.TMP_PATH + th_name + gl.QN +
-                                        gl.TMP_FILE_TYPE)
+        path = gl.TMP_PATH + th_name + '{}' + gl.TMP_FILE_TYPE
+        gl.tmp_file[th_name] = path.format('')
+        gl.tmp_file[th_name + gl.EC] = path.format(gl.EC)
+        gl.tmp_file[th_name + gl.QN] = path.format(gl.QN)
 
     init_qn(th_name)
 
 
 def tmp_update(res, th_name, query_nb, c):
 
-    # On sauve un fichier QN avec qn à 0 au cas ou le
+    # On sauve un fichier QN avec qn à 0 au cas où le
     # trt soit arrêté pendant l'écriture du fichier
     com.save_csv(['0'], gl.tmp_file[th_name + gl.QN])
 

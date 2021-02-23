@@ -36,6 +36,7 @@ CHECK_DUP = True
 OPEN_OUT_FILE = True
 SEND_NOTIF = True
 DEBUG_JOIN = False
+TEST_RESTART = False
 
 TMP_FOLDER = 'reqlist/'
 OUT_LEFT_FILE = 'out_l.csv'

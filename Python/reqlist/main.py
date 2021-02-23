@@ -27,7 +27,8 @@ def init(params):
     init_globals()
     com.log(f"Chargement du tableau d'entrée depuis {gl.IN_FILE}...")
     gl.ar_in = com.load_csv(gl.IN_FILE)
-    com.log("Tableau d'entrée chargé\n|")
+    com.log("Tableau d'entrée chargé")
+    com.log_print('|')
 
 
 def left_join(ldir='', rdir='', out='', debug=False):
@@ -39,11 +40,13 @@ def left_join(ldir='', rdir='', out='', debug=False):
         com.log(f"Chargement des tableaux {ldir} et {rdir}...")
         gl.ar_in = com.load_csv(ldir)
         ar_right = com.load_csv(rdir)
-        com.log("Tableaux chargés\n|")
+        com.log("Tableaux chargés")
+        com.log_print('|')
     else:
         com.log("Chargement du tableau de droite...")
         ar_right = com.load_csv(gl.OUT_SQL)
-        com.log("Tableau de droite chargé\n|")
+        com.log("Tableau de droite chargé")
+        com.log_print('|')
     join_arrays(gl.ar_in, ar_right)
     if not out:
         out = gl.OUT_FILE

@@ -42,7 +42,6 @@ from .csv import csv_to_list
 from .csv import extract_list
 from .csv import write_csv_line
 from .csv import get_csv_fields_dict
-from .csv import get_csv_fields_list
 
 from .mail import mail
 from .deco import log_exeptions

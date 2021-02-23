@@ -9,6 +9,7 @@ from toolDup import find_dup
 from sql.init import init
 from sql.init import init_gko
 from sql.init import init_params
+from sql.groupby import group_by
 from sql.process import process_range_list
 from sql.process import process_gko_query
 
@@ -53,34 +54,6 @@ def download_gko():
     rg.merge_tmp_files()
 
 
-def group_by():
-
-    if not gl.bools["MERGE_OK"] or not gl.bools['RANGE_QUERY']:
-        return
-
-    out_dir = gl.OUT_FILE
-    header = com.get_csv_fields_list(out_dir)
-    vol_fields = [elt for elt in header if 'VOL' in elt or 'COUNT' in elt]
-    if len(vol_fields) == 0:
-        return
-    else:
-        vol_field = vol_fields[0]
-
-    com.log('Group by sur le fichier de sortie...')
-    import pandas as pd
-
-    gl.CHECK_DUP = False
-    array_in = com.load_csv(out_dir)
-    df = pd.DataFrame(data=array_in[1:], columns=header)
-    gb_fields = [elt for elt in header if not ('VOL' in elt or 'COUNT' in elt)]
-    df[vol_field] = df[vol_field].astype(int)
-    df = df.groupby(by=gb_fields).sum()
-    df = df.sort_values(by=vol_field, ascending=False)
-    out_dir = gl.OUT_FILE
-    df.to_csv(path_or_buf=out_dir, sep=';', encoding='UTF-8')
-    com.log('Group by terminé')
-
-
 def finish(start_time):
 
     dur = com.get_duration_ms(start_time)
@@ -92,7 +65,9 @@ def finish(start_time):
     if gl.bools["MERGE_OK"]:
         out_dir = gl.OUT_FILE
         com.log("Fichier de sortie {} alimenté avec succès".format(out_dir))
-        if gl.counters["row"] < gl.MAX_CHECK_DUP and gl.CHECK_DUP:
+        a = gl.counters["row"] < gl.MAX_CHECK_DUP
+
+        if a and gl.CHECK_DUP and not gl.bools["COUNT"]:
             com.log_print('|')
             s = "Vérification des doublons sur la première colonne"
             s += " du fichier de sortie."

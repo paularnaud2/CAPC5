@@ -25,7 +25,7 @@ def process_range_list(range_list, rg_file_name):
 
 
 def lauch_threads(range_list, rg_file_name):
-    com.log("Plages à requêter : {}".format(range_list))
+    com.log(f"Plages à requêter : {range_list}")
     thread_list = []
     gen_cnx_dict(gl.BDD, gl.ENV, gl.MAX_BDD_CNX)
     for elt in range_list:

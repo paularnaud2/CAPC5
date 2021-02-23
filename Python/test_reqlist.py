@@ -7,7 +7,7 @@ from test_sql import upload
 from test_sql import execute
 
 
-def reqlist(in_file, out_file, query_file):
+def reqlist(in_file, out_file, query_file, test_restart=False):
     rl.run_reqList(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -22,6 +22,7 @@ def reqlist(in_file, out_file, query_file):
         SQUEEZE_SQL=False,
         CHECK_DUP=True,
         OPEN_OUT_FILE=False,
+        TEST_RESTART=test_restart,
     )
 
 
@@ -43,10 +44,12 @@ def test_reqlist():
     com.save_csv(arr, gl.RL_IN_1)
 
     com.log('Test reqlist')
-    reqlist(gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_1)
-    reqlist(gl.RL_OUT_1, gl.RL_OUT_2, gl.RL_QUERY_2)
-    q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, del_dup=True)
-    q.file_match(gl.OUT_DUP_TMP, gl.RL_OUT_DUP_REF)
+    reqlist(gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_1, True)
+
+    # reqlist(gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_1)
+    # reqlist(gl.RL_OUT_1, gl.RL_OUT_2, gl.RL_QUERY_2)
+    # q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, del_dup=True)
+    # q.file_match(gl.OUT_DUP_TMP, gl.RL_OUT_DUP_REF)
 
 
 if __name__ == '__main__':
