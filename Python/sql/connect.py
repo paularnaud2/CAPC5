@@ -57,7 +57,7 @@ def check_mepa(BDD, cnx, th_nb=0):
 
     s = "Vérification MEPA"
     if th_nb > 0:
-        s += f" (Pool No.{th_nb})..."
+        s += f" (thread No.{th_nb})..."
     com.log(s)
     d_bdd = get_bdd_date(cnx)
     if d_bdd == d_now:

@@ -33,6 +33,9 @@ def launch_threads(group_array):
     for th in thread_list:
         th.join()
 
+    com.log("Tous les threads ont terminé leur execution")
+    com.log_print('|')
+
 
 @com.log_exeptions
 def dl_th(grp, th_nb):
@@ -41,6 +44,7 @@ def dl_th(grp, th_nb):
     process_grp(c, grp, th_nb=th_nb)
     c.close()
     cnx.close()
+    com.log(f"Fin de l'execution du thread No.{th_nb}")
 
 
 def split_group_list():
@@ -65,11 +69,11 @@ def split_group_list():
         gl.bools['MULTI_TH'] = True
         bn = com.big_number(n)
         s = f"Les {bn} groupes seront traités en parallèle sur"
-        s += f" {len(array_out)} pools"
+        s += f" {len(array_out)} threads"
         s += " de connexion différents"
-        s = s + f" ({n_max} groupes max à traiter par pool)."
+        s = s + f" ({n_max} groupes max à traiter par thread)."
         if gl.TEST_RESTART:
-            gl.counters['N_STOP'] = ceil(n_max * 0.7)
+            gl.counters['N_STOP'] = n_max
         com.log(s)
 
     return array_out

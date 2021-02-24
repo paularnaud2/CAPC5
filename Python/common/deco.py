@@ -4,7 +4,7 @@ import conf_main as cfg
 
 from . import g
 from .log import log
-from .log import log_print
+from .log import log_input
 
 
 def log_exeptions(f):
@@ -16,7 +16,7 @@ def log_exeptions(f):
                 s = "Une erreur est survenue :\n"
                 s += traceback.format_exc()
                 log(s)
-                log_print("Arrêt du traitement")
+                log_input("Arrêt du traitement")
                 os._exit(1)
 
     if hasattr(cfg, 'DEBUG'):

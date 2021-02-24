@@ -6,7 +6,7 @@ def start_exec(inst, th_nb):
     if inst != '':
         s = f"Exécution des requêtes pour {inst}..."
     elif gl.bools['MULTI_TH'] is True:
-        s = f"Exécution des requêtes (pool No. {th_nb})..."
+        s = f"Exécution des requêtes (thread No. {th_nb})..."
     else:
         s = "Exécution des requêtes..."
     com.log(s)
@@ -25,7 +25,7 @@ def get_sql_array_finish(th_nb):
     if th_nb == 0:
         s_th = ''
     else:
-        s_th = f" pour le pool No.{th_nb}"
+        s_th = f" pour le thread No.{th_nb}"
     if n_rows > 0:
         bn = com.big_number(n_rows)
         s = f"Résultat récupéré{s_th} ({bn} lignes exportées)"

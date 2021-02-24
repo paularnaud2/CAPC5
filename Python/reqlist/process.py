@@ -1,4 +1,5 @@
 import sys
+import time
 import common as com
 import reqlist.gl as gl
 import reqlist.log as log
@@ -13,7 +14,8 @@ verrou = RLock()
 def process_grp(c, grp, inst='', th_nb=1):
 
     th_name = com.gen_sl_detail(inst, th_nb, multi_thread=gl.bools['MULTI_TH'])
-    file.tmp_init(th_name)
+    if not file.tmp_init(th_name, th_nb):
+        return
     with verrou:
         gl.counters[th_nb] = 0
     query_nb = 0
@@ -38,13 +40,7 @@ def process_query(c, query, inst, query_nb, th_name, th_nb):
         th_name=th_name,
     )
 
-    if gl.TEST_RESTART:
-        with verrou:
-            if query_nb == gl.counters['N_STOP'] and not gl.MD['STOP']:
-                com.log("TEST_RESTART : Arrêt automatique du traitement")
-                com.log_print()
-                gl.MD['STOP'] = True
-                sys.exit()
+    test_restart(query_nb, th_nb)
 
     if gl.bools["EXPORT_INSTANCES"]:
         res = export_cursor(c, inst)
@@ -54,6 +50,27 @@ def process_query(c, query, inst, query_nb, th_name, th_nb):
     file.tmp_update(res, th_name, query_nb, c)
     with verrou:
         gl.counters[th_nb] += len(res)
+
+
+def test_restart(query_nb, th_nb):
+    if not (gl.TEST_RESTART and gl.MD):
+        return
+    sleep = False
+    with verrou:
+        if query_nb == gl.counters['N_STOP'] and not gl.MD['STOP']:
+            s = f"TEST_RESTART : Arrêt automatique du traitement (thread No. {th_nb})\n"
+            com.log(s)
+            # A STOP flag is sent through the manager dict to the main process in order
+            # to terminate this subprocess and all the threads.
+            # However a bit of time can pass before all the treads are killed so other thread
+            # can continue for a few ms while this thread is blocked by the time.sleep
+            gl.MD['STOP'] = True
+            sleep = True
+
+    if sleep:
+        time.sleep(1)
+        com.log("sys.exit()")
+        sys.exit()
 
 
 def export_cursor(cursor, inst=''):

@@ -6,8 +6,8 @@ from common import g
 from test import gl
 from test_sql import upload
 from test_sql import execute
-
 from time import sleep
+
 from multiprocessing import Process
 from multiprocessing import Manager
 
@@ -73,7 +73,10 @@ def reqlist_interrupted(inp, out, query):
     p = Process(target=reqlist, args=(inp, out, query, True, md))
     p.start()
     while not md['STOP']:
-        sleep(0.1)
+        pass
+    # A bit of time is let to the other threads to finish their run as it
+    # is valuable to test the restart in this case (more code coverage)
+    sleep(0.1)
     p.terminate()
 
 

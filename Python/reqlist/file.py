@@ -60,7 +60,7 @@ def check_ec(file_list):
     return False
 
 
-def tmp_init(th_name):
+def tmp_init(th_name, th_nb):
     with verrou:
         com.mkdirs(gl.TMP_PATH)
         path = gl.TMP_PATH + th_name + '{}' + gl.TMP_FILE_TYPE
@@ -68,7 +68,10 @@ def tmp_init(th_name):
         gl.tmp_file[th_name + gl.EC] = path.format(gl.EC)
         gl.tmp_file[th_name + gl.QN] = path.format(gl.QN)
 
-    init_qn(th_name)
+    if not init_qn(th_name, th_nb):
+        return False
+
+    return True
 
 
 def tmp_update(res, th_name, query_nb, c):
@@ -101,7 +104,7 @@ def tmp_finish(th_name):
     os.remove(gl.tmp_file[th_name + gl.QN])
 
 
-def init_qn(th_name):
+def init_qn(th_name, th_nb):
     path = gl.tmp_file[th_name + gl.QN]
     if exists(path):
         s = com.load_txt(path)
@@ -110,11 +113,16 @@ def init_qn(th_name):
             os.remove(gl.tmp_file[th_name])
         else:
             s = "Reprise du traitement à partir de "
-            s += f"la requête No.{qn + 1} pour {th_name}"
+            s += f"la requête No.{qn + 1} pour le thread No.{th_nb}"
             com.log(s)
             gl.TEST_RESTART = False
+    elif exists(gl.tmp_file[th_name]):
+        com.log(f"Le thread No.{th_nb} avait fini son execution")
+        return False
     else:
         qn = 0
 
     with verrou:
         gl.ec_query_nb[th_name] = qn
+
+    return True

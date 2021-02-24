@@ -104,11 +104,11 @@ def gen_sl_detail(range_name, th_nb=1, what='la plage', multi_thread=False):
     th_name = str(range_name) + '_' + str(th_nb)
 
     if range_name not in ['', 'MONO'] and multi_thread is True:
-        detail = ' pour {} {} (pool No.{})'.format(what, range_name, th_nb)
+        detail = ' pour {} {} (thread No.{})'.format(what, range_name, th_nb)
     elif range_name not in ['', 'MONO']:
         detail = ' pour {} {}'.format(what, range_name)
     elif multi_thread is True:
-        detail = ' (pool No.{})'.format(th_nb)
+        detail = ' (thread No.{})'.format(th_nb)
     else:
         detail = ''
 
