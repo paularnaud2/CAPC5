@@ -50,3 +50,6 @@ QN = '_QN'
 
 # Globales paramétrables
 VAR_DICT = {}
+
+# Process manager
+MD = ''

@@ -22,3 +22,7 @@ def run():
     p2.join()
     print("md", md)
     print("Traitement terminé")
+
+
+if __name__ == '__main__':
+    run()

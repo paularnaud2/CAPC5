@@ -43,9 +43,9 @@ def download(query, out, merge=True):
 
 
 def test_sql():
-    # com.init_log('test_sql', True)
-    # com.mkdirs(gl.SQL_OUT, True)
-    # com.log_print()
+    com.init_log('test_sql', True)
+    com.mkdirs(gl.SQL_OUT, True)
+    com.log_print()
 
     com.log('Test sql.execute-----------------------------')
     execute()

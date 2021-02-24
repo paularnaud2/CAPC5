@@ -12,6 +12,11 @@ def init_params(params):
             gl.__getattribute__(key)
             gl.__setattr__(key, params[key])
 
+    if 'MD' in params:
+        if 'LOG_FILE' in gl.MD:
+            g.LOG_FILE_INITIALISED = True
+            g.LOG_FILE = gl.MD['LOG_FILE']
+
 
 def init_globals():
 

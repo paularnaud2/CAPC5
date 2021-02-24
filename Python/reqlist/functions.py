@@ -13,7 +13,7 @@ def restart():
     s = "Traitement en cours détecté. Tuer ? (o/n)"
     if gl.TEST_RESTART:
         com.log(s)
-        com.log_print("n (test de la fonctionnalité de reprise)")
+        com.log_print("n (TEST_RESTART = True)")
         return
     if com.log_input(s) == 'o':
         com.delete_folder(gl.TMP_PATH)

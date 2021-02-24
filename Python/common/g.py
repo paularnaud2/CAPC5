@@ -5,7 +5,6 @@ from threading import RLock
 # Misc
 MIN_DUR_NOTIF_TRIGGER = 30
 CSV_SEPARATOR = ';'
-DEBUG = True
 SLEEP_AFTER_DELETE_FOLDER = 0.1
 VAR_DEL = '@@'
 DEFAULT_FIELD = "FIELD"

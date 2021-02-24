@@ -68,6 +68,8 @@ def split_group_list():
         s += f" {len(array_out)} pools"
         s += " de connexion différents"
         s = s + f" ({n_max} groupes max à traiter par pool)."
+        if gl.TEST_RESTART:
+            gl.counters['N_STOP'] = ceil(n_max * 0.7)
         com.log(s)
 
     return array_out

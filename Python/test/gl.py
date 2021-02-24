@@ -1,6 +1,7 @@
 import toolDup
 import conf_main as cfg
 import tools.gl as tools
+import reqlist.gl as rl
 
 from common import g
 
@@ -37,6 +38,7 @@ SQL_MAX_ELT_INSERT = 200
 # test_reqlist
 TEST_RL_DIR = TEST_DIR + 'reqlist/'
 RL_OUT_DIR = g.paths['TMP'] + TEST_RL_DIR
+RL_TMP_DIR = g.paths['TMP'] + rl.TMP_FOLDER
 RL_OUT_JOIN = RL_OUT_DIR + 'join.csv'
 RL_OUT_DUP_REF = TEST_RL_DIR + 'out_dup_ref.csv'
 
@@ -46,6 +48,7 @@ RL_QUERY_1 = TEST_RL_DIR + 'query1.sql'
 RL_IN_2 = RL_OUT_DIR + 'in2.csv'
 RL_OUT_2 = RL_OUT_DIR + 'out2.csv'
 RL_QUERY_2 = TEST_RL_DIR + 'query2.sql'
+RL_OUT_3 = RL_OUT_DIR + 'out3.csv'
 
 RL_LEFT_1 = TEST_RL_DIR + 'left_1.csv'
 RL_RIGHT_1 = TEST_RL_DIR + 'right_1.csv'

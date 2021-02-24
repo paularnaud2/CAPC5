@@ -9,7 +9,10 @@ verrou = RLock()
 
 
 def gen_out_file():
-    (file_list, out_file) = init_gen_out()
+    a = init_gen_out()
+    if not a:
+        return
+    (file_list, out_file) = a
     if not gl.bools["MERGE_OK"]:
         return
 
@@ -99,8 +102,9 @@ def tmp_finish(th_name):
 
 
 def init_qn(th_name):
-    try:
-        s = com.load_txt(gl.tmp_file[th_name + gl.QN])
+    path = gl.tmp_file[th_name + gl.QN]
+    if exists(path):
+        s = com.load_txt(path)
         qn = int(s[0])
         if qn == 0:
             os.remove(gl.tmp_file[th_name])
@@ -108,7 +112,8 @@ def init_qn(th_name):
             s = "Reprise du traitement à partir de "
             s += f"la requête No.{qn + 1} pour {th_name}"
             com.log(s)
-    except FileNotFoundError:
+            gl.TEST_RESTART = False
+    else:
         qn = 0
 
     with verrou:

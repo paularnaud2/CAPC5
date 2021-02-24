@@ -1,5 +1,6 @@
 import os
 import traceback
+import conf_main as cfg
 
 from . import g
 from .log import log
@@ -18,7 +19,9 @@ def log_exeptions(f):
                 log_print("Arrêt du traitement")
                 os._exit(1)
 
-    if g.DEBUG:
-        return f
-    else:
-        return new
+    if hasattr(cfg, 'DEBUG'):
+        if cfg.DEBUG:
+            return new
+        else:
+            return f
+    return new

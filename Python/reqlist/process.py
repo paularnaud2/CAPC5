@@ -1,3 +1,4 @@
+import sys
 import common as com
 import reqlist.gl as gl
 import reqlist.log as log
@@ -9,7 +10,7 @@ from threading import RLock
 verrou = RLock()
 
 
-def process_grp(c, group_list, inst='', th_nb=1):
+def process_grp(c, grp, inst='', th_nb=1):
 
     th_name = com.gen_sl_detail(inst, th_nb, multi_thread=gl.bools['MULTI_TH'])
     file.tmp_init(th_name)
@@ -18,11 +19,11 @@ def process_grp(c, group_list, inst='', th_nb=1):
     query_nb = 0
 
     log.start_exec(inst, th_nb)
-    for grp in group_list:
+    for elt in grp:
         query_nb += 1
         if query_nb <= gl.ec_query_nb[th_name]:
             continue
-        query = gl.query_var.replace(g.VAR_DEL + gl.VAR_IN + g.VAR_DEL, grp)
+        query = gl.query_var.replace(g.VAR_DEL + gl.VAR_IN + g.VAR_DEL, elt)
         process_query(c, query, inst, query_nb, th_name, th_nb)
     file.tmp_finish(th_name)
     log.get_sql_array_finish(th_nb)
@@ -36,6 +37,15 @@ def process_query(c, query, inst, query_nb, th_name, th_nb):
         what='requêtes exécutées',
         th_name=th_name,
     )
+
+    if gl.TEST_RESTART:
+        with verrou:
+            if query_nb == gl.counters['N_STOP'] and not gl.MD['STOP']:
+                com.log("TEST_RESTART : Arrêt automatique du traitement")
+                com.log_print()
+                gl.MD['STOP'] = True
+                sys.exit()
+
     if gl.bools["EXPORT_INSTANCES"]:
         res = export_cursor(c, inst)
     else:
