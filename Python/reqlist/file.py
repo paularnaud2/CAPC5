@@ -9,13 +9,7 @@ verrou = RLock()
 
 
 def gen_out_file():
-    a = init_gen_out()
-    if not a:
-        return
-    (file_list, out_file) = a
-    if not gl.bools["MERGE_OK"]:
-        return
-
+    (file_list, out_file) = init_gen_out()
     i = 0
     for elt in file_list:
         i += 1
@@ -32,7 +26,6 @@ def gen_out_file():
 
 
 def init_gen_out():
-    gl.bools["MERGE_OK"] = True
     file_list = com.get_file_list(gl.TMP_PATH)
     if gl.SQUEEZE_JOIN:
         out_file = gl.OUT_FILE
@@ -55,9 +48,7 @@ def check_ec(file_list):
         if gl.EC in elt or gl.QN in elt:
             s = f"Elément inatendu trouvé dans les fichiers temporaire ({elt})."
             s += " Abandon de la fusion des fichiers temporaires."
-            gl.bools["MERGE_OK"] = False
-            return True
-    return False
+            raise Exception(s)
 
 
 def tmp_init(th_name, th_nb):
@@ -105,9 +96,12 @@ def tmp_finish(th_name):
 
 
 def init_qn(th_name, th_nb):
-    path = gl.tmp_file[th_name + gl.QN]
-    if exists(path):
-        s = com.load_txt(path)
+    if exists(gl.tmp_file[th_name]):
+        com.log(f"Le thread No.{th_nb} avait fini son execution")
+        gl.TEST_RESTART = False
+        return False
+    elif exists(gl.tmp_file[th_name + gl.QN]):
+        s = com.load_txt(gl.tmp_file[th_name + gl.QN])
         qn = int(s[0])
         if qn == 0:
             os.remove(gl.tmp_file[th_name])
@@ -116,9 +110,6 @@ def init_qn(th_name, th_nb):
             s += f"la requête No.{qn + 1} pour le thread No.{th_nb}"
             com.log(s)
             gl.TEST_RESTART = False
-    elif exists(gl.tmp_file[th_name]):
-        com.log(f"Le thread No.{th_nb} avait fini son execution")
-        return False
     else:
         qn = 0
 
