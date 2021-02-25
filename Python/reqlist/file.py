@@ -20,8 +20,7 @@ def gen_out_file():
             com.merge_files(cur_dir, out_file, remove_header=True)
         os.remove(cur_dir)
 
-    s = f"Fusion et suppression des {len(file_list)}"
-    s += " fichiers temporaires terminée"
+    s = f"Fusion et suppression terminées. Sortie enregistrée sous '{out_file}'"
     com.log(s)
 
 

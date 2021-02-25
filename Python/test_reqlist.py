@@ -12,7 +12,15 @@ from multiprocessing import Process
 from multiprocessing import Manager
 
 
-def reqlist(in_file, out_file, query_file, test_restart=False, md='', cnx=3):
+def reqlist(
+    in_file,
+    out_file,
+    query_file,
+    test_restart=False,
+    md='',
+    cnx=3,
+    elt=100,
+):
     rl.run_reqList(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -21,7 +29,7 @@ def reqlist(in_file, out_file, query_file, test_restart=False, md='', cnx=3):
         OUT_FILE=out_file,
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
         MAX_BDD_CNX=cnx,
-        NB_MAX_ELT_IN_STATEMENT=100,
+        NB_MAX_ELT_IN_STATEMENT=elt,
         SL_STEP_QUERY=5,
         SQUEEZE_JOIN=False,
         SQUEEZE_SQL=False,
@@ -60,21 +68,23 @@ def test_reqlist():
     q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, del_dup=True)
     q.file_match(gl.OUT_DUP_TMP, gl.RL_OUT_DUP_REF)
 
-    reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, cnx=6)
-    reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True, cnx=5)
+    com.mkdirs(gl.RL_TMP_DIR, True)
+    reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, cnx=6, elt=10)
+    reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True, cnx=6, elt=10)
     q.file_match(gl.RL_OUT_2, gl.RL_OUT_3)
 
+    com.mkdirs(gl.RL_TMP_DIR, True)
     reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True)
     q.file_match(gl.RL_OUT_2, gl.RL_OUT_3)
 
 
-def reqlist_interrupted(inp, out, query, sleep=False, cnx=3):
+def reqlist_interrupted(inp, out, query, sleep=False, cnx=3, elt=100):
     manager = Manager()
     md = manager.dict()
     md['STOP'] = False
     md['LOG_FILE'] = g.LOG_FILE
-    p = Process(target=reqlist, args=(inp, out, query, True, md, cnx))
+    p = Process(target=reqlist, args=(inp, out, query, True, md, cnx, elt))
     p.start()
     while not md['STOP']:
         pass
