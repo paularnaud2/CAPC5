@@ -47,8 +47,8 @@ def left_join(left, right, ref):
 
 def test_reqlist():
     com.init_log('test_reqlist', True)
-    com.mkdirs(gl.RL_TMP_DIR, True)
-    com.mkdirs(gl.RL_OUT_DIR, True)
+    com.mkdirs(gl.RL_TMP, True)
+    com.mkdirs(gl.RL_OUT, True)
     com.log_print()
     com.log('Test join----------------------------------------')
     left_join(gl.RL_LEFT_1, gl.RL_RIGHT_1, gl.RL_OUT_JOIN_REF_1)
@@ -68,12 +68,12 @@ def test_reqlist():
     q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, del_dup=True)
     q.file_match(gl.OUT_DUP_TMP, gl.RL_OUT_DUP_REF)
 
-    com.mkdirs(gl.RL_TMP_DIR, True)
+    com.mkdirs(gl.RL_TMP, True)
     reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, cnx=6, elt=10)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True, cnx=6, elt=10)
     q.file_match(gl.RL_OUT_2, gl.RL_OUT_3)
 
-    com.mkdirs(gl.RL_TMP_DIR, True)
+    com.mkdirs(gl.RL_TMP, True)
     reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True)
     q.file_match(gl.RL_OUT_2, gl.RL_OUT_3)

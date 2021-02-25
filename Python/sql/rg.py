@@ -44,7 +44,10 @@ def restart(range_list):
         return range_list
 
     s = "Traitement en cours détecté. Tuer ? (o/n)"
-    if com.log_input(s) == 'o':
+    if gl.TEST_RESTART:
+        com.log(s)
+        com.log_print("n (TEST_RESTART = True)")
+    elif com.log_input(s) == 'o':
         com.mkdirs(gl.TMP_PATH, True)
         return range_list
 

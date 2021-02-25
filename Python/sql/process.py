@@ -1,3 +1,5 @@
+import sys
+import time
 import common as com
 import sql.log as log
 import sql.gl as gl
@@ -39,6 +41,7 @@ def lauch_threads(range_list, rg_file_name):
     for th in thread_list:
         th.join()
 
+    com.log("Tous les threads ont terminé leur execution")
     com.log_print('|')
 
 
@@ -66,10 +69,32 @@ def process_query(c, query, elt, th_nb):
 
     log.process_query_init(elt, query, th_nb)
     c.execute(query)
+    test_restart(th_nb)
     log.process_query_finish(elt, th_nb)
     init_out_file(c, elt)
     th_name = com.gen_sl_detail(elt, th_nb)
     write_rows(c, elt, th_name, th_nb)
+
+
+def test_restart(th_nb):
+    if not (gl.TEST_RESTART and gl.MD):
+        return
+    sleep = False
+    with verrou:
+        if gl.counters["row"] > gl.MD['N_STOP'] and not gl.MD['STOP']:
+            s = f"TEST_RESTART : Arrêt automatique du traitement (thread No. {th_nb})\n"
+            com.log(s)
+            # A STOP flag is sent through the manager dict to the main process in order
+            # to terminate this subprocess and all the threads.
+            # However a bit of time can pass before all the treads are killed so other thread
+            # can continue for a few ms while this thread is blocked by the time.sleep
+            gl.MD['STOP'] = True
+            sleep = True
+
+    if sleep:
+        time.sleep(1)
+        com.log("sys.exit()")
+        sys.exit()
 
 
 def get_th_nb():

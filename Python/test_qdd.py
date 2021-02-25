@@ -7,7 +7,7 @@ from test import gl
 
 def qdd(in1, in2, out, ref, mrl, ref_dup='', dup_nb=1, tp=False, mls=100):
     q.run_qdd(
-        IN_DIR=gl.TEST_QDD_DIR,
+        IN_DIR=gl.TEST_QDD,
         IN_FILE_NAME_1=in1,
         IN_FILE_NAME_2=in2,
         OUT_DIR=gl.QDD_OUT,
@@ -28,7 +28,7 @@ def qdd(in1, in2, out, ref, mrl, ref_dup='', dup_nb=1, tp=False, mls=100):
 
 
 def file_match(ref, out):
-    left = gl.TEST_QDD_DIR + ref
+    left = gl.TEST_QDD + ref
     right = gl.QDD_OUT + out + qgl.FILE_TYPE
     q.file_match(left, right)
 

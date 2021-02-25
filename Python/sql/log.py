@@ -11,7 +11,7 @@ def process_query_init(elt, query, th_nb):
         s = "Exécution de la requête pour la plage {}"
         com.log(s.format(elt))
     else:
-        s = "Exécution de la requête pour la plage {} (thread No.{})..."
+        s = "Exécution de la requête pour la plage {} (connexion No.{})..."
         com.log(s.format(elt, th_nb))
 
 
@@ -22,7 +22,7 @@ def process_query_finish(elt, th_nb):
     elif gl.MAX_BDD_CNX == 1:
         com.log("Requête exécutée pour la plage {}".format(elt))
     else:
-        com.log("Requête exécutée pour la plage {} (thread No.{})".format(
+        com.log("Requête exécutée pour la plage {} (connexion No.{})".format(
             elt, th_nb))
 
 
@@ -39,9 +39,9 @@ def connect_init(ENV, BDD, cnx_str, th_nb, multi_thread):
 def connect_finish(th_nb, BDD, multi_thread):
 
     if multi_thread is False:
-        s = "Connecté à {}".format(BDD)
+        s = f"Connecté à {BDD}"
     else:
-        s = "Connecté à {} (thread No.{})".format(BDD, th_nb)
+        s = f"Connecté à {BDD} (thread No.{th_nb})"
     com.log(s)
 
 
@@ -54,8 +54,8 @@ def write_rows_init(range_name, th_nb):
             range_name))
     else:
         com.log(
-            "Écriture des lignes en cours pour la plage {} (thread No.{})...".
-            format(range_name, th_nb))
+            "Écriture des lignes en cours pour la plage {} (connexion No.{})..."
+            .format(range_name, th_nb))
 
 
 def write_rows_finish(range_name, i, th_nb):
@@ -68,7 +68,7 @@ def write_rows_finish(range_name, i, th_nb):
         com.log(s.format(range_name, com.big_number(i)))
     else:
         s = "Écriture des lignes terminée pour la plage {}."
-        s += " {} lignes écrites (thread No.{})"
+        s += " {} lignes écrites (connexion No.{})"
         com.log(s.format(range_name, com.big_number(i), th_nb))
 
 

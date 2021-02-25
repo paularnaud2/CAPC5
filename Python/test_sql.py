@@ -3,6 +3,10 @@ import qdd as q
 import common as com
 
 from test import gl
+from common import g
+
+from multiprocessing import Process
+from multiprocessing import Manager
 
 
 def execute():
@@ -26,7 +30,7 @@ def upload():
     )
 
 
-def download(query, out, merge=True):
+def download(query, out, merge=True, test_restart=False, md=''):
     sql.download(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -39,11 +43,14 @@ def download(query, out, merge=True):
         EXPORT_RANGE=False,
         CHECK_DUP=True,
         OPEN_OUT_FILE=False,
+        TEST_RESTART=test_restart,
+        MD=md,
     )
 
 
 def test_sql():
     com.init_log('test_sql', True)
+    com.mkdirs(gl.SQL_TMP, True)
     com.mkdirs(gl.SQL_OUT, True)
     com.log_print()
 
@@ -59,7 +66,8 @@ def test_sql():
     q.file_match(gl.OUT_DUP_TMP, gl.SQL_OUT_DUP_REF)
 
     com.log("Test sql.dowload RG avec merge---------------")
-    download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG)
+    download_interrupted(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG)
+    download(gl.SQL_QUERY_RG, gl.SQL_DL_OUT_RG, test_restart=True)
     q.file_match(gl.SQL_DL_OUT, gl.SQL_DL_OUT_RG)
 
     com.log("Test sql.dowload RG sans merge---------------")
@@ -77,6 +85,19 @@ def test_sql():
     q.file_match(gl.SQL_DL_OUT_COUNT, gl.SQL_DL_OUT_COUNT_2_REF)
     download(gl.SQL_QUERY_COUNT_2_RG, gl.SQL_DL_OUT_COUNT)
     q.file_match(gl.SQL_DL_OUT_COUNT, gl.SQL_DL_OUT_COUNT_2_REF)
+
+
+def download_interrupted(query, out):
+    manager = Manager()
+    md = manager.dict()
+    md['STOP'] = False
+    md['N_STOP'] = 0.8 * 2900
+    md['LOG_FILE'] = g.LOG_FILE
+    p = Process(target=download, args=(query, out, True, True, md))
+    p.start()
+    while not md['STOP']:
+        pass
+    p.terminate()
 
 
 if __name__ == '__main__':

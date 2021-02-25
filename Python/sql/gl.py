@@ -35,6 +35,7 @@ EXPORT_RANGE = False
 CHECK_DUP = True
 OPEN_OUT_FILE = True
 SEND_NOTIF = True
+TEST_RESTART = False
 
 FILE_TYPE = '.csv'
 TMP_FOLDER = 'sql/'
@@ -59,3 +60,6 @@ CHUNK_FILE = 'chunk.txt'
 
 # Upload
 UPLOAD_IN = g.paths['OUT'] + 'OUT/in.csv'
+
+# Process manager
+MD = ''
