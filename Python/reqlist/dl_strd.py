@@ -69,11 +69,12 @@ def split_group_list():
         gl.bools['MULTI_TH'] = True
         bn = com.big_number(n)
         s = f"Les {bn} groupes seront traités en parallèle sur"
-        s += f" {len(array_out)} threads"
+        s += f" {len(array_out)} pools"
         s += " de connexion différents"
         s = s + f" ({n_max} groupes max à traiter par thread)."
         if gl.TEST_RESTART:
-            gl.counters['N_STOP'] = n_max
+            # automatic stop when a thread reaches 80% of it's progress
+            gl.counters['N_STOP'] = ceil(n_max * 0.8)
         com.log(s)
 
     return array_out

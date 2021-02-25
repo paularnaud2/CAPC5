@@ -1,18 +1,18 @@
+import time
+import qdd as q
 import common as com
 import reqlist as rl
-import qdd as q
 
 from common import g
 from test import gl
 from test_sql import upload
 from test_sql import execute
-from time import sleep
 
 from multiprocessing import Process
 from multiprocessing import Manager
 
 
-def reqlist(in_file, out_file, query_file, test_restart=False, md=''):
+def reqlist(in_file, out_file, query_file, test_restart=False, md='', cnx=3):
     rl.run_reqList(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
@@ -20,7 +20,7 @@ def reqlist(in_file, out_file, query_file, test_restart=False, md=''):
         IN_FILE=in_file,
         OUT_FILE=out_file,
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        MAX_BDD_CNX=3,
+        MAX_BDD_CNX=cnx,
         NB_MAX_ELT_IN_STATEMENT=100,
         SL_STEP_QUERY=5,
         SQUEEZE_JOIN=False,
@@ -60,23 +60,29 @@ def test_reqlist():
     q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, del_dup=True)
     q.file_match(gl.OUT_DUP_TMP, gl.RL_OUT_DUP_REF)
 
-    reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2)
+    reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, cnx=6)
+    reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True, cnx=5)
+    q.file_match(gl.RL_OUT_2, gl.RL_OUT_3)
+
+    reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True)
     q.file_match(gl.RL_OUT_2, gl.RL_OUT_3)
 
 
-def reqlist_interrupted(inp, out, query):
+def reqlist_interrupted(inp, out, query, sleep=False, cnx=3):
     manager = Manager()
     md = manager.dict()
     md['STOP'] = False
     md['LOG_FILE'] = g.LOG_FILE
-    p = Process(target=reqlist, args=(inp, out, query, True, md))
+    p = Process(target=reqlist, args=(inp, out, query, True, md, cnx))
     p.start()
     while not md['STOP']:
         pass
-    # A bit of time is let to the other threads to finish their run as it
-    # is valuable to test the restart in this case (more code coverage)
-    sleep(0.1)
+    if sleep:
+        # if sleep = True, a bit of time is let to the other threads to finish
+        # their run as it is valuable to test the restart in this case
+        # (more code coverage)
+        time.sleep(0.5)
     p.terminate()
 
 
