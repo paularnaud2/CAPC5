@@ -30,7 +30,7 @@ def gen_header(in_dir, last_field='', out_dir=''):
 
     if out_dir:
         with open(out_dir, 'w', encoding='utf-8') as out_file:
-            out_file.write(header)
+            out_file.write(header + '\n')
 
     return header
 

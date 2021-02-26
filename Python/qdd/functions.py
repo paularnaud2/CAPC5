@@ -1,5 +1,4 @@
 import sys
-import os
 import qdd.gl as gl
 import common as com
 
@@ -7,6 +6,28 @@ from common import g
 from math import ceil
 from os.path import exists
 from toolSplit import split_file
+
+
+def check_header(inp):
+    if not com.has_header(inp):
+        s = f"Erreur : en tête absente dans le fichier '{inp}'."
+        s += " Les fichiers entrants doivent comporter une en-tête."
+        com.log(s)
+        raise Exception("Missing header")
+
+
+def compare_headers(in1, in2):
+
+    line1 = com.get_header(in1)
+    line2 = com.get_header(in2)
+
+    if line1 != line2:
+        s = f"Erreur : les fichiers {in1} et {in2} n'ont pas la même en-tête."
+        s += " Les fichiers entrants doivent avoir la même en-tête."
+        com.log(s)
+        raise Exception("Different headers")
+
+    return True
 
 
 def compare_elt(elt1, elt2):
@@ -30,14 +51,14 @@ def write_min_elt(min_elt, out_file):
 
     if cur_key != prev_key:
         gl.bool["dup_key"] = False
-        write_elt(out_file, min_elt, True)
+        com.write_csv_line(min_elt, out_file)
         gl.counters["tot_written_lines_out"] += 1
         com.step_log(gl.counters["tot_written_lines_out"], gl.SL_STEP)
         gl.prev_elt = min_elt
     elif check_dup(min_elt):
         # on n'écrit pas les doublons purs dans le fichier de sortie
         # mais on écrit les doublons de clé
-        write_elt(out_file, min_elt, True)
+        com.write_csv_line(min_elt, out_file)
         gl.counters["tot_written_lines_out"] += 1
         com.step_log(gl.counters["tot_written_lines_out"], gl.SL_STEP)
 
@@ -55,23 +76,6 @@ def check_dup(elt):
             gl.bool["dup_key"] = True
         gl.dup_key_list.append(elt)
         return True
-
-
-def write_elt(out_file, elt, append=False):
-    txt = elt[0]
-    for field in elt[1:]:
-        txt += g.CSV_SEPARATOR + field
-
-    if append:
-        out_file.write("\n" + txt)
-    else:
-        out_file.write(txt + "\n")
-
-
-def write_list(in_list, out_file_dir):
-    with open(out_file_dir, 'w', encoding='utf-8') as out_file:
-        for elt in in_list:
-            write_elt(out_file, elt)
 
 
 def temp_files():
@@ -99,39 +103,23 @@ def read_list(in_file):
     return line_list
 
 
-def check_py_version(in_dir):
-    a = str(sys.version).find("32 bit") != -1
-    b = gl.MAX_ROW_LIST > gl.MAX_ROW_LIST_PY_VERSION_ALERT
-    c = os.path.getsize(in_dir) > gl.MAX_FILE_SIZE_PY_VERSION_ALERT
-
-    if a and b and c:
-        s = "Attention vous utilisez la version 32 bit de Python qui est"
-        s += " limitée à 2 GO de mémoire RAM."
-        s += "\nAvec la valeur actuelle du paramètre MAX_ROW_LIST, vous"
-        s += " risquez un Memory Error."
-        s += "\nUtilisation de la version 64 bit conseillée."
-        s += "\nContinuer ? (o/n)"
-        if com.log_input(s) == 'n':
-            sys.exit()
-
-
 def check_split(in_dir):
 
-    prompt_split()
-    split_file(
-        IN_DIR=in_dir,
-        OUT_DIR='',
-        MAX_LINE=gl.MAX_LINE_SPLIT,
-        MAX_FILE_NB=gl.MAX_FILE_NB_SPLIT,
-        ADD_HEADER=True,
-    )
+    if split_needed():
+        split_file(
+            IN_DIR=in_dir,
+            OUT_DIR='',
+            MAX_LINE=gl.MAX_LINE_SPLIT,
+            MAX_FILE_NB=gl.MAX_FILE_NB_SPLIT,
+            ADD_HEADER=True,
+        )
 
 
-def prompt_split():
+def split_needed():
     n_line = gl.counters["out"]
     n_out_files = ceil(n_line / gl.MAX_LINE_SPLIT)
     if n_out_files == 1:
-        return
+        return False
 
     n_line_2 = n_line + n_out_files - 1
     n_out_files = ceil(n_line_2 / gl.MAX_LINE_SPLIT)
@@ -139,9 +127,11 @@ def prompt_split():
     s = f"Le fichier d'entrée dépasse les {bn} lignes."
     s += f" Il va être découpé en {n_out_files} fichiers "
     s += f"(nb max de fichiers fixé à {gl.MAX_FILE_NB_SPLIT}). Continuer ? (o/n)"
-    if gl.TEST_PROMPT:
+    if gl.TEST_PROMPT_SPLIT:
         com.log(s)
         com.log_print('o')
-        return
+        return True
     if com.log_input(s) == "n":
         sys.exit()
+
+    return True

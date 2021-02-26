@@ -44,11 +44,6 @@ def write_csv_line(row, out_file):
     out_file.write(line_out)
 
 
-def extract_list(array_in, dir_out):
-    out_list = [elt[0] for elt in array_in]
-    save_csv(out_list, dir_out)
-
-
 def csv_clean(s):
     out = s.replace('\r', '')
     out = out.replace('\n', '')

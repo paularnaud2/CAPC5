@@ -6,3 +6,5 @@ Python/Install/gl.py
 Excel/confidential.txt
 Python/conf_oracle.py
 Python/conf_main.py
+Python/htmlcov
+Python/.coverage

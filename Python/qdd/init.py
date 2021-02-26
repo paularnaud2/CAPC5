@@ -7,12 +7,15 @@ from math import floor
 from qdd.functions import read_list
 
 
-def init_file_match():
+def init_compare_files(out):
 
     init_tmp_dir()
     gl.IN_FILE_NAME_1 = '1'
     gl.IN_FILE_NAME_2 = '2'
-    gl.OUT_DIR = g.paths['OUT'] + 'file_match_out.csv'
+    if out:
+        gl.OUT_DIR = out
+    else:
+        gl.OUT_DIR = g.paths['OUT'] + 'file_match_out.csv'
     gl.TMP_1 = gl.TMP_DIR + 'tmp_1.csv'
     gl.TMP_2 = gl.TMP_DIR + 'tmp_2.csv'
     gl.EQUAL_OUT = False

@@ -3,7 +3,6 @@ import qdd.gl as gl
 import common as com
 
 from qdd.init import init_compare
-from qdd.functions import write_elt
 from qdd.functions import read_list
 from qdd.functions import compare_elt
 
@@ -46,11 +45,11 @@ def compare_equal(line_1_list, line_2_list, in_file_1, in_file_2, out_file):
             gl.counters["diff"] += 1
             if gl.bool["DIFF"]:
                 line_diff = compare_line(line_1_list, line_2_list)
-                write_elt(out_file, line_diff, True)
+                com.write_csv_line(line_diff, out_file)
                 gl.counters["out"] += 1
         elif gl.bool["EQUAL"]:
             line_1_list.append(gl.EQUAL_LABEL)
-            write_elt(out_file, line_1_list, True)
+            com.write_csv_line(line_1_list, out_file)
             gl.counters["out"] += 1
         line_1_list = read_list(in_file_1)
         gl.counters["c1"] += 1
@@ -81,7 +80,7 @@ def compare_inf(line_1_list, line_2_list, in_file_1, out_file):
         gl.counters["diff"] += 1
         if gl.bool["DIFF"]:
             line_1_list.append(gl.LABEL_1)
-            write_elt(out_file, line_1_list, True)
+            com.write_csv_line(line_1_list, out_file)
             gl.counters["out"] += 1
         line_1_list = read_list(in_file_1)
         gl.counters["c1"] += 1
@@ -96,25 +95,9 @@ def compare_sup(line_1_list, line_2_list, in_file_2, out_file):
         gl.counters["diff"] += 1
         if gl.bool["DIFF"]:
             line_2_list.append(gl.LABEL_2)
-            write_elt(out_file, line_2_list, True)
+            com.write_csv_line(line_2_list, out_file)
             gl.counters["out"] += 1
         line_2_list = read_list(in_file_2)
         gl.counters["c2"] += 1
 
     return (line_1_list, line_2_list)
-
-
-def compare_headers(in1, in2):
-
-    line1 = com.get_header(in1)
-    line2 = com.get_header(in2)
-
-    if line1 != line2:
-        s = "Attention : les fichiers à comparer ont des en-têtes différentes :\n"
-        s += f"{line1}\n"
-        s += f"{line2}\n"
-        s += "La comparaison ignorera ces en-têtes. Continuer ? (o/n)"
-        if com.log_input(s) == 'n':
-            sys.exit()
-
-    return True

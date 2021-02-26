@@ -2,7 +2,6 @@ import qdd.gl as gl
 import common as com
 
 from qdd.init import init_prev_elt
-from qdd.functions import write_elt
 from qdd.functions import write_min_elt
 
 
@@ -20,8 +19,8 @@ def gen_sorted_temp_files(in_file_dir, out_file_dir):
         for line in in_file:
             gl.counters["sf_read"] += 1
             gl.cur_list.append(com.csv_to_list(line))
-            com.step_log(gl.counters["sf_read"], gl.SL_STEP,
-                         'lignes parcourues')
+            s = 'lignes parcourues'
+            com.step_log(gl.counters["sf_read"], gl.SL_STEP, s)
             check_max_row(gl.counters["sf_read"])
     gen_last_file(out_file_dir)
     del gl.cur_list
@@ -100,12 +99,5 @@ def gen_temp_file():
     # génération d'un fichier temporaire
 
     file_nb = gl.counters["file"]
-    key = "tmp_{}".format(file_nb)
-    tmp_file_dir = gl.TMP_DIR + "tmp_" + str(file_nb) + gl.FILE_TYPE
-    with open(tmp_file_dir, 'w', encoding='utf-8') as tmp_file:
-        gl.counters[key] = 1
-        com.init_sl_time()
-        for elt in gl.cur_list:
-            gl.counters[key] += 1
-            com.step_log(gl.counters[key], gl.SL_STEP)
-            write_elt(tmp_file, elt, False)
+    tmp_file_dir = f"{gl.TMP_DIR}tmp_{file_nb}{gl.FILE_TYPE}"
+    com.save_csv(gl.cur_list, tmp_file_dir)

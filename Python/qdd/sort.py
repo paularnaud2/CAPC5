@@ -1,4 +1,3 @@
-import os
 import sys
 import common as com
 import qdd.gl as gl
@@ -6,7 +5,6 @@ from qdd.init import init_stf
 from qdd.init import init_msf
 from qdd.gstf import gen_sorted_temp_files
 from qdd.functions import temp_files
-from qdd.functions import write_list
 from qdd.functions import array_list_not_void
 from qdd.fill_al import fill_array_list
 from qdd.empty_al import empty_array_list
@@ -16,10 +14,7 @@ def sort_file(in_file_dir, out_file_dir, prompt=False, nb=0):
     # La variable nb sert à différentier les fichiers
     # de sortie dans le cadre de qdd
 
-    file_size = com.big_number(os.path.getsize(in_file_dir))
-    s = f"Début du tri de {in_file_dir}."
-    s += f" Taille du fichier à trier en octets : {file_size}"
-    com.log(s)
+    com.log(f"Début du tri de '{in_file_dir}'.")
     init_stf(in_file_dir, out_file_dir)
     gen_sorted_temp_files(in_file_dir, out_file_dir)
     com.log_print('|')
@@ -64,7 +59,7 @@ def finish(out_file_dir, prompt, nb):
         if prompt:
             prompt_dup_key(n_dup_key)
         else:
-            write_list(gl.dup_key_list, gl.OUT_DUP_KEY_FILE)
+            com.save_csv(gl.dup_key_list, gl.OUT_DUP_KEY_FILE)
             s = "{} doublons de clé trouvés. Liste écrite dans le fichier '{}'"
             com.log(s.format(n_dup_key, gl.OUT_DUP_KEY_FILE))
 
@@ -84,17 +79,21 @@ def prompt_dup_key(n_dup_key):
     s += "\nb -> ne pas sauvegarder la liste des doublons et quitter"
     s += "\nc -> sauvegarder la liste des doublons et continuer"
     s += "\nd -> ne pas sauvegarder la liste des doublons et continuer"
-    s += "\n"
-    command = com.log_input(s)
+    if gl.TEST_PROMPT_DK:
+        com.log_print(s)
+        com.log_print('c (TEST_PROMPT_DK)')
+        command = 'c'
+    else:
+        command = com.log_input(s)
     com.log_print('|')
     if command == 'a':
-        write_list(gl.dup_key_list, gl.OUT_DUP_KEY_FILE)
+        com.save_csv(gl.dup_key_list, gl.OUT_DUP_KEY_FILE)
         s = "Liste des doublons de clés écrite dans le fichier '{}'"
         com.log(s.format(gl.OUT_DUP_KEY_FILE))
         sys.exit()
     if command == 'b':
         sys.exit()
     if command == 'c':
-        write_list(gl.dup_key_list, gl.OUT_DUP_KEY_FILE)
+        com.save_csv(gl.dup_key_list, gl.OUT_DUP_KEY_FILE)
         s = "Liste des doublons de clés écrite dans le fichier '{}'"
         com.log(s.format(gl.OUT_DUP_KEY_FILE))
