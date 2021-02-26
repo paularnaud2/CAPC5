@@ -53,23 +53,20 @@ def test_qdd():
     com.mkdirs(gl.QDD_OUT, True)
     com.log_print()
 
-    # # test qdd no header
-    # ttry(qdd, gl.E_MH, gl.IN_NH, gl.IN12, gl.OUT1)
-    # ttry(qdd, gl.E_DH, gl.IN11, gl.IN_DH, gl.OUT1)
+    # test qdd no header
+    ttry(qdd, gl.E_MH, gl.IN_NH, gl.IN12, gl.OUT1)
+    ttry(qdd, gl.E_DH, gl.IN11, gl.IN_DH, gl.OUT1)
 
-    # # test dup key
+    # test dup key
     qdd(gl.IN_DK, gl.IN12, gl.OUT1, tpd=True)
 
     # compare matching files
     q.file_match(gl.OUT_DK, gl.OUT_DK_REF, compare=True, out=gl.OUT_FM)
-    q.file_match(gl.OUT_FM, gl.TEST_QDD + gl.REF_FM)
+    q.file_match(gl.OUT_FM, gl.REF_FM)
 
     # compare different files
-    q.file_match(gl.TEST_QDD + gl.REF1,
-                 gl.TEST_QDD + gl.REF2,
-                 err=False,
-                 out=gl.OUT_FM)
-    q.file_match(gl.OUT_FM, gl.TEST_QDD + gl.REF_FDM)
+    q.file_match(gl.REF1_F, gl.REF2_F, err=False, out=gl.OUT_FM)
+    q.file_match(gl.OUT_FM, gl.REF_FDM)
 
     qdd(gl.IN11, gl.IN12, gl.OUT1, gl.REF1, 100, gl.REF_DUP1)
     qdd(gl.IN11, gl.IN12, gl.OUT1, gl.REF1, 15, gl.REF_DUP1)
