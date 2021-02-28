@@ -15,10 +15,10 @@ def run_gen_out_file(test=False):
     com.log("Lancement du job " + __name__)
     sql.download(
         ENV='DIRECT',
-        BDD='CAPC5',
+        DB='CAPC5',
         QUERY_FILE=query_file,
         OUT_FILE=out_file,
-        MAX_BDD_CNX=10,
+        MAX_DB_CNX=10,
         MERGE_RG_FILES=True,
         EXPORT_RANGE=False,
         CHECK_DUP=False,

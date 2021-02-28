@@ -17,7 +17,7 @@ def run_sge(test=False):
     view_name = 'SGE'
     max_elt_insert = 10000
     max_elt_st = 500
-    max_bdd_cnx = 8
+    max_db_cnx = 8
     sl_step_query = 100
 
     if test:
@@ -28,7 +28,7 @@ def run_sge(test=False):
         view_name = 'SGE_TEST'
         max_elt_insert = 100
         max_elt_st = 10
-        max_bdd_cnx = 6
+        max_db_cnx = 6
         sl_step_query = 10
 
     squeeze_downl = False
@@ -40,11 +40,11 @@ def run_sge(test=False):
 ------------------------------------------------------------')
         run_reqList(
             ENV='PROD',
-            BDD='SGE',
+            DB='SGE',
             QUERY_FILE='reqlist/queries/SGE_SUIVI_FIN_TRV.sql',
             IN_FILE=in_file,
             OUT_FILE=out_file,
-            MAX_BDD_CNX=max_bdd_cnx,
+            MAX_DB_CNX=max_db_cnx,
             SL_STEP_QUERY=sl_step_query,
             NB_MAX_ELT_IN_STATEMENT=max_elt_st,
             OPEN_OUT_FILE=False,
@@ -58,7 +58,7 @@ def run_sge(test=False):
 ------------------------------------')
     sql.execute(
         ENV='DIRECT',
-        BDD='CAPC5',
+        DB='CAPC5',
         SCRIPT_FILE='sql/procs/create_table_sge_tmp.sql',
         VAR_DICT={'TABLE_NAME': tmp_table},
         PROC=True,
@@ -69,7 +69,7 @@ def run_sge(test=False):
 ----------------------')
         sql.upload(
             ENV='DIRECT',
-            BDD='CAPC5',
+            DB='CAPC5',
             SCRIPT_FILE='sql/scripts/insert_table_sge.sql',
             VAR_DICT={'TABLE_NAME': tmp_table},
             UPLOAD_IN=out_file,
@@ -80,7 +80,7 @@ def run_sge(test=False):
 ------------------------------------')
     sql.execute(
         ENV='DIRECT',
-        BDD='CAPC5',
+        DB='CAPC5',
         SCRIPT_FILE='sql/procs/create_table_sge_final.sql',
         VAR_DICT={'TABLE_NAME': final_table},
         PROC=True,
@@ -90,7 +90,7 @@ def run_sge(test=False):
 --------------------')
     sql.execute(
         ENV='DIRECT',
-        BDD='CAPC5',
+        DB='CAPC5',
         SCRIPT_FILE='sql/scripts/from_tmp_to_final.sql',
         VAR_DICT={
             'TMP_TABLE': tmp_table,
@@ -102,7 +102,7 @@ def run_sge(test=False):
 -----------------------------------')
     sql.execute(
         ENV='DIRECT',
-        BDD='CAPC5',
+        DB='CAPC5',
         SCRIPT_FILE='sql/scripts/update_view_sge.sql',
         VAR_DICT={
             'TABLE_NAME': final_table,

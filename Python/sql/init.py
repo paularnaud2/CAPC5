@@ -14,7 +14,7 @@ def init():
 
 def init_gl():
     TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
-    gl.CHECK_MEPA_DIR = TMP_DIR + gl.CHECK_MEPA_FILE
+    gl.IUTD_DIR = TMP_DIR + gl.IUTD_FILE
     gl.TMP_FILE_CHUNK = TMP_DIR + gl.CHUNK_FILE
 
     gl.conf = {}
@@ -30,7 +30,7 @@ def init_gl():
 
 
 def init_tmp_dir():
-    gl.TMP_PATH = g.paths['TMP'] + gl.TMP_FOLDER + gl.BDD + '/'
+    gl.TMP_PATH = g.paths['TMP'] + gl.TMP_FOLDER + gl.DB + '/'
     com.mkdirs(gl.TMP_PATH)
 
 

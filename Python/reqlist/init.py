@@ -24,7 +24,7 @@ def init_globals():
     gl.OUT_LEFT = TMP_DIR + gl.OUT_LEFT_FILE
     gl.OUT_RIGHT = TMP_DIR + gl.OUT_RIGHT_FILE
     gl.OUT_SQL = TMP_DIR + gl.OUT_SQL_FILE
-    gl.TMP_PATH = TMP_DIR + gl.BDD + '/'
+    gl.TMP_PATH = TMP_DIR + gl.DB + '/'
 
     gl.counters = {}
     gl.bools = {}

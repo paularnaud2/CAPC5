@@ -46,7 +46,7 @@ def write_row(row, out_file, range_name='MONO'):
         line_out += g.CSV_SEPARATOR + s
     if line_out.strip(g.CSV_SEPARATOR) == '':
         return 0
-    if gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES:
+    if gl.DB == 'GINKO' and gl.EXPORT_INSTANCES:
         line_out += g.CSV_SEPARATOR + range_name[5:]
     elif gl.EXPORT_RANGE and range_name != 'MONO':
         line_out += g.CSV_SEPARATOR + range_name

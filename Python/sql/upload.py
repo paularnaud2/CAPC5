@@ -65,7 +65,7 @@ def init(params):
     gl.ref_chunk = 0
     gl.counters['main'] = 0
     gl.counters['chunk'] = 0
-    gl.cnx = connect(ENV=gl.ENV, BDD=gl.BDD)
+    gl.cnx = connect(ENV=gl.ENV, DB=gl.DB)
     gl.c = gl.cnx.cursor()
     gl.data = []
 

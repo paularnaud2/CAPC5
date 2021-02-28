@@ -81,7 +81,7 @@ def prompt_dup_key(n_dup_key):
     s += "\nd -> ne pas sauvegarder la liste des doublons et continuer"
     if gl.TEST_PROMPT_DK:
         com.log_print(s)
-        com.log_print('c (TEST_PROMPT_DK)')
+        com.log_print('c (TEST_PROMPT_DK = True)')
         command = 'c'
     else:
         command = com.log_input(s)

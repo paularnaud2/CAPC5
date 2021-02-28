@@ -1,6 +1,7 @@
 # import common as com
-import os
+from datetime import datetime
+s = str(datetime.now().date()).replace('-', '/')
+print(s)
 
-l = []
-if l:
-    print('ok')
+d_now = datetime.now().strftime("%Y/%m/%d")
+print(d_now)

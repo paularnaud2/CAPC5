@@ -7,19 +7,18 @@ from test import ttry
 from common import g
 
 
-def qdd(
-    in1,
-    in2,
-    out,
-    ref='',
-    mrl=100,
-    ref_dup='',
-    dup_nb=1,
-    tps=False,
-    tpd=False,
-    eq=False,
-    mls=100,
-):
+def qdd(in1,
+        in2,
+        out,
+        ref='',
+        mrl=100,
+        ref_dup='',
+        dup_nb=1,
+        tps=False,
+        tpd=False,
+        eq=False,
+        mls=100):
+
     q.run_qdd(
         IN_DIR=gl.TEST_QDD,
         IN_FILE_NAME_1=in1,

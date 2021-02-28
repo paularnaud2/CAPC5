@@ -4,7 +4,7 @@ init_log('run_reqlist')
 if __name__ == '__main__':
     from reqlist import run_reqList
     run_reqList(
-        MAX_BDD_CNX=8,
+        MAX_DB_CNX=8,
         SQUEEZE_JOIN=False,
         SQUEEZE_SQL=False,
         CHECK_DUP=True,

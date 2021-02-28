@@ -16,7 +16,7 @@ def run_aff(test=False):
     view_name = 'AFF'
     max_elt_insert = 10000
     max_elt_st = 500
-    max_bdd_cnx = 8
+    max_db_cnx = 8
     sl_step_query = 100
 
     if test:
@@ -26,7 +26,7 @@ def run_aff(test=False):
         view_name = 'AFF_TEST'
         max_elt_insert = 40
         max_elt_st = 10
-        max_bdd_cnx = 6
+        max_db_cnx = 6
         sl_step_query = 10
 
     squeeze_downl = False
@@ -37,11 +37,11 @@ def run_aff(test=False):
 ------------------------------------------------------------')
         run_reqList(
             ENV='PROD',
-            BDD='SGE',
+            DB='SGE',
             QUERY_FILE='reqlist/queries/SGE_SUIVI_FIN_TRV_AFF.sql',
             IN_FILE=in_file,
             OUT_FILE=out_file,
-            MAX_BDD_CNX=max_bdd_cnx,
+            MAX_DB_CNX=max_db_cnx,
             SL_STEP_QUERY=sl_step_query,
             NB_MAX_ELT_IN_STATEMENT=max_elt_st,
             OPEN_OUT_FILE=False,
@@ -55,7 +55,7 @@ def run_aff(test=False):
 ------------------------------------')
     sql.execute(
         ENV='DIRECT',
-        BDD='CAPC5',
+        DB='CAPC5',
         SCRIPT_FILE='sql/procs/create_table_aff.sql',
         VAR_DICT={'TABLE_NAME': table_name},
         PROC=True,
@@ -65,7 +65,7 @@ def run_aff(test=False):
 ----------------------')
     sql.upload(
         ENV='DIRECT',
-        BDD='CAPC5',
+        DB='CAPC5',
         SCRIPT_FILE='sql/scripts/insert_table_aff.sql',
         VAR_DICT={'TABLE_NAME': table_name},
         UPLOAD_IN=out_file,
@@ -76,7 +76,7 @@ def run_aff(test=False):
 -----------------------------------')
     sql.execute(
         ENV='DIRECT',
-        BDD='CAPC5',
+        DB='CAPC5',
         SCRIPT_FILE='sql/scripts/update_view_aff.sql',
         VAR_DICT={
             'TABLE_NAME': table_name,

@@ -18,9 +18,9 @@ verrou = RLock()
 def process_range_list(range_list, rg_file_name):
     gl.counters['QUERY_RANGE'] = 0
     init_th_dict()
-    gl.sem = Semaphore(gl.MAX_BDD_CNX)
+    gl.sem = Semaphore(gl.MAX_DB_CNX)
     if range_list == ['MONO']:
-        gen_cnx_dict(gl.BDD, gl.ENV, 1)
+        gen_cnx_dict(gl.DB, gl.ENV, 1)
         process_range()
     else:
         lauch_threads(range_list, rg_file_name)
@@ -29,7 +29,7 @@ def process_range_list(range_list, rg_file_name):
 def lauch_threads(range_list, rg_file_name):
     com.log(f"Plages à requêter : {range_list}")
     thread_list = []
-    gen_cnx_dict(gl.BDD, gl.ENV, gl.MAX_BDD_CNX)
+    gen_cnx_dict(gl.DB, gl.ENV, gl.MAX_DB_CNX)
     for elt in range_list:
         th = Thread(target=process_range, args=(
             elt,
@@ -108,7 +108,7 @@ def get_th_nb():
 
 
 def init_th_dict():
-    for i in range(1, gl.MAX_BDD_CNX + 1):
+    for i in range(1, gl.MAX_DB_CNX + 1):
         gl.th_dic[i] = 0
 
 
@@ -127,7 +127,7 @@ def init_out_file(cursor, range_name='MONO'):
         out_file.write(fields[0])
         for elt in fields[1:]:
             out_file.write(g.CSV_SEPARATOR + elt)
-        if gl.BDD == 'GINKO' and gl.EXPORT_INSTANCES:
+        if gl.DB == 'GINKO' and gl.EXPORT_INSTANCES:
             out_file.write(g.CSV_SEPARATOR + "INSTANCE")
         elif gl.EXPORT_RANGE and range_name != 'MONO':
             out_file.write(g.CSV_SEPARATOR + "RANGE")

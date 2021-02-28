@@ -1,4 +1,4 @@
-from . import g
+from common import g
 from .log import log
 
 

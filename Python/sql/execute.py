@@ -13,7 +13,7 @@ def execute(**params):
     init_params(params)
     init()
     script = get_final_script(gl.SCRIPT_FILE)
-    cnx = connect(ENV=gl.ENV, BDD=gl.BDD)
+    cnx = connect(ENV=gl.ENV, DB=gl.DB)
     c = cnx.cursor()
     if gl.PROC:
         com.log("Execution de la procédure :")
@@ -21,8 +21,8 @@ def execute(**params):
         c.execute(script)
         com.log("Procédure executée")
     else:
-        command_list = script.split(';')
-        for command in command_list:
+        command_list = script.split(';\n')
+        for command in command_list[:-1]:
             com.log("Execution de la commande :")
             com.log_print(command)
             c.execute(command)

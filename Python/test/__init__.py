@@ -1,2 +1,2 @@
-from . import gl
+from test import gl
 from .main import ttry

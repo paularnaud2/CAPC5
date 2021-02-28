@@ -5,7 +5,7 @@ init_log('run_sql')
 if __name__ == '__main__':
 
     sql.download(
-        MAX_BDD_CNX=8,
+        MAX_DB_CNX=8,
         MERGE_RG_FILES=True,
         EXPORT_RANGE=False,
         CHECK_DUP=True,
@@ -17,7 +17,7 @@ if __name__ == '__main__':
     #     VAR_DICT={'@@TABLE_NAME@@': table_name},
     #     PROC=True,
     #     ENV='DIRECT',
-    #     BDD='CAPC5',
+    #     DB='CAPC5',
     # )
 
     # sql.upload(
@@ -26,5 +26,5 @@ if __name__ == '__main__':
     #     VAR_DICT={'@@TABLE_NAME@@': table_name},
     #     NB_MAX_ELT_INSERT=100,
     #     ENV='DIRECT',
-    #     BDD='CAPC5',
+    #     DB='CAPC5',
     # )

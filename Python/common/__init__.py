@@ -1,4 +1,4 @@
-from . import g
+from common import g
 from .mail import mail
 from .tools import send_notif
 from .deco import log_exeptions

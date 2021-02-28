@@ -7,7 +7,7 @@ def process_query_init(elt, query, th_nb):
     if elt == 'MONO':
         com.log("Exécution de la requête :")
         com.log_print(query + "\n;")
-    elif gl.MAX_BDD_CNX == 1:
+    elif gl.MAX_DB_CNX == 1:
         s = "Exécution de la requête pour la plage {}"
         com.log(s.format(elt))
     else:
@@ -19,29 +19,22 @@ def process_query_finish(elt, th_nb):
 
     if elt == 'MONO':
         com.log("Requête exécutée")
-    elif gl.MAX_BDD_CNX == 1:
+    elif gl.MAX_DB_CNX == 1:
         com.log("Requête exécutée pour la plage {}".format(elt))
     else:
         com.log("Requête exécutée pour la plage {} (connexion No.{})".format(
             elt, th_nb))
 
 
-def connect_init(ENV, BDD, cnx_str, th_nb, multi_thread):
+def connect_init(ENV, DB, cnx_str):
 
-    if multi_thread is False:
-        s = f"Connexion à la base '{BDD}' de l'environnement '{ENV}' ({cnx_str})"
-    else:
-        s = f"Connexion à la base '{BDD}' de l'environnement '{ENV}'"
-        s += f" ({cnx_str})"
+    s = f"Connexion à la base '{DB}' de l'environnement '{ENV}' ({cnx_str})"
     com.log(s)
 
 
-def connect_finish(th_nb, BDD, multi_thread):
+def connect_finish(DB):
 
-    if multi_thread is False:
-        s = f"Connecté à {BDD}"
-    else:
-        s = f"Connecté à {BDD} (thread No.{th_nb})"
+    s = f"Connecté à {DB}"
     com.log(s)
 
 
@@ -49,7 +42,7 @@ def write_rows_init(range_name, th_nb):
 
     if range_name == 'MONO':
         com.log("Écriture des lignes en cours...")
-    elif gl.MAX_BDD_CNX == 1 or th_nb == 0:
+    elif gl.MAX_DB_CNX == 1 or th_nb == 0:
         com.log("Écriture des lignes en cours pour la plage {}...".format(
             range_name))
     else:
@@ -63,7 +56,7 @@ def write_rows_finish(range_name, i, th_nb):
     if range_name == 'MONO':
         s = "Écriture des lignes terminée ({} lignes écrites)"
         com.log(s.format(com.big_number(i)))
-    elif gl.MAX_BDD_CNX == 1 or th_nb == 0:
+    elif gl.MAX_DB_CNX == 1 or th_nb == 0:
         s = "Écriture des lignes terminée pour la plage {}. {} lignes écrites"
         com.log(s.format(range_name, com.big_number(i)))
     else:

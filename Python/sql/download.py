@@ -20,7 +20,7 @@ def download(**params):
     start_time = time()
     init_params(params)
     init()
-    if gl.BDD == 'GINKO':
+    if gl.DB == 'GINKO':
         download_gko()
     else:
         download_strd()

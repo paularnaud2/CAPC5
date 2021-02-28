@@ -1,6 +1,6 @@
 from math import floor
 from time import time
-from . import g
+from common import g
 
 
 def get_duration_string(duration_ms):

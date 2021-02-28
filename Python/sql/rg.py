@@ -39,7 +39,7 @@ def restart(range_list):
     if a == 0:
         return range_list
 
-    if gl.bools['RANGE_QUERY'] is False and gl.BDD != 'GINKO':
+    if gl.bools['RANGE_QUERY'] is False and gl.DB != 'GINKO':
         com.mkdirs(gl.TMP_PATH, True)
         return range_list
 

@@ -1,7 +1,7 @@
 import ssl
 import smtplib
 
-from . import g
+from common import g
 from . import file
 from . import tools
 from .log import log

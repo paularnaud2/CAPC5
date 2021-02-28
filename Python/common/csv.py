@@ -1,4 +1,4 @@
-from . import g
+from common import g
 
 
 def get_csv_fields_dict(in_dir):

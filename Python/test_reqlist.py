@@ -12,23 +12,22 @@ from multiprocessing import Process
 from multiprocessing import Manager
 
 
-def reqlist(
-    in_file,
-    out_file,
-    query_file,
-    test_restart=False,
-    md='',
-    cnx=3,
-    elt=100,
-):
+def reqlist(in_file,
+            out_file,
+            query_file,
+            test_restart=False,
+            md='',
+            cnx=3,
+            elt=100):
+
     rl.run_reqList(
         ENV=gl.SQL_ENV,
-        BDD=gl.SQL_BDD,
+        DB=gl.SQL_DB,
         QUERY_FILE=query_file,
         IN_FILE=in_file,
         OUT_FILE=out_file,
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        MAX_BDD_CNX=cnx,
+        MAX_DB_CNX=cnx,
         NB_MAX_ELT_IN_STATEMENT=elt,
         SL_STEP_QUERY=5,
         SQUEEZE_JOIN=False,

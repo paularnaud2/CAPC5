@@ -16,4 +16,4 @@ ORACLE_CLIENT = 'C:/instantclient_19_6/'
 
 # test----------------------------------------------------------------------
 TEST_ENV = 'LOCAL'
-TEST_BDD = 'SYSTEM'
+TEST_DB = 'SYSTEM'

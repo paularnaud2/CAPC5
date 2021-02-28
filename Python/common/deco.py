@@ -2,7 +2,7 @@ import os
 import traceback
 import conf_main as cfg
 
-from . import g
+from common import g
 from .log import log
 from .log import log_input
 

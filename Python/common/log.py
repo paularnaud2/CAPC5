@@ -1,6 +1,6 @@
 import sys
 
-from . import g
+from common import g
 from time import time
 from datetime import datetime
 

@@ -23,7 +23,7 @@ def gen_group_list(elt_list, group_list):
 def get_sql_array_finish(th_nb):
     n_rows = gl.counters[th_nb]
     s_th = ''
-    if gl.MAX_BDD_CNX > 1:
+    if gl.MAX_DB_CNX > 1:
         s_th = f" pour le thread No.{th_nb}"
     if n_rows > 0:
         bn = com.big_number(n_rows)

@@ -11,7 +11,7 @@ from reqlist.functions import gen_group_list
 
 def download(query_file):
     init(query_file)
-    if gl.BDD == 'GINKO':
+    if gl.DB == 'GINKO':
         gko.download()
     else:
         strd.download()
@@ -31,7 +31,7 @@ def init(query_file):
 
     sql.init()
     com.log_print('|')
-    com.log(f"Récupération des données depuis la base {gl.BDD}...")
+    com.log(f"Récupération des données depuis la base {gl.DB}...")
     gl.header = ''
     gl.counters = {}
-    gl.bools["EXPORT_INSTANCES"] = gl.EXPORT_INSTANCES and gl.BDD == 'GINKO'
+    gl.bools["EXPORT_INSTANCES"] = gl.EXPORT_INSTANCES and gl.DB == 'GINKO'

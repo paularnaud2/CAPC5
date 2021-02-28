@@ -3,20 +3,20 @@ from common import g
 from datetime import datetime
 
 ENV = 'PROD'
-BDD = 'SGE'
-BDD = 'GINKO'
-# BDD = 'ADAM'
+DB = 'SGE'
+DB = 'GINKO'
+# DB = 'ADAM'
 
 # ENV = 'DIRECT'
-# BDD = 'CAPC5'
+# DB = 'CAPC5'
 
 # ENV = 'LOCAL'
-# BDD = 'XE'
+# DB = 'XE'
 
 date = datetime.now().strftime("%Y%m%d")
-QUERY_FILE = f'sql/queries/e_{BDD}.sql'
-OUT_FILE = f"{g.paths['OUT']}export_SQL_{BDD}_{date}.csv"
-OUT_RG_DIR = f"{g.paths['OUT']}{BDD}_OUT_{date}/"
+QUERY_FILE = f'sql/queries/e_{DB}.sql'
+OUT_FILE = f"{g.paths['OUT']}export_SQL_{DB}_{date}.csv"
+OUT_RG_DIR = f"{g.paths['OUT']}{DB}_OUT_{date}/"
 
 # GKO_INSTANCES = [
 # 'GKO1_IDF', 'GKO2_MMN', 'GKO3_EST', 'GKO4_RAB',
@@ -27,7 +27,7 @@ GKO_INSTANCES = ['GKO1_IDF', 'GKO2_MMN', 'GKO3_EST']
 EXPORT_INSTANCES = False
 
 SL_STEP = 100000
-MAX_BDD_CNX = 10
+MAX_DB_CNX = 10
 MAX_CHECK_DUP = 1 * 10**6
 
 MERGE_RG_FILES = True
@@ -36,18 +36,22 @@ CHECK_DUP = True
 OPEN_OUT_FILE = True
 SEND_NOTIF = True
 TEST_RESTART = False
+TEST_IUTD = False
 
 FILE_TYPE = '.csv'
 TMP_FOLDER = 'sql/'
-CHECK_MEPA_FILE = 'last_mepa_check.csv'
-CHECK_MEPA_QUERY = 'SELECT MAX(DEM_D_DEMANDE) FROM SUIVI.DEMANDE'
+IUTD_FILE = 'last_iutd_check.csv'
 RANGE_PATH = 'sql/ranges/'
+QUERY_PATH = 'sql/queries/'
 EC = '_EC'
 RANGE_FIELD = "RANGE"
 
+# Data bases in this list will be checked by the is_up_to_date function
+IUTD_LIST = ['SGE']
+
 # Super globals
 client_is_init = False
-check_mepa_ok = False
+iutd = False
 
 # Globales paramétrables
 VAR_DICT = {}

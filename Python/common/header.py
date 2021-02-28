@@ -1,4 +1,4 @@
-from . import g
+from common import g
 from .csv import csv_to_list
 from .log import log
 from .log import log_print

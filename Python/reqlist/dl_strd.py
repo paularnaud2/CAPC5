@@ -16,7 +16,7 @@ verrou = RLock()
 def download():
     group_array = split_group_list()
     n = len(group_array)
-    sql.gen_cnx_dict(gl.BDD, gl.ENV, n)
+    sql.gen_cnx_dict(gl.DB, gl.ENV, n)
     launch_threads(group_array)
     file.gen_out_file()
 
@@ -33,7 +33,7 @@ def launch_threads(group_array):
     for th in thread_list:
         th.join()
 
-    if gl.MAX_BDD_CNX > 1:
+    if gl.MAX_DB_CNX > 1:
         com.log("Tous les threads ont terminé leur execution")
     com.log_print('|')
 
@@ -45,17 +45,17 @@ def dl_th(grp, th_nb):
     process_grp(c, grp, th_nb=th_nb)
     c.close()
     cnx.close()
-    if gl.MAX_BDD_CNX > 1:
+    if gl.MAX_DB_CNX > 1:
         com.log(f"Fin de l'execution du thread No.{th_nb}")
 
 
 def split_group_list():
-    if gl.MAX_BDD_CNX < 2:
+    if gl.MAX_DB_CNX < 2:
         return [gl.group_list]
 
     array_out = []
     cur_list = []
-    n_max = ceil(len(gl.group_list) / gl.MAX_BDD_CNX)
+    n_max = ceil(len(gl.group_list) / gl.MAX_DB_CNX)
     i = 0
     for grp in gl.group_list:
         i += 1
