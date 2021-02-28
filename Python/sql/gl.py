@@ -51,15 +51,16 @@ check_mepa_ok = False
 
 # Globales paramétrables
 VAR_DICT = {}
+EXECUTE_PARAMS = {}
 
 # Execute
 SCRIPT_FILE = 'sql/scripts/create_table_aff.sql'
 NB_MAX_ELT_INSERT = 100000
 PROC = False
-CHUNK_FILE = 'chunk.txt'
 
 # Upload
 UPLOAD_IN = g.paths['OUT'] + 'OUT/in.csv'
+CHUNK_FILE = 'chunk.txt'
 
 # Process manager
 MD = ''

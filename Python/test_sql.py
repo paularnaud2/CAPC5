@@ -11,20 +11,21 @@ from multiprocessing import Process
 from multiprocessing import Manager
 
 
-def execute():
-    sql.execute(
-        ENV=gl.SQL_ENV,
-        BDD=gl.SQL_BDD,
-        SCRIPT_FILE=gl.SQL_CREATE_TABLE,
-        VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        PROC=True,
-    )
-
-
 def upload(inp, test_restart=False, md=''):
+    execute_params = {
+        'ENV': gl.SQL_ENV,
+        'BDD': gl.SQL_BDD,
+        'SCRIPT_FILE': gl.SQL_CREATE_TABLE,
+        'VAR_DICT': {
+            'TABLE_NAME': gl.SQL_TABLE_NAME
+        },
+        'PROC': True,
+    }
+
     sql.upload(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
+        EXECUTE_PARAMS=execute_params,
         SCRIPT_FILE=gl.SQL_INSERT_TABLE,
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
         UPLOAD_IN=inp,
@@ -58,13 +59,10 @@ def test_sql():
     com.mkdirs(gl.SQL_OUT, True)
     com.log_print()
 
-    # com.log('Test sql.execute-----------------------------')
-    # execute()
-
     # com.log('Test sql.upload------------------------------')
     # ttry(upload, g.E_MH, gl.SQL_IN_FILE_MH)
     upload_interrupted()
-    upload(gl.SQL_IN_FILE)
+    upload(gl.SQL_IN_FILE, True)
 
     com.log('Test sql.dowload-----------------------------')
     # test download no output
@@ -108,6 +106,7 @@ def upload_interrupted():
     t = md['T'] / 1000
     sleep(t)
     p.terminate()
+    com.log('Arrêt automatique du traitement (upload_interrupted)\n')
 
 
 def download_interrupted(query, out):

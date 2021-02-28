@@ -33,7 +33,6 @@ def run_sge(test=False):
 
     squeeze_downl = False
     squeeze_upl = False
-    (squeeze_downl, squeeze_create_table) = sql.check_restart(squeeze_downl)
 
     com.log("Lancement du job " + __name__)
     if not squeeze_downl:
@@ -55,16 +54,15 @@ def run_sge(test=False):
             SEND_NOTIF=False,
         )
 
-    if not squeeze_create_table and not squeeze_upl:
-        com.log(f'Création de la table temporaire {tmp_table}\
+    com.log(f'Création de la table temporaire {tmp_table}\
 ------------------------------------')
-        sql.execute(
-            ENV='DIRECT',
-            BDD='CAPC5',
-            SCRIPT_FILE='sql/procs/create_table_sge_tmp.sql',
-            VAR_DICT={'TABLE_NAME': tmp_table},
-            PROC=True,
-        )
+    sql.execute(
+        ENV='DIRECT',
+        BDD='CAPC5',
+        SCRIPT_FILE='sql/procs/create_table_sge_tmp.sql',
+        VAR_DICT={'TABLE_NAME': tmp_table},
+        PROC=True,
+    )
 
     if not squeeze_upl:
         com.log('Export des données importées dans la table temporaire créée\

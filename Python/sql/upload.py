@@ -2,19 +2,22 @@ import os
 import common as com
 import sql.gl as gl
 import sql.log as log
+import sql.init as sql
 
 from time import time
-from sql.init import init
-from sql.init import init_gl
-from sql.init import init_params
 from sql.connect import connect
 from sql.functions import get_final_script
+from sql.execute import execute
 
 
 @com.log_exeptions
 def upload(**params):
     com.log('[sql] upload')
-    script = init_this(params)
+    init(params)
+    if not check_restart():
+        prepare_bdd()
+        init(params)
+    script = get_script()
     start_time = time()
     com.check_header(gl.UPLOAD_IN)
     com.log(f"Ouverture du fichier d'entrée {gl.UPLOAD_IN}")
@@ -38,6 +41,13 @@ def upload(**params):
     com.log_print()
 
 
+def prepare_bdd():
+    if gl.EXECUTE_PARAMS:
+        com.log("Préparation de la base de donnée avant l'injection")
+        com.log_print('|')
+        execute(**gl.EXECUTE_PARAMS)
+
+
 def finish_this(start_time):
     gl.cnx.close()
     os.remove(gl.TMP_FILE_CHUNK)
@@ -48,9 +58,9 @@ def finish_this(start_time):
     com.log(s)
 
 
-def init_this(params):
-    init_params(params)
-    init()
+def init(params):
+    sql.init_params(params)
+    sql.init()
 
     gl.ref_chunk = 0
     gl.counters['main'] = 0
@@ -59,6 +69,8 @@ def init_this(params):
     gl.c = gl.cnx.cursor()
     gl.data = []
 
+
+def get_script():
     script = get_final_script(gl.SCRIPT_FILE)
     log.script(script)
     log.inject()
@@ -71,14 +83,14 @@ def insert(script):
     if gl.counters['chunk'] >= gl.ref_chunk:
         gl.data = [tuple(line) for line in gl.data]
         gl.c.executemany(script, gl.data)
+        gl.counters['chunk'] += 1
+        snc = str(gl.counters['chunk'])
+        com.save_csv([f"{snc}_COMMIT_RUNNING"], gl.TMP_FILE_CHUNK)
+        gl.cnx.commit()
+        com.save_csv([snc], gl.TMP_FILE_CHUNK)
         sn = com.big_number(gl.counters['main'])
         com.log(f"{sn} lignes insérées au total")
         gl.c.close()
-        sn = str(gl.counters['chunk'])
-        com.save_csv([sn + '_comitRunning...'], gl.TMP_FILE_CHUNK)
-        gl.cnx.commit()
-        gl.counters['chunk'] += 1
-        com.save_csv([str(gl.counters['chunk'])], gl.TMP_FILE_CHUNK)
         gl.c = gl.cnx.cursor()
     else:
         gl.counters['chunk'] += 1
@@ -94,23 +106,23 @@ def send_chunk_duration(start):
         gl.MD['T'] = com.get_duration_ms(start)
 
 
-def check_restart(squeeze_download=False):
-    init_gl()
-    if os.path.exists(gl.TMP_FILE_CHUNK):
+def check_restart():
+    chunk = gl.TMP_FILE_CHUNK
+    if os.path.exists(chunk):
         s = "Injection de données en cours détectée. Reprendre ? (o/n)"
-        if com.log_input(s) == 'o':
-            try:
-                gl.ref_chunk = int(com.load_txt(gl.TMP_FILE_CHUNK)[0])
-                squeeze_download = True
-                squeeze_create_table = True
-            except ValueError:
-                log.restart_fail()
-                breakpoint()
-                os.remove(gl.TMP_FILE_CHUNK)
-                squeeze_create_table = False
-        else:
-            os.remove(gl.TMP_FILE_CHUNK)
-            squeeze_create_table = False
-    else:
-        squeeze_create_table = False
-    return (squeeze_download, squeeze_create_table)
+        if gl.TEST_RESTART:
+            com.log(s)
+            com.log_print("o (TEST_RESTART = True)")
+        elif com.log_input(s) == 'n':
+            os.remove(chunk)
+            return False
+
+        txt = com.load_txt(chunk)
+        try:
+            gl.ref_chunk = int(txt[0])
+            return True
+        except Exception as e:
+            log.restart_fail(e, chunk, txt)
+            os.remove(chunk)
+            com.send_notif('update restart KO')
+            return False

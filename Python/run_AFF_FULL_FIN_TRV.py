@@ -30,7 +30,6 @@ def run_aff(test=False):
         sl_step_query = 10
 
     squeeze_downl = False
-    (squeeze_downl, squeeze_create_table) = sql.check_restart(squeeze_downl)
 
     com.log("Lancement du job " + __name__)
     if not squeeze_downl:
@@ -52,16 +51,15 @@ def run_aff(test=False):
             SEND_NOTIF=False,
         )
 
-    if not squeeze_create_table:
-        com.log(f'Création de la table {table_name}\
+    com.log(f'Création de la table {table_name}\
 ------------------------------------')
-        sql.execute(
-            ENV='DIRECT',
-            BDD='CAPC5',
-            SCRIPT_FILE='sql/procs/create_table_aff.sql',
-            VAR_DICT={'TABLE_NAME': table_name},
-            PROC=True,
-        )
+    sql.execute(
+        ENV='DIRECT',
+        BDD='CAPC5',
+        SCRIPT_FILE='sql/procs/create_table_aff.sql',
+        VAR_DICT={'TABLE_NAME': table_name},
+        PROC=True,
+    )
 
     com.log('Export des données importées dans la table créée\
 ----------------------')

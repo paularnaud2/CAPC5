@@ -7,7 +7,6 @@ from common import g
 from test import gl
 from test import ttry
 from test_sql import upload
-from test_sql import execute
 
 from multiprocessing import Process
 from multiprocessing import Manager
@@ -57,7 +56,6 @@ def test_reqlist():
     left_join(gl.RL_LEFT_3, gl.RL_RIGHT_3, gl.RL_OUT_JOIN_REF_3)
 
     com.log("Préparation de la BDD----------------------------")
-    execute()
     upload(gl.SQL_IN_FILE)
     arr = com.load_csv(gl.SQL_IN_FILE)
     arr = [elt[0] for elt in arr]

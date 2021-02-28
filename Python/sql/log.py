@@ -89,8 +89,7 @@ def script(script):
     com.log_print(script)
 
 
-def restart_fail():
-    s = "La reprise a échoué"
-    s += "(un commit était probablement en cours)."
-    s += " Appuyez sur 'c' pour continuer."
-    com.log(s)
+def restart_fail(e, chunk, txt):
+    com.log(f"Erreur lors de la reprise : {str(e)}")
+    com.log_print(f"Contenu du fichier {chunk}:")
+    com.log_print(txt)
