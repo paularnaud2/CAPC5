@@ -124,5 +124,4 @@ def check_restart():
         except Exception as e:
             log.restart_fail(e, chunk, txt)
             os.remove(chunk)
-            com.send_notif('update restart KO')
             return False

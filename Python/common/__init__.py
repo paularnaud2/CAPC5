@@ -15,7 +15,6 @@ from .log import init_sl_time
 from .log import gen_sl_detail
 
 from .string import big_number
-from .string import reverse_string
 from .string import replace_from_dict
 from .string import get_duration_ms
 from .string import get_duration_string

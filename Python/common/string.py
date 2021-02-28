@@ -42,14 +42,6 @@ def big_number(str_in):
     return (out)
 
 
-def reverse_string(str_in):
-    str_out = ''
-    for i in str_in:
-        str_out = i + str_out
-
-    return str_out
-
-
 def replace_from_dict(str_in, dict_in):
     for key in dict_in:
         str_in = str_in.replace(g.VAR_DEL + key + g.VAR_DEL, dict_in[key])
