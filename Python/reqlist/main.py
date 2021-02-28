@@ -25,6 +25,7 @@ def init(params):
     com.log("[reqlist] run_reqList")
     init_params(params)
     init_globals()
+    com.check_header(gl.IN_FILE)
     com.log(f"Chargement du tableau d'entrée depuis {gl.IN_FILE}...")
     gl.ar_in = com.load_csv(gl.IN_FILE)
     com.log("Tableau d'entrée chargé")
@@ -60,16 +61,17 @@ def finish(start_time):
     if gl.CHECK_DUP:
         com.log_print('|')
         s = "Vérification des doublons sur la première colonne"
-        s += " du fichier de sortie."
+        s += " du fichier de sortie"
         com.log(s)
         find_dup(gl.OUT_FILE, col=1)
         com.log_print('|')
 
     s = "Exécution terminée en {}"
-    duration = com.get_duration_ms(start_time)
-    s = s.format(com.get_duration_string(duration))
+    t = com.get_duration_ms(start_time)
+    s = s.format(com.get_duration_string(t))
     com.log(s)
-    com.send_notif(s, "reqlist", duration, gl.SEND_NOTIF)
+    if gl.SEND_NOTIF:
+        com.send_notif(s, "reqlist", t)
     com.log_print()
     if gl.OPEN_OUT_FILE:
         startfile(gl.OUT_FILE)

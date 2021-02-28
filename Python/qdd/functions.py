@@ -13,7 +13,7 @@ def check_header(inp):
         s = f"Erreur : en tête absente dans le fichier '{inp}'."
         s += " Les fichiers entrants doivent comporter une en-tête."
         com.log(s)
-        raise Exception("Missing header")
+        raise Exception(g.E_MH)
 
 
 def compare_headers(in1, in2):
@@ -25,7 +25,7 @@ def compare_headers(in1, in2):
         s = f"Erreur : les fichiers {in1} et {in2} n'ont pas la même en-tête."
         s += " Les fichiers entrants doivent avoir la même en-tête."
         com.log(s)
-        raise Exception("Different headers")
+        raise Exception(g.E_DH)
 
     return True
 

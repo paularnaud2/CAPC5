@@ -12,6 +12,12 @@ DEFAULT_FIELD = "FIELD"
 counters = {}
 verrou = RLock()
 
+# Exceptions
+E_MH = "Missing header (first elements of line 1 and 2 must be of different length)"
+E_MV = "Missing variable"
+E_DH = "Different headers"
+E_VA = "Void array"
+
 # Log
 LOG_LEVEL = 0
 LOG_FILE_INITIALISED = False

@@ -1,4 +1,3 @@
-import sys
 import time
 import common as com
 import reqlist.gl as gl
@@ -69,8 +68,7 @@ def test_restart(query_nb, th_nb):
 
     if sleep:
         time.sleep(1)
-        com.log("sys.exit()")
-        sys.exit()
+        raise Exception("This thread is not supposed to continue !")
 
 
 def export_cursor(cursor, inst=''):

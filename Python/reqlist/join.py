@@ -1,9 +1,9 @@
-import sys
 import common as com
 import reqlist.gl as gl
 
-from toolDup import find_dup_list
+from common import g
 from toolDup import del_dup_list
+from toolDup import find_dup_list
 
 
 def join_arrays(ar_left_in, ar_right_in):
@@ -37,9 +37,8 @@ def join_arrays(ar_left_in, ar_right_in):
 def prepare_array(arr):
     # tri et suppression de doublons
     if not com.has_header(arr):
-        com.log("Le tableau à préparer doit contenir une en-tête.")
-        com.log("Arrêt du traitement.")
-        sys.exit()
+        com.log("Erreur : Le tableau à préparer doit contenir une en-tête")
+        raise Exception(g.E_MH)
 
     first_line = arr[0]
     gl.dup_list = find_dup_list(arr)
@@ -62,8 +61,8 @@ def log_prepare(ar, bn_ar):
 
 def check_void_right_array(ar_right_in):
     if len(ar_right_in) == 1:
-        com.log("Le tableau de droite est vide. Arrêt du traitement.")
-        sys.exit()
+        com.log("Erreur : Le tableau de droite est vide")
+        raise Exception(g.E_VA)
 
 
 def init_while_join(first_line_l, first_line_r):

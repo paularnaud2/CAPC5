@@ -11,7 +11,6 @@ from toolDup import del_dup_list
 from qdd.csf import compare_sorted_files
 from qdd.sort import sort_file
 from qdd.functions import check_split
-from qdd.functions import check_header
 from qdd.functions import compare_headers
 
 
@@ -24,8 +23,8 @@ def run_qdd(**params):
     dirs = set_dirs()
     com.log(f"Tri et comparaison des fichiers {dirs['in1']} et {dirs['in2']}")
     com.log_print('|')
-    check_header(dirs["in1"])
-    check_header(dirs["in2"])
+    com.check_header(dirs["in1"])
+    com.check_header(dirs["in2"])
     compare_headers(dirs["in1"], dirs["in2"])
     sort_file(dirs["in1"], dirs["out1"], True, 1)
     sort_file(dirs["in2"], dirs["out2"], True, 2)

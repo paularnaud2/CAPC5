@@ -3,6 +3,8 @@ import qdd as q
 import common as com
 
 from test import gl
+from test import ttry
+from time import sleep
 from common import g
 
 from multiprocessing import Process
@@ -19,14 +21,16 @@ def execute():
     )
 
 
-def upload():
+def upload(inp, test_restart=False, md=''):
     sql.upload(
         ENV=gl.SQL_ENV,
         BDD=gl.SQL_BDD,
         SCRIPT_FILE=gl.SQL_INSERT_TABLE,
         VAR_DICT={'TABLE_NAME': gl.SQL_TABLE_NAME},
-        UPLOAD_IN=gl.SQL_IN_FILE,
+        UPLOAD_IN=inp,
         NB_MAX_ELT_INSERT=gl.SQL_MAX_ELT_INSERT,
+        TEST_RESTART=test_restart,
+        MD=md,
     )
 
 
@@ -54,13 +58,18 @@ def test_sql():
     com.mkdirs(gl.SQL_OUT, True)
     com.log_print()
 
-    com.log('Test sql.execute-----------------------------')
-    execute()
+    # com.log('Test sql.execute-----------------------------')
+    # execute()
 
-    com.log('Test sql.upload------------------------------')
-    upload()
+    # com.log('Test sql.upload------------------------------')
+    # ttry(upload, g.E_MH, gl.SQL_IN_FILE_MH)
+    upload_interrupted()
+    upload(gl.SQL_IN_FILE)
 
     com.log('Test sql.dowload-----------------------------')
+    # test download no output
+    download(gl.SQL_QUERY_NO, gl.SQL_DL_OUT)
+
     download(gl.SQL_QUERY, gl.SQL_DL_OUT)
     q.file_match(gl.SQL_IN_FILE, gl.SQL_DL_OUT)
     q.file_match(gl.OUT_DUP_TMP, gl.SQL_OUT_DUP_REF)
@@ -85,6 +94,20 @@ def test_sql():
     q.file_match(gl.SQL_DL_OUT_COUNT, gl.SQL_DL_OUT_COUNT_2_REF)
     download(gl.SQL_QUERY_COUNT_2_RG, gl.SQL_DL_OUT_COUNT)
     q.file_match(gl.SQL_DL_OUT_COUNT, gl.SQL_DL_OUT_COUNT_2_REF)
+
+
+def upload_interrupted():
+    manager = Manager()
+    md = manager.dict()
+    md['T'] = False
+    md['LOG_FILE'] = g.LOG_FILE
+    p = Process(target=upload, args=(gl.SQL_IN_FILE, True, md))
+    p.start()
+    while not md['T']:
+        pass
+    t = md['T'] / 1000
+    sleep(t)
+    p.terminate()
 
 
 def download_interrupted(query, out):

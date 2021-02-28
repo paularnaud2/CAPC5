@@ -5,6 +5,7 @@ import reqlist as rl
 
 from common import g
 from test import gl
+from test import ttry
 from test_sql import upload
 from test_sql import execute
 
@@ -57,22 +58,35 @@ def test_reqlist():
 
     com.log("Préparation de la BDD----------------------------")
     execute()
-    upload()
+    upload(gl.SQL_IN_FILE)
     arr = com.load_csv(gl.SQL_IN_FILE)
     arr = [elt[0] for elt in arr]
     com.save_csv(arr, gl.RL_IN_1)
 
     com.log('Test reqlist--------------------------------------')
-    reqlist(gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_1)
+    # test no sql output
+    ttry(reqlist, g.E_VA, gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_NO)
+
+    # test no var
+    ttry(reqlist, g.E_MV, gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_MV)
+
+    # test missing header
+    com.save_csv(arr[1:], gl.RL_IN_MH)
+    ttry(reqlist, g.E_MH, gl.RL_IN_MH, gl.RL_OUT_1, gl.RL_QUERY_1)
+
+    # test nominal conditions
+    reqlist(gl.RL_IN_1, gl.RL_OUT_1, gl.RL_QUERY_1, cnx=1)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_2, gl.RL_QUERY_2)
     q.file_match(gl.SQL_IN_FILE, gl.RL_OUT_2, del_dup=True)
     q.file_match(gl.OUT_DUP_TMP, gl.RL_OUT_DUP_REF)
 
+    # test interruption other threads not finished
     com.mkdirs(gl.RL_TMP, True)
     reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, cnx=6, elt=10)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True, cnx=6, elt=10)
     q.file_match(gl.RL_OUT_2, gl.RL_OUT_3)
 
+    # test interruption other threads finished
     com.mkdirs(gl.RL_TMP, True)
     reqlist_interrupted(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True)
     reqlist(gl.RL_OUT_1, gl.RL_OUT_3, gl.RL_QUERY_2, True)

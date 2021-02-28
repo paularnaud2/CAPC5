@@ -4,6 +4,7 @@ import qdd.gl as qgl
 
 from test import gl
 from test import ttry
+from common import g
 
 
 def qdd(
@@ -54,8 +55,8 @@ def test_qdd():
     com.log_print()
 
     # test qdd no header
-    ttry(qdd, gl.E_MH, gl.IN_NH, gl.IN12, gl.OUT1)
-    ttry(qdd, gl.E_DH, gl.IN11, gl.IN_DH, gl.OUT1)
+    ttry(qdd, g.E_MH, gl.IN_MH, gl.IN12, gl.OUT1)
+    ttry(qdd, g.E_DH, gl.IN11, gl.IN_DH, gl.OUT1)
 
     # test dup key
     qdd(gl.IN_DK, gl.IN12, gl.OUT1, tpd=True)

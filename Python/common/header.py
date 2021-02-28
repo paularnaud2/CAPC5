@@ -1,5 +1,7 @@
 from . import g
 from .csv import csv_to_list
+from .log import log
+from .log import log_print
 
 
 def get_header(in_dir, csv=False):
@@ -45,6 +47,10 @@ def has_header(in_var):
     else:
         ar = in_var
 
+    if not ar:
+        return False
+    if len(ar) == 1:
+        return True
     if isinstance(ar[0], str):
         if len(ar[0]) == len(ar[1]):
             out = False
@@ -53,3 +59,13 @@ def has_header(in_var):
             out = False
 
     return out
+
+
+def check_header(in_dir):
+    if not has_header(in_dir):
+        s = f"Erreur : Le fichier d'entrée {in_dir} doit contenir une en-tête"
+        log(s)
+        s = "Assurez-vous que les premiers éléments des deux premières lignes"
+        s += " sont de longeur différente."
+        log_print(s)
+        raise Exception(g.E_MH)

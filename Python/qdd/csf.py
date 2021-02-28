@@ -1,4 +1,3 @@
-import sys
 import qdd.gl as gl
 import common as com
 

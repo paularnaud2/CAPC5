@@ -2,15 +2,12 @@ from . import g
 from .log import log
 
 
-def send_notif(msg, package, duration=0, cond=True):
+def send_notif(msg, package='common', t=0, dur=10):
 
-    if duration != 0:
-        duration = duration / 1000
-        if duration < g.MIN_DUR_NOTIF_TRIGGER:
+    if t != 0:
+        t = t / 1000
+        if t < g.MIN_DUR_NOTIF_TRIGGER:
             return
-
-    if not cond:
-        return
 
     try:
         from win10toast import ToastNotifier
@@ -21,7 +18,7 @@ def send_notif(msg, package, duration=0, cond=True):
         return
 
     toaster = ToastNotifier()
-    toaster.show_toast("Python - " + package, msg, duration=10, threaded=True)
+    toaster.show_toast("Python - " + package, msg, duration=dur, threaded=True)
     log("Notification Windows envoyée")
 
 

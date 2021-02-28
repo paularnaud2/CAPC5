@@ -3,6 +3,8 @@ import common as com
 import reqlist.gl as gl
 import reqlist.log as log
 
+from common import g
+
 
 def restart():
     file_list = com.get_file_list(gl.TMP_PATH)
@@ -56,15 +58,24 @@ def set_query_var(query_file):
     query = com.read_file(query_file)
     query = query.strip('\r\n;')
     query = com.replace_from_dict(query, gl.VAR_DICT)
+    check_var(query)
     gl.query_var = query
-    s = "Requête modèle :\n{}\n;"
-    com.log_print(s.format(gl.query_var))
+    com.log_print(f"Requête modèle :\n{gl.query_var}\n;")
+
+
+def check_var(query):
+    var = g.VAR_DEL + gl.VAR_IN + g.VAR_DEL
+    if var not in query:
+        s = f"Erreur : la requête utilisée doit être variabilisée (contenir {var})"
+        com.log(s)
+        raise Exception(g.E_MV)
 
 
 def prepare_elt_list(array_in):
     # tri et suppression des doublons
-
-    elt_list = str_handle(array_in)
+    com.check_header(array_in)
+    check_field_nb()
+    elt_list = [elt[gl.IN_FIELD_NB - 1] for elt in array_in[1:]]
     elt_set = set()
     for elt in elt_list:
         elt_set.add(elt)
@@ -81,20 +92,10 @@ def prepare_elt_list(array_in):
     return elt_list
 
 
-def str_handle(array_in):
-    if not com.has_header(array_in):
-        s = "Attention il semble ne pas y avoir de header dans l'entrant"
-        s += f" (premier élément : {array_in[0]}) Continuer ? (o/n)"
-        if com.log_input(s) != 'o':
-            sys.exit()
-
+def check_field_nb():
     if gl.IN_FIELD_NB != 1:
         s = "Attention les requêtes se feront sur le {}ème champ "
         s += "du tableau d'entrée. Continuer ? (o/n)"
         s = s.format(gl.IN_FIELD_NB)
         if com.log_input(s) != 'o':
             sys.exit()
-
-    elt_list = [elt[gl.IN_FIELD_NB - 1] for elt in array_in[1:]]
-
-    return elt_list

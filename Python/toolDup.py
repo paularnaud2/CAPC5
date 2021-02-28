@@ -53,6 +53,9 @@ def del_dup(in_dir, out_dir, open_out=False, main=True):
 
 
 def find_dup_list(in_list):
+    if not in_list:
+        return []
+
     in_sorted = sorted(in_list)
     dup_list = []
     old_elt = in_sorted[0]
@@ -69,6 +72,9 @@ def find_dup_list(in_list):
 
 
 def del_dup_list(in_list):
+    if not in_list:
+        return []
+
     # if in_list elements are hashable
     if isinstance(in_list[0], str):
         out_list = list(set(in_list))

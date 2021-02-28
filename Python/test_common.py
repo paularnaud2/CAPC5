@@ -7,6 +7,7 @@ from os.path import exists
 def test_common():
     com.init_log('test_common', True)
 
+    # test mail
     mail_conf = g.paths['MAIL'] + 'conf.txt'
     if exists(mail_conf):
         com.log("Test de la fonctionnalité mail---------------")
@@ -16,7 +17,8 @@ def test_common():
         s += " La fonctionnalité mail n'a pas pu être testée."
         com.log(s)
 
-    com.send_notif('Notification test', 'Test')
+    # test notif
+    com.send_notif('Notification test', 'Test', dur=2)
 
 
 if __name__ == '__main__':

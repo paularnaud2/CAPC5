@@ -9,8 +9,6 @@ from common import g
 # main
 TEST = 'test/'
 OUT_DUP_TMP = g.paths['TMP'] + tools.TMP_FOLDER + toolDup.TMP_OUT
-E_MH = "Missing header"
-E_DH = "Different headers"
 
 # test_sql
 TEST_SQL = TEST + 'sql/'
@@ -22,12 +20,14 @@ SQL_TABLE_NAME = 'TEST'
 SQL_CREATE_TABLE = TEST_SQL + 'create_table.sql'
 SQL_INSERT_TABLE = TEST_SQL + 'insert_table.sql'
 SQL_QUERY = TEST_SQL + 'export.sql'
+SQL_QUERY_NO = TEST_SQL + 'export_no_output.sql'
 SQL_QUERY_RG = TEST_SQL + 'export_rg.sql'
 SQL_QUERY_COUNT_1 = TEST_SQL + 'count_1.sql'
 SQL_QUERY_COUNT_1_RG = TEST_SQL + 'count_1_rg.sql'
 SQL_QUERY_COUNT_2 = TEST_SQL + 'count_2.sql'
 SQL_QUERY_COUNT_2_RG = TEST_SQL + 'count_2_rg.sql'
 SQL_IN_FILE = TEST_SQL + 'in.csv'
+SQL_IN_FILE_MH = TEST_SQL + 'in_missing_header.csv'
 SQL_OUT_DUP_REF = TEST_SQL + 'out_dup_ref.csv'
 SQL_DL_OUT = SQL_OUT + 'out.csv'
 SQL_DL_OUT_COUNT = SQL_OUT + 'out_count.csv'
@@ -47,11 +47,16 @@ RL_OUT_JOIN = RL_OUT + 'join.csv'
 RL_OUT_DUP_REF = TEST_RL + 'out_dup_ref.csv'
 
 RL_IN_1 = RL_OUT + 'in1.csv'
+RL_IN_MH = RL_OUT + 'in_missing_header.csv'
 RL_OUT_1 = RL_OUT + 'out1.csv'
 RL_QUERY_1 = TEST_RL + 'query1.sql'
+RL_QUERY_NO = TEST_RL + 'query_no_output.sql'
+RL_QUERY_MV = TEST_RL + 'query_missing_var.sql'
+
 RL_IN_2 = RL_OUT + 'in2.csv'
 RL_OUT_2 = RL_OUT + 'out2.csv'
 RL_QUERY_2 = TEST_RL + 'query2.sql'
+
 RL_OUT_3 = RL_OUT + 'out3.csv'
 
 RL_LEFT_1 = TEST_RL + 'left_1.csv'
@@ -70,7 +75,7 @@ RL_OUT_JOIN_REF_3 = TEST_RL + 'join_ref_3.csv'
 TEST_QDD = TEST + 'qdd/'
 QDD_OUT = g.paths['TMP'] + TEST_QDD
 
-IN_NH = 'in_no_header'
+IN_MH = 'in_missing_header'
 IN_DH = 'in_different_header'
 IN_DK = 'in_dup_key'
 OUT_DK = QDD_OUT + '1_dup_key.csv'

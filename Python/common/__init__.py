@@ -32,6 +32,7 @@ from .file import get_file_list
 from .header import get_header
 from .header import gen_header
 from .header import has_header
+from .header import check_header
 
 from .csv import csv_clean
 from .csv import load_csv

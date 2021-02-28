@@ -45,8 +45,9 @@ def init_gen_out():
 def check_ec(file_list):
     for elt in file_list:
         if gl.EC in elt or gl.QN in elt:
-            s = f"Elément inatendu trouvé dans les fichiers temporaire ({elt})."
-            s += " Abandon de la fusion des fichiers temporaires."
+            s = f"Elément inatendu trouvé dans les fichiers temporaire ({elt})"
+            com.log(s)
+            com.log_print("Abandon de la fusion des fichiers temporaires.")
             raise Exception(s)
 
 
@@ -66,9 +67,10 @@ def tmp_init(th_name, th_nb):
 
 def tmp_update(res, th_name, query_nb, c):
 
-    # On sauve un fichier QN avec qn à 0 au cas où le
+    # On sauve un fichier QN avec qn à EC au cas où le
     # trt soit arrêté pendant l'écriture du fichier
-    com.save_csv(['0'], gl.tmp_file[th_name + gl.QN])
+    s = f"WRITING RES IN {gl.tmp_file[th_name + gl.EC]}"
+    com.save_csv([s], gl.tmp_file[th_name + gl.QN])
 
     # Si c'est la première requête on crée le fichier
     # et on écrit le header
@@ -95,20 +97,28 @@ def tmp_finish(th_name):
 
 
 def init_qn(th_name, th_nb):
+    pqn = gl.tmp_file[th_name + gl.QN]
+    pec = gl.tmp_file[th_name + gl.EC]
     if exists(gl.tmp_file[th_name]):
         com.log(f"Le thread No.{th_nb} avait fini son execution")
         gl.TEST_RESTART = False
         return False
-    elif exists(gl.tmp_file[th_name + gl.QN]):
-        s = com.load_txt(gl.tmp_file[th_name + gl.QN])
-        qn = int(s[0])
-        if qn == 0:
-            os.remove(gl.tmp_file[th_name])
-        else:
-            s = "Reprise du traitement à partir de "
-            s += f"la requête No.{qn + 1} pour le thread No.{th_nb}"
+    elif exists(pqn):
+        txt = com.load_txt(pqn)
+        try:
+            qn = int(txt[0])
+        except Exception as e:
+            s = f"Erreur lors de la reprise pour le thread {th_nb} : {str(e)}"
             com.log(s)
-            gl.TEST_RESTART = False
+            if exists(pec):
+                com.log(f"Suppression du fichier {pec}")
+                os.remove(pec)
+            qn = 0
+
+        s = "Reprise du traitement à partir de "
+        s += f"la requête No.{qn + 1} pour le thread No.{th_nb}"
+        com.log(s)
+        gl.TEST_RESTART = False
     else:
         qn = 0
 

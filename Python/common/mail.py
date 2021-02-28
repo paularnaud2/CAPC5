@@ -3,8 +3,8 @@ import smtplib
 
 from . import g
 from . import file
-from . import log
 from . import tools
+from .log import log
 from os.path import exists
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart

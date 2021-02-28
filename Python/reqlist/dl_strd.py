@@ -33,7 +33,8 @@ def launch_threads(group_array):
     for th in thread_list:
         th.join()
 
-    com.log("Tous les threads ont terminé leur execution")
+    if gl.MAX_BDD_CNX > 1:
+        com.log("Tous les threads ont terminé leur execution")
     com.log_print('|')
 
 
@@ -44,7 +45,8 @@ def dl_th(grp, th_nb):
     process_grp(c, grp, th_nb=th_nb)
     c.close()
     cnx.close()
-    com.log(f"Fin de l'execution du thread No.{th_nb}")
+    if gl.MAX_BDD_CNX > 1:
+        com.log(f"Fin de l'execution du thread No.{th_nb}")
 
 
 def split_group_list():

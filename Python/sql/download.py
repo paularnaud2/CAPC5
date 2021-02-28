@@ -56,16 +56,17 @@ def download_gko():
 
 def finish(start_time):
 
-    dur = com.get_duration_ms(start_time)
-    bn = com.big_number(gl.counters["row"])
+    t = com.get_duration_ms(start_time)
+    n = gl.counters["row"]
+    bn = com.big_number(n)
     s = "Export terminé. {} lignes écrites en {}."
-    s = s.format(bn, com.get_duration_string(dur))
+    s = s.format(bn, com.get_duration_string(t))
     com.log(s)
 
     if gl.bools["MERGE_OK"]:
         out_dir = gl.OUT_FILE
         com.log("Fichier de sortie {} alimenté avec succès".format(out_dir))
-        a = gl.counters["row"] < gl.MAX_CHECK_DUP
+        a = n < gl.MAX_CHECK_DUP and n > 0
 
         if a and gl.CHECK_DUP and not gl.bools["COUNT"]:
             com.log_print('|')
@@ -79,4 +80,5 @@ def finish(start_time):
     com.log_print('|')
     com.log("Traitement terminé")
     com.log_print()
-    com.send_notif(s, "sql", dur, gl.SEND_NOTIF)
+    if gl.SEND_NOTIF:
+        com.send_notif(s, "sql", t)
