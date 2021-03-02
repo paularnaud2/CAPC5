@@ -68,6 +68,8 @@ def check_var(query):
     if var not in query:
         s = f"Erreur : la requête utilisée doit être variabilisée (contenir {var})"
         com.log(s)
+        com.log_print("Requête :")
+        com.log_print(query)
         raise Exception(g.E_MV)
 
 
