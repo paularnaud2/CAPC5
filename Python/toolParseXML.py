@@ -35,7 +35,7 @@ def init_vars():
 
 def parse_xml(**params):
     init_vars()
-    com.log(f"[toolParseXML] parse_xml")
+    com.log("[toolParseXML] parse_xml")
     init_params(params)
     gen_img_dict()
     save_img_dict()
