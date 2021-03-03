@@ -137,3 +137,7 @@ DUP_OUT_REF = TEST_TOOL + 'dup_out_ref.csv'
 DEL_DUP_OUT_REF = TEST_TOOL + 'del_dup_out_ref.csv'
 DUP_COL_IN = TEST_TOOL + 'dup_col_in.csv'
 DUP_COL_REF = TEST_TOOL + 'dup_out_ref_2.csv'
+
+# test filter
+FLT_OUT = TOOLS_OUT + 'filter_out.csv'
+FLT_OUT_REF = TEST_TOOL + 'filter_out_ref.csv'

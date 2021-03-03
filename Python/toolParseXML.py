@@ -26,13 +26,12 @@ def init(params):
     gl.IN_DIR = 'test/tools/xml_in.xml'
     gl.OUT_DIR = 'C:/Py/OUT/out.csv'
     gl.OPEN_OUT_FILE = False
+    com.init_params(gl, params)
 
     # Global variables
     gl.FIRST_TAG = ''
     gl.SUB_TAG = ''
     gl.N_ROW = 0
-
-    com.init_params(gl, params)
 
 
 def parse_xml(**params):

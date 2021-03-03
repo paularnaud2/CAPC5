@@ -12,12 +12,11 @@ def init_var(params):
     gl.MAX_LINE = 2 * 10**3
     gl.MAX_FILE_NB = 3
     gl.ADD_HEADER = True
+    com.init_params(gl, params)
 
     # Global variables
     gl.QUIT = False
     gl.N_OUT = 0
-
-    com.init_params(gl, params)
 
 
 def split_file(**params):
