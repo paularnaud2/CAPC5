@@ -83,12 +83,12 @@ def filter_line(in_list):
     if gl.FILTER is False:
         return True
 
-    # On garde les lignes qui vérifient ces critères
+    # lines for which cond = True are written in the output file
     if gl.TEST_FILTER:
-        a = in_list[gl.fields['PRM']].find('01') == 0
+        cond = in_list[gl.fields['PRM']].find('01') == 0
     else:
-        a = True  # enter your conditions here
-    if a:
+        cond = True  # enter your conditions here
+    if cond:
         return True
     else:
         return False
