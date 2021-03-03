@@ -4,7 +4,6 @@ import common as com
 
 from time import time
 from qdd.init import set_dirs
-from qdd.init import init_params
 from qdd.init import init_tmp_dir
 from qdd.init import init_compare_files
 from toolDup import del_dup_list
@@ -18,7 +17,7 @@ def run_qdd(**params):
 
     com.log("[qdd] run_qdd")
     start_time = time()
-    init_params(params)
+    com.init_params(gl, params)
     init_tmp_dir()
     dirs = set_dirs()
     com.log(f"Tri et comparaison des fichiers {dirs['in1']} et {dirs['in2']}")

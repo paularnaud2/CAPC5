@@ -59,7 +59,7 @@ def finish_this(start_time):
 
 
 def init(params):
-    sql.init_params(params)
+    com.init_params(gl, params)
     sql.init()
 
     gl.ref_chunk = 0

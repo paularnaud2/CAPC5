@@ -5,7 +5,7 @@ import tools.gl as gl
 from os import remove
 
 
-def init_vars():
+def init_var(params):
     # Input variables default values
     gl.IN_DIR = 'C:/Py/IN/Enedis_APR_20201030_092105813.xml'
     gl.OUT_DIR = ''
@@ -17,11 +17,12 @@ def init_vars():
     gl.QUIT = False
     gl.N_OUT = 0
 
+    com.init_params(gl, params)
+
 
 def split_file(**params):
     com.log("[toolSplit] split_file")
-    init_vars()
-    init_params(params)
+    init_var(params)
     (file_dir, file_name, ext) = split_in_dir()
     gl.header = com.get_header(gl.IN_DIR)
     with open(gl.IN_DIR, 'r', encoding='utf-8') as in_file:
@@ -33,14 +34,6 @@ def split_file(**params):
 
     com.log("Traitement terminé")
     com.log_print()
-
-
-def init_params(params):
-    if len(params) > 0:
-        com.log(f"Initialisation des paramètres : {params}")
-        for key in params:
-            gl.__getattribute__(key)
-            gl.__setattr__(key, params[key])
 
 
 def split_in_dir():

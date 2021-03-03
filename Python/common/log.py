@@ -1,6 +1,7 @@
 import sys
 
 from common import g
+from common import string
 from time import time
 from datetime import datetime
 
@@ -59,7 +60,6 @@ def step_log(counter, step, what='lignes écrites', nb=0, th_name='DEFAULT'):
     # Pour une utilisation simple, initialiser avec init_sl_time()
     # Pour une utilisation multi_thread, initialiser avec
     # gen_sl_detail(range_name)
-    from . import string
 
     if counter % step != 0:
         return False
@@ -119,16 +119,6 @@ def gen_sl_detail(range_name, th_nb=1, what='la plage', multi_thread=False):
     return th_name
 
 
-def log_list(list):
-    for elt in list:
-        log_print(elt)
-
-
 def log_array(array, nb_tab=0):
     for elt in array:
         log_print(elt, nb_tab)
-
-
-def log_dict(dict):
-    for key in dict:
-        log_print(f'{key} : {dict[key]}')

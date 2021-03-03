@@ -2,7 +2,6 @@ import common as com
 import sql.gl as gl
 
 from sql.init import init
-from sql.init import init_params
 from sql.connect import connect
 from sql.functions import get_final_script
 
@@ -10,7 +9,7 @@ from sql.functions import get_final_script
 @com.log_exeptions
 def execute(**params):
     com.log('[sql] execute')
-    init_params(params)
+    com.init_params(gl, params)
     init()
     script = get_final_script(gl.SCRIPT_FILE)
     cnx = connect(ENV=gl.ENV, DB=gl.DB)

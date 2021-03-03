@@ -28,3 +28,16 @@ def list_to_dict(list_in, separator='='):
         e = elt.split(separator)
         out[e[0]] = e[1]
     return out
+
+
+def init_params(mod, params):
+    if len(params) > 0:
+        log(f"Initialisation des paramètres : {params}")
+        for key in params:
+            mod.__getattribute__(key)
+            mod.__setattr__(key, params[key])
+
+    if 'MD' in params:
+        if 'LOG_FILE' in mod.MD:
+            g.LOG_FILE_INITIALISED = True
+            g.LOG_FILE = mod.MD['LOG_FILE']

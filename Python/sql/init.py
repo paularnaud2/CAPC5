@@ -34,19 +34,6 @@ def init_tmp_dir():
     com.mkdirs(gl.TMP_PATH)
 
 
-def init_params(params):
-    if len(params) > 0:
-        com.log(f"Initialisation des paramètres : {params}")
-        for key in params:
-            gl.__getattribute__(key)
-            gl.__setattr__(key, params[key])
-
-    if 'MD' in params:
-        if 'LOG_FILE' in gl.MD:
-            g.LOG_FILE_INITIALISED = True
-            g.LOG_FILE = gl.MD['LOG_FILE']
-
-
 def get_query():
     query = com.read_file(gl.QUERY_FILE)
     query = query.strip('\r\n;')

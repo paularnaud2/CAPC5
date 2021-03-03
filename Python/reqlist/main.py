@@ -1,10 +1,10 @@
 import common as com
 import reqlist.gl as gl
 
+from common import g
+from time import time
 from os import startfile
 from toolDup import find_dup
-from reqlist.init import init_params
-from reqlist.init import init_globals
 from reqlist.dl import download
 from reqlist.join import join_arrays
 
@@ -19,17 +19,6 @@ def run_reqList(**params):
         left_join()
 
     finish(gl.start_time)
-
-
-def init(params):
-    com.log("[reqlist] run_reqList")
-    init_params(params)
-    init_globals()
-    com.check_header(gl.IN_FILE)
-    com.log(f"Chargement du tableau d'entrée depuis {gl.IN_FILE}...")
-    gl.ar_in = com.load_csv(gl.IN_FILE)
-    com.log("Tableau d'entrée chargé")
-    com.log_print('|')
 
 
 def left_join(ldir='', rdir='', out='', debug=False):
@@ -75,3 +64,30 @@ def finish(start_time):
     com.log_print()
     if gl.OPEN_OUT_FILE:
         startfile(gl.OUT_FILE)
+
+
+def init(params):
+    com.log("[reqlist] run_reqList")
+    com.init_params(gl, params)
+    init_globals()
+    com.check_header(gl.IN_FILE)
+    com.log(f"Chargement du tableau d'entrée depuis {gl.IN_FILE}...")
+    gl.ar_in = com.load_csv(gl.IN_FILE)
+    com.log("Tableau d'entrée chargé")
+    com.log_print('|')
+
+
+def init_globals():
+
+    TMP_DIR = g.paths['TMP'] + gl.TMP_FOLDER
+    gl.OUT_LEFT = TMP_DIR + gl.OUT_LEFT_FILE
+    gl.OUT_RIGHT = TMP_DIR + gl.OUT_RIGHT_FILE
+    gl.OUT_SQL = TMP_DIR + gl.OUT_SQL_FILE
+    gl.TMP_PATH = TMP_DIR + gl.DB + '/'
+
+    gl.counters = {}
+    gl.bools = {}
+    gl.bools['MULTI_TH'] = False
+    gl.tmp_file = {}
+    gl.ec_query_nb = {}
+    gl.start_time = time()

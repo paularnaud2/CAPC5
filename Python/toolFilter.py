@@ -1,17 +1,32 @@
+import os
 import common as com
 import tools.gl as gl
 
-IN_FILE = 'C:/Py/IN/in.csv'
-OUT_FILE = 'C:/Py/OUT/out_filtered.csv'
-FILTER = False
-EXTRACT_COL = True
-COL_LIST = ['PRM', 'SI']
-SL_STEP = 500 * 10**3
+
+def init_vars(params):
+    # Input variables default values
+    gl.IN_FILE = 'C:/Py/IN/in.csv'
+    gl.OUT_FILE = 'C:/Py/OUT/out_filtered.csv'
+    gl.FILTER = False
+    gl.EXTRACT_COL = True
+    gl.OPEN_OUT_FILE = False
+    gl.COL_LIST = ['PRM', 'AFFAIRE']
+    gl.SL_STEP = 500 * 10**3
+
+    # Global variables
+    gl.n_r = 0
+    gl.n_o = 0
+    gl.out_list = []
+    com.init_sl_time()
+    gl.fields = com.get_csv_fields_dict(gl.IN_FILE)
+
+    com.init_params(gl, params)
 
 
-def filter():
-    init()
-    with open(IN_FILE, 'r', encoding='utf-8') as in_file:
+def filter(**params):
+    com.log("[toolFilter] filter")
+    init(params)
+    with open(gl.IN_FILE, 'r', encoding='utf-8') as in_file:
         process_header(in_file)
         line = in_file.readline()
         while line:
@@ -19,13 +34,8 @@ def filter():
     finish()
 
 
-def init():
-    com.log("[toolFilter] filter")
-    gl.n_r = 0
-    gl.n_o = 0
-    gl.out_list = []
-    com.init_sl_time()
-    gl.fields = com.get_csv_fields_dict(IN_FILE)
+def init(params):
+    init_vars(params)
 
     com.log("Filtrage en cours")
     gl.s = "{bn_1} lignes parcourues en {ds}. {bn_2} lignes parcourues au total "
@@ -48,7 +58,7 @@ def process_line(line, in_file):
         line_list = extract_col(line_list)
         gl.out_list.append(line_list)
         gl.n_o += 1
-    com.step_log(gl.n_r, SL_STEP, what=gl.s, nb=gl.n_o)
+    com.step_log(gl.n_r, gl.SL_STEP, what=gl.s, nb=gl.n_o)
     line = in_file.readline()
 
 
@@ -60,17 +70,19 @@ def finish():
     com.log(s)
 
     com.log("Ecriture du fichier de sortie...")
-    com.save_csv(gl.out_list, OUT_FILE)
-    s = f"Traitement terminé, fichier de sortie {OUT_FILE} généré avec succès"
+    com.save_csv(gl.out_list, gl.T_FILE)
+    s = f"Traitement terminé, fichier de sortie {gl.OUT_FILE} généré avec succès"
     com.log(s)
+    if gl.OPEN_OUT_FILE:
+        os.startfile(gl.OUT_FILE)
 
 
 def filter_line(in_list):
-    if FILTER is False:
+    if gl.FILTER is False:
         return True
 
     # On garde les lignes qui vérifient ces critères
-    a = in_list[gl.fields['typeCompteur']] != 'Evolué - Communicant'
+    a = in_list[gl.fields['PRM']].find('01') == 0
     if a:
         return True
     else:
@@ -78,7 +90,7 @@ def filter_line(in_list):
 
 
 def extract_col(line):
-    if EXTRACT_COL is False:
+    if gl.EXTRACT_COL is False:
         return line
 
     new_line = [line[gl.fields[elt]] for elt in gl.COL_LIST]
@@ -86,4 +98,4 @@ def extract_col(line):
 
 
 if __name__ == '__main__':
-    filter()
+    filter(OPEN_OUT_FILE=True)

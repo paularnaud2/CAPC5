@@ -40,14 +40,6 @@ def set_dirs():
     return dirs
 
 
-def init_params(params):
-    if len(params) > 0:
-        com.log(f"Initialisation des paramètres : {params}")
-        for key in params:
-            gl.__getattribute__(key)
-            gl.__setattr__(key, params[key])
-
-
 def init_stf(in_file_dir, out_file_dir):
 
     gl.counters["file"] = 0

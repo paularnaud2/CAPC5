@@ -8,7 +8,6 @@ from threading import Thread
 from toolDup import find_dup
 from sql.init import init
 from sql.init import init_gko
-from sql.init import init_params
 from sql.groupby import group_by
 from sql.process import process_range_list
 from sql.process import process_gko_query
@@ -18,7 +17,7 @@ from sql.process import process_gko_query
 def download(**params):
     com.log('[sql] download')
     start_time = time()
-    init_params(params)
+    com.init_params(gl, params)
     init()
     if gl.DB == 'GINKO':
         download_gko()

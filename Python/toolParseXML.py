@@ -21,7 +21,7 @@ SL_STEP_READ = 1000 * 10**3
 SL_STEP_WRITE = 100 * 10**3
 
 
-def init_vars():
+def init(params):
     # Input variables default values
     gl.IN_DIR = 'test/tools/xml_in.xml'
     gl.OUT_DIR = 'C:/Py/OUT/out.csv'
@@ -32,22 +32,15 @@ def init_vars():
     gl.SUB_TAG = ''
     gl.N_ROW = 0
 
+    com.init_params(gl, params)
+
 
 def parse_xml(**params):
-    init_vars()
     com.log("[toolParseXML] parse_xml")
-    init_params(params)
+    init(params)
     gen_img_dict()
     save_img_dict()
     finish()
-
-
-def init_params(params):
-    if len(params) > 0:
-        com.log(f"Initialisation des paramètres : {params}")
-        for key in params:
-            gl.__getattribute__(key)
-            gl.__setattr__(key, params[key])
 
 
 def finish():

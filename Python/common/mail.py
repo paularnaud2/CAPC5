@@ -2,8 +2,8 @@ import ssl
 import smtplib
 
 from common import g
-from . import file
-from . import tools
+from common import file
+from common import tools
 from .log import log
 from os.path import exists
 from email.mime.text import MIMEText

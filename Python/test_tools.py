@@ -33,12 +33,15 @@ def test_tools():
     split()
 
     find_dup(gl.DUP_IN, gl.DUP_OUT)
+    com.log_print()
     q.file_match(gl.DUP_OUT, gl.DUP_OUT_REF)
 
     find_dup(gl.DUP_COL_IN, col=1)
+    com.log_print()
     q.file_match(gl.DUP_OUT, gl.DUP_OUT_REF)
 
     del_dup(gl.DUP_IN, gl.DUP_OUT)
+    com.log_print()
     q.file_match(gl.DUP_OUT, gl.DEL_DUP_OUT_REF)
 
     list_in = com.load_csv(gl.DUP_IN)
